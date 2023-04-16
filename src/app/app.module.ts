@@ -1,3 +1,13 @@
+/**
+ * Title: app.module.ts
+ * Author: Richard Krasso
+ * Contributors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+ * Date: 04/16/23
+ * Last Modified by: Walter McCue
+ * Last Modification Date: 04/16/23
+ * Description: angular module for the bcrs project
+*/
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,6 +23,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ServerErrorComponent } from './pages/server-error/server-error.component';
+import { LoginComponent } from './pages/login/login.component';
 
 // Angular Materials
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -32,7 +43,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AboutComponent,
     ContactComponent,
     NotFoundComponent,
-    ServerErrorComponent
+    ServerErrorComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

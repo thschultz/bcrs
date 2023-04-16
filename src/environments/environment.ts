@@ -1,3 +1,13 @@
+/**
+ * Title: environments.ts
+ * Author: Richard Krasso
+ * Contributors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+ * Date: 04/16/23
+ * Last Modified by: Walter McCue
+ * Last Modification Date: 04/16/23
+ * Description: environment for the bcrs project
+*/
+
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.

@@ -1,3 +1,13 @@
+/**
+Title: styles.css
+Author: Richard Krasso
+Contributors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+Date: 04/16/23
+Last Modified by: Walter McCue
+Last Modification Date: 04/16/23
+Description: Global styling for the bcrs project
+*/
+
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }

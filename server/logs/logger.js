@@ -1,8 +1,10 @@
 /**
  * Title: logger.js
- * Author: Walter McCue
- * Contributors: Thomas Schultz, Jamal Damir, Carl Logan
+ * Author: Richard Krasso
+ * Contributors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 04/15/23
+ * Last Modified by: Walter McCue
+ * Last Modification Date: 04/15/23
  * Description: logging for the bcrs project
 */
 

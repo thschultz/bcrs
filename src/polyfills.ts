@@ -1,4 +1,14 @@
 /**
+ * Title: polyfills.ts
+ * Author: Richard Krasso
+ * Contributors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+ * Date: 04/16/23
+ * Last Modified by: Walter McCue
+ * Last Modification Date: 04/16/23
+ * Description: ts file for the bcrs project
+*/
+
+/**
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.
  *
