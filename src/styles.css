@@ -88,7 +88,7 @@ body {
 /* Neon Button Styling */
 
 .neon-btn {
-  margin: 0 20px;
+  margin: 30px 30px 0 30px;
   background-color: #000;
   color: #2a623d;
   display: inline-block;
@@ -147,3 +147,15 @@ body {
 
 /* Media Queries */
 
+@media screen and (max-width: 800px) {
+
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content-container {
+    width: 95%;
+  }
+  
+}

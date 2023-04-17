@@ -9,8 +9,6 @@ Description: component styling for the bcrs project
 */
 
 .navbar-container {
-  padding: 10px;
-  padding-left: 50px;
   font-weight: bolder;
   text-align: center;
   align-items: center;
@@ -28,13 +26,13 @@ Description: component styling for the bcrs project
 
 footer {
   bottom: 0;
-  position: absolute;
+  position: fixed;
   width: 100%;
 }
 
 .footer-content {
   bottom: 5px;
-  position: absolute;
+  position: fixed;
   font-size: 16px;
   font-weight: bolder;
   padding-left: 100px;
@@ -55,6 +53,17 @@ footer {
 }
 
 .house-img img {
-  padding: 20px;
+  padding-top: 20px;
   height: 200px;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 800px) {
+
+  .footer-content {
+    padding: 0 5px;
+    text-align: center;
+  }
+
 }
