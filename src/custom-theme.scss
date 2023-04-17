@@ -29,7 +29,7 @@ $bcrs-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$bcrs-theme: mat.define-light-theme((
+$bcrs-theme: mat.define-dark-theme((
   color: (
     primary: $bcrs-primary,
     accent: $bcrs-accent,

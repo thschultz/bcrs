@@ -22,6 +22,15 @@ body {
   background-color: #000;
 }
 
+.page-header {
+  color: #fff;
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
 
 
 /* Color Styles */
@@ -52,6 +61,28 @@ body {
   box-shadow: 0 0 10px 5px #5d5d5d,
   inset 0 0 10px 5px #5d5d5d;
 }
+
+/* flex Style */
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.content-container {
+  width: 45%;
+  margin: 2%;
+  justify-items: center;
+}
+
+.img-container {
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  place-items: center;
+  max-width: 1100px;
+}
+
 
 
 /* Neon Button Styling */

@@ -10,10 +10,14 @@
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {BaseLayoutComponent} from "./shared/base-layout/base-layout.component";
-import {HomeComponent} from "./pages/home/home.component";
+import { BaseLayoutComponent } from "./shared/base-layout/base-layout.component";
+import { HomeComponent } from "./pages/home/home.component";
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
+import { LoginComponent } from './pages/login/login.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ServerErrorComponent } from './pages/server-error/server-error.component';
 
 const routes: Routes = [
   {
@@ -33,6 +37,29 @@ const routes: Routes = [
         component: ContactComponent
       }
     ]
+  },
+  {
+    path: 'session',
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: 'server-error',
+        component: NotFoundComponent
+      },
+      {
+        path: 'not-found',
+        component: ServerErrorComponent
+      }
+    ]
+  },
+  // Unexpected URL values will redirect users to the 404 error page
+  {
+    path: '**',
+    redirectTo: 'session/not-found'
   }
 ];
 
