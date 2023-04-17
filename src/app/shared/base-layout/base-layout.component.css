@@ -3,15 +3,18 @@ Title: base-layout.component.css
 Author: Richard Krasso
 Contributors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
 Date: 04/16/23
-Last Modified by: Walter McCue
-Last Modification Date: 04/16/23
+Last Modified by: Jamal Damir
+Last Modification Date: 04/17/23
 Description: component styling for the bcrs project
 */
 
 .navbar-container {
-  padding: 5px;
+  padding: 10px;
   padding-left: 50px;
   font-weight: bolder;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar-link {
@@ -19,7 +22,7 @@ Description: component styling for the bcrs project
 }
 
 .main-content {
-  padding: 30px;
+  padding-top: 100px;
 }
 
 footer {
@@ -44,4 +47,13 @@ footer {
 
 .bu-link:hover {
   text-decoration: underline;
+}
+
+.house-img {
+  text-align: center;
+}
+
+.house-img img {
+  padding: 20px;
+  height: 200px;
 }
