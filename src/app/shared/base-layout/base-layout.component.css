@@ -8,40 +8,38 @@ Last Modification Date: 04/16/23
 Description: component styling for the bcrs project
 */
 
-.logo {
-  margin-left: 75px;
-  font-size: 24px;
-  font-weight: lighter;;
-}
-
 .navbar-container {
   padding: 5px;
+  padding-left: 50px;
+  font-weight: bolder;
 }
 
 .navbar-link {
   font-size: 24px;
-  font-weight: lighter;
 }
 
 .main-content {
-  padding-left: 30px;
+  padding-top: 30px;
 }
 
-.footer {
+footer {
   bottom: 0;
   position: absolute;
   width: 100%;
 }
 
 .footer-content {
+  bottom: 5px;
+  position: absolute;
   font-size: 16px;
-  font-weight: lighter;
+  font-weight: bolder;
   padding-left: 100px;
   letter-spacing: 3px;
 }
 
 .bu-link {
   text-decoration: none;
+  color: #2a623d;
 }
 
 .bu-link:hover {
