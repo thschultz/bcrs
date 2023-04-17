@@ -3,27 +3,26 @@
   Author: Richard Krasso
   Contributors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
   Date: 04/16/23
-  Last Modified by: Walter McCue
-  Last Modification Date: 04/16/23
+  Last Modified by: Jamal Damir
+  Last Modification Date: 04/17/23
   Description: html for the bcrs project
 -->
 
 <div fxLayout="column">
-
   <header class="gradient-header">
-
     <!-- navigation -->
     <nav fxFlex>
-
-        <!-- navbar container -->
-        <div class="navbar-container">
-          <a routerLink="/" class="neon-btn">HOME</a>
-          <a routerLink="/about" class="neon-btn">ABOUT</a>
-          <a routerLink="/contact" class="neon-btn">CONTACT</a>
-        </div>
-
+      <!-- nabar image-->
+      <div class="house-img">
+        <img src="/assets/pngwing.com.png" alt="Slytherin Emblem" />
+      </div>
+      <!-- navbar container -->
+      <div class="navbar-container">
+        <a routerLink="/" class="neon-btn">HOME</a>
+        <a routerLink="/about" class="neon-btn">ABOUT</a>
+        <a routerLink="/contact" class="neon-btn">CONTACT</a>
+      </div>
     </nav>
-
   </header>
 
   <!-- main content -->
@@ -38,7 +37,10 @@
     <footer class="gradient-footer">
       <div class="footer-content">
         <p>
-          &copy; {{year | date: 'yyyy'}} - Bob's Computer Repair Service - <a href="https://www.bellevue.edu/" class="bu-link" target="_blank">Bellevue University</a>
+          &copy; {{ year | date : "yyyy" }} - Bob's Computer Repair Service -
+          <a href="https://www.bellevue.edu/" class="bu-link" target="_blank"
+            >Bellevue University</a
+          >
         </p>
       </div>
     </footer>
