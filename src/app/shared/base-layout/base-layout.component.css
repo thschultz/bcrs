@@ -19,6 +19,16 @@ Description: component styling for the bcrs project
   font-size: 24px;
 }
 
+.profile-menu {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+.profile-btn {
+  transform: scale(2);
+}
+
 .main-content {
   padding: 100px 30px;
 
