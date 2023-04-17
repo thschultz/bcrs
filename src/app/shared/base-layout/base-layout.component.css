@@ -22,7 +22,8 @@ Description: component styling for the bcrs project
 }
 
 .main-content {
-  padding-top: 100px;
+  padding: 100px 30px;
+
 }
 
 footer {
