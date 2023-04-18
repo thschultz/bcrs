@@ -18,6 +18,7 @@ import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component'
 import { LoginComponent } from './pages/login/login.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ServerErrorComponent } from './pages/server-error/server-error.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -26,15 +27,18 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: 'about',
-        component: AboutComponent
+        component: AboutComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: 'contact',
-        component: ContactComponent
+        component: ContactComponent,
+        canActivate: [AuthGuard]
       }
     ]
   },
@@ -47,11 +51,11 @@ const routes: Routes = [
         component: LoginComponent
       },
       {
-        path: 'server-error',
+        path: 'not-found',
         component: NotFoundComponent
       },
       {
-        path: 'not-found',
+        path: 'server-error',
         component: ServerErrorComponent
       }
     ]
@@ -64,7 +68,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true, enableTracing: false, scrollPositionRestoration: 'enabled', relativeLinkResolution: 'legacy'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
