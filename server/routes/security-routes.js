@@ -8,14 +8,15 @@
  */
 
 // Require statements
-const express = require('express');
-const User = require('../models/user');
+const express = require("express");
+const User = require("../models/user");
 const router = express.Router();
-const { debugLogger, errorLogger } = require('../logs/logger');
-const createError = require('http-errors');
-const Ajv = require('ajv');
-const BaseResponse = require('../services/base-response');
-const ErrorResponse = require('../services/error-response');
+const { debugLogger, errorLogger } = require("../logs/logger");
+const createError = require("http-errors");
+const Ajv = require("ajv");
+const BaseResponse = require("../services/base-response");
+const ErrorResponse = require("../services/error-response");
+const SecurityQuestion = require("../models/security-question");
 
 // Logging and Validation
 const myFile = "security-routes.js";
@@ -33,7 +34,7 @@ router.post("/", async (req, res) => {
       text: req.body.text,
     };
 
-    securityQuestion.create(
+    SecurityQuestion.create(
       newSecurityQuestion,
       function (err, securityQuestion) {
         if (err) {
