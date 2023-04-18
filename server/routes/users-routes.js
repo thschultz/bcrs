@@ -15,17 +15,46 @@ const router = express.Router();
 const { debugLogger, errorLogger } = require('../logs/logger');
 const createError = require('http-errors');
 const Ajv = require('ajv');
-const BaseResponse = require('../models/base-response');
-const ErrorResponse = require('../models/error-response');
+// const bcrypt = require('bcryptjs');
+const BaseResponse = require('../services/base-response');
+const ErrorResponse = require('../services/error-response');
 
 // Logging and Validation
 const myFile = 'users-routes.js';
 const ajv = new Ajv();
+const saltRounds = 10; // hashes password
 
 // Schema for validation
 
 
 // findAllUsers
+
+router.get('/', async (req, res) =>{
+  try {
+    User.find({}).where('isDisabled').equals(false).exec(function(err, users) {
+
+      if (err) {
+        const findAllError = new ErrorResponse(500, 'Internal server error', err.message);
+        res.status(500).send(findAllError.toObject());
+        errorLogger({filename: myFile, message: 'Internal server error'});
+        return
+      }
+
+      console.log(users);
+      const findAllResponse = new BaseResponse(200, 'Query Successful', users);
+      debugLogger({filename: myFile, message: 'Query Successful'})
+      res.json(findAllResponse.toObject());
+    })
+
+  } catch (e) {
+    const findAllError = new ErrorResponse(500, 'Internal server error', e.message);
+    res.status(500).send(findAllError.toObject());
+    errorLogger({filename: myFile, message: 'Internal server error'});
+  }
+})
+
+
+
 
 // findUserById
 
