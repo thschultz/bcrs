@@ -62,6 +62,8 @@ body {
   inset 0 0 10px 5px #5d5d5d;
 }
 
+
+
 /* flex Style */
 .flex-container {
   display: flex;
@@ -157,5 +159,5 @@ body {
   .content-container {
     width: 95%;
   }
-  
+
 }
