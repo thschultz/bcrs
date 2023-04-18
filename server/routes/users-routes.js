@@ -6,3 +6,14 @@
  * Last Modification Date: 04/17/23
  * Description: users api routing for the bcrs project
 */
+
+
+// findAllUsers
+
+// findUserById
+
+// createUser
+
+// updateUser
+
+// deleteUser

@@ -6,3 +6,14 @@
  * Last Modification Date: 04/17/23
  * Description: roles api routing for the bcrs project
 */
+
+
+// findRolesUsers
+
+// findRolesById
+
+// createRole
+
+// updateRole
+
+// deleteRole

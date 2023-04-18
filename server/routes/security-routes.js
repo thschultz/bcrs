@@ -6,3 +6,14 @@
  * Last Modification Date: 04/17/23
  * Description: security question api routing for the bcrs project
 */
+
+
+// findAllSecurity
+
+// findSecurityById
+
+// createSecurity
+
+// updateSecurity
+
+// deleteSecurity

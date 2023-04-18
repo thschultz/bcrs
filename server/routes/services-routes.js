@@ -6,3 +6,14 @@
  * Last Modification Date: 04/17/23
  * Description: services api routing for the bcrs project
 */
+
+
+// findAllServices
+
+// findServiceById
+
+// createService
+
+// updateService
+
+// deleteService
