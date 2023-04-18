@@ -40,8 +40,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
-// import { MessageModule } from 'primeng/message';
-// import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+import { MessagesModule } from 'primeng/messages';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
@@ -75,7 +75,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    DragDropModule
+    DragDropModule,
+    MessagesModule,
+    MessageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

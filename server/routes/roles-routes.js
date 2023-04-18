@@ -14,6 +14,13 @@ const express = require('express');
 const router = express.Router();
 const { debugLogger, errorLogger } = require('../logs/logger');
 const createError = require('http-errors');
+const Ajv = require('ajv');
+const BaseResponse = require('../models/base-response');
+const ErrorResponse = require('../models/error-response');
+
+// Logging and Validation
+const myFile = 'users-routes.js';
+const ajv = new Ajv();
 
 
 // findRolesUsers
