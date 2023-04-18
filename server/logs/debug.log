@@ -10,3 +10,9 @@
 >>>>>>> 1b5f9f7db74342563cd8c929b9ad3859ebe0ef05
 [4/18/2023, 2:36:59 AM] server	 users-routes.js - 
 [4/18/2023, 2:37:18 AM] server	 users-routes.js - 
+[4/18/2023, 2:45:55 AM] server	 users-routes.js - 
+[4/18/2023, 2:48:55 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01'
+}
