@@ -8,4 +8,6 @@ Last Modification Date: 04/16/23
 Description: component styling for the bcrs project
 */
 
-
+.house-img img {
+  height: 300px;
+}
