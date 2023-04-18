@@ -9,12 +9,12 @@
 
 // Require Statements
 const mongoose = require("mongoose");
-const schema = mongoose.schema;
+const Schema = mongoose.Schema;
 const userRoleSchema = require("../schemas/user-role");
 const selectedSecurityQuestionSchema = require("../schemas/selected-security-question");
 
 // Defining user schema
-let userSchema = new schema(
+let userSchema = new Schema(
   {
     userName: { type: String, required: true, unique: true },
     password: { type: String, required: true },

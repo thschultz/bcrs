@@ -15,8 +15,8 @@ const router = express.Router();
 const { debugLogger, errorLogger } = require('../logs/logger');
 const createError = require('http-errors');
 const Ajv = require('ajv');
-const BaseResponse = require('../models/base-response');
-const ErrorResponse = require('../models/error-response');
+const BaseResponse = require('../services/base-response');
+const ErrorResponse = require('../services/error-response');
 
 // Logging and Validation
 const myFile = 'roles-routes.js';
