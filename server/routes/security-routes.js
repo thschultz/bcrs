@@ -8,13 +8,14 @@
  */
 
 // Require statements
-const express = require("express");
-
-const { debugLogger, errorLogger } = require("../logs/logger");
-const createError = require("http-errors");
-const Ajv = require("ajv");
-const BaseResponse = require("../models/base-response");
-const ErrorResponse = require("../models/error-response");
+const express = require('express');
+const User = require('../models/user');
+const router = express.Router();
+const { debugLogger, errorLogger } = require('../logs/logger');
+const createError = require('http-errors');
+const Ajv = require('ajv');
+const BaseResponse = require('../services/base-response');
+const ErrorResponse = require('../services/error-response');
 
 // Logging and Validation
 const myFile = "security-routes.js";
