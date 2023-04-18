@@ -8,6 +8,14 @@
 */
 
 
+// Require statements
+const express = require('express');
+
+const router = express.Router();
+const { debugLogger, errorLogger } = require('../logs/logger');
+const createError = require('http-errors');
+
+
 // findAllSecurity
 
 // findSecurityById
@@ -17,3 +25,6 @@
 // updateSecurity
 
 // deleteSecurity
+
+
+module.exports = router;

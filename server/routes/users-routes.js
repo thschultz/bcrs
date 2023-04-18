@@ -8,6 +8,14 @@
 */
 
 
+// Require statements
+const express = require('express');
+const User = require('../models/users');
+const router = express.Router();
+const { debugLogger, errorLogger } = require('../logs/logger');
+const createError = require('http-errors');
+
+
 // findAllUsers
 
 // findUserById
@@ -17,3 +25,6 @@
 // updateUser
 
 // deleteUser
+
+
+module.exports = router;
