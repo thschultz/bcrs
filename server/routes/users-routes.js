@@ -27,12 +27,33 @@ const saltRounds = 10; // hashes password
 // Schema for validation
 
 
-// findAllUsers
+/**
+ * API: http://localhost:3000/api/users
+ */
 
+
+/**
+ * findAllUsers
+ * @openapi
+ * /api/users:
+ *   get:
+ *     tags:
+ *       - Users
+ *     description: Returns all users
+ *     summary: Returns all users
+ *     responses:
+ *       '200':
+ *         description: Returned all users
+ *       '500':
+ *         description: Server Error
+*/
+
+// findAllUsers
 router.get('/', async (req, res) =>{
   try {
-    User.find({}).where('isDisabled').equals(false).exec(function(err, users) {
+    User.find({}).where('isDisabled').equals(false).exec(function (err, users) {
 
+      // Server Error
       if (err) {
         const findAllError = new ErrorResponse(500, 'Internal server error', err.message);
         res.status(500).send(findAllError.toObject());
@@ -40,12 +61,14 @@ router.get('/', async (req, res) =>{
         return
       }
 
+      // Successful Query
       console.log(users);
       const findAllResponse = new BaseResponse(200, 'Query Successful', users);
-      debugLogger({filename: myFile, message: 'Query Successful'})
+      debugLogger({filename: myFile, message: users})
       res.json(findAllResponse.toObject());
     })
 
+  //Server Error
   } catch (e) {
     const findAllError = new ErrorResponse(500, 'Internal server error', e.message);
     res.status(500).send(findAllError.toObject());
