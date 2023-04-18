@@ -23,7 +23,31 @@ const myFile = "security-routes.js";
 const ajv = new Ajv();
 
 // findAllSecurity
-
+router.get("/", async (req, res) => {
+  try {
+    SecurityQuestion.find({})
+      .where("isDisabled")
+      .equals(false)
+      .exec(function(err, securityQuestions) {
+        //internal server error
+        if (err) {
+          console.log(err);
+          const findAllMongoDBErrorResponse = new ErrorResponse(500, 'Internal server error', err);
+          res.status(500).send(findAllMongoDBErrorResponse.toObject());
+        } else {
+          //successful query response
+          console.log(securityQuestions);
+          const findAllResponse = new BaseResponse(200, 'Query Successful', securityQuestions);
+          res.json(findAllResponse.toObject());
+        }
+      });
+  } catch (e) {
+    //error response with server
+    console.log(e);
+    const findAllCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
+    res.status(500).send(findAllCatchErrorResponse.toObject());
+  }
+});
 // findSecurityById
 
 // createSecurity
@@ -70,6 +94,46 @@ router.post("/", async (req, res) => {
 });
 
 // updateSecurity
+
+router.put("/:id", async (req, res) => {
+  try {
+    SecurityQuestion.findOne({'_id': req.params.id }, function (err, securityQuestion) {
+        if (err) {
+          //server error
+          console.log(err);
+          const updateSecurityQuestionMongodbErrorResponse = new ErrorResponse(500, "Internal server error", err);
+          res.status(500).send(updateSecurityQuestionMongodbErrorResponse.toObject());
+        } else {
+          //setting security question
+          console.log(securityQuestion);
+
+          securityQuestion.set({
+            text: req.body.text,
+          });
+
+          securityQuestion.save(function (err, savedSecurityQuestion) {
+            if (err) {
+              //server error
+              console.log(err);
+              const savedSecurityQuestionMongodbErrorResponse = new ErrorResponse(500, "Internal server error", err);
+              res.status(500).send(savedSecurityQuestionMongodbErrorResponse.toObject());
+            } else {
+              //saving new security question
+              console.log(savedSecurityQuestion);
+              const savedSecurityQuestionResponse = new BaseResponse(200, "Query successful", savedSecurityQuestion );
+              res.json(savedSecurityQuestionResponse.toObject());
+            }
+          });
+        }
+      }
+    );
+  } catch (e) {
+    //server error
+    console.log(e);
+    const updateSecurityQuestionCatchErrorResponse = new ErrorResponse(500, "Internal server error", e.message);
+    res.status(500).send(updateSecurityQuestionCatchErrorResponse.toObject());
+  }
+});
 
 // deleteSecurity
 
