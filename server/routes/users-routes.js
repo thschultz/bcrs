@@ -84,7 +84,55 @@ router.get('/', async (req, res) =>{
 // createUser
 
 // updateUser
+router.put('/:id', async (req, res) => {
+  try {
+    User.findOne({ '_id': req.params.id }, function (err, user) {
+      if (err) {
+        //server error
+        console.log(err);
+        const updateUserByIdMongodbErrorResponse = new ErrorResponse(500, "Internal server error", err);
+        res.status(500).send(updateUserByIdMongodbErrorResponse.toObject());
+      } else {
+        //updating fields
+        console.log(user);
 
+
+        user.set({
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
+          phoneNumber: req.body.phoneNumber,
+          address: req.body.address,
+          email: req.body.email,
+          'role.text': req.body.role,
+          dateModified: new Date(),
+        });
+        //saving updating user function
+        user.save(function (err, savedUser) {
+          if (err) {
+            //Server error
+            console.log(err);
+            const saveUserMongodbErrorResponse = new ErrorResponse(500, "Internal server error", err);
+            res.status(500).send(saveUserMongodbErrorResponse.toObject());
+          } else {
+            //saving updated User
+            console.log(savedUser);
+            const saveUserResponse = new BaseResponse(200, "Query successful", savedUser);
+            res.json(saveUserResponse.toObject());
+          }
+        });
+      }
+    });
+    //Server error
+  } catch (e) {
+    console.log(e);
+    const updateUserByIdCatchErrorResponse = new ErrorResponse(
+      500,
+      "Internal server error",
+      e.message
+    );
+    res.status(500).send(updateUserByIdCatchErrorResponse.toObject());
+  }
+});
 // deleteUser
 
 
