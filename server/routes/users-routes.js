@@ -29,7 +29,7 @@ const saltRounds = 10; // hashes password
 
 // findAllUsers
 
-router.get('/', async (req, res, next) =>{
+router.get('/', async (req, res) =>{
   try {
     User.find({}).where('isDisabled').equals(false).exec(function(err, users) {
 
@@ -37,7 +37,6 @@ router.get('/', async (req, res, next) =>{
         const findAllError = new ErrorResponse(500, 'Internal server error', err.message);
         res.status(500).send(findAllError.toObject());
         errorLogger({filename: myFile, message: 'Internal server error'});
-        next(err)
         return
       }
 
@@ -51,7 +50,6 @@ router.get('/', async (req, res, next) =>{
     const findAllError = new ErrorResponse(500, 'Internal server error', e.message);
     res.status(500).send(findAllError.toObject());
     errorLogger({filename: myFile, message: 'Internal server error'});
-    next(err)
   }
 })
 
