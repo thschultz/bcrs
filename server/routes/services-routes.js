@@ -23,6 +23,22 @@ const myFile = 'services-routes.js';
 const ajv = new Ajv();
 
 
+/**
+ * @openapi
+ * /api/services:
+ *   get:
+ *     tags:
+ *       - Services
+ *     name: findAllServices
+ *     description: API to show all services
+ *     summary: Find all services
+ *     responses:
+ *       '200':
+ *         description: All services
+ *       '500':
+ *         description: Server Exception
+ */
+
 // findAllServices
 router.get("/", async (req, res) => {
   try {
@@ -56,6 +72,29 @@ router.get("/", async (req, res) => {
 });
 
 
+/**
+ * findServiceById
+ * @openapi
+ * /api/services/{id}:
+ *   get:
+ *     tags:
+ *       - Services
+ *     description:  API for returning a service document
+ *     summary: returns an service document
+ *     parameters:
+ *       - _id:
+ *         in: path
+ *         required: true
+ *         description: Service ID
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: Service document
+ *       '500':
+ *         description: Server exception
+ */
+
 // findServiceById
 router.get("/:id", async (req, res) => {
   try {
@@ -74,6 +113,7 @@ router.get("/:id", async (req, res) => {
       // Successful query
       console.log(service);
       const findByIdResponse = new BaseResponse(200, "Query Successful", service);
+      debugLogger({ filename: myFile, message: service });
       res.json(findByIdResponse.toObject());
     })
 
@@ -85,6 +125,38 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+
+/**
+ * createService
+ * @openapi
+ * /api/services:
+ *   post:
+ *     tags:
+ *       - Services
+ *     name: createService
+ *     description: API for adding a new service document to MongoDB Atlas
+ *     summary: Creates a new service document
+ *     requestBody:
+ *       description: Service information
+ *       content:
+ *         application/json:
+ *           schema:
+ *             required:
+ *               - serviceName
+ *               - price
+ *             properties:
+ *                serviceName:
+ *                   description: Name of service
+ *                   type: string
+ *                price:
+ *                   description: Service price
+ *                   type: number
+ *     responses:
+ *       '200':
+ *         description: Service added
+ *       '500':
+ *         description: Server Exception
+ */
 
 // createService
 router.post('/', async (req, res) => {
@@ -120,6 +192,43 @@ router.post('/', async (req, res) => {
   }
 })
 
+
+/**
+ * updateServiceById
+ * @openapi
+ * /api/services/{id}:
+ *   put:
+ *     tags:
+ *       - Services
+ *     name: updateService
+ *     description: API for updating an existing document in MongoDB.
+ *     summary: Updates a document in MongoDB.
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         description: Id to filter the collection by.
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       description: Service information
+ *       content:
+ *         application/json:
+ *           schema:
+ *             required:
+ *               - serviceName
+ *               - price
+ *             properties:
+ *               serviceName:
+ *                 type: string
+ *               price:
+ *                 type: number
+ *     responses:
+ *       '200':
+ *         description: Updated service
+ *       '500':
+ *         description: Server Exception
+ */
 
 // updateService
 router.put("/:id", async (req, res) => {
@@ -168,6 +277,30 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+
+/**
+ * deleteServiceById
+ * @openapi
+ * /api/services/{id}:
+ *   delete:
+ *     tags:
+ *       - Services
+ *     name: deleteService
+ *     description: API for deleting a document.
+ *     summary: Sets the isDisabled status to true.
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         description: Id of the document to remove.
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: Service disabled
+ *       '500':
+ *         description: Server Exception
+ */
 
 // deleteService
 router.delete('/:id', async (req, res) => {

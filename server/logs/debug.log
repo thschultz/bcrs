@@ -702,3 +702,12 @@
   __v: 0,
   dateModified: 2023-04-19T15:44:42.584Z
 }
+[4/19/2023, 11:54:47 AM] server	 services-routes.js - {
+  _id: new ObjectId("64400ca2cbe36255508a3c2f"),
+  serviceName: 'testService2',
+  price: 600.98,
+  isDisabled: true,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:46:07.058Z
+}
