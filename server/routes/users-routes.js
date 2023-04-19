@@ -90,6 +90,33 @@ router.get("/", async (req, res) => {
 
 // findUserById
 
+/**
+ * findUserById
+ * @openapi
+ * /api/users/{id}:
+ *   get:
+ *     tags:
+ *       - Employees
+ *     description:  API that returns user by ID
+ *     summary: returns user by ID
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         description: User ID
+ *         schema:
+ *           type: number
+ *     responses:
+ *       '200':
+ *         description: User document
+ *       '401':
+ *         description: Invalid invalid user ID
+ *       '500':
+ *         description: Server exception
+ *       '501':
+ *         description: MongoDB exception
+ */
+
 router.get("/:id", async (req, res) => {
   try {
     User.findOne({ _id: req.params.id }, function (err, user) {
