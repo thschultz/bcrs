@@ -20,6 +20,8 @@ const UsersRoute = require("./routes/users-routes");
 const RolesRoute = require("./routes/roles-routes");
 const SecurityRoute = require("./routes/security-routes");
 const ServicesRoute = require("./routes/services-routes");
+const swaggerUi = require("swagger-ui-express");
+const swaggerJsdoc = require("swagger-jsdoc");
 
 const app = express(); // Express variable.
 
@@ -50,7 +52,23 @@ mongoose
     console.log("MongoDB Error: " + err.message);
   });
 
-// API request/response can be made through the corresponding route
+// Swagger API documentation options
+const options = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "NodeBucket API's",
+      version: "1.0.0",
+    },
+  },
+  apis: ["./server/routes/*.js"],
+};
+
+// Defining options for Swagger UI
+const openapiSpecification = swaggerJsdoc(options);
+
+// Defining routes for serving Swagger documentation
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(openapiSpecification));
 app.use("/api/users", UsersRoute);
 app.use("/api/security", SecurityRoute);
 app.use("/api/roles", RolesRoute);

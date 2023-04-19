@@ -14,7 +14,7 @@ const router = express.Router();
 const { debugLogger, errorLogger } = require("../logs/logger");
 const createError = require("http-errors");
 const Ajv = require("ajv");
-const bcrypt = require('bcryptjs');
+const bcrypt = require("bcryptjs");
 const BaseResponse = require("../services/base-response");
 const ErrorResponse = require("../services/error-response");
 
@@ -87,7 +87,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-
 // findUserById
 
 /**
@@ -149,11 +148,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-
 // createUser
-
-
-
 
 // updateUser
 router.put("/:id", async (req, res) => {
@@ -217,54 +212,63 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-
 // deleteUser
-router.delete('/:id', async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
-
     // finds User by id
-    User.findOne({'_id': req.params.id}, function(err, user) {
-
+    User.findOne({ _id: req.params.id }, function (err, user) {
       // Server error
       if (err) {
         console.log(err);
-        const deleteUserErrorResponse = new ErrorResponse(500, 'Internal server error', err.message);
+        const deleteUserErrorResponse = new ErrorResponse(
+          500,
+          "Internal server error",
+          err.message
+        );
         res.status(500).send(deleteUserErrorResponse.toObject());
-        return
+        return;
       }
 
       // sets disabled status instead of deleting the record
       console.log(user);
       user.set({
         isDisabled: true,
-        dateModified: new Date()
+        dateModified: new Date(),
       });
-      user.save(function(err, savedUser) {
-
+      user.save(function (err, savedUser) {
         // Server error if unable to save the disabled status
         if (err) {
           console.log(err);
-          const savedUserErrorResponse = new ErrorResponse(500, 'Internal server Error', err);
+          const savedUserErrorResponse = new ErrorResponse(
+            500,
+            "Internal server Error",
+            err
+          );
           res.json(500).send(savedUserErrorResponse.toObject());
-          return
+          return;
         }
 
         // Successfully saves the disabled status
         console.log(savedUser);
-        const savedUserResponse = new BaseResponse(200, 'Successful Query', savedUser);
+        const savedUserResponse = new BaseResponse(
+          200,
+          "Successful Query",
+          savedUser
+        );
         res.json(savedUserResponse.toObject());
-      })
-    })
+      });
+    });
 
     // Server error
   } catch (e) {
     console.log(e);
-    const deleteUserErrorResponse = new ErrorResponse(500, 'Internal server error',  e.message);
+    const deleteUserErrorResponse = new ErrorResponse(
+      500,
+      "Internal server error",
+      e.message
+    );
     res.status(500).send(deleteUserErrorResponse.toObject());
   }
-})
-
-
-
+});
 
 module.exports = router;
