@@ -3,14 +3,15 @@
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Contributors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 04/16/23
- * Last Modified by: Walter McCue
- * Last Modification Date: 04/16/23
+ * Last Modified by: Jamal Damir
+ * Last Modification Date: 04/18/23
  * Description: login component for the bcrs project
  */
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -37,7 +38,11 @@ export class LoginComponent implements OnInit {
     ],
   });
 
-  constructor(private router: Router, private fb: FormBuilder) {}
+  constructor(
+    private router: Router,
+    private fb: FormBuilder,
+    private cookieService: CookieService
+  ) {}
 
   ngOnInit(): void {}
 
