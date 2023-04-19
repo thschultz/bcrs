@@ -15,12 +15,14 @@ const router = express.Router();
 const { debugLogger, errorLogger } = require('../logs/logger');
 const createError = require('http-errors');
 const Ajv = require('ajv');
+const addFormats = require("ajv-formats");
 const BaseResponse = require('../services/base-response');
 const ErrorResponse = require('../services/error-response');
 
 // Logging and Validation
 const myFile = 'services-routes.js';
 const ajv = new Ajv();
+addFormats(ajv);
 
 // Schema for validation
 const serviceSchema = {
@@ -38,11 +40,11 @@ const serviceUpdateSchema = {
   properties: {
     serviceName: {type: 'string'},
     price: {type: 'number'},
-    dateModified: {type: 'string', format: 'date-time'},
+    dateModified: {type: 'object'},
 
   },
   required: ['serviceName', 'price', 'dateModified'],
-  additionalProperties: true
+  additionalProperties: false
 }
 
 
