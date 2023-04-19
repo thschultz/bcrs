@@ -677,3 +677,28 @@
   ],
   address: '28201 E. Bonanza st. South Park, Colorado 15129'
 }
+[4/19/2023, 11:45:46 AM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64400ca2cbe36255508a3c2f"),
+  serviceName: 'testService2',
+  price: 600.98,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0
+}
+[4/19/2023, 11:46:18 AM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}

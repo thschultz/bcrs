@@ -195,7 +195,7 @@ router.put("/:id", async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
 
-    // finds User by Id
+    // finds User by id
     User.findOne({'_id': req.params.id}, function(err, user) {
 
       // Server error
