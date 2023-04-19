@@ -274,8 +274,7 @@ router.put("/:id", async (req, res) => {
         if (err) {
           //server error
           console.log(err);
-          const updateSecurityQuestionMongodbErrorResponse = new ErrorResponse(
-            500,
+          const updateSecurityQuestionMongodbErrorResponse = new ErrorResponse(500,
             "Internal server error",
             err
           );
@@ -326,5 +325,39 @@ router.put("/:id", async (req, res) => {
 });
 
 // deleteSecurity
+router.delete("/:id", async (req, res) => {
+  // find a security question by _id and delete it, or return an error message
+  try {
+    SecurityQuestion.findOne({'_id': req.params.id },function (err, securityQuestion) {
+        if (err) {
+          console.log(err);
+          const deleteByIdMongoDBErrorResponse = new new ErrorResponse(500, "Internal server error", err);
+          res.status(500).send(deleteByIdMongoDBErrorResponse.toObject());
+        } else {
+          console.log(securityQuestion)
+          securityQuestion.set({
+            isDisabled: true,
+          });
 
+          securityQuestion.save(function (err, savedSecurityQuestion) {
+            if (err) {
+              console.log(err);
+              const savedSecurityQuestionMongoDBErrorResponse = ErrorResponse(500, "Internal server error", err);
+              res.status(501).send(savedSecurityQuestionMongoDBErrorResponse.toObject());
+            } else {
+              console.log(savedSecurityQuestion);
+              const deleteByIdResponse = new BaseResponse(200, "Query successful", savedSecurityQuestion);
+              res.json(deleteByIdResponse.toObject());
+            }
+          });
+        }
+      }
+    );
+  } catch (e) {
+    // internal Server Error
+    console.log(e);
+    const deleteSecurityQuestionCatchErrorResponse = new ErrorResponse(500, "Internal server error", err);
+    res.status(500).send(deleteSecurityQuestionCatchErrorResponse.toObject());
+  }
+});
 module.exports = router;
