@@ -149,6 +149,43 @@ router.get("/:id", async (req, res) => {
 });
 
 // createUser
+router.post('/', async (req, res) => {
+  try {
+    let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds);// salt/hash the password
+
+    standardRole = {
+      text: "standard"
+    };
+
+    // user object
+    let newUser = {
+      userName: req.body.userName,
+      password: hashedPassword,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      phoneNumber: req.body.phoneNumber,
+      address: req.body.address,
+      email: req.body.email,
+      role: standardRole,
+    };
+
+    User.create(newUser, function (err, user) {
+      if (err) {
+        console.log(err);
+        const createUserMongodbErrorResponse = new ErrorResponse(500, "Internal server error", err);
+        res.status(500).send(createUserMongodbErrorResponse.toObject());
+      } else {
+        console.log(user);
+        const CreateUserResponse = new BaseResponse(200, "Query successful", user);
+        res.json(CreateUserResponse.toObject());
+      }
+    });
+  } catch (e) {
+    console.log(e);
+    const createUserCatchErrorResponse = ErrorResponse(500, "Internal server error", e.message);
+    res.status(500).send(createUserCatchErrorResponse.toObject());
+  }
+});
 
 // updateUser
 router.put("/:id", async (req, res) => {

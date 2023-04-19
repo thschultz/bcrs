@@ -41,9 +41,11 @@ const serviceUpdateSchema = {
     serviceName: {type: 'string'},
     price: {type: 'number'},
     dateModified: {type: 'object'},
-
+    _id: {type: 'string'},
+    dateCreated: {type: 'object'},
+    isDisabled: {type: 'boolean'}
   },
-  required: ['serviceName', 'price', 'dateModified'],
+  required: ['serviceName', 'price', 'dateModified', '_id', 'dateCreated', 'isDisabled'],
   additionalProperties: false
 }
 
