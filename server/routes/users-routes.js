@@ -14,7 +14,7 @@ const router = express.Router();
 const { debugLogger, errorLogger } = require("../logs/logger");
 const createError = require("http-errors");
 const Ajv = require("ajv");
-// const bcrypt = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 const BaseResponse = require("../services/base-response");
 const ErrorResponse = require("../services/error-response");
 
