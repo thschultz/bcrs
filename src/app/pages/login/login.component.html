@@ -3,9 +3,73 @@
   Author: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
   Contributors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
   Date: 04/16/23
-  Last Modified by: Walter McCue
-  Last Modification Date: 04/16/23
+  Last Modified by: Jamal Damir
+  Last Modification Date: 04/18/23
   Description: html for the bcrs project
 -->
 
-<p>login works!</p>
+<div fxLayout="column">
+  <mat-card fxFlex class="login-container w-50">
+    <mat-card-header class="header">
+      <!-- Page Title-->
+      <mat-card-title class="login-title"> Employee Login In </mat-card-title>
+    </mat-card-header>
+    <hr />
+    <mat-card-content class="login-content">
+      <mat-card class="input-area mat-elevation-z0">
+        <form [formGroup]="loginForm" (ngSubmit)="login(); loginForm.reset()">
+          <mat-card-content>
+            <mat-form-field appearance="standard">
+              <input
+                matInput
+                formControlName="userName"
+                placeholder="   Username"
+              />
+              <br />
+              <br />
+              <input
+                matInput
+                formControlName="password"
+                placeholder="   password"
+                style="color: #5d5d5d"
+              />
+              <!-- Error Handling -->
+              <mat-error
+                *ngIf="
+                  loginForm.controls['userName'].hasError('required') &&
+                  loginForm.controls['userName'].touched
+                "
+              >
+                Employee ID is a required field.
+              </mat-error>
+
+              <mat-error
+                *ngIf="
+                  loginForm.controls['empId'].hasError('pattern') &&
+                  loginForm.controls['empId'].touched
+                "
+              >
+                Employee ID must be a number.
+              </mat-error>
+            </mat-form-field>
+          </mat-card-content>
+          <mat-card-actions>
+            <button
+              type="submit"
+              mat-raised-button
+              [disabled]="!loginForm.valid"
+              class="btn"
+            >
+              Log in
+            </button>
+          </mat-card-actions>
+          <hr />
+          <div class="create-account">
+            <a [routerLink]="" (click)="passwordReset()">Forgot Password?</a>
+            <a [routerLink]="" (click)="createAccount()">Create Account</a>
+          </div>
+        </form>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>
+</div>

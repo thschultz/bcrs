@@ -28,3 +28,631 @@
 [4/18/2023, 2:46:29 AM] server	 users-routes.js - 
 >>>>>>> 4d81444a71e465c78293ed26f33aab03c4378a7e
 [4/18/2023, 2:19:52 PM] server	 users-routes.js - 
+[4/18/2023, 11:31:52 PM] server	 users-routes.js - 
+[4/18/2023, 11:32:52 PM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01'
+}
+[4/18/2023, 11:48:40 PM] server	 users-routes.js - 
+[4/18/2023, 11:48:41 PM] server	 users-routes.js - 
+[4/18/2023, 11:49:49 PM] server	 users-routes.js - 
+[4/18/2023, 11:49:50 PM] server	 users-routes.js - 
+[4/18/2023, 11:50:06 PM] server	 users-routes.js - 
+[4/18/2023, 11:50:08 PM] server	 users-routes.js - 
+[4/18/2023, 11:57:06 PM] server	 users-routes.js - 
+[4/18/2023, 11:58:42 PM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2021-07-15T10:30:48.021Z,
+  dateModified: 2021-07-15T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: 'What is your favorite foof?',
+  address: '28201 E. Bonanza st. South Park, Colorado 15129'
+}
+[4/18/2023, 11:59:17 PM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2021-07-15T10:30:48.021Z,
+  dateModified: 2021-07-15T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: 'What is your favorite foof?',
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/18/2023, 11:59:21 PM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2021-07-15T10:30:48.021Z,
+  dateModified: 2021-07-15T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: 'What is your favorite foof?',
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/18/2023, 11:59:41 PM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2021-07-15T10:30:48.021Z,
+  dateModified: 2021-07-15T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: 'What is your favorite foof?',
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/18/2023, 11:59:42 PM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2021-07-15T10:30:48.021Z,
+  dateModified: 2021-07-15T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: 'What is your favorite foof?',
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:00:07 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2021-07-15T10:30:48.021Z,
+  dateModified: 2021-07-15T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: 'What is your favorite foof?',
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:03:58 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2021-07-15T10:30:48.021Z,
+  dateModified: 2021-07-15T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [ 'what is you favorite food?', 'Shshi' ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:04:21 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2021-07-15T10:30:48.021Z,
+  dateModified: 2021-07-15T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [ 'what is you favorite food?', 'Shshi' ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:09:26 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2021-07-15T10:30:48.021Z,
+  dateModified: 2021-07-15T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [
+    {
+      questionText: 'What is your favorite food?',
+      answerText: 'Sushi'
+    },
+    'Shshi'
+  ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:10:12 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2021-07-15T10:30:48.021Z,
+  dateModified: 2021-07-15T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [
+    {
+      questionText: 'What is your favorite food?',
+      answerText: 'Sushi'
+    }
+  ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:10:54 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2021-07-15T10:30:48.021Z,
+  dateModified: 2021-07-15T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [
+    {
+      questionText: 'What is your favorite food?',
+      answerText: 'Sushi'
+    }
+  ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:12:35 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2021-07-15T10:30:48.021Z,
+  dateModified: 2021-07-15T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: { questionText: 'What is your favorite food?', answerText: 'Sushi' },
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:13:44 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: { questionText: 'What is your favorite food?', answerText: 'Sushi' },
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:14:42 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [ 'Hi' ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:14:43 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [ 'Hi' ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:17:35 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [ 'Hi' ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:17:37 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [ 'Hi' ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:17:38 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [ 'Hi' ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:17:39 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [ 'Hi' ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:18:24 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [ 'Hi' ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:18:25 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [ 'Hi' ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:18:26 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [ 'Hi' ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:18:26 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [ 'Hi' ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:20:34 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:20:34 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:20:35 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:20:36 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129',
+  selectedSecurityQuestionS: []
+}
+[4/19/2023, 12:21:13 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129'
+}
+[4/19/2023, 12:22:30 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [
+    {
+      _id: new ObjectId("643f6c86d929224c8654883a"),
+      questionText: 'What is your favorite food?',
+      answerText: 'Sushi'
+    }
+  ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129'
+}
+[4/19/2023, 12:23:26 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [
+    {
+      _id: new ObjectId("643f6cbed929224c8654883c"),
+      questionText: 'What is your favorite food?',
+      answerText: 'Sushi'
+    }
+  ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129'
+}
+[4/19/2023, 12:24:41 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [
+    {
+      _id: new ObjectId("643f6d09d929224c8654883e"),
+      questionText: 'What is your favorite food?',
+      answerText: 'Sushi'
+    }
+  ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129'
+}
+[4/19/2023, 12:24:42 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [
+    {
+      _id: new ObjectId("643f6d0ad929224c86548840"),
+      questionText: 'What is your favorite food?',
+      answerText: 'Sushi'
+    }
+  ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129'
+}
+[4/19/2023, 12:24:43 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [
+    {
+      _id: new ObjectId("643f6d0bd929224c86548842"),
+      questionText: 'What is your favorite food?',
+      answerText: 'Sushi'
+    }
+  ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129'
+}
+[4/19/2023, 12:25:15 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [
+    {
+      _id: new ObjectId("643f6d2bd929224c86548844"),
+      questionText: 'What is your favorite food?',
+      answerText: 'Sushi'
+    }
+  ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129'
+}
+[4/19/2023, 12:25:16 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [
+    {
+      _id: new ObjectId("643f6d2cd929224c86548846"),
+      questionText: 'What is your favorite food?',
+      answerText: 'Sushi'
+    }
+  ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129'
+}
+[4/19/2023, 12:25:17 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  selectedSecurityQuestions: [
+    {
+      _id: new ObjectId("643f6d2dd929224c86548848"),
+      questionText: 'What is your favorite food?',
+      answerText: 'Sushi'
+    }
+  ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129'
+}
+[4/19/2023, 12:26:27 AM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  role: { text: 'Admin', _id: new ObjectId("643f6d73d929224c8654884a") },
+  selectedSecurityQuestions: [
+    {
+      _id: new ObjectId("643f6d73d929224c8654884b"),
+      questionText: 'What is your favorite food?',
+      answerText: 'Sushi'
+    }
+  ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129'
+}

@@ -25,7 +25,7 @@ let userSchema = new Schema(
     email: { type: String },
     isDisabled: { type: Boolean, default: false },
     role: userRoleSchema,
-    selectedSecurityQuestionS: [selectedSecurityQuestionSchema],
+    selectedSecurityQuestions: [selectedSecurityQuestionSchema],
     dateCreated: { type: Date, default: new Date() },
     dateModified: { type: Date },
   },

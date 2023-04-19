@@ -3,11 +3,99 @@ Title: login.component.css
 Author: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
 Contributors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
 Date: 04/16/23
-Last Modified by: Walter McCue
-Last Modification Date: 04/16/23
+Last Modified by: Jamal Damir
+Last Modification Date: 04/18/23
 Description: component styling for the bcrs project
 */
 
-p {
-  color: #fff;
+.login-container {
+  width: 50%;
+  margin: 10% auto;
+  text-align: center;
+  background-color: #000;
+  border: var(--green) 4px solid;
+  box-shadow: 0 0 10px 3px var(--green), inset 0 0 10px 5px var(--green);
+}
+
+.header {
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.login-title {
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+hr {
+  width: 90%;
+  border: var(--green) 2px solid;
+  box-shadow: 0 0 10px 3px var(--green), inset 0 0 10px 5px var(--green);
+  background-color: var(--green);
+  margin-bottom: 20px;
+}
+.mat-card {
+  padding: 0;
+}
+
+.mat-card-header {
+  color: var(--green);
+  text-shadow: 1px 1px 10px var(--green);
+}
+
+.mat-card-content {
+  text-align: center;
+}
+
+.mat-form-field {
+  width: 60%;
+}
+
+.mat-card-actions {
+  margin-right: 128px;
+  margin-bottom: 60px;
+}
+
+.btn {
+  height: 46px;
+  font-family: "Abril Fatface", cursive;
+  font-size: 18px;
+  border: var(--green) 2px solid;
+  box-shadow: 0 0 10px 2px var(--green), inset 0 0 10px 5px var(--green);
+  background-color: transparent;
+  float: right;
+  width: 10rem;
+}
+
+.btn:disabled {
+  background-color: lightgray;
+  color: black;
+  font-family: "Abril Fatface", cursive;
+}
+
+.input-area {
+  margin-top: 20px;
+  background-color: transparent;
+  margin: auto;
+}
+
+input {
+  background-color: #000;
+  border: var(--green) 4px solid;
+  box-shadow: 0 0 10px 2px var(--green), inset 0 0 10px 5px var(--green);
+  height: 60px;
+  border-radius: 5px;
+  font-family: "Abril Fatface", cursive;
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+.create-account {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50%;
+  margin-bottom: 30px;
 }

@@ -11,19 +11,19 @@ References: .neon-btn { Kevin Powell: youtube/github; }
 
 /* You can add global styles to this file, and also import other style files */
 
-
-
 :root {
   --green: #2a623d;
   --silver: #5d5d5d;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
 body {
-  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: #000;
 }
 
@@ -40,8 +40,6 @@ body {
 .p-20 {
   padding: 20px;
 }
-
-
 
 /* Color Styles */
 
@@ -68,11 +66,8 @@ body {
 
 .gradient-menu {
   background-color: #000;
-  box-shadow: 0 0 10px 5px var(--silver),
-  inset 0 0 10px 5px var(--silver);
+  box-shadow: 0 0 10px 5px var(--silver), inset 0 0 10px 5px var(--silver);
 }
-
-
 
 /* flex Style */
 .flex-container {
@@ -95,8 +90,6 @@ body {
   max-width: 1100px;
 }
 
-
-
 /* Neon Button Styling */
 
 .neon-btn {
@@ -112,8 +105,7 @@ body {
   text-shadow: 1px 1px 10px var(--green);
   width: 125px;
   text-align: center;
-  box-shadow: 0 0 10px 5px var(--green),
-  inset 0 0 10px 5px var(--green);
+  box-shadow: 0 0 10px 5px var(--green), inset 0 0 10px 5px var(--green);
   position: relative;
 }
 
@@ -126,9 +118,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  transform: perspective(20px) rotateX(40deg) scale(1, .35);
+  transform: perspective(20px) rotateX(40deg) scale(1, 0.35);
   filter: blur(20px);
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .neon-btn::after {
@@ -140,27 +132,32 @@ body {
   right: 0;
   background: transparent;
   box-shadow: 0 0 20px 10px var(--green);
-  opacity: .5;
+  opacity: 0.5;
 }
 
-.neon-btn:hover, .neon-btn:focus {
+.neon-btn:hover,
+.neon-btn:focus {
   background: var(--green);
-  color:#000;
+  color: #000;
   text-shadow: none;
   outline: none;
 }
 
-.neon-btn:hover::before, .neon-btn:hover::after, .neon-btn:focus::before, .neon-btn:focus::after  {
+.neon-btn:hover::before,
+.neon-btn:hover::after,
+.neon-btn:focus::before,
+.neon-btn:focus::after {
   opacity: 1;
   outline: none;
 }
 
-
+.w-50 {
+  width: 50%;
+}
 
 /* Media Queries */
 
 @media screen and (max-width: 800px) {
-
   .flex-container {
     display: flex;
     flex-direction: column;
@@ -169,5 +166,4 @@ body {
   .content-container {
     width: 95%;
   }
-
 }
