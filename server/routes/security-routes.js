@@ -2,7 +2,7 @@
  * Title: security-routes.js
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 04/17/23
- * Last Modified by: Walter McCue
+ * Last Modified by: Carl Logan
  * Last Modification Date: 04/17/23
  * Description: security question api routing for the bcrs project
  */
@@ -17,6 +17,7 @@ const Ajv = require("ajv");
 const BaseResponse = require("../services/base-response");
 const ErrorResponse = require("../services/error-response");
 const SecurityQuestion = require("../models/security-question");
+const securityQuestion = require("../models/security-question");
 
 // Logging and Validation
 const myFile = "security-routes.js";
@@ -48,7 +49,66 @@ router.get("/", async (req, res) => {
     res.status(500).send(findAllCatchErrorResponse.toObject());
   }
 });
-// findSecurityById
+
+// openapi language used to describe the API via swagger
+/**
+ * @openapi
+ * /api/security/{id}:
+ *   get:
+ *     tags:
+ *       - securityQuestions
+ *     operationId: findById
+ *     description: API to find the security questions.
+ *     summary: Returns an object matching the object ID.
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *     responses:
+ *       '200':
+ *         description: Return a security question document.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 _id:
+ *                   type: string
+ *                 text:
+ *                   type: string
+ *                 isDisabled:
+ *                   type: Boolean
+ *       '400':
+ *         description: Bad request.
+ *       '404':
+ *         description: Not found.
+ *       '500':
+ *         description: Server expectations.
+ */
+router.get('/:id', async(req, res) => {
+  try {
+    SecurityQuestion.findOne({ '_id': req.params.id }, (err, securityQuestion) => {
+      if(err) {
+        console.log(err);
+        const findByIdMongodbErrorResponse = new ErrorResponse(500, 'Internal server error', err);
+        res.status(500).send(findByIdMongodbErrorResponse.toObject());
+      }
+      else {
+        console.log(securityQuestion);
+        const findByIdResponse = new BaseResponse(200, 'Query successful', securityQuestion);
+        res.json(findByIdResponse.toObject());
+      }
+    });
+  }
+  catch(e) {
+    console.log(e);
+    const findByIdCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
+    res.status(500).send(findByIdCatchErrorResponse.toObject());
+  }
+});
+
 
 // createSecurity
 
