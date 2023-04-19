@@ -41,7 +41,7 @@ hr {
 
 .mat-card-header {
   color: var(--green);
-  text-shadow: 1px 1px 10px var(--green);
+  text-shadow: 1px 5px 10px var(--green);
 }
 
 .mat-card-content {
@@ -69,8 +69,8 @@ hr {
 }
 
 .btn:disabled {
-  background-color: lightgray;
-  color: black;
+  background-color: transparent;
+  color: grey;
   font-family: "Abril Fatface", cursive;
 }
 
@@ -98,4 +98,8 @@ input {
   justify-content: center;
   gap: 50%;
   margin-bottom: 30px;
+}
+
+a:hover {
+  cursor: pointer;
 }

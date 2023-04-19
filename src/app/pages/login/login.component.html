@@ -25,14 +25,7 @@
                 formControlName="userName"
                 placeholder="   Username"
               />
-              <br />
-              <br />
-              <input
-                matInput
-                formControlName="password"
-                placeholder="   password"
-                style="color: #5d5d5d"
-              />
+
               <!-- Error Handling -->
               <mat-error
                 *ngIf="
@@ -40,16 +33,40 @@
                   loginForm.controls['userName'].touched
                 "
               >
-                Employee ID is a required field.
+                Username is a required field.
               </mat-error>
 
               <mat-error
                 *ngIf="
-                  loginForm.controls['empId'].hasError('pattern') &&
-                  loginForm.controls['empId'].touched
+                  loginForm.controls['userName'].hasError('pattern') &&
+                  loginForm.controls['userName'].touched
                 "
               >
-                Employee ID must be a number.
+                Username is not valid.
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="standard">
+              <input
+                matInput
+                formControlName="password"
+                placeholder="   Password"
+              />
+              <mat-error
+                *ngIf="
+                  loginForm.controls['password'].hasError('required') &&
+                  loginForm.controls['password'].touched
+                "
+              >
+                Password is a required field.
+              </mat-error>
+
+              <mat-error
+                *ngIf="
+                  loginForm.controls['password'].hasError('pattern') &&
+                  loginForm.controls['password'].touched
+                "
+              >
+                Password is not valid.
               </mat-error>
             </mat-form-field>
           </mat-card-content>
