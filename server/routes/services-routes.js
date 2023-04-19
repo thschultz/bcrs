@@ -22,6 +22,29 @@ const ErrorResponse = require('../services/error-response');
 const myFile = 'services-routes.js';
 const ajv = new Ajv();
 
+// Schema for validation
+const serviceSchema = {
+  type: 'object',
+  properties: {
+    serviceName: {type: 'string'},
+    price: {type: 'number'}
+  },
+  required: ['serviceName', 'price'],
+  additionalProperties: false
+}
+
+const serviceUpdateSchema = {
+  type: 'object',
+  properties: {
+    serviceName: {type: 'string'},
+    price: {type: 'number'},
+    dateCreated: {type: 'string'},
+
+  },
+  required: ['serviceName', 'price', 'dateCreated'],
+  additionalProperties: false
+}
+
 
 /**
  * @openapi
@@ -106,6 +129,7 @@ router.get("/:id", async (req, res) => {
       if (err) {
         console.log(err);
         const findByIdError = new ErrorResponse(500, "Internal server error", err);
+        errorLogger({ filename: myFile, message: "Internal server error" });
         res.status(500).send(findByIdError.toObject());
         return
       }
@@ -121,6 +145,7 @@ router.get("/:id", async (req, res) => {
   } catch (e) {
     console.log(e);
     const findByIdError = new ErrorResponse(500, "Internal server error", e);
+    errorLogger({ filename: myFile, message: "Internal server error" });
     res.status(200).send(findByIdError.toObject());
   }
 });
@@ -168,12 +193,27 @@ router.post('/', async (req, res) => {
       price: req.body.price
     }
 
+    // Checks current request body against the schema
+    const validator = ajv.compile(serviceSchema);
+    const valid = validator(newService)
+
+    // If invalid return 400 Error
+    if (!valid) {
+      console.log('Bad Request, unable to validate');
+      const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
+      errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+      res.status(400).send(createServiceError.toObject());
+      return
+    }
+
+    // If valid, attempts tp create service
     Service.create(newService, function(err, service) {
 
       // Server error
       if (err) {
         console.log(err);
         const createServiceError = new ErrorResponse(500, 'Internal server error', e.message);
+        errorLogger({ filename: myFile, message: "Internal server error" });
         res.status(500).send(createServiceError.toObject());
         return
       }
@@ -181,6 +221,7 @@ router.post('/', async (req, res) => {
       // Successfully creates service
       console.log(service);
       const createServiceResponse = new BaseResponse(200, 'Service created', service);
+      debugLogger({ filename: myFile, message: service });
       res.json(createServiceResponse.toObject());
     })
 
@@ -188,6 +229,7 @@ router.post('/', async (req, res) => {
   } catch (e) {
     console.log(e);
     const createServiceError = new ErrorResponse(500, 'Internal server error', e.message);
+    errorLogger({ filename: myFile, message: "Internal server error" });
     res.status(500).send(createServiceError.toObject());
   }
 })
@@ -241,6 +283,7 @@ router.put("/:id", async (req, res) => {
       if (err) {
         console.log(err);
         const updateError = new ErrorResponse(500, "Internal server error", err);
+        errorLogger({ filename: myFile, message: "Internal server error" });
         res.status(500).send(updateError.toObject());
         return
       }
@@ -252,12 +295,27 @@ router.put("/:id", async (req, res) => {
         price: req.body.price,
         dateModified: new Date(),
       });
+
+      // Checks current request body against the schema
+      const validator = ajv.compile(serviceUpdateSchema);
+      const valid = validator(service)
+
+      // If invalid return 400 Error
+      if (!valid) {
+        console.log('Bad Request, unable to validate');
+        const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
+        errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+        res.status(400).send(createServiceError.toObject());
+        return
+      }
+
       service.save(function (err, savedService) {
 
         // Server error if unable to updated the selected service
         if (err) {
           console.log(err);
           const savedError = new ErrorResponse(500, "Internal server error", err);
+          errorLogger({ filename: myFile, message: "Internal server error" });
           res.status(500).send(savedError.toObject());
           return
         }
@@ -265,6 +323,7 @@ router.put("/:id", async (req, res) => {
         // Successfully updates the service
         console.log(savedService);
         const savedServiceResponse = new BaseResponse(200, "Query successful", savedService);
+        debugLogger({ filename: myFile, message: savedService });
         res.json(savedServiceResponse.toObject());
       })
     })
@@ -273,6 +332,7 @@ router.put("/:id", async (req, res) => {
   } catch (e) {
     console.log(e);
     const updateServiceErrorResponse = new ErrorResponse(500, "Internal server error", e.message);
+    errorLogger({ filename: myFile, message: "Internal server error" });
     res.status(500).send(updateServiceErrorResponse.toObject());
   }
 });
@@ -313,6 +373,7 @@ router.delete('/:id', async (req, res) => {
       if (err) {
         console.log(err);
         const deleteServiceError = new ErrorResponse(500, 'Internal server error', err.message);
+        errorLogger({ filename: myFile, message: "Internal server error" });
         res.status(500).send(deleteServiceError.toObject());
         return
       }
@@ -329,6 +390,7 @@ router.delete('/:id', async (req, res) => {
         if (err) {
           console.log(err);
           const savedServiceError = new ErrorResponse(500, 'Internal server Error', err);
+          errorLogger({ filename: myFile, message: "Internal server error" });
           res.json(500).send(savedServiceError.toObject());
           return
         }
@@ -336,6 +398,7 @@ router.delete('/:id', async (req, res) => {
         // Successfully saves the disabled status
         console.log(savedService);
         const savedServiceResponse = new BaseResponse(200, 'Successful Query', savedService);
+        debugLogger({ filename: myFile, message: savedService });
         res.json(savedServiceResponse.toObject());
       })
     })
@@ -344,6 +407,7 @@ router.delete('/:id', async (req, res) => {
   } catch (e) {
     console.log(e);
     const deleteServiceError = new ErrorResponse(500, 'Internal server error',  e.message);
+    errorLogger({ filename: myFile, message: "Internal server error" });
     res.status(500).send(deleteServiceError.toObject());
   }
 })

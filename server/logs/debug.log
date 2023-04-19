@@ -711,3 +711,182 @@
   __v: 0,
   dateModified: 2023-04-19T15:46:07.058Z
 }
+[4/19/2023, 2:25:01 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/19/2023, 2:25:12 PM] server	 services-routes.js - {
+  serviceName: 'testService3',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  __v: 0
+}
+[4/19/2023, 2:34:23 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.2',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T18:34:03.911Z
+}
+[4/19/2023, 2:36:18 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.2',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T18:34:03.911Z
+}
+[4/19/2023, 2:37:40 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.2',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T18:34:03.911Z
+}
+[4/19/2023, 2:43:54 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.2',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T18:34:03.911Z
+}
+[4/19/2023, 2:45:28 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.2',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T18:34:03.911Z
+}
+[4/19/2023, 2:46:14 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.2',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T18:34:03.911Z
+}
+[4/19/2023, 2:48:16 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.2',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T18:34:03.911Z
+}
+[4/19/2023, 2:48:47 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.2',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T18:34:03.911Z
+}
+[4/19/2023, 2:49:30 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.2',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T18:34:03.911Z
+}
+[4/19/2023, 2:54:30 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.2',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T18:34:03.911Z
+}
+[4/19/2023, 2:54:52 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.2',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T18:34:03.911Z
+}
+[4/19/2023, 3:20:12 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.2',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T18:34:03.911Z
+}
+[4/19/2023, 3:25:28 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.2',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T18:34:03.911Z
+}
+[4/19/2023, 3:27:36 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.2',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T18:34:03.911Z
+}
+[4/19/2023, 3:38:45 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.2',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T18:34:03.911Z
+}
+[4/19/2023, 3:39:08 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.2',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T18:34:03.911Z
+}
+[4/19/2023, 3:40:36 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.2',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T18:34:03.911Z
+}
+[4/19/2023, 3:50:43 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.2',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T18:34:03.911Z
+}
