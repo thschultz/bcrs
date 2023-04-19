@@ -38,11 +38,11 @@ const serviceUpdateSchema = {
   properties: {
     serviceName: {type: 'string'},
     price: {type: 'number'},
-    dateCreated: {type: 'string'},
+    dateModified: {type: 'string', format: 'date-time'},
 
   },
-  required: ['serviceName', 'price', 'dateCreated'],
-  additionalProperties: false
+  required: ['serviceName', 'price', 'dateModified'],
+  additionalProperties: true
 }
 
 
