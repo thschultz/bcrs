@@ -940,3 +940,12 @@
   _id: new ObjectId("644032085afd2418ac6fab1a"),
   __v: 0
 }
+[4/19/2023, 6:53:15 PM] server	 services-routes.js - {
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  serviceName: 'testService3.5',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  __v: 0,
+  dateModified: 2023-04-19T22:45:06.080Z
+}
