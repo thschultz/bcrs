@@ -23,29 +23,62 @@ const securityQuestion = require("../models/security-question");
 const myFile = "security-routes.js";
 const ajv = new Ajv();
 
-// findAllSecurity
+// findAllSecurityQuestions
+
+/**
+ * findAllSecurityQuestions
+ * @openapi
+ * /api/security:
+ *   get:
+ *     tags:
+ *       - SecurityQuestions
+ *     description:  API for viewing all security questions
+ *     summary: view all security questions
+ *     responses:
+ *       '200':
+ *         description: Success
+ *       '400':
+ *         description: Bad Request
+ *       '404':
+ *         description: Not Found
+ *       '500':
+ *         description: server error for all other use cases
+ */
+
 router.get("/", async (req, res) => {
   try {
     SecurityQuestion.find({})
       .where("isDisabled")
       .equals(false)
-      .exec(function(err, securityQuestions) {
+      .exec(function (err, securityQuestions) {
         //internal server error
         if (err) {
           console.log(err);
-          const findAllMongoDBErrorResponse = new ErrorResponse(500, 'Internal server error', err);
+          const findAllMongoDBErrorResponse = new ErrorResponse(
+            500,
+            "Internal server error",
+            err
+          );
           res.status(500).send(findAllMongoDBErrorResponse.toObject());
         } else {
           //successful query response
           console.log(securityQuestions);
-          const findAllResponse = new BaseResponse(200, 'Query Successful', securityQuestions);
+          const findAllResponse = new BaseResponse(
+            200,
+            "Query Successful",
+            securityQuestions
+          );
           res.json(findAllResponse.toObject());
         }
       });
   } catch (e) {
     //error response with server
     console.log(e);
-    const findAllCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
+    const findAllCatchErrorResponse = new ErrorResponse(
+      500,
+      "Internal server error",
+      e.message
+    );
     res.status(500).send(findAllCatchErrorResponse.toObject());
   }
 });
@@ -56,7 +89,7 @@ router.get("/", async (req, res) => {
  * /api/security/{id}:
  *   get:
  *     tags:
- *       - securityQuestions
+ *       - SecurityQuestions
  *     operationId: findById
  *     description: API to find the security questions.
  *     summary: Returns an object matching the object ID.
@@ -87,30 +120,74 @@ router.get("/", async (req, res) => {
  *       '500':
  *         description: Server expectations.
  */
-router.get('/:id', async(req, res) => {
+router.get("/:id", async (req, res) => {
   try {
-    SecurityQuestion.findOne({ '_id': req.params.id }, (err, securityQuestion) => {
-      if(err) {
-        console.log(err);
-        const findByIdMongodbErrorResponse = new ErrorResponse(500, 'Internal server error', err);
-        res.status(500).send(findByIdMongodbErrorResponse.toObject());
+    SecurityQuestion.findOne(
+      { _id: req.params.id },
+      (err, securityQuestion) => {
+        if (err) {
+          console.log(err);
+          const findByIdMongodbErrorResponse = new ErrorResponse(
+            500,
+            "Internal server error",
+            err
+          );
+          res.status(500).send(findByIdMongodbErrorResponse.toObject());
+        } else {
+          console.log(securityQuestion);
+          const findByIdResponse = new BaseResponse(
+            200,
+            "Query successful",
+            securityQuestion
+          );
+          res.json(findByIdResponse.toObject());
+        }
       }
-      else {
-        console.log(securityQuestion);
-        const findByIdResponse = new BaseResponse(200, 'Query successful', securityQuestion);
-        res.json(findByIdResponse.toObject());
-      }
-    });
-  }
-  catch(e) {
+    );
+  } catch (e) {
     console.log(e);
-    const findByIdCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
+    const findByIdCatchErrorResponse = new ErrorResponse(
+      500,
+      "Internal server error",
+      e.message
+    );
     res.status(500).send(findByIdCatchErrorResponse.toObject());
   }
 });
 
-
-// createSecurity
+// createSecurityQuestion
+/**
+ * createSecurityQuestion
+ * @openapi
+ * /api/security:
+ *   post:
+ *     tags:
+ *       - SecurityQuestions
+ *     description: API that creates a new security question.
+ *     summary: Creates a new new security question
+ *     requestBody:
+ *       description: Creates a new new security question
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             required:
+ *               - text
+ *             properties:
+ *               text:
+ *                 type: string
+ *     responses:
+ *       '200':
+ *         description: New security question added to MongoDB
+ *       '400':
+ *         description: Bad Request
+ *       '404':
+ *         description: Null Record
+ *       '500':
+ *         description: Server Exception
+ *       '501':
+ *         description: MongoDB Exception
+ */
 
 router.post("/", async (req, res) => {
   try {
@@ -153,16 +230,58 @@ router.post("/", async (req, res) => {
   }
 });
 
-// updateSecurity
-
+// updateSecurityQuestions
+/**
+ * updateSecurityQuestions
+ * @openapi
+ * /api/security/{id}:
+ *   put:
+ *     tags:
+ *       - SecurityQuestions
+ *     description: API that updates security questions by id
+ *     summary: Updates security questions
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         description: question id
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       description: Creates a new new security question
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             required:
+ *               - text
+ *             properties:
+ *               text:
+ *                 type: string
+ *     responses:
+ *       '204':
+ *         description: Question updated
+ *       '400':
+ *         description: Bad Request
+ *       '404':
+ *         description: Not found
+ */
 router.put("/:id", async (req, res) => {
   try {
-    SecurityQuestion.findOne({'_id': req.params.id }, function (err, securityQuestion) {
+    SecurityQuestion.findOne(
+      { _id: req.params.id },
+      function (err, securityQuestion) {
         if (err) {
           //server error
           console.log(err);
-          const updateSecurityQuestionMongodbErrorResponse = new ErrorResponse(500, "Internal server error", err);
-          res.status(500).send(updateSecurityQuestionMongodbErrorResponse.toObject());
+          const updateSecurityQuestionMongodbErrorResponse = new ErrorResponse(
+            500,
+            "Internal server error",
+            err
+          );
+          res
+            .status(500)
+            .send(updateSecurityQuestionMongodbErrorResponse.toObject());
         } else {
           //setting security question
           console.log(securityQuestion);
@@ -175,12 +294,19 @@ router.put("/:id", async (req, res) => {
             if (err) {
               //server error
               console.log(err);
-              const savedSecurityQuestionMongodbErrorResponse = new ErrorResponse(500, "Internal server error", err);
-              res.status(500).send(savedSecurityQuestionMongodbErrorResponse.toObject());
+              const savedSecurityQuestionMongodbErrorResponse =
+                new ErrorResponse(500, "Internal server error", err);
+              res
+                .status(500)
+                .send(savedSecurityQuestionMongodbErrorResponse.toObject());
             } else {
               //saving new security question
               console.log(savedSecurityQuestion);
-              const savedSecurityQuestionResponse = new BaseResponse(200, "Query successful", savedSecurityQuestion );
+              const savedSecurityQuestionResponse = new BaseResponse(
+                200,
+                "Query successful",
+                savedSecurityQuestion
+              );
               res.json(savedSecurityQuestionResponse.toObject());
             }
           });
@@ -190,7 +316,11 @@ router.put("/:id", async (req, res) => {
   } catch (e) {
     //server error
     console.log(e);
-    const updateSecurityQuestionCatchErrorResponse = new ErrorResponse(500, "Internal server error", e.message);
+    const updateSecurityQuestionCatchErrorResponse = new ErrorResponse(
+      500,
+      "Internal server error",
+      e.message
+    );
     res.status(500).send(updateSecurityQuestionCatchErrorResponse.toObject());
   }
 });
