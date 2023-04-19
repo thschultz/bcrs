@@ -3,7 +3,7 @@
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 04/17/23
  * Last Modified by: Walter McCue
- * Last Modification Date: 04/17/23
+ * Last Modification Date: 04/19/23
  * Description: users api routing for the bcrs project
  */
 
@@ -87,6 +87,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+
 // findUserById
 
 router.get("/:id", async (req, res) => {
@@ -121,7 +122,11 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+
 // createUser
+
+
+
 
 // updateUser
 router.put("/:id", async (req, res) => {
@@ -184,6 +189,55 @@ router.put("/:id", async (req, res) => {
     res.status(500).send(updateUserByIdCatchErrorResponse.toObject());
   }
 });
+
+
 // deleteUser
+router.delete('/:id', async (req, res) => {
+  try {
+
+    // finds User by Id
+    User.findOne({'_id': req.params.id}, function(err, user) {
+
+      // Server error
+      if (err) {
+        console.log(err);
+        const deleteUserErrorResponse = new ErrorResponse(500, 'Internal server error', err.message);
+        res.status(500).send(deleteUserErrorResponse.toObject());
+        return
+      }
+
+      // sets disabled status instead of deleting the record
+      console.log(user);
+      user.set({
+        isDisabled: true,
+        dateModified: new Date()
+      });
+      user.save(function(err, savedUser) {
+
+        // Server error if unable to save the disabled status
+        if (err) {
+          console.log(err);
+          const savedUserErrorResponse = new ErrorResponse(500, 'Internal server Error', err);
+          res.json(500).send(savedUserErrorResponse.toObject());
+          return
+        }
+
+        // Successfully saves the disabled status
+        console.log(savedUser);
+        const savedUserResponse = new BaseResponse(200, 'Successful Query', savedUser);
+        res.json(savedUserResponse.toObject());
+      })
+    })
+
+    // Server error
+  } catch (e) {
+    console.log(e);
+    const deleteUserErrorResponse = new ErrorResponse(500, 'Internal server error',  e.message);
+    res.status(500).send(deleteUserErrorResponse.toObject());
+  }
+})
+
+
+
 
 module.exports = router;
