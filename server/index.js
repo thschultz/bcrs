@@ -57,7 +57,7 @@ const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "NodeBucket API's",
+      title: "BCRS API's",
       version: "1.0.0",
     },
   },

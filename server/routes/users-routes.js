@@ -95,7 +95,7 @@ router.get("/", async (req, res) => {
  * /api/users/{id}:
  *   get:
  *     tags:
- *       - Employees
+ *       - Users
  *     description:  API that returns user by ID
  *     summary: returns user by ID
  *     parameters:
@@ -104,7 +104,7 @@ router.get("/", async (req, res) => {
  *         required: true
  *         description: User ID
  *         schema:
- *           type: number
+ *           type: string
  *     responses:
  *       '200':
  *         description: User document
