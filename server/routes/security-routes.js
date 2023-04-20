@@ -2,8 +2,8 @@
  * Title: security-routes.js
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 04/17/23
- * Last Modified by: Carl Logan
- * Last Modification Date: 04/17/23
+ * Last Modified by: Jamal Damir
+ * Last Modification Date: 04/19/23
  * Description: security question api routing for the bcrs project
  */
 
@@ -83,7 +83,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// openapi language used to describe the API via swagger
+// findById
 /**
  * @openapi
  * /api/security/{id}:
@@ -156,6 +156,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // createSecurityQuestion
+
 /**
  * createSecurityQuestion
  * @openapi
