@@ -2,13 +2,13 @@
 [4/18/2023, 1:13:41 AM] server	 users-routes.js - Query Successful
 [4/18/2023, 1:19:44 AM] server	 users-routes.js - Query Successful
 <<<<<<< HEAD
-[4/18/2023, 1:21:00 AM] server	 users-routes.js - 
-[4/18/2023, 1:31:19 AM] server	 users-routes.js - 
-[4/18/2023, 1:40:52 AM] server	 users-routes.js - 
+[4/18/2023, 1:21:00 AM] server	 users-routes.js -
+[4/18/2023, 1:31:19 AM] server	 users-routes.js -
+[4/18/2023, 1:40:52 AM] server	 users-routes.js -
 >>>>>>> 1b5f9f7db74342563cd8c929b9ad3859ebe0ef05
-[4/18/2023, 2:36:59 AM] server	 users-routes.js - 
-[4/18/2023, 2:37:18 AM] server	 users-routes.js - 
-[4/18/2023, 2:45:55 AM] server	 users-routes.js - 
+[4/18/2023, 2:36:59 AM] server	 users-routes.js -
+[4/18/2023, 2:37:18 AM] server	 users-routes.js -
+[4/18/2023, 2:45:55 AM] server	 users-routes.js -
 [4/18/2023, 2:48:55 AM] server	 users-routes.js - {
   _id: new ObjectId("643e2689f0a7052a84f68f8c"),
   userName: 'testUser',
@@ -24,23 +24,23 @@
 [4/18/2023, 2:43:16 AM] server	 users-routes.js -
 [4/18/2023, 2:43:39 AM] server	 users-routes.js -
 [4/18/2023, 2:44:09 AM] server	 users-routes.js -
-[4/18/2023, 2:46:19 AM] server	 users-routes.js - 
-[4/18/2023, 2:46:29 AM] server	 users-routes.js - 
+[4/18/2023, 2:46:19 AM] server	 users-routes.js -
+[4/18/2023, 2:46:29 AM] server	 users-routes.js -
 >>>>>>> 4d81444a71e465c78293ed26f33aab03c4378a7e
-[4/18/2023, 2:19:52 PM] server	 users-routes.js - 
-[4/18/2023, 11:31:52 PM] server	 users-routes.js - 
+[4/18/2023, 2:19:52 PM] server	 users-routes.js -
+[4/18/2023, 11:31:52 PM] server	 users-routes.js -
 [4/18/2023, 11:32:52 PM] server	 users-routes.js - {
   _id: new ObjectId("643e2689f0a7052a84f68f8c"),
   userName: 'testUser',
   password: 'Password01'
 }
-[4/18/2023, 11:48:40 PM] server	 users-routes.js - 
-[4/18/2023, 11:48:41 PM] server	 users-routes.js - 
-[4/18/2023, 11:49:49 PM] server	 users-routes.js - 
-[4/18/2023, 11:49:50 PM] server	 users-routes.js - 
-[4/18/2023, 11:50:06 PM] server	 users-routes.js - 
-[4/18/2023, 11:50:08 PM] server	 users-routes.js - 
-[4/18/2023, 11:57:06 PM] server	 users-routes.js - 
+[4/18/2023, 11:48:40 PM] server	 users-routes.js -
+[4/18/2023, 11:48:41 PM] server	 users-routes.js -
+[4/18/2023, 11:49:49 PM] server	 users-routes.js -
+[4/18/2023, 11:49:50 PM] server	 users-routes.js -
+[4/18/2023, 11:50:06 PM] server	 users-routes.js -
+[4/18/2023, 11:50:08 PM] server	 users-routes.js -
+[4/18/2023, 11:57:06 PM] server	 users-routes.js -
 [4/18/2023, 11:58:42 PM] server	 users-routes.js - {
   _id: new ObjectId("643e2689f0a7052a84f68f8c"),
   userName: 'testUser',
@@ -890,7 +890,6 @@
   __v: 0,
   dateModified: 2023-04-19T18:34:03.911Z
 }
-<<<<<<< HEAD
 [4/19/2023, 6:33:40 PM] server	 users-routes.js - {
   _id: new ObjectId("643e2689f0a7052a84f68f8c"),
   userName: 'testUser',
@@ -911,16 +910,6 @@
     }
   ],
   address: '28201 E. Bonanza st. South Park, Colorado 15129'
-=======
-[4/19/2023, 6:21:54 PM] server	 services-routes.js - {
-  serviceName: 'testService3.3',
-  price: 99.99,
-  isDisabled: false,
-  dateCreated: 2023-04-19T18:24:35.772Z,
-  dateModified: 2023-04-19T18:34:03.911Z,
-  _id: new ObjectId("644032085afd2418ac6fab1a"),
-  __v: 0
->>>>>>> efeffa3d18f6bc47012960f942326bbddae7a983
 }
 [4/19/2023, 6:44:33 PM] server	 services-routes.js - {
   serviceName: 'testService3.4',
@@ -948,4 +937,13 @@
   dateCreated: 2023-04-19T18:24:35.772Z,
   __v: 0,
   dateModified: 2023-04-19T22:45:06.080Z
+}
+[4/19/2023, 7:06:58 PM] server	 services-routes.js - {
+  serviceName: 'testService3.6',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T18:24:35.772Z,
+  dateModified: 2023-04-19T23:06:58.040Z,
+  _id: new ObjectId("644032085afd2418ac6fab1a"),
+  __v: 0
 }

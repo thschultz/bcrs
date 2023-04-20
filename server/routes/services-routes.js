@@ -35,6 +35,7 @@ const serviceSchema = {
   additionalProperties: false
 }
 
+// Schema for validation
 const serviceUpdateSchema = {
   type: 'object',
   properties: {
@@ -45,7 +46,7 @@ const serviceUpdateSchema = {
     dateCreated: {type: 'object'},
     isDisabled: {type: 'boolean'}
   },
-  required: ['serviceName', 'price', 'dateModified', '_id', 'dateCreated', 'isDisabled'],
+  required: ['serviceName', 'price', 'dateModified'/*, '_id', 'dateCreated', 'isDisabled'*/],
   additionalProperties: false
 }
 
@@ -326,7 +327,7 @@ router.put("/:id", async (req, res) => {
 
         // Successfully updates the service
         console.log(savedService);
-        const savedServiceResponse = new BaseResponse(200, "Query successful", savedService);
+        const savedServiceResponse = new BaseResponse(204, "Query successful", savedService);
         debugLogger({ filename: myFile, message: savedService });
         res.json(savedServiceResponse.toObject());
       })

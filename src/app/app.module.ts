@@ -35,6 +35,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
 
 // Services and Modules
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -42,6 +43,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
+import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
@@ -77,7 +82,12 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     HttpClientModule,
     DragDropModule,
     MessagesModule,
-    MessageModule
+    MessageModule,
+    MatTableModule,
+    TableModule,
+    ButtonModule,
+    ConfirmDialogModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
