@@ -949,3 +949,59 @@
   __v: 0,
   dateModified: 2023-04-19T22:45:06.080Z
 }
+[4/19/2023, 6:41:57 PM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  role: { text: 'Admin', _id: new ObjectId("64408a55458f09e4dbbe2bb2") },
+  selectedSecurityQuestions: [
+    {
+      _id: new ObjectId("64408a55458f09e4dbbe2bb3"),
+      questionText: 'What is your favorite food?',
+      answerText: 'Sushi'
+    }
+  ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129'
+}
+[4/19/2023, 7:16:24 PM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  role: { text: 'Admin', _id: new ObjectId("64409268773327e3f77e7137") },
+  selectedSecurityQuestions: [
+    {
+      _id: new ObjectId("64409268773327e3f77e7138"),
+      questionText: 'What is your favorite food?',
+      answerText: 'Sushi'
+    }
+  ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129'
+},{
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440924a773327e3f77e7134") },
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}

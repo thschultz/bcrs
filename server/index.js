@@ -20,6 +20,7 @@ const UsersRoute = require("./routes/users-routes");
 const RolesRoute = require("./routes/roles-routes");
 const SecurityRoute = require("./routes/security-routes");
 const ServicesRoute = require("./routes/services-routes");
+const Session = require("./routes/session-routes");
 const swaggerUi = require("swagger-ui-express");
 const swaggerJsdoc = require("swagger-jsdoc");
 
@@ -73,6 +74,7 @@ app.use("/api/users", UsersRoute);
 app.use("/api/security", SecurityRoute);
 app.use("/api/roles", RolesRoute);
 app.use("/api/services", ServicesRoute);
+app.use("/api/session", Session);
 
 // Error handler for 404 errors
 app.use(function (req, res, next) {
