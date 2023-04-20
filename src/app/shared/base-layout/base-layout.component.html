@@ -9,12 +9,9 @@
 -->
 
 <div fxLayout="column">
-
   <header class="gradient-header">
-
     <!-- navigation -->
     <nav fxFlex>
-
       <!-- nabar image-->
       <div class="house-img">
         <img src="/assets/pngwing.com.png" alt="Slytherin Emblem" />
@@ -28,12 +25,17 @@
       </div>
 
       <div class="profile-menu">
-        <button mat-icon-button [matMenuTriggerFor]="profileMenu" aria-label="User Profile menu">
+        <button
+          mat-icon-button
+          [matMenuTriggerFor]="profileMenu"
+          aria-label="User Profile menu"
+        >
           <mat-icon class="profile-btn">perm_identity</mat-icon>
         </button>
         <mat-menu #profileMenu class="accent-color p-20">
-          <p style="padding: 10px; font-size: 18px; font-weight: bolder;">
-            Signed in as <span style="font-weight: normal;"><!-- {{ sessionName }} --></span>
+          <p style="padding: 10px; font-size: 18px; font-weight: bolder">
+            Signed in as
+            <span style="font-weight: normal">{{ userName }}</span>
           </p>
           <!-- <button mat-menu-item  (click)="logout()">
             <mat-icon>logout</mat-icon>
@@ -41,7 +43,6 @@
           </button> -->
         </mat-menu>
       </div>
-
     </nav>
   </header>
 
