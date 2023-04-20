@@ -37,6 +37,10 @@ const routes: Routes = [
         component: AboutComponent,
       },
       {
+        path: 'user-create',
+        component: UserCreateComponent,
+      },
+      {
         path: 'user-list',
         component: UserListComponent,
       },
@@ -66,11 +70,6 @@ const routes: Routes = [
       {
         path: 'security-questions/:questionId',
         component: SecurityQuestionDetailsComponent,
-      },
-
-      {
-        path: 'user-create',
-        component: UserCreateComponent,
       },
     ],
   },
