@@ -8,6 +8,9 @@
  * Description: base layout for UI for the bcrs project
 */
 
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -18,9 +21,18 @@ import { Component, OnInit } from '@angular/core';
 export class BaseLayoutComponent implements OnInit {
   year: number = Date.now();
 
-  constructor() { }
+  userName: string;
+
+  constructor(private cookieService: CookieService, private router: Router) {
+    this.userName = this.cookieService.get('sessionuser') ?? '';
+  }
 
   ngOnInit(): void {
+  }
+
+  logout() {
+    this.cookieService.deleteAll();
+    this.router.navigate(['/session.login']);
   }
 
 }

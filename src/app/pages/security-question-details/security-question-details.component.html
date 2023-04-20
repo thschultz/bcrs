@@ -11,11 +11,11 @@
         <div>
           <mat-form-field appearance="fill">
             <mat-label>Security question</mat-label>
-            <input type="text">
+            <input type="text" matInput formControlName="text" required />
 
             <mat-error class="error"
-              *ngIf="editForm.controls.['text'].hasError('required') && editForm.controls.['text'].touched">
-              Security question is a required field
+              *ngIf="editForm.controls['text'].hasError('required') && editForm.controls['text'].touched">
+              Security question is a required field.
             </mat-error>
           </mat-form-field>
         </div>
