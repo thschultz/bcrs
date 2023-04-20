@@ -11,8 +11,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
-import { BaseLayoutComponent } from "./shared/base-layout/base-layout.component";
-import { HomeComponent } from "./pages/home/home.component";
+import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
+import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
@@ -21,7 +21,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ServerErrorComponent } from './pages/server-error/server-error.component';
 import { SecurityQuestionDetailsComponent } from './pages/security-question-details/security-question-details.component';
 import { UserListComponent } from './pages/user-list/user-list.component';
-
+import { UserCreateComponent } from './pages/user-create/user-create.component';
 
 const routes: Routes = [
   {
@@ -35,6 +35,10 @@ const routes: Routes = [
       {
         path: 'about',
         component: AboutComponent,
+      },
+      {
+        path: 'user-list',
+        component: UserListComponent,
       },
       {
         path: 'contact',
@@ -61,13 +65,14 @@ const routes: Routes = [
       },
       {
         path: 'security-questions/:questionId',
-        component: SecurityQuestionDetailsComponent
+        component: SecurityQuestionDetailsComponent,
       },
+
       {
-        path: 'user-list',
-        component: UserListComponent
-      }
-    ]
+        path: 'user-create',
+        component: UserCreateComponent,
+      },
+    ],
   },
   // Unexpected URL values will redirect users to the 404 error page
   {

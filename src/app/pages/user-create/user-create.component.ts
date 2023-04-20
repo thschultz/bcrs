@@ -1,9 +1,20 @@
+/**
+ * Title: user-create.component.ts
+ * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+ * Contributors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+ * Date: 04/16/23
+ * Last Modified by: Jamal Damir
+ * Last Modification Date: 04/19/23
+ * Description: user-create component for the bcrs project
+ */
+
+// Import Statements
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../shared/services/user.service';
 import { User } from '../../shared/models/user.interface';
-import { Message } from "primeng/api";
+import { Message } from 'primeng/api';
 
 @Component({
   selector: 'app-user-create',
@@ -24,14 +35,18 @@ export class UserCreateComponent implements OnInit {
     lastName: [null, Validators.compose([Validators.required])],
     phoneNumber: [null, Validators.compose([Validators.required])],
     address: [null, Validators.compose([Validators.required])],
-
+    email: [null, Validators.compose([Validators.required, Validators.email])],
   });
 
   user: User;
   userId: string;
   errorMessages: Message[] = [];
 
-  constructor(private fb: FormBuilder, private router: Router, private userService: UserService) {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private userService: UserService
+  ) {
     this.user = {} as User;
     this.userId = '';
   }
@@ -41,30 +56,32 @@ export class UserCreateComponent implements OnInit {
   createUser(): void {
     const newUser: User = {
       userName: this.form.controls['userName'].value,
-      password:this.form.controls['password'].value,
-      firstName:this.form.controls['firstName'].value,
-      lastName:this.form.controls['lastName'].value,
-      phoneNumber:this.form.controls['phoneNumber'].value,
-      address:this.form.controls['address'].value,
-      email:this.form.controls['email'].value,
+      password: this.form.controls['password'].value,
+      firstName: this.form.controls['firstName'].value,
+      lastName: this.form.controls['lastName'].value,
+      phoneNumber: this.form.controls['phoneNumber'].value,
+      address: this.form.controls['address'].value,
+      email: this.form.controls['email'].value,
     };
 
     this.userService.createUser(newUser).subscribe({
       next: (res) => {
-        console.log(res)
-        this.router.navigate(['/users'])
+        console.log(res);
+        this.router.navigate(['/user-list']);
       },
       error: (err) => {
         this.errorMessages = [
-          {severity: 'error', summary:'Error', detail: err.message}
-        ]
-        console.log(`Node.js server error; httpCode: ${err.httpCode};message:${err.message}`)
+          { severity: 'error', summary: 'Error', detail: err.message },
+        ];
+        console.log(
+          `Node.js server error; httpCode: ${err.httpCode};message:${err.message}`
+        );
         console.log(err);
-      }
-    })
+      },
+    });
   }
 
   cancel(): void {
     this.router.navigate(['/users']);
   }
- }
+}
