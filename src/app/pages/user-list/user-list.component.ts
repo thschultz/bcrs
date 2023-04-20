@@ -34,9 +34,27 @@ export class UserListComponent implements OnInit {
       header: 'Confirmation',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
-        this.userService.deleteUser(userId).subscribe
+        this.userService.deleteUser(userId).subscribe({
+          next: (res) => {
+            console.log('User deleted successfully');
+            this.users = this.users.filter(user => user._id !== userId)
+          },
+          error: (e) => {
+            console.log(e);
+          }
+        })
+      },
+      reject: (type: any) => {
+        switch(type) {
+          case ConfirmEventType.REJECT:
+            console.log('User rejected this operation');
+            break;
+          case ConfirmEventType.CANCEL:
+            console.log('User canceled this operation');
+            break;
+        }
       }
-    })
+    });
   }
 
 }
