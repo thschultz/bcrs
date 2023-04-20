@@ -24,7 +24,7 @@ const myFile = 'services-routes.js';
 const ajv = new Ajv();
 addFormats(ajv);
 
-// Schema for validation
+// Schema for  create and update validation
 const serviceSchema = {
   type: 'object',
   properties: {
@@ -44,6 +44,11 @@ const disabledSchema = {
   required: ['isDisabled'],
   additionalProperties: false
 }
+
+
+/**
+ * API: http://localhost:3000/api/services
+ */
 
 
 /**
@@ -415,7 +420,7 @@ router.delete('/:id', async (req, res) => {
 
         // Successfully saves the disabled status
         console.log(savedService);
-        const savedServiceResponse = new BaseResponse(200, 'Successful Query', savedService);
+        const savedServiceResponse = new BaseResponse(204, 'Successful Query', savedService);
         debugLogger({ filename: myFile, message: savedService });
         res.json(savedServiceResponse.toObject());
       })
