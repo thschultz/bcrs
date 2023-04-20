@@ -1208,3 +1208,32 @@
   selectedSecurityQuestions: [],
   __v: 0
 }
+[4/20/2023, 1:47:45 AM] server	 users-routes.js - {
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440924a773327e3f77e7134") },
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+},{
+  _id: new ObjectId("6440c9ae3c98e2d36a50236e"),
+  userName: 'Eric23',
+  password: '$2a$10$UoOxp2cLikRrBBQgadhTUOvNjfYjuJyIiyXXqBtJ6UcEo/ltXw3gW',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '123-456-7890',
+  address: '1234 Authority st. South Park, Colorado 12345',
+  email: 'eric@southpark.tv',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440c9ae3c98e2d36a50236f") },
+  dateCreated: 2023-04-20T05:12:11.773Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
