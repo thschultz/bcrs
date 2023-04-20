@@ -82,6 +82,6 @@ export class UserCreateComponent implements OnInit {
   }
 
   cancel(): void {
-    this.router.navigate(['/users']);
+    this.router.navigate(['/user-list']);
   }
 }
