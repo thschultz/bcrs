@@ -28,7 +28,7 @@ export class UserCreateComponent implements OnInit {
   });
 
   user: User;
-  userId: string:
+  userId: string;
   errorMessages: Message[] = [];
 
   constructor(private fb: FormBuilder, private router: Router, private userService: UserService) {
