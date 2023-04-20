@@ -4,11 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class UserServiceService {
-
-  constructor(private http: HttpClient) { }
+export class UserService {
+  constructor(private http: HttpClient) {}
 
   findAllUsers(): Observable<any> {
     return this.http.get('/api/users-routes');
@@ -26,8 +25,8 @@ export class UserServiceService {
       lastName: user.lastName,
       phoneNumber: user.phoneNumber,
       address: user.address,
-      email: user.email
-    })
+      email: user.email,
+    });
   }
 
   updateUser(userId: string, user: User): Observable<any> {
@@ -36,8 +35,8 @@ export class UserServiceService {
       lastName: user.lastName,
       phoneNumber: user.phoneNumber,
       address: user.address,
-      email: user.email
-    })
+      email: user.email,
+    });
   }
 
   deleteUser(userId: string): Observable<any> {
