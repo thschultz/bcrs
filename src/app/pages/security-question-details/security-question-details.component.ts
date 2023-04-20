@@ -16,7 +16,7 @@ export class SecurityQuestionDetailsComponent implements OnInit {
   questionId: string;
   errorMessages: Message[];
 
-  editForm: FormGroup this.fb.group({
+  editForm: FormGroup = this.fb.group({
     text: [null, Validators.compose([Validators.required])]
   });
 
@@ -44,7 +44,7 @@ save(): void {
   const updateSecurityQuestion: SecurityQuestion = {
     text: this.editForm.controls['text'].value
   }
-      this.securityQuestionService.updateSecurityQuestion(this.questionId, updatedSecurityQuestion).subscribe({
+      this.securityQuestionService.updateSecurityQuestion(this.questionId, updateSecurityQuestion).subscribe({
     next: (res) => {
       this.router.navigate(['/security-questions']);
     },

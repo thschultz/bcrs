@@ -28,19 +28,17 @@ const routes: Routes = [
       {
         path: '',
         component: HomeComponent,
-        canActivate: [AuthGuard]
       },
       {
         path: 'about',
         component: AboutComponent,
-        canActivate: [AuthGuard]
       },
       {
         path: 'contact',
         component: ContactComponent,
-        canActivate: [AuthGuard]
       }
-    ]
+    ],
+    canActivate: [AuthGuard]
   },
   {
     path: 'session',

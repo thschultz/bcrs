@@ -28,4 +28,15 @@ export class UserListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  delete(userId: string) {
+    this.confirmationService.confirm({
+      message: 'Are you sure that you want to delete this record?',
+      header: 'Confirmation',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        this.userService.deleteUser(userId).subscribe
+      }
+    })
+  }
+
 }
