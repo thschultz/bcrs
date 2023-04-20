@@ -35,18 +35,13 @@ const serviceSchema = {
   additionalProperties: false
 }
 
-// Schema for validation
-const serviceUpdateSchema = {
+// Schema for disabled validation
+const disabledSchema = {
   type: 'object',
   properties: {
-    serviceName: {type: 'string'},
-    price: {type: 'number'},
-    dateModified: {type: 'object'},
-    _id: {type: 'string'},
-    dateCreated: {type: 'object'},
-    isDisabled: {type: 'boolean'}
+    isDisabled: {type: 'boolean'},
   },
-  required: ['serviceName', 'price', 'dateModified'/*, '_id', 'dateCreated', 'isDisabled'*/],
+  required: ['isDisabled'],
   additionalProperties: false
 }
 
@@ -293,17 +288,12 @@ router.put("/:id", async (req, res) => {
         return
       }
 
-      // If service is found, sets the service fields to be updated
-      console.log(service);
-      service.set({
-        serviceName: req.body.serviceName,
-        price: req.body.price,
-        dateModified: new Date(),
-      });
-
       // Checks current request body against the schema
-      const validator = ajv.compile(serviceUpdateSchema);
-      const valid = validator(service)
+      const validator = ajv.compile(serviceSchema);
+      const valid = validator({
+        serviceName: req.body.serviceName,
+        price: req.body.price
+      })
 
       // If invalid return 400 Error
       if (!valid) {
@@ -313,6 +303,14 @@ router.put("/:id", async (req, res) => {
         res.status(400).send(createServiceError.toObject());
         return
       }
+
+      // If service is found, sets the service fields to be updated
+      console.log(service);
+      service.set({
+        serviceName: req.body.serviceName,
+        price: req.body.price,
+        dateModified: new Date(),
+      });
 
       service.save(function (err, savedService) {
 
@@ -380,6 +378,21 @@ router.delete('/:id', async (req, res) => {
         const deleteServiceError = new ErrorResponse(500, 'Internal server error', err.message);
         errorLogger({ filename: myFile, message: "Internal server error" });
         res.status(500).send(deleteServiceError.toObject());
+        return
+      }
+
+      // Checks current request body against the schema
+      const validator = ajv.compile(disabledSchema);
+      const valid = validator({
+        isDisabled: req.body.isDisabled
+      })
+
+      // If invalid return 400 Error
+      if (!valid) {
+        console.log('Bad Request, unable to validate');
+        const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
+        errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+        res.status(400).send(createServiceError.toObject());
         return
       }
 
