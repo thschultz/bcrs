@@ -24,7 +24,7 @@ const myFile = 'services-routes.js';
 const ajv = new Ajv();
 addFormats(ajv);
 
-// Schema for validation
+// Schema for  create and update validation
 const serviceSchema = {
   type: 'object',
   properties: {
@@ -35,19 +35,20 @@ const serviceSchema = {
   additionalProperties: false
 }
 
-const serviceUpdateSchema = {
+// Schema for disabled validation
+const disabledSchema = {
   type: 'object',
   properties: {
-    serviceName: {type: 'string'},
-    price: {type: 'number'},
-    dateModified: {type: 'object'},
-    _id: {type: 'string'},
-    dateCreated: {type: 'object'},
-    isDisabled: {type: 'boolean'}
+    isDisabled: {type: 'boolean'},
   },
-  required: ['serviceName', 'price', 'dateModified', '_id', 'dateCreated', 'isDisabled'],
+  required: ['isDisabled'],
   additionalProperties: false
 }
+
+
+/**
+ * API: http://localhost:3000/api/services
+ */
 
 
 /**
@@ -292,17 +293,12 @@ router.put("/:id", async (req, res) => {
         return
       }
 
-      // If service is found, sets the service fields to be updated
-      console.log(service);
-      service.set({
-        serviceName: req.body.serviceName,
-        price: req.body.price,
-        dateModified: new Date(),
-      });
-
       // Checks current request body against the schema
-      const validator = ajv.compile(serviceUpdateSchema);
-      const valid = validator(service)
+      const validator = ajv.compile(serviceSchema);
+      const valid = validator({
+        serviceName: req.body.serviceName,
+        price: req.body.price
+      })
 
       // If invalid return 400 Error
       if (!valid) {
@@ -312,6 +308,14 @@ router.put("/:id", async (req, res) => {
         res.status(400).send(createServiceError.toObject());
         return
       }
+
+      // If service is found, sets the service fields to be updated
+      console.log(service);
+      service.set({
+        serviceName: req.body.serviceName,
+        price: req.body.price,
+        dateModified: new Date(),
+      });
 
       service.save(function (err, savedService) {
 
@@ -326,7 +330,7 @@ router.put("/:id", async (req, res) => {
 
         // Successfully updates the service
         console.log(savedService);
-        const savedServiceResponse = new BaseResponse(200, "Query successful", savedService);
+        const savedServiceResponse = new BaseResponse(204, "Query successful", savedService);
         debugLogger({ filename: myFile, message: savedService });
         res.json(savedServiceResponse.toObject());
       })
@@ -382,6 +386,21 @@ router.delete('/:id', async (req, res) => {
         return
       }
 
+      // Checks current request body against the schema
+      const validator = ajv.compile(disabledSchema);
+      const valid = validator({
+        isDisabled: req.body.isDisabled
+      })
+
+      // If invalid return 400 Error
+      if (!valid) {
+        console.log('Bad Request, unable to validate');
+        const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
+        errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+        res.status(400).send(createServiceError.toObject());
+        return
+      }
+
       // sets disabled status instead of deleting the record
       console.log(service);
       service.set({
@@ -401,7 +420,7 @@ router.delete('/:id', async (req, res) => {
 
         // Successfully saves the disabled status
         console.log(savedService);
-        const savedServiceResponse = new BaseResponse(200, 'Successful Query', savedService);
+        const savedServiceResponse = new BaseResponse(204, 'Successful Query', savedService);
         debugLogger({ filename: myFile, message: savedService });
         res.json(savedServiceResponse.toObject());
       })

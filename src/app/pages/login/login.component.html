@@ -16,11 +16,17 @@
     </mat-card-header>
     <hr />
     <mat-card-content class="login-content">
+      <!-- Display error messages-->
+      <p-messages
+        [(value)]="errorMessages"
+        [enableService]="false"
+      ></p-messages>
       <mat-card class="input-area mat-elevation-z0">
         <form [formGroup]="loginForm" (ngSubmit)="login(); loginForm.reset()">
           <mat-card-content>
             <mat-form-field appearance="standard">
               <input
+                type="text"
                 matInput
                 formControlName="userName"
                 placeholder="   Username"
@@ -35,19 +41,12 @@
               >
                 Username is a required field.
               </mat-error>
-
-              <mat-error
-                *ngIf="
-                  loginForm.controls['userName'].hasError('pattern') &&
-                  loginForm.controls['userName'].touched
-                "
-              >
-                Username is not valid.
-              </mat-error>
             </mat-form-field>
+
             <mat-form-field appearance="standard">
               <input
                 matInput
+                type="password"
                 formControlName="password"
                 placeholder="   Password"
               />
@@ -66,7 +65,8 @@
                   loginForm.controls['password'].touched
                 "
               >
-                Password is not valid.
+                Password must be at least 8 characters, contain one letter, and
+                one number.
               </mat-error>
             </mat-form-field>
           </mat-card-content>

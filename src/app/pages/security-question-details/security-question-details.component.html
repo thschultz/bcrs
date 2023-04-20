@@ -1,0 +1,31 @@
+<div fxLayout="column">
+  <mat-card class="mat-elevation-z0">
+    <mat-card-title>Update Security Question Form</mat-card-title>
+    <mat-card-subtitle>Fields marked with an asterisk (*) are required</mat-card-subtitle>
+    <br>
+
+    <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
+
+    <form [formGroup]="editForm" (ngSubmit)="save(); editForm.reset();">
+      <mat-card-content>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Security question</mat-label>
+            <input type="text">
+
+            <mat-error class="error"
+              *ngIf="editForm.controls.['text'].hasError('required') && editForm.controls.['text'].touched">
+              Security question is a required field
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+
+      <br />
+      <mat-card-actions>
+        <button mat-raised-button (click)="cancel()">Cancel</button>
+        <button mat-raised-button (click)="save()">Save</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>
