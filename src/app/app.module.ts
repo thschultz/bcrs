@@ -24,6 +24,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ServerErrorComponent } from './pages/server-error/server-error.component';
 import { LoginComponent } from './pages/login/login.component';
+import { SecurityQuestionDetailsComponent } from './pages/security-question-details/security-question-details.component';
 
 // Angular Materials
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -49,6 +50,11 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { SecurityQuestionListComponent } from './pages/security-question-list/security-question-list.component';
+import { UserCreateComponent } from './pages/user-create/user-create.component';
+import { UserDetailsComponent } from './pages/user-details/user-details.component';
+import { UserListComponent } from './pages/user-list/user-list.component';
+
 
 @NgModule({
   declarations: [
@@ -61,7 +67,13 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ContactComponent,
     NotFoundComponent,
     ServerErrorComponent,
-    LoginComponent
+    LoginComponent,
+    SecurityQuestionDetailsComponent,
+    SecurityQuestionListComponent,
+    UserCreateComponent,
+    UserDetailsComponent,
+    UserListComponent,
+
   ],
   imports: [
     BrowserModule,
