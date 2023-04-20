@@ -19,9 +19,11 @@ import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component'
 import { LoginComponent } from './pages/login/login.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ServerErrorComponent } from './pages/server-error/server-error.component';
+import { SecurityQuestionListComponent } from './pages/security-question-list/security-question-list.component';
 import { SecurityQuestionDetailsComponent } from './pages/security-question-details/security-question-details.component';
 import { UserListComponent } from './pages/user-list/user-list.component';
 import { UserCreateComponent } from './pages/user-create/user-create.component';
+import { UserDetailsComponent } from './pages/user-details/user-details.component';
 
 const routes: Routes = [
   {
@@ -37,12 +39,20 @@ const routes: Routes = [
         component: AboutComponent,
       },
       {
+        path: 'users/:userId',
+        component: UserDetailsComponent
+      },
+      {
         path: 'user-create',
         component: UserCreateComponent,
       },
       {
         path: 'user-list',
         component: UserListComponent,
+      },
+      {
+        path: 'security-questions',
+        component: SecurityQuestionListComponent,
       },
       {
         path: 'contact',
@@ -68,6 +78,14 @@ const routes: Routes = [
         component: ServerErrorComponent,
       },
       {
+        path: 'users/:userId',
+        component: UserDetailsComponent,
+      },
+      {
+        path: 'security-questions',
+        component: SecurityQuestionListComponent,
+      },
+      {
         path: 'security-questions/:questionId',
         component: SecurityQuestionDetailsComponent,
       },
@@ -91,4 +109,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
