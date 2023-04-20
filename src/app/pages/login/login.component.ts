@@ -33,11 +33,14 @@ export class LoginComponent implements OnInit {
     ],
   });
 
+  errorMessages: Message[] = [];
+
   constructor(
     private router: Router,
     private fb: FormBuilder,
     private cookieService: CookieService,
-    private sessionService: SessionService
+    private sessionService: SessionService,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {}
@@ -60,6 +63,7 @@ export class LoginComponent implements OnInit {
       },
     });
   }
+
   createAccount() {}
   passwordReset() {}
 }
