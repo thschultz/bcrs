@@ -31,6 +31,6 @@ export class BaseLayoutComponent implements OnInit {
 
   logout() {
     this.cookieService.deleteAll();
-    this.router.navigate(['/session.login']);
+    this.router.navigate(['/session/login']);
   }
 }
