@@ -7,14 +7,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   findAllUsers(): Observable<any> {
     return this.http.get('/api/users');
   }
 
   findUserById(userId: string): Observable<any> {
-    return this.http.get('/api/users-routes' + userId);
+    return this.http.get('/api/users/' + userId);
   }
 
   createUser(user: User): Observable<any> {
@@ -30,7 +30,7 @@ export class UserService {
   }
 
   updateUser(userId: string, user: User): Observable<any> {
-    return this.http.put('/api/users-routes/' + userId, {
+    return this.http.put('/api/users/' + userId, {
       firstName: user.firstName,
       lastName: user.lastName,
       phoneNumber: user.phoneNumber,
@@ -40,6 +40,6 @@ export class UserService {
   }
 
   deleteUser(userId: string): Observable<any> {
-    return this.http.delete('/api/users-routes' + userId);
+    return this.http.delete('/api/users/' + userId);
   }
 }
