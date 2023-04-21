@@ -15,7 +15,7 @@ export class SecurityQuestionService {
   }
 
   findSecurityQuestionById(questionId: string): Observable<any> {
-    return this.http.get('/api/security' + questionId);
+    return this.http.get('/api/security/' + questionId);
   }
 
   createSecurityQuestion(newSecurityQuestion: SecurityQuestion): Observable<any> {
@@ -25,12 +25,12 @@ export class SecurityQuestionService {
   }
 
   updateSecurityQuestion(questionId: string, updateSecurityQuestion: SecurityQuestion): Observable<any> {
-    return this.http.put('/api/security' + questionId, {
+    return this.http.put('/api/security/' + questionId, {
       text: updateSecurityQuestion.text
     })
   }
 
   deleteSecurityQuestion(questionId: string): Observable<any> {
-    return this.http.delete('/api/security' + questionId);
+    return this.http.delete('/api/security/' + questionId);
   }
 }

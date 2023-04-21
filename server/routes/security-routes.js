@@ -398,10 +398,10 @@ router.delete("/:id", async (req, res) => {
         } else {
 
           // Checks current request body against the schema
-          const validator = ajv.compile(disabledSchema);
-          const valid = validator({
-            isDisabled: req.body.isDisabled
-          })
+          // const validator = ajv.compile(disabledSchema);
+          // const valid = validator({
+          //   isDisabled: req.body.isDisabled
+          // })
 
           // If invalid return 400 Error
           if (!valid) {

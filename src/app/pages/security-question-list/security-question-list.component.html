@@ -49,14 +49,14 @@
           <tr>
             <td>{{ sq.text }}</td>
             <td style="text-align: center">
-              <button pButton pRipple type="button" routerLink="/security-questions/{{ sq._id }}" icon="pi pi-pencil"
-                class="p-button-rounded p-button-text"></button>
-              <button pButton pRipple type="button" (click)="delete(sq._id)" icon="pi pi-trash"
-                class="p-button-rounded p-button-text"></button>
+              <button mat-button type="button" routerLink="/security-questions/{{ sq._id }}"><i
+                  class="fa-solid fa-pen-to-square"></i></button>
+              <button mat-button type="button" (click)="delete(sq._id)"><i class="fa-regular fa-trash-can"></i>
+              </button>
             </td>
           </tr>
         </ng-template>
       </p-table>
-  </mat-card>
+    </mat-card>
   </div>
 </div>
