@@ -43,21 +43,17 @@
             <td>{{ user.address }}</td>
             <td style="text-align: center">
               <button
-                pButton
-                pRipple
+                mat-button
                 type="button"
-                routerLink="/users/{{ user._id }}"
-                icon="pi pi-pencil"
-                class="p-button-rounded p-button-text"
-              ></button>
+                routerLink="/users/{{ user._id }}">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
               <button
-                pButton
-                pRipple
+                mat-button
                 type="button"
-                (click)="delete(user._id)"
-                icon="pi pi-trash"
-                class="p-button-rounded p-button-text"
-              ></button>
+                (click)="delete(user._id)">
+                <i class="fa-regular fa-trash-can"></i>
+            </button>
             </td>
           </tr>
         </ng-template>
