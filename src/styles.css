@@ -30,7 +30,8 @@ body {
 .page-header {
   color: #fff;
   text-align: center;
-  font-size: 48px;
+  font-size: 40px!important;
+  line-height: 1.25!important;
 }
 
 .text-center {
@@ -38,7 +39,7 @@ body {
 }
 
 .subtitle {
-  font-size:smaller
+  font-size: 24px!important;
 }
 
 .p-20 {

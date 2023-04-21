@@ -74,7 +74,7 @@ export class UserDetailsComponent implements OnInit {
     })
   }
   cancel(): void {
-    this.router.navigate(['/users-routes'])
+    this.router.navigate(['/user-list'])
   }
 
 }
