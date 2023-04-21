@@ -6,19 +6,22 @@
  * Last Modified by: Walter McCue
  * Last Modification Date: 04/16/23
  * Description: angular routing for the bcrs project
-*/
+ */
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BaseLayoutComponent } from "./shared/base-layout/base-layout.component";
-import { HomeComponent } from "./pages/home/home.component";
+import { AuthGuard } from './auth.guard';
+import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
+import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ServerErrorComponent } from './pages/server-error/server-error.component';
-import { AuthGuard } from './auth.guard';
+import { SecurityQuestionDetailsComponent } from './pages/security-question-details/security-question-details.component';
+import { UserListComponent } from './pages/user-list/user-list.component';
+import { UserCreateComponent } from './pages/user-create/user-create.component';
 
 const routes: Routes = [
   {
@@ -28,19 +31,25 @@ const routes: Routes = [
       {
         path: '',
         component: HomeComponent,
-        canActivate: [AuthGuard]
       },
       {
         path: 'about',
         component: AboutComponent,
-        canActivate: [AuthGuard]
+      },
+      {
+        path: 'user-create',
+        component: UserCreateComponent,
+      },
+      {
+        path: 'user-list',
+        component: UserListComponent,
       },
       {
         path: 'contact',
         component: ContactComponent,
-        canActivate: [AuthGuard]
-      }
-    ]
+      },
+    ],
+    canActivate: [AuthGuard],
   },
   {
     path: 'session',
@@ -48,27 +57,38 @@ const routes: Routes = [
     children: [
       {
         path: 'login',
-        component: LoginComponent
+        component: LoginComponent,
       },
       {
         path: 'not-found',
-        component: NotFoundComponent
+        component: NotFoundComponent,
       },
       {
         path: 'server-error',
-        component: ServerErrorComponent
-      }
-    ]
+        component: ServerErrorComponent,
+      },
+      {
+        path: 'security-questions/:questionId',
+        component: SecurityQuestionDetailsComponent,
+      },
+    ],
   },
   // Unexpected URL values will redirect users to the 404 error page
   {
     path: '**',
-    redirectTo: 'session/not-found'
-  }
+    redirectTo: 'session/not-found',
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true, enableTracing: false, scrollPositionRestoration: 'enabled', relativeLinkResolution: 'legacy'})],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {
+      useHash: true,
+      enableTracing: false,
+      scrollPositionRestoration: 'enabled',
+      relativeLinkResolution: 'legacy',
+    }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

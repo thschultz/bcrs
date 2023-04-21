@@ -10,7 +10,7 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   findAllUsers(): Observable<any> {
-    return this.http.get('/api/users-routes');
+    return this.http.get('/api/users');
   }
 
   findUserById(userId: string): Observable<any> {
@@ -18,7 +18,7 @@ export class UserService {
   }
 
   createUser(user: User): Observable<any> {
-    return this.http.post('/api/users-routes/', {
+    return this.http.post('/api/users', {
       userName: user.userName,
       password: user.password,
       firstName: user.firstName,

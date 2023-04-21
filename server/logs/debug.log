@@ -1048,6 +1048,7 @@
 >>>>>>> dd0ce886f665d1e1d23d6c53d280f274315b7695
   __v: 0
 }
+<<<<<<< HEAD
 [4/19/2023, 7:43:53 PM] server	 users-routes.js - {
   _id: new ObjectId("643e2689f0a7052a84f68f8c"),
   userName: 'testUser',
@@ -1069,6 +1070,66 @@
   ],
   address: '28201 E. Bonanza st. South Park, Colorado 15129'
 },{
+=======
+[4/20/2023, 1:05:47 AM] server	 users-routes.js - {
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440924a773327e3f77e7134") },
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+},{
+  _id: new ObjectId("6440c523bc04234e7b1c4bf0"),
+  userName: 'dsfafads',
+  password: '$2a$10$1pAUZvD02V32lE/ZTcYt9.GJ/H8RFKYAlfhKys/gk8O2n60EaJtAO',
+  firstName: '1212133asdffas',
+  lastName: 'dfasfdasf',
+  phoneNumber: 'dsfafads',
+  address: 'dsafasdfas',
+  email: 'asfasd@dsaf.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440c523bc04234e7b1c4bf1") },
+  dateCreated: 2023-04-20T04:51:21.680Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/20/2023, 1:05:48 AM] server	 users-routes.js - {
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440924a773327e3f77e7134") },
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+},{
+  _id: new ObjectId("6440c523bc04234e7b1c4bf0"),
+  userName: 'dsfafads',
+  password: '$2a$10$1pAUZvD02V32lE/ZTcYt9.GJ/H8RFKYAlfhKys/gk8O2n60EaJtAO',
+  firstName: '1212133asdffas',
+  lastName: 'dfasfdasf',
+  phoneNumber: 'dsfafads',
+  address: 'dsafasdfas',
+  email: 'asfasd@dsaf.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440c523bc04234e7b1c4bf1") },
+  dateCreated: 2023-04-20T04:51:21.680Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/20/2023, 1:07:52 AM] server	 users-routes.js - {
   _id: new ObjectId("6440924a773327e3f77e7133"),
   userName: 'testUser1',
   password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
@@ -1083,7 +1144,7 @@
   selectedSecurityQuestions: [],
   __v: 0
 }
-[4/19/2023, 7:47:50 PM] server	 users-routes.js - {
+[4/20/2023, 1:12:15 AM] server	 users-routes.js - {
   _id: new ObjectId("6440924a773327e3f77e7133"),
   userName: 'testUser1',
   password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
@@ -1097,6 +1158,100 @@
   dateCreated: 2023-04-20T01:06:14.129Z,
   selectedSecurityQuestions: [],
   __v: 0
+},{
+  _id: new ObjectId("6440c9ae3c98e2d36a50236e"),
+  userName: 'Eric23',
+  password: '$2a$10$UoOxp2cLikRrBBQgadhTUOvNjfYjuJyIiyXXqBtJ6UcEo/ltXw3gW',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '123-456-7890',
+  address: '1234 Authority st. South Park, Colorado 12345',
+  email: 'eric@southpark.tv',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440c9ae3c98e2d36a50236f") },
+  dateCreated: 2023-04-20T05:12:11.773Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/20/2023, 1:13:11 AM] server	 users-routes.js - {
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440924a773327e3f77e7134") },
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+},{
+  _id: new ObjectId("6440c9ae3c98e2d36a50236e"),
+  userName: 'Eric23',
+  password: '$2a$10$UoOxp2cLikRrBBQgadhTUOvNjfYjuJyIiyXXqBtJ6UcEo/ltXw3gW',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '123-456-7890',
+  address: '1234 Authority st. South Park, Colorado 12345',
+  email: 'eric@southpark.tv',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440c9ae3c98e2d36a50236f") },
+  dateCreated: 2023-04-20T05:12:11.773Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/20/2023, 1:41:56 AM] server	 users-routes.js - {
+>>>>>>> 837e591272c9c0fe0c1f02f404c4c65038efe487
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440924a773327e3f77e7134") },
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+<<<<<<< HEAD
+}
+[4/19/2023, 7:47:50 PM] server	 users-routes.js - {
+=======
+},{
+  _id: new ObjectId("6440c9ae3c98e2d36a50236e"),
+  userName: 'Eric23',
+  password: '$2a$10$UoOxp2cLikRrBBQgadhTUOvNjfYjuJyIiyXXqBtJ6UcEo/ltXw3gW',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '123-456-7890',
+  address: '1234 Authority st. South Park, Colorado 12345',
+  email: 'eric@southpark.tv',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440c9ae3c98e2d36a50236f") },
+  dateCreated: 2023-04-20T05:12:11.773Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/20/2023, 1:47:45 AM] server	 users-routes.js - {
+>>>>>>> 837e591272c9c0fe0c1f02f404c4c65038efe487
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440924a773327e3f77e7134") },
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+<<<<<<< HEAD
 }
 [4/19/2023, 7:48:26 PM] server	 users-routes.js - {
   _id: new ObjectId("6440924a773327e3f77e7133"),
@@ -1125,6 +1280,20 @@
   isDisabled: false,
   role: { text: 'standard', _id: new ObjectId("6440924a773327e3f77e7134") },
   dateCreated: 2023-04-20T01:06:14.129Z,
+=======
+},{
+  _id: new ObjectId("6440c9ae3c98e2d36a50236e"),
+  userName: 'Eric23',
+  password: '$2a$10$UoOxp2cLikRrBBQgadhTUOvNjfYjuJyIiyXXqBtJ6UcEo/ltXw3gW',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '123-456-7890',
+  address: '1234 Authority st. South Park, Colorado 12345',
+  email: 'eric@southpark.tv',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440c9ae3c98e2d36a50236f") },
+  dateCreated: 2023-04-20T05:12:11.773Z,
+>>>>>>> 837e591272c9c0fe0c1f02f404c4c65038efe487
   selectedSecurityQuestions: [],
   __v: 0
 }

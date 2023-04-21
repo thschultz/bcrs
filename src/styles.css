@@ -37,6 +37,10 @@ body {
   text-align: center;
 }
 
+.subtitle {
+  font-size:smaller
+}
+
 .p-20 {
   padding: 20px;
 }
