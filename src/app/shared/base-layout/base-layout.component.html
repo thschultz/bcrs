@@ -33,13 +33,44 @@
           <mat-icon class="profile-btn">perm_identity</mat-icon>
         </button>
         <mat-menu #profileMenu class="accent-color p-20">
-          <p style="padding: 10px; font-size: 18px; font-weight: bolder">
+          <p style="padding: 10px; font-size: 18px;">
             Signed in as
             <span style="font-weight: normal">{{ userName }}</span>
           </p>
+
+          <div class="configurations">
+
+            <p style="font-weight: bolder;">Configurations:</p>
+              <button mat-button routerLink="user-list" class="">
+                USERS
+              </button>
+              <button mat-button routerLink="security-questions" class="">
+                SECURTIY QUESTIONS
+              </button>
+              <!--
+              <button mat-button routerLink="roles" class="">
+                ROLES
+              </button>
+              <button mat-button routerLink="services" class="">
+                SERVICES
+              </button>
+              -->
+
+          </div>
+
+          <!--
+          <div class="purchases">
+
+            <p style="font-weight: bolder;">Reports:</p>
+              <button mat-button routerLink="purchases">
+                PURCHASES BY SERVICE
+              </button>
+
+          </div>
+          -->
           <button mat-menu-item  (click)="logout()">
-            <mat-icon>logout</mat-icon>
-            <span style="font-size: 16px; font-weight: bolder">Log out</span>
+            <mat-icon style="color: #000;">logout</mat-icon>
+            <span style="font-size: 16px; color: #000;">Log out</span>
           </button>
         </mat-menu>
       </div>

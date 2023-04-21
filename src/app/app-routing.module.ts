@@ -39,6 +39,10 @@ const routes: Routes = [
         component: AboutComponent,
       },
       {
+        path: 'contact',
+        component: ContactComponent,
+      },
+      {
         path: 'users/:userId',
         component: UserDetailsComponent
       },
@@ -55,8 +59,8 @@ const routes: Routes = [
         component: SecurityQuestionListComponent,
       },
       {
-        path: 'contact',
-        component: ContactComponent,
+        path: 'security-questions/:questionId',
+        component: SecurityQuestionDetailsComponent,
       },
     ],
     canActivate: [AuthGuard],
@@ -77,17 +81,10 @@ const routes: Routes = [
         path: 'server-error',
         component: ServerErrorComponent,
       },
-      {
-        path: 'users/:userId',
-        component: UserDetailsComponent,
-      },
+
       {
         path: 'security-questions',
         component: SecurityQuestionListComponent,
-      },
-      {
-        path: 'security-questions/:questionId',
-        component: SecurityQuestionDetailsComponent,
       },
     ],
   },
