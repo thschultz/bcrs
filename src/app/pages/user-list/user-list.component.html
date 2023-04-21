@@ -22,7 +22,7 @@
   <!-- Table Data -->
   <div fxFlex class="p-20">
     <mat-card>
-      <p-table [value]="users" responsiveLayout="scroll">
+      <p-table [value]="users" responsiveLayout="scroll" class="api-table">
         <ng-template pTemplate="header">
           <tr>
             <th>First Name</th>
@@ -36,11 +36,11 @@
 
         <ng-template pTemplate="body" let-user>
           <tr>
-            <td>{{ user.firstName }}</td>
-            <td>{{ user.lastName }}</td>
-            <td>{{ user.phoneNumber }}</td>
-            <td>{{ user.email }}</td>
-            <td>{{ user.address }}</td>
+            <td data-cell="first name">{{ user.firstName }}</td>
+            <td data-cell="last name">{{ user.lastName }}</td>
+            <td data-cell="phone number">{{ user.phoneNumber }}</td>
+            <td data-cell="email">{{ user.email }}</td>
+            <td data-cell="address">{{ user.address }}</td>
             <td style="text-align: center">
               <button
                 mat-button
