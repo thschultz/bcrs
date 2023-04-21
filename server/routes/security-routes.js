@@ -387,7 +387,7 @@ router.put("/:id", async (req, res) => {
 
 
 // deleteSecurity
-router.delete("/:id", async (req, res) => {
+router.delete('/:id', async (req, res) => {
   // find a security question by _id and delete it, or return an error message
   try {
     SecurityQuestion.findOne({'_id': req.params.id },function (err, securityQuestion) {
@@ -397,6 +397,10 @@ router.delete("/:id", async (req, res) => {
           res.status(500).send(deleteByIdMongoDBErrorResponse.toObject());
         } else {
 
+          console.log(securityQuestion)
+          securityQuestion.set({
+            isDisabled: true,
+          });
           // Checks current request body against the schema
           // const validator = ajv.compile(disabledSchema);
           // const valid = validator({
@@ -404,18 +408,13 @@ router.delete("/:id", async (req, res) => {
           // })
 
           // If invalid return 400 Error
-          if (!valid) {
-            console.log('Bad Request, unable to validate');
-            const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
-            errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
-            res.status(400).send(createServiceError.toObject());
-            return
-          }
-
-          console.log(securityQuestion)
-          securityQuestion.set({
-            isDisabled: true,
-          });
+          // if (!valid) {
+          //   console.log('Bad Request, unable to validate');
+          //   const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
+          //   errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+          //   res.status(400).send(createServiceError.toObject());
+          //   return
+          // }
 
           securityQuestion.save(function (err, savedSecurityQuestion) {
             if (err) {
