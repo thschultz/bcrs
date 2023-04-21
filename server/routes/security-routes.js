@@ -44,7 +44,10 @@ const disabledSchema = {
 }
 
 
-// findAllSecurityQuestions
+/**
+ * API: http://localhost:3000/api/security
+ */
+
 
 /**
  * findAllSecurityQuestions
@@ -66,6 +69,7 @@ const disabledSchema = {
  *         description: server error for all other use cases
  */
 
+// findAllSecurityQuestions
 router.get("/", async (req, res) => {
   try {
     SecurityQuestion.find({})
@@ -104,7 +108,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// findById
+
 /**
  * @openapi
  * /api/security/{id}:
@@ -141,6 +145,8 @@ router.get("/", async (req, res) => {
  *       '500':
  *         description: Server expectations.
  */
+
+// findById
 router.get("/:id", async (req, res) => {
   try {
     SecurityQuestion.findOne(
@@ -176,7 +182,6 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// createSecurityQuestion
 
 /**
  * createSecurityQuestion
@@ -211,6 +216,7 @@ router.get("/:id", async (req, res) => {
  *         description: MongoDB Exception
  */
 
+// createSecurityQuestion
 router.post("/", async (req, res) => {
   try {
     let newSecurityQuestion = {
@@ -266,7 +272,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// updateSecurityQuestions
+
 /**
  * updateSecurityQuestions
  * @openapi
@@ -302,6 +308,8 @@ router.post("/", async (req, res) => {
  *       '404':
  *         description: Not found
  */
+
+// updateSecurityQuestions
 router.put("/:id", async (req, res) => {
   try {
     SecurityQuestion.findOne(
@@ -377,6 +385,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+
 // deleteSecurity
 router.delete("/:id", async (req, res) => {
   // find a security question by _id and delete it, or return an error message
@@ -429,4 +438,5 @@ router.delete("/:id", async (req, res) => {
     res.status(500).send(deleteSecurityQuestionCatchErrorResponse.toObject());
   }
 });
+
 module.exports = router;
