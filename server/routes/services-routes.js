@@ -184,6 +184,8 @@ router.get("/:id", async (req, res) => {
  *     responses:
  *       '200':
  *         description: Service added
+ *       '400':
+ *         description: Bad Request
  *       '500':
  *         description: Server Exception
  */
@@ -273,6 +275,8 @@ router.post('/', async (req, res) => {
  *     responses:
  *       '200':
  *         description: Updated service
+ *       '400':
+ *         description: Bad Request
  *       '500':
  *         description: Server Exception
  */
@@ -366,6 +370,8 @@ router.put("/:id", async (req, res) => {
  *     responses:
  *       '200':
  *         description: Service disabled
+ *       '400':
+ *         description: Bad Request
  *       '500':
  *         description: Server Exception
  */
