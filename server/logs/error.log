@@ -50,3 +50,7 @@
 [4/19/2023, 8:42:55 PM] server	 services-routes.js - Bad Request, unable to validate
 [4/19/2023, 8:58:18 PM] server	 services-routes.js - Bad Request, unable to validate
 [4/20/2023, 8:12:25 PM] server	 session-routes.js - Bad Request, unable to validate
+[4/21/2023, 12:43:31 PM] server	 security-routes.js - Bad Request, unable to validate
+[4/21/2023, 12:50:23 PM] server	 security-routes.js - Bad Request, unable to validate
+[4/21/2023, 12:52:26 PM] server	 security-routes.js - Bad Request, unable to validate
+[4/21/2023, 12:54:38 PM] server	 security-routes.js - Bad Request, unable to validate
