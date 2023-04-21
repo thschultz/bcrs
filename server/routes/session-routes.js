@@ -24,34 +24,94 @@ const myFile = 'session-routes.js';
 const ajv = new Ajv();
 
 // Schema for validation
+const loginSchema = {
+  type: 'object',
+  properties: {
+    userName: {type: 'string'},
+    password: {type: 'string'}
+  },
+  required: ['userName', 'password'],
+  additionalProperties: false
+}
 
-
+// openapi language used to describe the API via swagger
+/**
+ * @openapi
+ * /api/session/login:
+ *   put:
+ *     tags:
+ *       - Session login
+ *     operationId: login
+ *     description: Login with username and password.
+ *     summary: Login with username and password.
+ *     requestBody:
+ *       description: Login with username and password.
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               userName:
+ *                 text:
+ *                   type: string
+ *               password:
+ *                 text:
+ *                   type: string
+ *       required: true
+ *     responses:
+ *       '200':
+ *         description: Login successful.
+ *       '400':
+ *         description: Bad request.
+ *       '404':
+ *         description: Not found.
+ *       '500':
+ *         description: Server expectations.
+ */
 // User Sign-in
 router.post('/login', async(req, res) => {
   try {
+    // checks request body against the schema
+    const validator = ajv.compile(loginSchema);
+    const valid = validator({'userName': req.body.userName, 'password': req.body.password})
+
+    // failed validation
+    if (!valid) {
+      console.log('Bad Request, unable to validate');
+      const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
+      errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+      res.status(400).send(createServiceError.toObject());
+      return
+    }
+
     User.findOne({'userName': req.body.userName}, (err, user) => {
+
+      // return an error response
       if(err) {
         console.log(err);
         const signinMongodbErrorResponse = new ErrorResponse(500, 'Internal server error', err);
+        errorLogger({ filename: myFile, message: "Internal server error" });
         res.status(500).send(signinMongodbErrorResponse.toObject());
       }
       else {
         console.log(user);
 
+        // compare the string password with the hashed password in the database
         if(user) {
           let passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
-          // let passwordIsValid = true;
 
           // valid password
           if(passwordIsValid) {
             console.log('Login successful');
             const signinResponse = new BaseResponse(200, 'Login successful', user);
+            debugLogger({ filename: myFile, message: user });
             res.json(signinResponse.toObject());
           }
           // invalid password
           else {
             console.log(`Invalid password or username: ${user.userName}`);
             const invalidPasswordResponse = new BaseResponse(401, 'Invalid password or username, please try again.', null);
+            errorLogger({ filename: myFile, message: "Invalid password or username" });
             res.status(401).send(invalidPasswordResponse.toObject());
           }
         }
@@ -59,6 +119,7 @@ router.post('/login', async(req, res) => {
         else {
           console.log(`Username: ${req.body.userName} is invalid`);
           const invalidUserNameResponse = new BaseResponse(200, 'Invalid password or username, please try again.', null);
+          errorLogger({ filename: myFile, message: "Invalid password or username" });
           res.status(401).send(invalidUserNameResponse.toObject());
         }
       }
@@ -67,10 +128,9 @@ router.post('/login', async(req, res) => {
   catch (err) {
     console.log(err);
     const signinCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
+    errorLogger({ filename: myFile, message: "Internal server error" });
     res.status(500).send(signinCatchErrorResponse.toObject());
   }
 });
-
-
 
 module.exports = router;

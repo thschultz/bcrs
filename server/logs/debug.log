@@ -1048,3 +1048,83 @@
 >>>>>>> dd0ce886f665d1e1d23d6c53d280f274315b7695
   __v: 0
 }
+[4/19/2023, 7:43:53 PM] server	 users-routes.js - {
+  _id: new ObjectId("643e2689f0a7052a84f68f8c"),
+  userName: 'testUser',
+  password: 'Password01',
+  email: 'eric@cartman.com',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '111-222-3333',
+  dateCreated: 2023-04-18T10:30:48.021Z,
+  dateModified: 2023-04-18T10:30:48.021Z,
+  isDisabled: false,
+  role: { text: 'Admin', _id: new ObjectId("644098d92d5974353e44b5bd") },
+  selectedSecurityQuestions: [
+    {
+      _id: new ObjectId("644098d92d5974353e44b5be"),
+      questionText: 'What is your favorite food?',
+      answerText: 'Sushi'
+    }
+  ],
+  address: '28201 E. Bonanza st. South Park, Colorado 15129'
+},{
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440924a773327e3f77e7134") },
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/19/2023, 7:47:50 PM] server	 users-routes.js - {
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440924a773327e3f77e7134") },
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/19/2023, 7:48:26 PM] server	 users-routes.js - {
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440924a773327e3f77e7134") },
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/20/2023, 8:12:48 PM] server	 session-routes.js - {
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440924a773327e3f77e7134") },
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
