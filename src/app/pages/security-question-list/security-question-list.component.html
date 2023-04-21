@@ -35,26 +35,28 @@
 
 
   <div fxFlex>
-    <p-table [value]="securityQuestions" responsiveLayout="scroll">
-      <ng-template pTemplate="header">
-        <tr>
-          <th>Text
-          </th>
-          <th style="width: 8rem"></th>
-        </tr>
-      </ng-template>
+    <mat-card>
+      <p-table [value]="securityQuestions" responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Text
+            </th>
+            <th style="width: 8rem"></th>
+          </tr>
+        </ng-template>
 
-      <ng-template pTemplate="body" let-sq>
-        <tr>
-          <td>{{ sq.text }}</td>
-          <td style="text-align: center">
-            <button pButton pRipple type="button" routerLink="/security-questions/{{ sq._id }}" icon="pi pi-pencil"
-              class="p-button-rounded p-button-text"></button>
-            <button pButton pRipple type="button" (click)="delete(sq._id)" icon="pi pi-trash"
-              class="p-button-rounded p-button-text"></button>
-          </td>
-        </tr>
-      </ng-template>
-    </p-table>
+        <ng-template pTemplate="body" let-sq>
+          <tr>
+            <td>{{ sq.text }}</td>
+            <td style="text-align: center">
+              <button pButton pRipple type="button" routerLink="/security-questions/{{ sq._id }}" icon="pi pi-pencil"
+                class="p-button-rounded p-button-text"></button>
+              <button pButton pRipple type="button" (click)="delete(sq._id)" icon="pi pi-trash"
+                class="p-button-rounded p-button-text"></button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+  </mat-card>
   </div>
 </div>
