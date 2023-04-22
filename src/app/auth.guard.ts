@@ -32,7 +32,7 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    const sessionUser = this.cookieService.get('sessionUser');
+    const sessionUser = this.cookieService.get('sessionuser');
 
     if (sessionUser) {
       return true;

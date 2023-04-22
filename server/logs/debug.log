@@ -21268,3 +21268,138 @@
   __v: 0,
   dateModified: 2023-04-22T00:29:56.194Z
 }
+[4/22/2023, 12:10:24 AM] server	 session-routes.js - {
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440924a773327e3f77e7134") },
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/22/2023, 12:10:30 AM] server	 session-routes.js - {
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440924a773327e3f77e7134") },
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/22/2023, 12:10:36 AM] server	 session-routes.js - {
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440924a773327e3f77e7134") },
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/22/2023, 12:10:48 AM] server	 session-routes.js - {
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440924a773327e3f77e7134") },
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/22/2023, 12:12:39 AM] server	 session-routes.js - {
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440924a773327e3f77e7134") },
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/22/2023, 12:13:43 AM] server	 session-routes.js - {
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6440924a773327e3f77e7134") },
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/22/2023, 12:17:05 AM] server	 session-routes.js - {
+  _id: new ObjectId("64435faf0cdc58a914211c1d"),
+  userName: 'mccuw008',
+  password: '$2a$10$EKcTPChHuEVo0H/Gg5/4NOWcCO3KmY./mHL9HZ1LocxeQ47/sQ0UK',
+  firstName: 'Walter',
+  lastName: 'McCue',
+  phoneNumber: '555-555-5555',
+  address: '555 Do Not Touch',
+  email: 'mccue@test.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("64435faf0cdc58a914211c1e") },
+  dateCreated: 2023-04-22T04:04:40.182Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/22/2023, 12:18:27 AM] server	 session-routes.js - {
+  _id: new ObjectId("64435faf0cdc58a914211c1d"),
+  userName: 'mccuw008',
+  password: '$2a$10$EKcTPChHuEVo0H/Gg5/4NOWcCO3KmY./mHL9HZ1LocxeQ47/sQ0UK',
+  firstName: 'Walter',
+  lastName: 'McCue',
+  phoneNumber: '555-555-5555',
+  address: '555 Do Not Touch',
+  email: 'mccue@test.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("64435faf0cdc58a914211c1e") },
+  dateCreated: 2023-04-22T04:04:40.182Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/22/2023, 12:19:22 AM] server	 session-routes.js - {
+  _id: new ObjectId("64435faf0cdc58a914211c1d"),
+  userName: 'mccuw008',
+  password: '$2a$10$EKcTPChHuEVo0H/Gg5/4NOWcCO3KmY./mHL9HZ1LocxeQ47/sQ0UK',
+  firstName: 'Walter',
+  lastName: 'McCue',
+  phoneNumber: '555-555-5555',
+  address: '555 Do Not Touch',
+  email: 'mccue@test.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("64435faf0cdc58a914211c1e") },
+  dateCreated: 2023-04-22T04:04:40.182Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}

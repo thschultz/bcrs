@@ -67,3 +67,7 @@
 [4/21/2023, 8:21:17 PM] server	 users-routes.js - Bad Request, unable to validate
 [4/21/2023, 8:21:34 PM] server	 users-routes.js - Bad Request, unable to validate
 [4/21/2023, 8:21:59 PM] server	 users-routes.js - Bad Request, unable to validate
+[4/22/2023, 12:12:01 AM] server	 session-routes.js - Invalid password or username
+[4/22/2023, 12:13:10 AM] server	 session-routes.js - Invalid password or username
+[4/22/2023, 12:13:25 AM] server	 session-routes.js - Invalid password or username
+[4/22/2023, 12:13:53 AM] server	 session-routes.js - Invalid password or username
