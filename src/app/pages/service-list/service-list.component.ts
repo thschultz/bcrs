@@ -29,7 +29,7 @@ export class ServiceListComponent implements OnInit {
 
   serviceForm: FormGroup = this.fb.group({
     serviceName: new FormControl('', [ Validators.required, Validators.minLength(3), Validators.maxLength(50) ]),
-    price: new FormControl('', [ Validators.required, Validators.pattern('\\-?\\d*\\.?\\d{1,2}') ])
+    price: new FormControl('', [ Validators.required, Validators.pattern('\\-?\\d*\\.?\\d{1,2}'), Validators.maxLength(7) ])
   });
 
   constructor(private serviceService: ServiceService, private confirmationService: ConfirmationService, private fb: FormBuilder, private dialog: MatDialog) {
@@ -50,7 +50,8 @@ export class ServiceListComponent implements OnInit {
 
   create(): void {
     const serviceName = this.serviceForm.controls['serviceName'].value;
-    const price = this.serviceForm.controls['price'].value;
+    const inputPrice = this.serviceForm.controls['price'].value;
+    const price = parseFloat(inputPrice);
 
     const newService = {
       serviceName: serviceName,

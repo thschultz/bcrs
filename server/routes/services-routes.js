@@ -391,7 +391,7 @@ router.delete('/:id', async (req, res) => {
         res.status(500).send(deleteServiceError.toObject());
         return
       }
-
+      /*
       // Checks current request body against the schema
       const validator = ajv.compile(disabledSchema);
       const valid = validator({
@@ -406,7 +406,7 @@ router.delete('/:id', async (req, res) => {
         res.status(400).send(createServiceError.toObject());
         return
       }
-
+      */
       // sets disabled status instead of deleting the record
       console.log(service);
       service.set({

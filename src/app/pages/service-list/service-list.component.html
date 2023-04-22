@@ -25,31 +25,44 @@
   </div>
 
   <div fxFlex>
-    <div fxLayout="column" class="pageDesign">
+    <div fxLayout="column">
       <mat-card>
         <form [formGroup]="serviceForm" (ngSubmit)="create(); serviceForm.reset()">
 
-          <mat-form-field appearance="fill" class="w-50">
+          <mat-form-field appearance="fill" class="w-60">
             <mat-label>Service Name</mat-label>
             <input type="text" matInput formControlName="serviceName" required placeholder="Enter a service name..." /><br />
           </mat-form-field>
 
-          <mat-form-field appearance="fill" class="w-30">
+          <mat-form-field appearance="fill" class="w-20">
             <mat-label>Service Price</mat-label>
             <input type="text" matInput formControlName="price" required placeholder="Enter a price..." />
           </mat-form-field>
 
-            <button mat-button type="submit" [disabled]="!serviceForm.valid" class="primary-color">
+            <button mat-button type="submit" [disabled]="!serviceForm.valid" class="primary-color form-button">
               Add Service
             </button>
 
           <mat-error *ngIf="serviceForm.controls['serviceName'].hasError('required') && serviceForm.controls['serviceName'].touched">
             Service Name is a required field.
           </mat-error>
+          <mat-error *ngIf="serviceForm.controls['serviceName'].hasError('minlength') && serviceForm.controls['serviceName'].touched">
+            Service Name must be at least 3 characters.
+          </mat-error>
+          <mat-error *ngIf="serviceForm.controls['serviceName'].hasError('maxlength') && serviceForm.controls['serviceName'].touched">
+            Service Name must be less than 50 characters.
+          </mat-error>
+          
           <mat-error *ngIf="serviceForm.controls['price'].hasError('required') && serviceForm.controls['price'].touched">
             Price is a required field.
           </mat-error>
-          
+          <mat-error *ngIf="serviceForm.controls['price'].hasError('pattern') && serviceForm.controls['price'].touched">
+            Price must be a number up to 2 decimal places.
+          </mat-error>
+          <mat-error *ngIf="serviceForm.controls['price'].hasError('maxlength') && serviceForm.controls['price'].touched">
+            We cannot charge our customers that. Please adjust the price to a more affordable level (under 8 characters).
+          </mat-error>
+
         </form>
       </mat-card>
     </div>
@@ -73,7 +86,7 @@
             <td>{{ service.serviceName }}</td>
             <td>{{ service.price }}</td>
             <td style="text-align: center">
-              <button mat-button type="button" routerLink="/security-questions/{{ service._id }}">
+              <button mat-button type="button" routerLink="/service-list/{{ service._id }}">
                 <i class="fa-solid fa-pen-to-square"></i>
               </button>
               <button mat-button type="button" (click)="delete(service._id)">
