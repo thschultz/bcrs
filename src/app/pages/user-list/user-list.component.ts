@@ -57,7 +57,7 @@ export class UserListComponent implements OnInit {
                 {
                   severity: 'success',
                   summary: 'Success',
-                  detail: 'Task Deleted Successfully'
+                  detail: 'User Deleted Successfully'
                 }
               ]
             },
