@@ -11,6 +11,8 @@
   rejectButtonStyleClass="p-button-text"></p-confirmDialog>
 
 <div fxLayout="column" fxLayoutGap="20px">
+
+  <!-- Page Header -->
   <div fxFlex>
     <h1 class="page-header">
       Services Configuration Page! <br />
@@ -24,6 +26,7 @@
     <p-messages [(value)]="serverMessages" [enableService]="false" style="color: #fff;"></p-messages>
   </div>
 
+  <!-- Create Service Form -->
   <div fxFlex>
     <div fxLayout="column">
       <mat-card>
@@ -39,10 +42,11 @@
             <input type="text" matInput formControlName="price" required placeholder="Enter a price..." />
           </mat-form-field>
 
-            <button mat-button type="submit" [disabled]="!serviceForm.valid" class="primary-color form-button">
-              Add Service
-            </button>
+          <button mat-button type="submit" [disabled]="!serviceForm.valid" class="primary-color form-button">
+            Add Service
+          </button>
 
+          <!-- Service Name Validation Errors -->
           <mat-error *ngIf="serviceForm.controls['serviceName'].hasError('required') && serviceForm.controls['serviceName'].touched">
             Service Name is a required field.
           </mat-error>
@@ -52,7 +56,8 @@
           <mat-error *ngIf="serviceForm.controls['serviceName'].hasError('maxlength') && serviceForm.controls['serviceName'].touched">
             Service Name must be less than 50 characters.
           </mat-error>
-          
+
+          <!-- Price Validation Errors -->
           <mat-error *ngIf="serviceForm.controls['price'].hasError('required') && serviceForm.controls['price'].touched">
             Price is a required field.
           </mat-error>
@@ -68,7 +73,7 @@
     </div>
   </div>
 
-
+  <!-- List of Active Services -->
   <div fxFlex>
     <mat-card>
       <p-table [value]="services" responsiveLayout="scroll" class="api-table">
