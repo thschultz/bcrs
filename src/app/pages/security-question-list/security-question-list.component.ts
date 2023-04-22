@@ -46,7 +46,7 @@ export class SecurityQuestionListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  // create function
   create(): void {
     const sqText = this.sqForm.controls['text'].value;
 
@@ -55,9 +55,11 @@ export class SecurityQuestionListComponent implements OnInit {
     }
 
     this.securityQuestionService.createSecurityQuestion(newSq).subscribe({
+      // successful update
       next: (res) => {
         this.securityQuestions.push(res.data);
       },
+      //error message
       error: (e) => {
         console.log(e);
       },
@@ -66,8 +68,9 @@ export class SecurityQuestionListComponent implements OnInit {
       }
     })
   }
-
+  //delete function
   delete(sqId: string): void {
+    //dialog to confirm that you want to delete
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: {
         header: 'Delete Security Question',
@@ -82,9 +85,11 @@ export class SecurityQuestionListComponent implements OnInit {
         // message: 'Are you sure that you want to delete this record?',
         // header: 'Confirmation',
         // icon: '<div style="background-color: #D3A625; color: black">pi pi-exclamation-triangle</div>',
+        //if you click confirm, function for successful and unsuccessful
         if (result === 'confirm') {
           this.securityQuestionService.deleteSecurityQuestion(sqId).subscribe({
             next: (res) => {
+              //successful deleted question
               console.log('Security question deleted successfully!');
               this.securityQuestions = this.securityQuestions.filter(sq => sq._id !== sqId);
               this.serverMessages = [

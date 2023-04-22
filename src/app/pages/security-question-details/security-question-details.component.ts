@@ -52,18 +52,20 @@ export class SecurityQuestionDetailsComponent implements OnInit {
         },
       });
   }
-  ngOnInit(): void {}
-
+  ngOnInit(): void { }
+  // save function
   save(): void {
     const updateSecurityQuestion: SecurityQuestion = {
       text: this.editForm.controls['text'].value,
     };
+    //successful update sends the user back to the security questions page
     this.securityQuestionService
       .updateSecurityQuestion(this.questionId, updateSecurityQuestion)
       .subscribe({
         next: (res) => {
           this.router.navigate(['/security-questions']);
         },
+        //error message if unsuccessful
         error: (e) => {
           this.errorMessages = [
             { severity: 'error', summary: 'Error', detail: e.message },
@@ -74,6 +76,7 @@ export class SecurityQuestionDetailsComponent implements OnInit {
         },
       });
   }
+  //cancel function to send user back to security questions page
   cancel(): void {
     this.router.navigate(['/security-questions']);
   }

@@ -7,6 +7,7 @@
   Description: html for the bcrs project
 -->
 
+<!-- security questions list page -->
 <p-confirmDialog [style]="{ width: '35vw' }" [baseZIndex]="10000"
   rejectButtonStyleClass="p-button-text"></p-confirmDialog>
 
@@ -19,7 +20,7 @@
       </span>
     </h1>
   </div>
-
+  <!-- error message from server -->
   <div>
     <p-messages [(value)]="serverMessages" [enableService]="false" style="color: #fff;"></p-messages>
   </div>

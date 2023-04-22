@@ -21,6 +21,7 @@ import { SessionService } from '../../shared/services/session.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
+
 export class LoginComponent implements OnInit {
   loginForm: FormGroup = this.fb.group({
     userName: [null, Validators.compose([Validators.required])],
@@ -41,20 +42,21 @@ export class LoginComponent implements OnInit {
     private cookieService: CookieService,
     private sessionService: SessionService,
     private http: HttpClient
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void { }
+  //login function
   login() {
     const userName = this.loginForm.controls['userName'].value;
     const password = this.loginForm.controls['password'].value;
-
+    //if successful, navigate to home page
     this.sessionService.login(userName, password).subscribe({
       next: (res) => {
         console.log(res);
         this.cookieService.set('sessionuser', res.data.userName, 1);
         this.router.navigate(['/']);
       },
+      //error handling if unsuccessful
       error: (e) => {
         this.errorMessages = [
           { severity: 'error', summary: 'error', detail: e.message },
@@ -64,6 +66,6 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  createAccount() {}
-  passwordReset() {}
+  createAccount() { }
+  passwordReset() { }
 }
