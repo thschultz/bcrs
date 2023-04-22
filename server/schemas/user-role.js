@@ -7,9 +7,11 @@
  * Description: user roles schema for the bcrs project
 */
 
+//require statements
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+//define user role schema
 let userRoleSchema = new Schema({
   text: {type: String, default: 'standard'}
 })
