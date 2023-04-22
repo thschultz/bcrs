@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, ConfirmEventType } from 'primeng/api';
 import { ServiceService } from '../../shared/services/service.service';
 import { Service } from '../../shared/models/service.interface';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog'
 import { Message } from 'primeng/api/message';
@@ -28,8 +28,8 @@ export class ServiceListComponent implements OnInit {
   serverMessages: Message[] = [];
 
   serviceForm: FormGroup = this.fb.group({
-    serviceName: [null, Validators.compose([Validators.required])],
-    price: [null, Validators.compose([Validators.required])]
+    serviceName: new FormControl('', [ Validators.required, Validators.minLength(3), Validators.maxLength(50) ]),
+    price: new FormControl('', [ Validators.required, Validators.pattern('\\-?\\d*\\.?\\d{1,2}') ])
   });
 
   constructor(private serviceService: ServiceService, private confirmationService: ConfirmationService, private fb: FormBuilder, private dialog: MatDialog) {
