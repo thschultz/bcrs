@@ -20,7 +20,7 @@
     <form [formGroup]="editForm" (ngSubmit)="save(); editForm.reset();">
       <mat-card-content>
         <div>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" class="w-60">
             <mat-label>Security question</mat-label>
             <input type="text" matInput formControlName="text" required />
             <!-- if you click save and it's empty, this error will show up -->
@@ -32,11 +32,10 @@
         </div>
       </mat-card-content>
 
-      <br />
       <!-- cancel and save buttons -->
       <mat-card-actions>
-        <button mat-raised-button (click)="cancel()">Cancel</button>
-        <button mat-raised-button (click)="save()">Save</button>
+        <button mat-raised-button (click)="cancel()" class="cancel form-button">Cancel</button>
+        <button mat-raised-button (click)="save()" class="primary-color form-button">Save</button>
       </mat-card-actions>
     </form>
   </mat-card>

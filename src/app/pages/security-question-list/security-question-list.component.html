@@ -29,15 +29,15 @@
     <div fxLayout="column" class="pageDesign">
       <mat-card>
         <form [formGroup]="sqForm" (ngSubmit)="create(); sqForm.reset()">
-          <mat-form-field appearance="fill" class="w-100">
+          <mat-form-field appearance="fill" class="w-60">
             <mat-label>Security question</mat-label>
             <input type="text" matInput formControlName="text" required placeholder="Enter a security question..." />
-
-            <button type="submit" [disabled]="!sqForm.valid" mat-icon-button matSuffix>
-              <mat-icon color="primary" style="width: 36px; height: 36px; font-size: 36px" matSuffix>
-                add_circle</mat-icon>
-            </button>
           </mat-form-field>
+
+            <button mat-button type="submit" [disabled]="!sqForm.valid" class="primary-color form-button">
+              Add Question
+            </button>
+
 
           <mat-error *ngIf="sqForm.controls['text'].hasError('required') && sqForm.controls['text'].touched">
             Security question is a required field.
