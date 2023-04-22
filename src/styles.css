@@ -48,6 +48,7 @@ body {
 
 .form-button {
   margin-inline: 20px!important;
+  width: 125px;
 }
 
 /* Width Styles */

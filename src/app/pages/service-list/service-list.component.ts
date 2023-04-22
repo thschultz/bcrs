@@ -82,13 +82,17 @@ export class ServiceListComponent implements OnInit {
       // User has to click one of the buttons in the dialog box to get it to close
       disableClose: true
     })
+
+    // Subscribe event from dialog box
     dialogRef.afterClosed().subscribe({
       next: (result) => {
+
+        // If delete is confirmed, the service is deleted
         if (result === 'confirm') {
           this.serviceService.deleteService(serviceId).subscribe({
             next: (res) => {
               console.log('Service deleted successfully!');
-              this.services = this.services.filter(sq => sq._id !== serviceId);
+              this.services = this.services.filter(service => service._id !== serviceId);
               this.serverMessages = [
                 {
                   severity: 'success',

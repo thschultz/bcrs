@@ -28,7 +28,7 @@ export class UserListComponent implements OnInit {
   serverMessages: Message[] = [];
 
   constructor(private userService: UserService, private confirmationService: ConfirmationService, private dialog: MatDialog) {
-    
+
     this.userService.findAllUsers().subscribe({
       next: (res) => {
         this.users = res.data;
@@ -57,7 +57,7 @@ export class UserListComponent implements OnInit {
     dialogRef.afterClosed().subscribe({
       next: (result) => {
 
-        // If delete is confirmed, the task item is deleted
+        // If delete is confirmed, the user is deleted
         if (result === 'confirm') {
           this.userService.deleteUser(userId).subscribe({
             next: (res) => {
