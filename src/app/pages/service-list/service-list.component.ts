@@ -50,8 +50,8 @@ export class ServiceListComponent implements OnInit {
 
   create(): void {
     const serviceName = this.serviceForm.controls['serviceName'].value;
-    const inputPrice = this.serviceForm.controls['price'].value;
-    const price = parseFloat(inputPrice);
+    const price = parseFloat(this.serviceForm.controls['price'].value);
+
 
     const newService = {
       serviceName: serviceName,

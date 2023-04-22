@@ -47,8 +47,7 @@ body {
 }
 
 .form-button {
-  display: block;
-
+  margin-inline: 20px!important;
 }
 
 /* Width Styles */

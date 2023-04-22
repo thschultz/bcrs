@@ -25210,3 +25210,1271 @@
   dateCreated: 2023-04-22T15:02:29.134Z,
   __v: 0
 }
+[4/22/2023, 12:00:31 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:00:36 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:00:46 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:00:54 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:01:00 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:01:16 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:01:20 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:01:25 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:01:27 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:01:39 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:02:17 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:02:22 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:02:24 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:02:57 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+},{
+  _id: new ObjectId("644405241c66de3ca7c9562d"),
+  serviceName: 'TestingThomas',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T16:01:53.800Z,
+  __v: 0
+}
+[4/22/2023, 12:11:15 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:11:42 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:11:57 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:12:13 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:53:33 PM] server	 session-routes.js - {
+  _id: new ObjectId("64435faf0cdc58a914211c1d"),
+  userName: 'mccuw008',
+  password: '$2a$10$EKcTPChHuEVo0H/Gg5/4NOWcCO3KmY./mHL9HZ1LocxeQ47/sQ0UK',
+  firstName: 'Walter',
+  lastName: 'McCue',
+  phoneNumber: '555-555-5555',
+  address: '555 Do Not Touch',
+  email: 'mccue@test.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("64435faf0cdc58a914211c1e") },
+  dateCreated: 2023-04-22T04:04:40.182Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/22/2023, 12:53:39 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:53:41 PM] server	 services-routes.js - {
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:54:25 PM] server	 services-routes.js - {
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:54:29 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:54:33 PM] server	 services-routes.js - {
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:54:41 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:55:09 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:55:11 PM] server	 services-routes.js - {
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:56:03 PM] server	 services-routes.js - {
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:56:15 PM] server	 services-routes.js - {
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:57:34 PM] server	 services-routes.js - {
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:58:45 PM] server	 services-routes.js - {
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:59:19 PM] server	 services-routes.js - {
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 1e+26,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0
+}
+[4/22/2023, 12:59:28 PM] server	 services-routes.js - {
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  dateModified: 2023-04-22T16:59:28.619Z,
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  __v: 0
+}
+[4/22/2023, 12:59:28 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0,
+  dateModified: 2023-04-22T16:59:28.619Z
+}
+[4/22/2023, 12:59:28 PM] server	 services-routes.js - {
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  dateModified: 2023-04-22T16:59:28.741Z,
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  __v: 0
+}
+[4/22/2023, 12:59:41 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0,
+  dateModified: 2023-04-22T16:59:28.741Z
+}
+[4/22/2023, 1:00:12 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0,
+  dateModified: 2023-04-22T16:59:28.741Z
+}
+[4/22/2023, 1:00:24 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0,
+  dateModified: 2023-04-22T16:59:28.741Z
+}
+[4/22/2023, 1:00:34 PM] server	 services-routes.js - {
+  serviceName: 'UI Test 2',
+  price: 33.33,
+  isDisabled: false,
+  dateCreated: 2023-04-22T16:52:24.151Z,
+  _id: new ObjectId("644412b27c1e16fe122cabac"),
+  __v: 0
+}
+[4/22/2023, 1:00:42 PM] server	 services-routes.js - {
+  serviceName: 'UI Test 2',
+  price: 33.33,
+  isDisabled: true,
+  dateCreated: 2023-04-22T16:52:24.151Z,
+  dateModified: 2023-04-22T17:00:42.248Z,
+  _id: new ObjectId("644412b27c1e16fe122cabac"),
+  __v: 0
+}
+[4/22/2023, 1:01:38 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0,
+  dateModified: 2023-04-22T16:59:28.741Z
+}
+[4/22/2023, 1:01:42 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0,
+  dateModified: 2023-04-22T16:59:28.741Z
+}
+[4/22/2023, 1:01:50 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0,
+  dateModified: 2023-04-22T16:59:28.741Z
+}
+[4/22/2023, 1:01:54 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0,
+  dateModified: 2023-04-22T16:59:28.741Z
+}
+[4/22/2023, 1:01:56 PM] server	 services-routes.js - {
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0,
+  dateModified: 2023-04-22T16:59:28.741Z
+}
+[4/22/2023, 1:02:02 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0,
+  dateModified: 2023-04-22T16:59:28.741Z
+}
+[4/22/2023, 1:02:04 PM] server	 services-routes.js - {
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0,
+  dateModified: 2023-04-22T16:59:28.741Z
+}
+[4/22/2023, 1:02:21 PM] server	 services-routes.js - {
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  dateModified: 2023-04-22T17:02:21.748Z,
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  __v: 0
+}
+[4/22/2023, 1:02:21 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0,
+  dateModified: 2023-04-22T17:02:21.748Z
+}
+[4/22/2023, 1:02:21 PM] server	 services-routes.js - {
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  dateModified: 2023-04-22T17:02:21.859Z,
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  __v: 0
+}
+[4/22/2023, 1:02:54 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0,
+  dateModified: 2023-04-22T17:02:21.859Z
+}
+[4/22/2023, 1:02:56 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0,
+  dateModified: 2023-04-22T17:02:21.859Z
+}
+[4/22/2023, 1:02:58 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0,
+  dateModified: 2023-04-22T17:02:21.859Z
+}
+[4/22/2023, 1:02:59 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:03:25 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:03:33 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:03:35 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:03:46 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:03:51 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:03:55 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:04:13 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:04:14 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:04:16 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:04:18 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:04:21 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:04:41 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:04:44 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:05:06 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:05:20 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:05:25 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:05:27 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:05:31 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:05:33 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:05:45 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:05:59 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:06:23 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:06:35 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:06:37 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:07:11 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:07:12 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:07:16 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:07:22 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+}
+[4/22/2023, 1:07:38 PM] server	 services-routes.js - {
+  _id: new ObjectId("64400c14cbe36255508a3c2a"),
+  serviceName: 'testServiceUpdate',
+  price: 25.99,
+  isDisabled: false,
+  dateCreated: 2023-04-19T15:40:00.696Z,
+  __v: 0,
+  dateModified: 2023-04-19T15:44:42.584Z
+},{
+  _id: new ObjectId("64436759e06d5f8481d6d39b"),
+  serviceName: 'test Service',
+  price: 29.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T04:46:39.782Z,
+  __v: 0
+},{
+  _id: new ObjectId("6443f96203dd81c56732f0fb"),
+  serviceName: 'UI Test',
+  price: 99.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T15:02:29.134Z,
+  __v: 0,
+  dateModified: 2023-04-22T17:02:21.859Z
+}

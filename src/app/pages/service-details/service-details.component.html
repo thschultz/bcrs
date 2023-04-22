@@ -7,4 +7,42 @@
   Description: html for the bcrs project
 -->
 
-<p>service-details works!</p>
+<div fxLayout="column">
+
+  <!-- Page Header -->
+  <div fxFlex>
+    <h1 class="page-header">
+      Update Service Form <br />
+      <span class="subtitle">
+        Fields marked with an asterisk(*) are required.
+      </span>
+    </h1>
+  </div>
+
+  <mat-card class="mat-elevation-z0">
+
+    <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
+
+    <form [formGroup]="updateForm" (ngSubmit)="save(); updateForm.reset();">
+      <mat-card-content>
+        <div>
+          <mat-form-field appearance="fill" class="w-60">
+            <mat-label>Service Name</mat-label>
+            <input type="text" matInput formControlName="serviceName" required placeholder="Enter a service name..." /><br />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="w-20">
+            <mat-label>Service Price</mat-label>
+            <input type="text" matInput formControlName="price" required placeholder="Enter a price..." />
+          </mat-form-field>
+
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-raised-button (click)="cancel()" class="cancel form-button">Cancel</button>
+        <button mat-raised-button (click)="save()"class="primary-color form-button">Save</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>
