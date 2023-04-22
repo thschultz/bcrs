@@ -84,10 +84,10 @@
       </mat-card-content>
 
       <mat-card-actions align="end">
-        <button mat-raised-button (click)="cancel()">
+        <button mat-raised-button (click)="cancel()" class="cancel">
           Cancel
         </button>
-        <button mat-raised-button [disabled]="!form.valid" class="btn-primary">
+        <button mat-raised-button [disabled]="!form.valid" class="btn-primary primary-color">
           Submit
         </button>
       </mat-card-actions>

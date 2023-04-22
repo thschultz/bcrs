@@ -58,6 +58,11 @@ body {
   color: #000;
 }
 
+.cancel {
+  color: #810116;
+  background-color: #fd798f;
+}
+
 .gradient-header {
   width: 100%;
   background-image: linear-gradient(var(--silver), #000);

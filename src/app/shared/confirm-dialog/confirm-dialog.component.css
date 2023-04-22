@@ -21,8 +21,3 @@ Description: component styling for the bcrs project
 .dialog-buttons {
   justify-content: space-between;
 }
-
-.cancel {
-  color: #810116;
-  background-color: #fd798f;
-}
