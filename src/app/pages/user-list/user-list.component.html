@@ -19,6 +19,10 @@
     <a routerLink="/user-create" class="neon-btn">Add User</a>
   </div>
 
+  <div>
+    <p-messages [(value)]="serverMessages" [enableService]="false"></p-messages>
+  </div>
+
   <!-- Table Data -->
   <div fxFlex class="p-20">
     <mat-card>
