@@ -28,7 +28,8 @@ export class ServiceListComponent implements OnInit {
   serverMessages: Message[] = [];
 
   serviceForm: FormGroup = this.fb.group({
-    text: [null, Validators.compose([Validators.required])]
+    serviceName: [null, Validators.compose([Validators.required])],
+    price: [null, Validators.compose([Validators.required])]
   });
 
   constructor(private serviceService: ServiceService, private confirmationService: ConfirmationService, private fb: FormBuilder, private dialog: MatDialog) {
@@ -48,7 +49,7 @@ export class ServiceListComponent implements OnInit {
   }
 
   create(): void {
-    const serviceName = this.serviceForm.controls['service-name'].value;
+    const serviceName = this.serviceForm.controls['serviceName'].value;
     const price = this.serviceForm.controls['price'].value;
 
     const newService = {
@@ -64,7 +65,8 @@ export class ServiceListComponent implements OnInit {
         console.log(e);
       },
       complete: () => {
-        this.serviceForm.controls['text'].setErrors({ 'incorrect': false })
+        this.serviceForm.controls['serviceName'].setErrors({ 'incorrect': false })
+        this.serviceForm.controls['price'].setErrors({ 'incorrect': false })
       }
     })
   }
