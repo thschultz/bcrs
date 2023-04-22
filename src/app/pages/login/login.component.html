@@ -75,15 +75,15 @@
               type="submit"
               mat-raised-button
               [disabled]="!loginForm.valid"
-              class="btn"
+              class="btn neon-btn"
             >
               Log in
             </button>
           </mat-card-actions>
           <hr />
           <div class="create-account">
-            <a [routerLink]="" (click)="passwordReset()">Forgot Password?</a>
-            <a [routerLink]="" (click)="createAccount()">Create Account</a>
+            <a [routerLink]="" (click)="passwordReset()" class="neon-btn">Forgot Password?</a>
+            <a [routerLink]="" (click)="createAccount()" class="neon-btn">Create Account</a>
           </div>
         </form>
       </mat-card>

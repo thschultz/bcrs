@@ -198,6 +198,7 @@ router.post('/', async (req, res) => {
     let newService = {
       serviceName: req.body.serviceName,
       price: req.body.price
+
     }
 
     // Checks current request body against the schema

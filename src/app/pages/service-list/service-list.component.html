@@ -91,7 +91,7 @@
         <ng-template pTemplate="body" let-service>
           <tr>
             <td>{{ service.serviceName }}</td>
-            <td>{{ service.price }}</td>
+            <td>{{ service.price | number: '1.2' }}</td>
             <td style="text-align: center">
               <button mat-button type="button" routerLink="/service-list/{{ service._id }}">
                 <i class="fa-solid fa-pen-to-square"></i>

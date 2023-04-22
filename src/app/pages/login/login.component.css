@@ -63,7 +63,7 @@ hr {
   font-size: 18px;
   border: var(--green) 2px solid;
   box-shadow: 0 0 10px 2px var(--green), inset 0 0 10px 5px var(--green);
-  background-color: transparent;
+  font-weight: 700;
   float: right;
   width: 10rem;
 }
@@ -95,8 +95,8 @@ input {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 50%;
+  justify-content: space-between;
+
   margin-bottom: 30px;
 }
 
@@ -105,5 +105,4 @@ a {
 }
 a:hover {
   cursor: pointer;
-  color: #fff;
 }
