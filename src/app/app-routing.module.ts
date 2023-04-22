@@ -24,6 +24,8 @@ import { SecurityQuestionDetailsComponent } from './pages/security-question-deta
 import { UserListComponent } from './pages/user-list/user-list.component';
 import { UserCreateComponent } from './pages/user-create/user-create.component';
 import { UserDetailsComponent } from './pages/user-details/user-details.component';
+import { ServiceListComponent } from './pages/service-list/service-list.component';
+import { ServiceDetailsComponent } from './pages/service-details/service-details.component';
 
 const routes: Routes = [
   {
@@ -62,6 +64,14 @@ const routes: Routes = [
         path: 'security-questions/:questionId',
         component: SecurityQuestionDetailsComponent,
       },
+      {
+        path: 'service-list',
+        component: ServiceListComponent,
+      },
+      {
+        path: 'service-list/:serviceId',
+        component: ServiceDetailsComponent
+      }
     ],
     canActivate: [AuthGuard],
   },

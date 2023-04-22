@@ -33,6 +33,7 @@
             Signed in as
             <span style="font-weight: normal">{{ userName }}</span>
           </p>
+          
           <button mat-menu-item [matMenuTriggerFor]="configs">
             <mat-icon>settings</mat-icon>
             Configurations
@@ -46,11 +47,12 @@
             </button>
             <!-- <button mat-menu-item routerLink="roles" class="">
               ROLES
-            </button>
+            </button> -->
             <button mat-menu-item routerLink="services" class="">
               SERVICES
-            </button> -->
+            </button>
           </mat-menu>
+
           <button mat-menu-item (click)="logout()">
             <mat-icon style="color: #000;">logout</mat-icon>
             <span style="font-size: 16px; color: #000;">Log out</span>

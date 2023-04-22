@@ -28,6 +28,7 @@ export class UserListComponent implements OnInit {
   serverMessages: Message[] = [];
 
   constructor(private userService: UserService, private confirmationService: ConfirmationService, private dialog: MatDialog) {
+    
     this.userService.findAllUsers().subscribe({
       next: (res) => {
         this.users = res.data;
