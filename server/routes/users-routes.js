@@ -386,19 +386,19 @@ router.delete("/:id", async (req, res) => {
       }
 
       // Checks current request body against the schema
-      // const validator = ajv.compile(disabledSchema);
-      // const valid = validator({
-      //   isDisabled: req.body.isDisabled
-      // })
+      const validator = ajv.compile(disabledSchema);
+      const valid = validator({
+        isDisabled: req.body.isDisabled
+      })
 
       // If invalid return 400 Error
-      // if (!valid) {
-      //   console.log('Bad Request, unable to validate');
-      //   const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
-      //   errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
-      //   res.status(400).send(createServiceError.toObject());
-      //   return
-      // }
+      if (!valid) {
+        console.log('Bad Request, unable to validate');
+        const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
+        errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+        res.status(400).send(createServiceError.toObject());
+        return
+      }
 
       // sets disabled status instead of deleting the record
       console.log(user);
