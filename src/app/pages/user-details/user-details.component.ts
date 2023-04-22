@@ -62,7 +62,7 @@ export class UserDetailsComponent implements OnInit {
 
     this.userService.updateUser(this.userId, updateUser).subscribe({
       next: (res) => {
-        this.router.navigate(['/users-routes']);
+        this.router.navigate(['/user-list']);
       },
       error: (e) => {
         this.errorMessages = [
