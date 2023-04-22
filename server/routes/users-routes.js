@@ -281,17 +281,17 @@ router.put("/:id", async (req, res) => {
         }
 
         // Checks current request body against the schema
-        const validator = ajv.compile(updateUserSchema);
-        const valid = validator(updatedUser)
+    //     const validator = ajv.compile(updateUserSchema);
+    //     const valid = validator(updatedUser)
 
-        // If invalid return 400 Error
-        if (!valid) {
-          console.log('Bad Request, unable to validate');
-          const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
-          errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
-          res.status(400).send(createServiceError.toObject());
-          return
-    }
+    //     // If invalid return 400 Error
+    //     if (!valid) {
+    //       console.log('Bad Request, unable to validate');
+    //       const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
+    //       errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+    //       res.status(400).send(createServiceError.toObject());
+    //       return
+    // }
 
         //updating fields
         console.log(user);
