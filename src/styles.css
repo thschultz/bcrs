@@ -42,8 +42,12 @@ body {
   font-size: 24px!important;
 }
 
+.p-10 {
+  padding-inline: 10px!important;
+}
+
 .p-20 {
-  padding: 20px;
+  padding-inline: 20px!important;
 }
 
 .form-button {

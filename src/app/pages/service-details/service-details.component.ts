@@ -9,7 +9,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Service } from '../../shared/models/service.interface';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceService } from '../../shared/services/service.service';
 import { Message } from 'primeng/api';
@@ -26,8 +26,8 @@ export class ServiceDetailsComponent implements OnInit {
   errorMessages: Message[];
 
   updateForm: FormGroup = this.fb.group({
-    serviceName: [null, Validators.compose([Validators.required])],
-    price: [null, Validators.compose([Validators.required])],
+    serviceName: new FormControl('', [ Validators.required, Validators.minLength(3), Validators.maxLength(50) ]),
+    price: new FormControl('', [ Validators.required, Validators.pattern('\\-?\\d*\\.?\\d{1,2}'), Validators.maxLength(7) ])
   });
 
   constructor(
