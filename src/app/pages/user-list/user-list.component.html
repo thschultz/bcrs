@@ -13,6 +13,7 @@
   rejectButtonStyleClass="p-button-text"
 ></p-confirmDialog>
 
+<!-- Page Header -->
 <div fxLayout="column" fxLayoutGap="20px">
   <div fxFlex>
     <h1 class="page-header">
@@ -36,6 +37,8 @@
   <div fxFlex class="p-20">
     <mat-card>
       <p-table [value]="users" responsiveLayout="scroll" class="api-table">
+
+        <!-- Table Header -->
         <ng-template pTemplate="header">
           <tr>
             <th>First Name</th>
@@ -47,6 +50,7 @@
           </tr>
         </ng-template>
 
+        <!-- Table Body -->
         <ng-template pTemplate="body" let-user>
           <tr>
             <td data-cell="first name">{{ user.firstName }}</td>
@@ -70,6 +74,7 @@
             </td>
           </tr>
         </ng-template>
+        
       </p-table>
     </mat-card>
   </div>

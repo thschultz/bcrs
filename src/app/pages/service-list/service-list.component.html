@@ -78,6 +78,7 @@
     <mat-card>
       <p-table [value]="services" responsiveLayout="scroll" class="api-table">
 
+        <!-- Table Header -->
         <ng-template pTemplate="header">
           <tr>
             <th>Service Name</th>
@@ -86,6 +87,7 @@
           </tr>
         </ng-template>
 
+        <!-- Table Body -->
         <ng-template pTemplate="body" let-service>
           <tr>
             <td>{{ service.serviceName }}</td>

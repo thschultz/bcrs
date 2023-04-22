@@ -29,6 +29,7 @@ export class UserListComponent implements OnInit {
 
   constructor(private userService: UserService, private confirmationService: ConfirmationService, private dialog: MatDialog) {
 
+    // findAllUsers function
     this.userService.findAllUsers().subscribe({
       next: (res) => {
         this.users = res.data;
@@ -42,6 +43,7 @@ export class UserListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // deleteUser function
   delete(userId: string) {
       const dialogRef = this.dialog.open(ConfirmDialogComponent, {
         data: {
@@ -57,7 +59,7 @@ export class UserListComponent implements OnInit {
     dialogRef.afterClosed().subscribe({
       next: (result) => {
 
-        // If delete is confirmed, the user is deleted
+        // If delete is confirmed, the user is disabled
         if (result === 'confirm') {
           this.userService.deleteUser(userId).subscribe({
             next: (res) => {

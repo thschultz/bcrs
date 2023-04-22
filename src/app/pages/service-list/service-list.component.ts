@@ -27,6 +27,7 @@ export class ServiceListComponent implements OnInit {
   services: Service[] = [];
   serverMessages: Message[] = [];
 
+  // FormGroup initializer with Validators
   serviceForm: FormGroup = this.fb.group({
     serviceName: new FormControl('', [ Validators.required, Validators.minLength(3), Validators.maxLength(50) ]),
     price: new FormControl('', [ Validators.required, Validators.pattern('\\-?\\d*\\.?\\d{1,2}'), Validators.maxLength(7) ])
@@ -35,6 +36,7 @@ export class ServiceListComponent implements OnInit {
   constructor(private serviceService: ServiceService, private confirmationService: ConfirmationService, private fb: FormBuilder, private dialog: MatDialog) {
     this.services = [];
 
+    // findAllServices function
     this.serviceService.findAllServices().subscribe({
       next: (res) => {
         this.services = res.data;
@@ -48,6 +50,7 @@ export class ServiceListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // createService function
   create(): void {
     const serviceName = this.serviceForm.controls['serviceName'].value;
     const price = parseFloat(this.serviceForm.controls['price'].value);
@@ -72,6 +75,7 @@ export class ServiceListComponent implements OnInit {
     })
   }
 
+  // deleteService function
   delete(serviceId: string): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: {
@@ -87,7 +91,7 @@ export class ServiceListComponent implements OnInit {
     dialogRef.afterClosed().subscribe({
       next: (result) => {
 
-        // If delete is confirmed, the service is deleted
+        // If delete is confirmed, the service is disabled
         if (result === 'confirm') {
           this.serviceService.deleteService(serviceId).subscribe({
             next: (res) => {
