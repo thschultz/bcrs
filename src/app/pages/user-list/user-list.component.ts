@@ -1,3 +1,12 @@
+/**
+ * Title: user-list.component.ts
+ * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+ * Date: 04/19/23
+ * Last Modified by: Walter McCue
+ * Last Modification Date: 04/19/23
+ * Description: user list component for the bcrs project
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../shared/models/user.interface';
 import { UserService } from '../../shared/services/user.service';

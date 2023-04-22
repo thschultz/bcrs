@@ -24,7 +24,7 @@ export class BaseLayoutComponent implements OnInit {
   userName: string;
 
   constructor(private cookieService: CookieService, private router: Router) {
-    this.userName = this.cookieService.get('sessionuser') ?? '';
+    this.userName = this.cookieService.get('sessionUser') ?? '';
   }
 
   ngOnInit(): void {}

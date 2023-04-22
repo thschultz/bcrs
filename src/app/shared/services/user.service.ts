@@ -1,3 +1,12 @@
+/**
+ * Title: user.service.ts
+ * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+ * Date: 04/19/23
+ * Last Modified by: Walter McCue
+ * Last Modification Date: 04/19/23
+ * Description: user api service for the bcrs project
+ */
+
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.interface';
 import { HttpClient } from '@angular/common/http';
