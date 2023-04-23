@@ -7,9 +7,6 @@
   Description: html for the bcrs project
 -->
 
-<p-confirmDialog [style]="{ width: '35vw' }" [baseZIndex]="10000"
-  rejectButtonStyleClass="p-button-text"></p-confirmDialog>
-
 <div fxLayout="column" fxLayoutGap="20px">
 
   <!-- Page Header -->
@@ -23,7 +20,7 @@
   </div>
 
   <div>
-    <p-messages [(value)]="serverMessages" [enableService]="false" style="color: #fff;"></p-messages>
+    <p-messages [(value)]="serverMessages" [enableService]="false"></p-messages>
   </div>
 
   <!-- Create Service Form -->
