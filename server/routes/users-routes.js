@@ -23,11 +23,66 @@ const myFile = "users-routes.js";
 const ajv = new Ajv();
 const saltRounds = 10; // hashes password
 
-// Schema for validation
+// Schema for  create validation
+const userSchema = {
+  type: 'object',
+  properties: {
+    userName: {type: 'string'},
+    password: {type: 'string'},
+    firstName: {type: 'string'},
+    lastName: {type: 'string'},
+    phoneNumber: {type: 'string'},
+    address: {type: 'string'},
+    email: {type: 'string'},
+    role: {
+      type: 'object',
+      properties: {
+        text: {type: 'string'}
+      },
+      required: ['text'],
+      additionalProperties: false
+    }
+  },
+  required: ['userName', 'password', 'firstName', 'lastName', 'phoneNumber', 'address', 'email', 'role'],
+  additionalProperties: false
+}
+
+const updateUserSchema = {
+  type: 'object',
+  properties: {
+    firstName: {type: 'string'},
+    lastName: {type: 'string'},
+    phoneNumber: {type: 'string'},
+    address: {type: 'string'},
+    email: {type: 'string'},
+    /*role: {
+      type: 'object',
+      properties: {
+        text: {type: 'string'}
+      },
+      required: ['text'],
+      additionalProperties: false
+    }*/
+  },
+  required: ['firstName', 'lastName', 'phoneNumber', 'address', 'email'/*, 'role'*/],
+  additionalProperties: false
+}
+
+// Schema for disabled validation
+const disabledSchema = {
+  type: 'object',
+  properties: {
+    isDisabled: {type: 'boolean'},
+  },
+  required: ['isDisabled'],
+  additionalProperties: false
+}
+
 
 /**
  * API: http://localhost:3000/api/users
  */
+
 
 /**
  * findAllUsers
@@ -87,8 +142,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// findUserById
-
 /**
  * findUserById
  * @openapi
@@ -116,6 +169,7 @@ router.get("/", async (req, res) => {
  *         description: MongoDB exception
  */
 
+// findUserById
 router.get("/:id", async (req, res) => {
   try {
     User.findOne({ _id: req.params.id }, function (err, user) {
@@ -148,6 +202,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+
 // createUser
 router.post('/', async (req, res) => {
   try {
@@ -169,6 +224,19 @@ router.post('/', async (req, res) => {
       role: standardRole,
     };
 
+    // Checks current request body against the schema
+    const validator = ajv.compile(userSchema);
+    const valid = validator(newUser)
+
+    // If invalid return 400 Error
+    if (!valid) {
+      console.log('Bad Request, unable to validate');
+      const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
+      errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+      res.status(400).send(createServiceError.toObject());
+      return
+    }
+
     User.create(newUser, function (err, user) {
       if (err) {
         console.log(err);
@@ -187,6 +255,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+
 // updateUser
 router.put("/:id", async (req, res) => {
   try {
@@ -201,6 +270,29 @@ router.put("/:id", async (req, res) => {
         );
         res.status(500).send(updateUserByIdMongodbErrorResponse.toObject());
       } else {
+
+        let updatedUser = {
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
+          phoneNumber: req.body.phoneNumber,
+          address: req.body.address,
+          email: req.body.email,
+          // role: req.body.role
+        }
+
+        // Checks current request body against the schema
+         const validator = ajv.compile(updateUserSchema);
+         const valid = validator(updatedUser)
+
+         // If invalid return 400 Error
+         if (!valid) {
+           console.log('Bad Request, unable to validate');
+           const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
+           errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+           res.status(400).send(createServiceError.toObject());
+           return
+         }
+
         //updating fields
         console.log(user);
 
@@ -210,7 +302,7 @@ router.put("/:id", async (req, res) => {
           phoneNumber: req.body.phoneNumber,
           address: req.body.address,
           email: req.body.email,
-          "role.text": req.body.role,
+          role: req.body.role,
           dateModified: new Date(),
         });
         //saving updating user function
@@ -249,6 +341,33 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+
+/**
+ * deleteUserById
+ * @openapi
+ * /api/users/{id}:
+ *   delete:
+ *     tags:
+ *       - Users
+ *     name: deleteUser
+ *     description: API for deleting a document.
+ *     summary: Sets the isDisabled status to true.
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         description: Id of the document to remove.
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: Service disabled
+ *       '400':
+ *         description: Bad Request
+ *       '500':
+ *         description: Server Exception
+ */
+
 // deleteUser
 router.delete("/:id", async (req, res) => {
   try {
@@ -265,6 +384,21 @@ router.delete("/:id", async (req, res) => {
         res.status(500).send(deleteUserErrorResponse.toObject());
         return;
       }
+
+      // Checks current request body against the schema
+      //const validator = ajv.compile(disabledSchema);
+      //const valid = validator({
+      //  isDisabled: req.body.isDisabled
+      //})
+
+      // If invalid return 400 Error
+      //if (!valid) {
+      //  console.log('Bad Request, unable to validate');
+      //  const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
+      //  errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+      //  res.status(400).send(createServiceError.toObject());
+      //  return
+      //}
 
       // sets disabled status instead of deleting the record
       console.log(user);

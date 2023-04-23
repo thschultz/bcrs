@@ -184,6 +184,8 @@ router.get("/:id", async (req, res) => {
  *     responses:
  *       '200':
  *         description: Service added
+ *       '400':
+ *         description: Bad Request
  *       '500':
  *         description: Server Exception
  */
@@ -273,6 +275,8 @@ router.post('/', async (req, res) => {
  *     responses:
  *       '200':
  *         description: Updated service
+ *       '400':
+ *         description: Bad Request
  *       '500':
  *         description: Server Exception
  */
@@ -366,6 +370,8 @@ router.put("/:id", async (req, res) => {
  *     responses:
  *       '200':
  *         description: Service disabled
+ *       '400':
+ *         description: Bad Request
  *       '500':
  *         description: Server Exception
  */
@@ -385,7 +391,7 @@ router.delete('/:id', async (req, res) => {
         res.status(500).send(deleteServiceError.toObject());
         return
       }
-
+      /*
       // Checks current request body against the schema
       const validator = ajv.compile(disabledSchema);
       const valid = validator({
@@ -400,7 +406,7 @@ router.delete('/:id', async (req, res) => {
         res.status(400).send(createServiceError.toObject());
         return
       }
-
+      */
       // sets disabled status instead of deleting the record
       console.log(service);
       service.set({

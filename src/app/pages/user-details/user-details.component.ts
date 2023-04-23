@@ -1,3 +1,12 @@
+/**
+ * Title: user-details.component.ts
+ * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+ * Date: 04/19/23
+ * Last Modified by: Walter McCue
+ * Last Modification Date: 04/19/23
+ * Description: user details component for the bcrs project
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -62,7 +71,7 @@ export class UserDetailsComponent implements OnInit {
 
     this.userService.updateUser(this.userId, updateUser).subscribe({
       next: (res) => {
-        this.router.navigate(['/users-routes']);
+        this.router.navigate(['/user-list']);
       },
       error: (e) => {
         this.errorMessages = [
@@ -74,7 +83,7 @@ export class UserDetailsComponent implements OnInit {
     })
   }
   cancel(): void {
-    this.router.navigate(['/users-routes'])
+    this.router.navigate(['/user-list'])
   }
 
 }

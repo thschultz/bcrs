@@ -51,7 +51,7 @@ footer {
 
 .bu-link {
   text-decoration: none;
-  color: #2a623d;
+  color: var(--green);
 }
 
 .bu-link:hover {

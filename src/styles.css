@@ -12,7 +12,7 @@ References: .neon-btn { Kevin Powell: youtube/github; }
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-  --green: #2a623d;
+  --green: #2e7d32;
   --silver: #5d5d5d;
 }
 
@@ -30,7 +30,8 @@ body {
 .page-header {
   color: #fff;
   text-align: center;
-  font-size: 48px;
+  font-size: 40px!important;
+  line-height: 1.25!important;
 }
 
 .text-center {
@@ -38,11 +39,32 @@ body {
 }
 
 .subtitle {
-  font-size:smaller
+  font-size: 24px!important;
 }
 
 .p-20 {
   padding: 20px;
+}
+
+.form-button {
+  display: block;
+
+}
+
+/* Width Styles */
+
+.w-50 {
+  width: 50%;
+}
+
+.w-20 {
+  width: 20%;
+  margin-inline: 20px;
+}
+
+.w-60 {
+  width: 60%;
+  margin-inline: 20px;
 }
 
 /* Color Styles */
@@ -55,6 +77,11 @@ body {
 .accent-color {
   background-color: var(--silver);
   color: #000;
+}
+
+.cancel {
+  color: #810116;
+  background-color: #fd798f;
 }
 
 .gradient-header {
@@ -92,6 +119,11 @@ body {
   margin-right: auto;
   place-items: center;
   max-width: 1100px;
+}
+
+.formDesign {
+  display: flex;
+  flex-direction: row;
 }
 
 /* Neon Button Styling */
@@ -155,8 +187,24 @@ body {
   outline: none;
 }
 
-.w-50 {
-  width: 50%;
+/* API Tables */
+
+.api-table {
+  padding: 5px;
+}
+
+.api-table th, .api-table td {
+  padding: 5px;
+  text-align: left;
+
+}
+
+.api-table th {
+  background-color: #48494b;
+}
+
+.api-table tr:nth-of-type(2n) {
+  background-color: #48494b;
 }
 
 /* Media Queries */
@@ -169,5 +217,37 @@ body {
 
   .content-container {
     width: 95%;
+  }
+
+  .formDesign {
+    flex-direction: column;
+  }
+
+  /* Width Styles */
+  .w-20, .w-50, .w-60 {
+    width: 90%;
+  }
+
+  /* API Tables */
+  .api-table th {
+    display: none;
+  }
+  .api-table td {
+    display: grid;
+    padding: 3px 5px;
+  }
+  .api-table td button {
+    width: 50px;
+  }
+  .api-table td::before {
+    content: attr(data-cell);
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+  .api-table td:first-child {
+    padding-top: 10px;
+  }
+  .api-table td:last-child {
+    padding-bottom: 10px;
   }
 }

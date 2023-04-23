@@ -1,3 +1,12 @@
+<!--
+  Title: user-list.component.html
+  Author: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+  Date: 04/19/23
+  Last Modified by: Walter McCue
+  Last Modification Date: 04/19/23
+  Description: html for the bcrs project
+-->
+
 <p-confirmDialog
   [style]="{ width: '35vw' }"
   [baseZIndex]="10000"
@@ -19,10 +28,14 @@
     <a routerLink="/user-create" class="neon-btn">Add User</a>
   </div>
 
+  <div>
+    <p-messages [(value)]="serverMessages" [enableService]="false" style="color: #fff;"></p-messages>
+  </div>
+
   <!-- Table Data -->
   <div fxFlex class="p-20">
     <mat-card>
-      <p-table [value]="users" responsiveLayout="scroll">
+      <p-table [value]="users" responsiveLayout="scroll" class="api-table">
         <ng-template pTemplate="header">
           <tr>
             <th>First Name</th>
@@ -36,28 +49,24 @@
 
         <ng-template pTemplate="body" let-user>
           <tr>
-            <td>{{ user.firstName }}</td>
-            <td>{{ user.lastName }}</td>
-            <td>{{ user.phoneNumber }}</td>
-            <td>{{ user.email }}</td>
-            <td>{{ user.address }}</td>
+            <td data-cell="first name">{{ user.firstName }}</td>
+            <td data-cell="last name">{{ user.lastName }}</td>
+            <td data-cell="phone number">{{ user.phoneNumber }}</td>
+            <td data-cell="email">{{ user.email }}</td>
+            <td data-cell="address">{{ user.address }}</td>
             <td style="text-align: center">
               <button
-                pButton
-                pRipple
+                mat-button
                 type="button"
-                routerLink="/users/{{ user._id }}"
-                icon="pi pi-pencil"
-                class="p-button-rounded p-button-text"
-              ></button>
+                routerLink="/users/{{ user._id }}">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
               <button
-                pButton
-                pRipple
+                mat-button
                 type="button"
-                (click)="delete(user._id)"
-                icon="pi pi-trash"
-                class="p-button-rounded p-button-text"
-              ></button>
+                (click)="delete(user._id)">
+                <i class="fa-regular fa-trash-can"></i>
+            </button>
             </td>
           </tr>
         </ng-template>

@@ -19,9 +19,13 @@ import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component'
 import { LoginComponent } from './pages/login/login.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ServerErrorComponent } from './pages/server-error/server-error.component';
+import { SecurityQuestionListComponent } from './pages/security-question-list/security-question-list.component';
 import { SecurityQuestionDetailsComponent } from './pages/security-question-details/security-question-details.component';
 import { UserListComponent } from './pages/user-list/user-list.component';
 import { UserCreateComponent } from './pages/user-create/user-create.component';
+import { UserDetailsComponent } from './pages/user-details/user-details.component';
+import { ServiceListComponent } from './pages/service-list/service-list.component';
+import { ServiceDetailsComponent } from './pages/service-details/service-details.component';
 
 const routes: Routes = [
   {
@@ -37,6 +41,14 @@ const routes: Routes = [
         component: AboutComponent,
       },
       {
+        path: 'contact',
+        component: ContactComponent,
+      },
+      {
+        path: 'users/:userId',
+        component: UserDetailsComponent
+      },
+      {
         path: 'user-create',
         component: UserCreateComponent,
       },
@@ -45,9 +57,21 @@ const routes: Routes = [
         component: UserListComponent,
       },
       {
-        path: 'contact',
-        component: ContactComponent,
+        path: 'security-questions',
+        component: SecurityQuestionListComponent,
       },
+      {
+        path: 'security-questions/:questionId',
+        component: SecurityQuestionDetailsComponent,
+      },
+      {
+        path: 'service-list',
+        component: ServiceListComponent,
+      },
+      {
+        path: 'service-list/:serviceId',
+        component: ServiceDetailsComponent
+      }
     ],
     canActivate: [AuthGuard],
   },
@@ -67,9 +91,10 @@ const routes: Routes = [
         path: 'server-error',
         component: ServerErrorComponent,
       },
+
       {
-        path: 'security-questions/:questionId',
-        component: SecurityQuestionDetailsComponent,
+        path: 'security-questions',
+        component: SecurityQuestionListComponent,
       },
     ],
   },
@@ -91,4 +116,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

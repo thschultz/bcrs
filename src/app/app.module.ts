@@ -29,6 +29,8 @@ import { SecurityQuestionListComponent } from './pages/security-question-list/se
 import { UserCreateComponent } from './pages/user-create/user-create.component';
 import { UserDetailsComponent } from './pages/user-details/user-details.component';
 import { UserListComponent } from './pages/user-list/user-list.component';
+import { ServiceListComponent } from './pages/service-list/service-list.component';
+import { ServiceDetailsComponent } from './pages/service-details/service-details.component';
 
 // Angular Materials
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -56,6 +58,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,6 +76,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     UserCreateComponent,
     UserDetailsComponent,
     UserListComponent,
+    ServiceListComponent,
+    ServiceDetailsComponent,
 
   ],
   imports: [

@@ -8,3 +8,16 @@ Last Modification Date: 04/16/23
 Description: component styling for the bcrs project
 */
 
+.dialog-warning {
+  color: #fd798f;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #000,
+  1px -1px 0 #000,
+  1px 1px 0 #000,
+  -1px 1px 0 #000
+  ;
+}
+
+.dialog-buttons {
+  justify-content: space-between;
+}

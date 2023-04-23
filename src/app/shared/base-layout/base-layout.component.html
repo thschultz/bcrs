@@ -25,21 +25,37 @@
       </div>
 
       <div class="profile-menu">
-        <button
-          mat-icon-button
-          [matMenuTriggerFor]="profileMenu"
-          aria-label="User Profile menu"
-        >
+        <button mat-icon-button [matMenuTriggerFor]="profileMenu" aria-label="User Profile menu">
           <mat-icon class="profile-btn">perm_identity</mat-icon>
         </button>
-        <mat-menu #profileMenu class="accent-color p-20">
-          <p style="padding: 10px; font-size: 18px; font-weight: bolder">
+        <mat-menu #profileMenu class="accent-color p-20" x-position="before">
+          <p style="padding: 10px; font-size: 18px;">
             Signed in as
             <span style="font-weight: normal">{{ userName }}</span>
           </p>
-          <button mat-menu-item  (click)="logout()">
-            <mat-icon>logout</mat-icon>
-            <span style="font-size: 16px; font-weight: bolder">Log out</span>
+
+          <button mat-menu-item [matMenuTriggerFor]="configs">
+            <mat-icon>settings</mat-icon>
+            Configurations
+          </button>
+          <mat-menu #configs="matMenu">
+            <button mat-menu-item routerLink="user-list" class="">
+              USERS
+            </button>
+            <button mat-menu-item routerLink="security-questions" class="">
+              SECURITY QUESTIONS
+            </button>
+            <!-- <button mat-menu-item routerLink="roles" class="">
+              ROLES
+            </button> -->
+            <button mat-menu-item routerLink="service-list" class="">
+              SERVICES
+            </button>
+          </mat-menu>
+
+          <button mat-menu-item (click)="logout()">
+            <mat-icon style="color: #000;">logout</mat-icon>
+            <span style="font-size: 16px; color: #000;">Log out</span>
           </button>
         </mat-menu>
       </div>
@@ -59,9 +75,7 @@
       <div class="footer-content">
         <p>
           &copy; {{ year | date : "yyyy" }} - Bob's Computer Repair Service -
-          <a href="https://www.bellevue.edu/" class="bu-link" target="_blank"
-            >Bellevue University</a
-          >
+          <a href="https://www.bellevue.edu/" class="bu-link" target="_blank">Bellevue University</a>
         </p>
       </div>
     </footer>

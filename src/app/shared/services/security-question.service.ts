@@ -1,3 +1,12 @@
+/**
+ * Title: security-question.service.ts
+ * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+ * Date: 04/19/23
+ * Last Modified by: Walter McCue
+ * Last Modification Date: 04/19/23
+ * Description: security question api service for the bcrs project
+ */
+
 import { Injectable } from '@angular/core';
 import { SecurityQuestion } from '../models/security-question.interface';
 import { HttpClient } from '@angular/common/http';
@@ -11,26 +20,26 @@ export class SecurityQuestionService {
   constructor(private http: HttpClient) { }
 
   findAllSecurityQuestions(): Observable<any> {
-    return this.http.get('/api/security-routes');
+    return this.http.get('/api/security');
   }
 
   findSecurityQuestionById(questionId: string): Observable<any> {
-    return this.http.get('/api/security-routes' + questionId);
+    return this.http.get('/api/security/' + questionId);
   }
 
   createSecurityQuestion(newSecurityQuestion: SecurityQuestion): Observable<any> {
-    return this.http.post('/api/security-routes', {
+    return this.http.post('/api/security', {
       text: newSecurityQuestion.text
     })
   }
 
   updateSecurityQuestion(questionId: string, updateSecurityQuestion: SecurityQuestion): Observable<any> {
-    return this.http.put('/api/security-routes' + questionId, {
+    return this.http.put('/api/security/' + questionId, {
       text: updateSecurityQuestion.text
     })
   }
 
   deleteSecurityQuestion(questionId: string): Observable<any> {
-    return this.http.delete('/api/security-routes' + questionId);
+    return this.http.delete('/api/security/' + questionId);
   }
 }

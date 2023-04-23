@@ -1,1 +1,75 @@
-<p>security-question-list works!</p>
+<!--
+  Title: security-question-list.component.html
+  Author: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+  Date: 04/19/23
+  Last Modified by: Walter McCue
+  Last Modification Date: 04/19/23
+  Description: html for the bcrs project
+-->
+
+<p-confirmDialog [style]="{ width: '35vw' }" [baseZIndex]="10000"
+  rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+
+<div fxLayout="column" fxLayoutGap="20px">
+  <div fxFlex>
+    <h1 class="page-header">
+      Security Questions Configuration Page! <br />
+      <span class="subtitle">
+        Fields marked with an asterisk(*) are required.
+      </span>
+    </h1>
+  </div>
+
+  <div>
+    <p-messages [(value)]="serverMessages" [enableService]="false" style="color: #fff;"></p-messages>
+  </div>
+
+  <div fxFlex>
+    <div fxLayout="column" class="pageDesign">
+      <mat-card>
+        <form [formGroup]="sqForm" (ngSubmit)="create(); sqForm.reset()">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Security question</mat-label>
+            <input type="text" matInput formControlName="text" required placeholder="Enter a security question..." />
+
+            <button type="submit" [disabled]="!sqForm.valid" mat-icon-button matSuffix>
+              <mat-icon color="primary" style="width: 36px; height: 36px; font-size: 36px" matSuffix>
+                add_circle</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <mat-error *ngIf="sqForm.controls['text'].hasError('required') && sqForm.controls['text'].touched">
+            Security question is a required field.
+          </mat-error>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+
+
+  <div fxFlex>
+    <mat-card>
+      <p-table [value]="securityQuestions" responsiveLayout="scroll" class="api-table">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Security Questions
+            </th>
+            <th style="width: 8rem"></th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-sq>
+          <tr>
+            <td>{{ sq.text }}</td>
+            <td style="text-align: center">
+              <button mat-button type="button" routerLink="/security-questions/{{ sq._id }}"><i
+                  class="fa-solid fa-pen-to-square"></i></button>
+              <button mat-button type="button" (click)="delete(sq._id)"><i class="fa-regular fa-trash-can"></i>
+              </button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </mat-card>
+  </div>
+</div>

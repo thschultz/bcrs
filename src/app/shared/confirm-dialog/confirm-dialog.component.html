@@ -8,4 +8,18 @@
   Description: html for the bcrs project
 -->
 
-<p>confirm-dialog works!</p>
+
+  <h2 mat-dialog-title>{{ dialogData.header }}</h2>
+
+<div mat-dialog-content>
+  <p>{{ dialogData.body }}</p>
+  <p class="dialog-warning"><i class="fa-solid fa-triangle-exclamation"></i> WARNING: This action cannot be undone.</p>
+</div>
+
+<mat-divider></mat-divider>
+
+<div mat-dialog-actions class="dialog-buttons">
+  <button mat-raised-button matDialogClose="cancel" class="cancel">Cancel</button>
+  <button mat-raised-button matDialogClose="confirm" class="primary-color" cdkFocusInitial>Confirm</button>
+</div>
+

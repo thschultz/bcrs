@@ -17,13 +17,37 @@ const Ajv = require("ajv");
 const BaseResponse = require("../services/base-response");
 const ErrorResponse = require("../services/error-response");
 const SecurityQuestion = require("../models/security-question");
-const securityQuestion = require("../models/security-question");
+
 
 // Logging and Validation
 const myFile = "security-routes.js";
 const ajv = new Ajv();
 
-// findAllSecurityQuestions
+// Schema for  create and update validation
+const securitySchema = {
+  type: 'object',
+  properties: {
+    text: {type: 'string'}
+  },
+  required: ['text'],
+  additionalProperties: false
+}
+
+// Schema for disabled validation
+const disabledSchema = {
+  type: 'object',
+  properties: {
+    isDisabled: {type: 'boolean'},
+  },
+  required: ['isDisabled'],
+  additionalProperties: false
+}
+
+
+/**
+ * API: http://localhost:3000/api/security
+ */
+
 
 /**
  * findAllSecurityQuestions
@@ -45,6 +69,7 @@ const ajv = new Ajv();
  *         description: server error for all other use cases
  */
 
+// findAllSecurityQuestions
 router.get("/", async (req, res) => {
   try {
     SecurityQuestion.find({})
@@ -83,7 +108,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// findById
+
 /**
  * @openapi
  * /api/security/{id}:
@@ -120,6 +145,8 @@ router.get("/", async (req, res) => {
  *       '500':
  *         description: Server expectations.
  */
+
+// findById
 router.get("/:id", async (req, res) => {
   try {
     SecurityQuestion.findOne(
@@ -155,7 +182,6 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// createSecurityQuestion
 
 /**
  * createSecurityQuestion
@@ -190,15 +216,30 @@ router.get("/:id", async (req, res) => {
  *         description: MongoDB Exception
  */
 
+// createSecurityQuestion
 router.post("/", async (req, res) => {
   try {
     let newSecurityQuestion = {
       text: req.body.text,
     };
 
+    // Checks current request body against the schema
+    const validator = ajv.compile(securitySchema);
+    const valid = validator(newSecurityQuestion)
+
+    // If invalid return 400 Error
+    if (!valid) {
+      console.log('Bad Request, unable to validate');
+      const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
+      errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+      res.status(400).send(createServiceError.toObject());
+      return
+    }
+
     SecurityQuestion.create(
       newSecurityQuestion,
       function (err, securityQuestion) {
+
         if (err) {
           console.log(err);
           const createSecurityQuestionMongodbErrorResponse = new ErrorResponse(
@@ -231,7 +272,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// updateSecurityQuestions
+
 /**
  * updateSecurityQuestions
  * @openapi
@@ -267,11 +308,14 @@ router.post("/", async (req, res) => {
  *       '404':
  *         description: Not found
  */
+
+// updateSecurityQuestions
 router.put("/:id", async (req, res) => {
   try {
     SecurityQuestion.findOne(
       { _id: req.params.id },
       function (err, securityQuestion) {
+
         if (err) {
           //server error
           console.log(err);
@@ -283,6 +327,22 @@ router.put("/:id", async (req, res) => {
             .status(500)
             .send(updateSecurityQuestionMongodbErrorResponse.toObject());
         } else {
+
+          // Checks current request body against the schema
+          const validator = ajv.compile(securitySchema);
+          const valid = validator({
+            text: req.body.text
+          })
+
+          // If invalid return 400 Error
+          if (!valid) {
+            console.log('Bad Request, unable to validate');
+            const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
+            errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+            res.status(400).send(createServiceError.toObject());
+            return
+          }
+
           //setting security question
           console.log(securityQuestion);
 
@@ -325,8 +385,9 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+
 // deleteSecurity
-router.delete("/:id", async (req, res) => {
+router.delete('/:id', async (req, res) => {
   // find a security question by _id and delete it, or return an error message
   try {
     SecurityQuestion.findOne({'_id': req.params.id },function (err, securityQuestion) {
@@ -335,10 +396,25 @@ router.delete("/:id", async (req, res) => {
           const deleteByIdMongoDBErrorResponse = new new ErrorResponse(500, "Internal server error", err);
           res.status(500).send(deleteByIdMongoDBErrorResponse.toObject());
         } else {
+
           console.log(securityQuestion)
           securityQuestion.set({
             isDisabled: true,
           });
+          // Checks current request body against the schema
+          // const validator = ajv.compile(disabledSchema);
+          // const valid = validator({
+          //   isDisabled: req.body.isDisabled
+          // })
+
+          // If invalid return 400 Error
+          // if (!valid) {
+          //   console.log('Bad Request, unable to validate');
+          //   const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
+          //   errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+          //   res.status(400).send(createServiceError.toObject());
+          //   return
+          // }
 
           securityQuestion.save(function (err, savedSecurityQuestion) {
             if (err) {
@@ -361,4 +437,5 @@ router.delete("/:id", async (req, res) => {
     res.status(500).send(deleteSecurityQuestionCatchErrorResponse.toObject());
   }
 });
+
 module.exports = router;

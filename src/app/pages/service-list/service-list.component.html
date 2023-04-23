@@ -1,0 +1,118 @@
+<!--
+  Title: service-list.component.html
+  Author: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+  Date: 04/19/23
+  Last Modified by: Walter McCue
+  Last Modification Date: 04/19/23
+  Description: html for the bcrs project
+-->
+
+<p-confirmDialog [style]="{ width: '35vw' }" [baseZIndex]="10000"
+  rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+
+<div fxLayout="column" fxLayoutGap="20px">
+
+  <!-- Page Header -->
+  <div fxFlex>
+    <h1 class="page-header">
+      Services Configuration Page! <br />
+      <span class="subtitle">
+        Fields marked with an asterisk(*) are required.
+      </span>
+    </h1>
+  </div>
+
+  <div>
+    <p-messages [(value)]="serverMessages" [enableService]="false" style="color: #fff;"></p-messages>
+  </div>
+
+  <!-- Create Service Form -->
+  <div fxFlex>
+    <div fxLayout="column">
+      <mat-card>
+        <form [formGroup]="serviceForm" (ngSubmit)="create(); serviceForm.reset()">
+
+          <mat-form-field appearance="fill" class="w-60">
+            <mat-label>Service Name</mat-label>
+            <input type="text" matInput formControlName="serviceName" required placeholder="Enter a service name..." /><br />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="w-20">
+            <mat-label>Service Price</mat-label>
+            <input type="text" matInput formControlName="price" required placeholder="Enter a price..." />
+          </mat-form-field>
+
+          <button mat-button type="submit" [disabled]="!serviceForm.valid" class="primary-color form-button">
+            Add Service
+          </button>
+
+          <!-- Service Name Validation Errors -->
+          <mat-error *ngIf="serviceForm.controls['serviceName'].hasError('required') && serviceForm.controls['serviceName'].touched">
+            Service Name is a required field.
+          </mat-error>
+          <mat-error *ngIf="serviceForm.controls['serviceName'].hasError('minlength') && serviceForm.controls['serviceName'].touched">
+            Service Name must be at least 3 characters.
+          </mat-error>
+          <mat-error *ngIf="serviceForm.controls['serviceName'].hasError('maxlength') && serviceForm.controls['serviceName'].touched">
+            Service Name must be less than 50 characters.
+          </mat-error>
+
+          <!-- Price Validation Errors -->
+          <mat-error *ngIf="serviceForm.controls['price'].hasError('required') && serviceForm.controls['price'].touched">
+            Price is a required field.
+          </mat-error>
+          <mat-error *ngIf="serviceForm.controls['price'].hasError('pattern') && serviceForm.controls['price'].touched">
+            Price must be a number up to 2 decimal places.
+          </mat-error>
+          <mat-error *ngIf="serviceForm.controls['price'].hasError('maxlength') && serviceForm.controls['price'].touched">
+            We cannot charge our customers that. Please adjust the price to a more affordable level (under 8 characters).
+          </mat-error>
+
+        </form>
+      </mat-card>
+    </div>
+  </div>
+
+  <!-- List of Active Services -->
+  <div fxFlex>
+    <mat-card>
+      <p-table [value]="services" responsiveLayout="scroll" class="api-table">
+
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Service Name</th>
+            <th>Price</th>
+            <th style="width: 8rem"></th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-service>
+          <tr>
+            <td>{{ service.serviceName }}</td>
+            <td>{{ service.price }}</td>
+            <td style="text-align: center">
+              <button mat-button type="button" routerLink="/service-list/{{ service._id }}">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button mat-button type="button" (click)="delete(service._id)">
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </td>
+          </tr>
+        </ng-template>
+
+      </p-table>
+    </mat-card>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
