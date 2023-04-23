@@ -72,6 +72,13 @@ export class ServiceListComponent implements OnInit {
       complete: () => {
         this.serviceForm.controls['serviceName'].setErrors({ 'incorrect': false })
         this.serviceForm.controls['price'].setErrors({ 'incorrect': false })
+        this.serverMessages = [
+          {
+            severity: 'success',
+            summary: 'Success',
+            detail: 'Service Added Successfully'
+          }
+        ]
       }
     })
   }

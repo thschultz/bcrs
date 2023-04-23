@@ -65,6 +65,13 @@ export class SecurityQuestionListComponent implements OnInit {
       },
       complete: () => {
         this.sqForm.controls['text'].setErrors({ 'incorrect': false })
+        this.serverMessages = [
+          {
+            severity: 'success',
+            summary: 'Success',
+            detail: 'Security Question Added Successfully'
+          }
+        ]
       }
     })
   }
