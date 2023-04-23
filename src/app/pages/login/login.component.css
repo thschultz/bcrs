@@ -47,17 +47,16 @@ hr {
 }
 
 .mat-card-actions {
-  margin-right: 145px;
+  margin-right: 20%;
   margin-bottom: 60px;
 }
 
 button {
-  height: 46px;
   font-family: "Abril Fatface", cursive;
   font-size: 18px;
   font-weight: 700;
   float: right;
-  width: 10rem;
+  width: 25%;
   background-color: var(--green);
   color: black;
 }
@@ -75,6 +74,10 @@ input {
   padding-left: 10px;
 }
 
+hr {
+  width: 60%;
+}
+
 .create-account {
   display: flex;
   flex-direction: row;
@@ -86,9 +89,13 @@ input {
 
 a {
   color: #fff;
-  margin-top: 5%;
+  margin-top: 2%;
 }
 a:hover {
   cursor: pointer;
   color: var(--green);
+}
+
+.error-message {
+  background-color: red;
 }

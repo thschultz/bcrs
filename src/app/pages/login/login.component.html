@@ -9,7 +9,12 @@
 -->
 
 <div fxLayout="column">
-  <mat-card fxFlex class="login-container w-50"n style="margin-top: 150px;">
+  <mat-card
+    fxFlex
+    class="login-container w-50"
+    n
+    style="margin-top: 150px; border-radius: 10px"
+  >
     <mat-card-header class="header">
       <!-- Page Title-->
       <mat-card-title class="login-title"> Employee Login</mat-card-title>
@@ -78,6 +83,7 @@
               Log in
             </button>
           </mat-card-actions>
+          <hr />
           <div class="create-account">
             <a [routerLink]="" (click)="passwordReset()" class=""
               >Forgot Password?</a
