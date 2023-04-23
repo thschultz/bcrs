@@ -7,6 +7,7 @@
  * Description: user interface for the bcrs project
  */
 
+//user interface
 export interface User {
   _id?: string;
   userName?: string;

@@ -27,8 +27,8 @@ export class BaseLayoutComponent implements OnInit {
     this.userName = this.cookieService.get('sessionuser') ?? '';
   }
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void { }
+  //logout function. deletes cookie session
   logout() {
     this.cookieService.deleteAll();
     this.router.navigate(['/session/login']);

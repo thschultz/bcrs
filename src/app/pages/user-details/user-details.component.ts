@@ -59,7 +59,7 @@ export class UserDetailsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  //save user function
   saveUser(): void {
     const updateUser = {
       firstName: this.form.controls['firstName'].value,
@@ -68,11 +68,12 @@ export class UserDetailsComponent implements OnInit {
       email: this.form.controls['email'].value,
       address: this.form.controls['address'].value
     }
-
+    //if successful, takes them to user list page.
     this.userService.updateUser(this.userId, updateUser).subscribe({
       next: (res) => {
         this.router.navigate(['/user-list']);
       },
+      //error handling
       error: (e) => {
         this.errorMessages = [
           { severity: 'error', summary: 'Error', detail: e.message }
@@ -82,6 +83,7 @@ export class UserDetailsComponent implements OnInit {
       }
     })
   }
+  //cancel function to lead back to user list page
   cancel(): void {
     this.router.navigate(['/user-list'])
   }

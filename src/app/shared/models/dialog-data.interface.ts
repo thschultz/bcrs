@@ -7,6 +7,7 @@
  * Description: dialog data interface for the bcrs project
  */
 
+//dialog interface
 export interface DialogData {
   header: string;
   body: string;

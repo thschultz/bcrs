@@ -51,10 +51,11 @@ export class UserCreateComponent implements OnInit {
     this.userId = '';
   }
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void { }
+  //create user function
   createUser(): void {
     const newUser: User = {
+      //variables for form.
       userName: this.form.controls['userName'].value,
       password: this.form.controls['password'].value,
       firstName: this.form.controls['firstName'].value,
@@ -63,7 +64,7 @@ export class UserCreateComponent implements OnInit {
       address: this.form.controls['address'].value,
       email: this.form.controls['email'].value,
     };
-
+    //successful save and error handling
     this.userService.createUser(newUser).subscribe({
       next: (res) => {
         console.log(res);
@@ -80,7 +81,7 @@ export class UserCreateComponent implements OnInit {
       },
     });
   }
-
+  //cancel navigates to user list page
   cancel(): void {
     this.router.navigate(['/user-list']);
   }

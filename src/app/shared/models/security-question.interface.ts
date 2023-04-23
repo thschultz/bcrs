@@ -7,6 +7,7 @@
  * Description: security question interface for the bcrs project
  */
 
+//security question interface
 export interface SecurityQuestion {
   _id?: string;
   text: string;
