@@ -27,6 +27,7 @@ export class ServiceListComponent implements OnInit {
   services: Service[] = [];
   serverMessages: Message[] = [];
 
+  // FormGroup initializer with Validators
   serviceForm: FormGroup = this.fb.group({
     serviceName: new FormControl('', [ Validators.required, Validators.minLength(3), Validators.maxLength(50) ]),
     price: new FormControl('', [ Validators.required, Validators.pattern('\\-?\\d*\\.?\\d{1,2}'), Validators.maxLength(7) ])
@@ -35,6 +36,7 @@ export class ServiceListComponent implements OnInit {
   constructor(private serviceService: ServiceService, private confirmationService: ConfirmationService, private fb: FormBuilder, private dialog: MatDialog) {
     this.services = [];
 
+    // findAllServices function
     this.serviceService.findAllServices().subscribe({
       next: (res) => {
         this.services = res.data;
@@ -48,10 +50,11 @@ export class ServiceListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // createService function
   create(): void {
     const serviceName = this.serviceForm.controls['serviceName'].value;
-    const inputPrice = this.serviceForm.controls['price'].value;
-    const price = parseFloat(inputPrice);
+    const price = parseFloat(this.serviceForm.controls['price'].value);
+
 
     const newService = {
       serviceName: serviceName,
@@ -72,6 +75,7 @@ export class ServiceListComponent implements OnInit {
     })
   }
 
+  // deleteService function
   delete(serviceId: string): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: {
@@ -82,13 +86,17 @@ export class ServiceListComponent implements OnInit {
       // User has to click one of the buttons in the dialog box to get it to close
       disableClose: true
     })
+
+    // Subscribe event from dialog box
     dialogRef.afterClosed().subscribe({
       next: (result) => {
+
+        // If delete is confirmed, the service is disabled
         if (result === 'confirm') {
           this.serviceService.deleteService(serviceId).subscribe({
             next: (res) => {
               console.log('Service deleted successfully!');
-              this.services = this.services.filter(sq => sq._id !== serviceId);
+              this.services = this.services.filter(service => service._id !== serviceId);
               this.serverMessages = [
                 {
                   severity: 'success',

@@ -8,40 +8,34 @@ Last Modification Date: 04/18/23
 Description: component styling for the bcrs project
 */
 
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Carter+One&family=Kanit:wght@300&display=swap");
+
+
 .login-container {
-  width: 50%;
-  margin: 10% auto;
+  margin: auto;
   text-align: center;
-  background-color: #000;
-  border: var(--green) 4px solid;
-  box-shadow: 0 0 10px 3px var(--green), inset 0 0 10px 5px var(--green);
 }
 
 .header {
   justify-content: center;
   align-items: center;
-  height: 80px;
+  height: 100px;
+  background-color: rgb(48, 48, 48);
 }
 
 .login-title {
   font-size: 30px;
   margin-top: 20px;
+  font-family: "Abril Fatface", cursive;
 }
 
 hr {
-  width: 90%;
-  border: var(--green) 2px solid;
-  box-shadow: 0 0 10px 3px var(--green), inset 0 0 10px 5px var(--green);
-  background-color: var(--green);
+  width: 100%;
   margin-bottom: 20px;
 }
 .mat-card {
+  margin-top: 50px;
   padding: 0;
-}
-
-.mat-card-header {
-  color: var(--green);
-  text-shadow: 1px 5px 10px var(--green);
 }
 
 .mat-card-content {
@@ -53,40 +47,30 @@ hr {
 }
 
 .mat-card-actions {
-  margin-right: 128px;
+  margin-right: 145px;
   margin-bottom: 60px;
 }
 
-.btn {
+button {
   height: 46px;
   font-family: "Abril Fatface", cursive;
   font-size: 18px;
-  border: var(--green) 2px solid;
-  box-shadow: 0 0 10px 2px var(--green), inset 0 0 10px 5px var(--green);
-  background-color: transparent;
+  font-weight: 700;
   float: right;
   width: 10rem;
+  background-color: var(--green);
+  color: black;
 }
 
 .btn:disabled {
   background-color: transparent;
-  color: grey;
+  color: #fff;
   font-family: "Abril Fatface", cursive;
-}
-
-.input-area {
-  margin-top: 20px;
-  background-color: transparent;
-  margin: auto;
 }
 
 input {
-  background-color: #000;
-  border: var(--green) 4px solid;
-  box-shadow: 0 0 10px 2px var(--green), inset 0 0 10px 5px var(--green);
-  height: 60px;
   border-radius: 5px;
-  font-family: "Abril Fatface", cursive;
+  font-family: cursive;
   font-size: 18px;
   padding-left: 10px;
 }
@@ -101,9 +85,10 @@ input {
 }
 
 a {
-  color: var(--green);
+  color: #fff;
+  margin-top: 5%;
 }
 a:hover {
   cursor: pointer;
-  color: #fff;
+  color: var(--green);
 }

@@ -9,22 +9,21 @@
 -->
 
 <div fxLayout="column">
-  <mat-card fxFlex class="login-container w-50">
+  <mat-card fxFlex class="login-container w-50"n style="margin-top: 150px;">
     <mat-card-header class="header">
       <!-- Page Title-->
-      <mat-card-title class="login-title"> Employee Login In </mat-card-title>
+      <mat-card-title class="login-title"> Employee Login</mat-card-title>
     </mat-card-header>
-    <hr />
-    <mat-card-content class="login-content">
+    <mat-card-content>
       <!-- Display error messages-->
       <p-messages
         [(value)]="errorMessages"
         [enableService]="false"
       ></p-messages>
-      <mat-card class="input-area mat-elevation-z0">
+      <mat-card class="mat-elevation-z0">
         <form [formGroup]="loginForm" (ngSubmit)="login(); loginForm.reset()">
           <mat-card-content>
-            <mat-form-field appearance="standard">
+            <mat-form-field appearance="fill">
               <input
                 type="text"
                 matInput
@@ -43,7 +42,7 @@
               </mat-error>
             </mat-form-field>
 
-            <mat-form-field appearance="standard">
+            <mat-form-field appearance="fill">
               <input
                 matInput
                 type="password"
@@ -75,15 +74,17 @@
               type="submit"
               mat-raised-button
               [disabled]="!loginForm.valid"
-              class="btn"
             >
               Log in
             </button>
           </mat-card-actions>
-          <hr />
           <div class="create-account">
-            <a [routerLink]="" (click)="passwordReset()">Forgot Password?</a>
-            <a [routerLink]="" (click)="createAccount()">Create Account</a>
+            <a [routerLink]="" (click)="passwordReset()" class=""
+              >Forgot Password?</a
+            >
+            <a [routerLink]="" (click)="createAccount()" class=""
+              >Create Account</a
+            >
           </div>
         </form>
       </mat-card>

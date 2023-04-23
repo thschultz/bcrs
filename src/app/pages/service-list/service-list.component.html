@@ -78,6 +78,7 @@
     <mat-card>
       <p-table [value]="services" responsiveLayout="scroll" class="api-table">
 
+        <!-- Table Header -->
         <ng-template pTemplate="header">
           <tr>
             <th>Service Name</th>
@@ -86,10 +87,11 @@
           </tr>
         </ng-template>
 
+        <!-- Table Body -->
         <ng-template pTemplate="body" let-service>
           <tr>
             <td>{{ service.serviceName }}</td>
-            <td>{{ service.price }}</td>
+            <td>{{ service.price | number: '1.2' }}</td>
             <td style="text-align: center">
               <button mat-button type="button" routerLink="/service-list/{{ service._id }}">
                 <i class="fa-solid fa-pen-to-square"></i>
