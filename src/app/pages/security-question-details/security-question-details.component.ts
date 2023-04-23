@@ -2,7 +2,7 @@
  * Title: security-question-details.component.ts
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 04/19/23
- * Last Modified by: Walter McCue
+ * Last Modified by: Thomas Schultz
  * Last Modification Date: 04/19/23
  * Description: security question details component for the bcrs project
  */
@@ -25,7 +25,7 @@ export class SecurityQuestionDetailsComponent implements OnInit {
   errorMessages: Message[];
 
   editForm: FormGroup = this.fb.group({
-    text: [null, Validators.compose([Validators.required])],
+    text: [null, Validators.compose([ Validators.required, Validators.minLength(3), Validators.maxLength(75) ])],
   });
 
   constructor(

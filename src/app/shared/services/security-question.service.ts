@@ -2,7 +2,7 @@
  * Title: security-question.service.ts
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 04/19/23
- * Last Modified by: Walter McCue
+ * Last Modified by: Thomas Schultz
  * Last Modification Date: 04/19/23
  * Description: security question api service for the bcrs project
  */

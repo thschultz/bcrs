@@ -2,7 +2,7 @@
  * Title: user-details.component.ts
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 04/19/23
- * Last Modified by: Walter McCue
+ * Last Modified by: Carl Logan
  * Last Modification Date: 04/19/23
  * Description: user details component for the bcrs project
  */
@@ -26,11 +26,11 @@ export class UserDetailsComponent implements OnInit {
   errorMessages: Message[];
 
   form: FormGroup = this.fb.group({
-    firstName: [null, Validators.compose([Validators.required])],
-    lastName: [null, Validators.compose([Validators.required])],
-    phoneNumber: [null, Validators.compose([Validators.required])],
-    email: [null, Validators.compose([Validators.required, Validators.email])],
-    address: [null, Validators.compose([Validators.required])],
+    firstName: [null, Validators.compose([ Validators.required, Validators.minLength(3), Validators.maxLength(35) ])],
+    lastName: [null, Validators.compose([ Validators.required, Validators.minLength(3), Validators.maxLength(35) ])],
+    phoneNumber: [null, Validators.compose( [Validators.required, Validators.pattern('\\d{3}\\-\\d{3}-\\d{4}') ])],
+    email: [null, Validators.compose([ Validators.required, Validators.email ])],
+    address: [null, Validators.compose([ Validators.required, Validators.minLength(3), Validators.maxLength(75) ])],
   });
 
   constructor(private route: ActivatedRoute, private fb: FormBuilder, private router: Router, private userService: UserService) {

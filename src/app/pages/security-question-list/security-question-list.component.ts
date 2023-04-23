@@ -2,7 +2,7 @@
  * Title: security-question-list.component.ts
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 04/19/23
- * Last Modified by: Walter McCue
+ * Last Modified by: Carl Logan
  * Last Modification Date: 04/19/23
  * Description: security question list component for the bcrs project
  */
@@ -28,7 +28,7 @@ export class SecurityQuestionListComponent implements OnInit {
   serverMessages: Message[] = [];
 
   sqForm: FormGroup = this.fb.group({
-    text: [null, Validators.compose([Validators.required])]
+    text: [null, Validators.compose([ Validators.required, Validators.minLength(3), Validators.maxLength(75) ])]
   });
 
   constructor(private securityQuestionService: SecurityQuestionService, private confirmationService: ConfirmationService, private fb: FormBuilder, private dialog: MatDialog) {
