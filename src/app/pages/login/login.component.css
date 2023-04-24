@@ -20,13 +20,14 @@ Description: component styling for the bcrs project
   justify-content: center;
   align-items: center;
   height: 100px;
-  background-color: rgb(48, 48, 48);
+  background-image: linear-gradient(to bottom, rgb(19, 19, 19), rgb(66,66,66));
 }
 
 .login-title {
   font-size: 30px;
   margin-top: 20px;
   font-family: "Abril Fatface", cursive;
+  color: var(--green);
 }
 
 hr {

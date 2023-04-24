@@ -8,16 +8,16 @@
 -->
 
 <div fxLayout="colums">
-  <mat-card
-    style="margin: auto; margin-top: 100px; width: 50%"
-    class="mat-elevation-z0"
-  >
-    <mat-card-title style="text-align: center">
-      Create User Form
-    </mat-card-title>
-    <mat-card-subtitle style="text-align: center"
-      >Field marked with an asterisk (*) are required.</mat-card-subtitle
-    >
+  <mat-card class="mat-elevation-z0">
+    <div class="header">
+      <mat-card-title style="text-align: center">
+        Create User Form
+      </mat-card-title>
+
+      <mat-card-subtitle style="text-align: center"
+        >Field marked with an asterisk (*) are required.</mat-card-subtitle
+      >
+    </div>
 
     <br />
     <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
@@ -26,149 +26,120 @@
       [formGroup]="form"
       (ngSubmit)="createUser()"
       (keydown.enter)="$event.preventDefault()"
-      style="width: 50%; margin: 0 auto"
     >
       <mat-card-content>
         <div fxLayout="column" fxLayoutGap="10px">
+          <div class="smaller-inputs">
+            <!-- First Name -->
+            <mat-form-field appearance="outline">
+              <mat-label>First name</mat-label>
+              <input
+                type="text"
+                matInput
+                formControlName="firstName"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  form.controls['firstName'].hasError('required') &&
+                  form.controls['firstName'].touched
+                "
+                >First name is a required field.</mat-error
+              >
+              <mat-error
+                *ngIf="
+                  form.controls['firstName'].hasError('minlength') &&
+                  form.controls['firstName'].touched
+                "
+                >First Name must be at least 3 characters.</mat-error
+              >
+              <mat-error
+                *ngIf="
+                  form.controls['firstName'].hasError('maxlength') &&
+                  form.controls['firstName'].touched
+                "
+                >First Name must be less than 35 characters.</mat-error
+              >
+            </mat-form-field>
+            <!-- Last Name -->
+            <mat-form-field appearance="outline">
+              <mat-label>Last name</mat-label>
+              <input type="text" matInput formControlName="lastName" required />
+              <mat-error
+                *ngIf="
+                  form.controls['lastName'].hasError('required') &&
+                  form.controls['lastName'].touched
+                "
+                >Last name is a required field.</mat-error
+              >
+              <mat-error
+                *ngIf="
+                  form.controls['lastName'].hasError('minlength') &&
+                  form.controls['lastName'].touched
+                "
+                >Last Name must be at least 3 characters.</mat-error
+              >
+              <mat-error
+                *ngIf="
+                  form.controls['lastName'].hasError('maxlength') &&
+                  form.controls['lastName'].touched
+                "
+                >Last Name must be less than 35 characters.</mat-error
+              >
+            </mat-form-field>
+          </div>
 
-          <!-- Username -->
-          <mat-form-field appearance="fill">
-            <mat-label>Username</mat-label>
-            <input type="text" matInput formControlName="userName" required autocomplete="off" />
-            <mat-error
-              *ngIf="
-                form.controls['userName'].hasError('required') &&
-                form.controls['userName'].touched
-              "
-              >Username is a required field.</mat-error
-            >
-          </mat-form-field>
-
-          <!-- Password -->
-          <mat-form-field appearance="fill">
-            <mat-label>Password</mat-label>
-            <input
-              type="password"
-              matInput
-              formControlName="password"
-              required
-              autocomplete="off"
-            />
-            <mat-error
-              *ngIf="
-                form.controls['password'].hasError('required') &&
-                form.controls['password'].touched
-              "
-              >Password is a required field.</mat-error
-            >
-            <mat-error
-              *ngIf="
-                form.controls['password'].hasError('pattern') &&
-                form.controls['password'].touched
-              "
-              >Password must be at least 8 characters, contain one letter, and
-              one number.</mat-error
-            >
-          </mat-form-field>
-
-          <!-- First Name -->
-          <mat-form-field appearance="fill">
-            <mat-label>First name</mat-label>
-            <input type="text" matInput formControlName="firstName" required />
-            <mat-error
-              *ngIf="
-                form.controls['firstName'].hasError('required') &&
-                form.controls['firstName'].touched
-              "
-              >First name is a required field.</mat-error
-            >
-            <mat-error
-              *ngIf="
-              form.controls['firstName'].hasError('minlength') &&
-              form.controls['firstName'].touched
-              "
-              >First Name must be at least 3 characters.</mat-error
-            >
-            <mat-error
-              *ngIf="
-              form.controls['firstName'].hasError('maxlength') &&
-              form.controls['firstName'].touched"
-              >First Name must be less than 35 characters.</mat-error
-            >
-          </mat-form-field>
-
-          <!-- Last Name -->
-          <mat-form-field appearance="fill">
-            <mat-label>Last name</mat-label>
-            <input type="text" matInput formControlName="lastName" required />
-            <mat-error
-              *ngIf="
-                form.controls['lastName'].hasError('required') &&
-                form.controls['lastName'].touched
-              "
-              >Last name is a required field.</mat-error
-            >
-            <mat-error
-              *ngIf="
-              form.controls['lastName'].hasError('minlength') &&
-              form.controls['lastName'].touched
-              "
-              >Last Name must be at least 3 characters.</mat-error
-            >
-            <mat-error
-              *ngIf="form.controls['lastName'].hasError('maxlength') &&
-              form.controls['lastName'].touched"
-              >Last Name must be less than 35 characters.</mat-error
-            >
-          </mat-form-field>
-
-          <!-- Phone Number -->
-          <mat-form-field appearance="fill">
-            <mat-label>Phone Number</mat-label>
-            <input
-              type="text"
-              matInput
-              formControlName="phoneNumber"
-              required
-            />
-            <mat-error
-              *ngIf="
-                form.controls['phoneNumber'].hasError('required') &&
-                form.controls['phoneNumber'].touched
-              "
-              >Phone number is a required field.</mat-error
-            >
-            <mat-error
-              *ngIf="
-              form.controls['phoneNumber'].hasError('pattern') &&
-              form.controls['phoneNumber'].touched"
-              >Phone number must be formatted as 999-999-9999.</mat-error
-            >
-          </mat-form-field>
-
-          <!-- Email Address -->
-          <mat-form-field appearance="fill">
-            <mat-label>Email address</mat-label>
-            <input type="text" matInput formControlName="email" required />
-            <mat-error
-              *ngIf="
-                form.controls['email'].hasError('required') &&
-                form.controls['email'].touched
-              "
-              >Email address is a required field.</mat-error
-            >
-            <mat-error
-              *ngIf="
-                form.controls['email'].hasError('email') &&
-                form.controls['email'].touched
-              "
-              >Invalid email format.</mat-error
-            >
-          </mat-form-field>
+          <div class="smaller-inputs">
+            <!-- Phone Number -->
+            <mat-form-field appearance="outline">
+              <mat-label>Phone Number</mat-label>
+              <input
+                type="text"
+                matInput
+                formControlName="phoneNumber"
+                required
+              />
+              <mat-error
+                *ngIf="
+                  form.controls['phoneNumber'].hasError('required') &&
+                  form.controls['phoneNumber'].touched
+                "
+                >Phone number is a required field.</mat-error
+              >
+              <mat-error
+                *ngIf="
+                  form.controls['phoneNumber'].hasError('pattern') &&
+                  form.controls['phoneNumber'].touched
+                "
+                >Phone number must be formatted as 999-999-9999.</mat-error
+              >
+            </mat-form-field>
+            <!-- Email Address -->
+            <mat-form-field appearance="outline">
+              <mat-label>Email address</mat-label>
+              <input type="text" matInput formControlName="email" required />
+              <mat-error
+                *ngIf="
+                  form.controls['email'].hasError('required') &&
+                  form.controls['email'].touched
+                "
+                >Email address is a required field.</mat-error
+              >
+              <mat-error
+                *ngIf="
+                  form.controls['email'].hasError('email') &&
+                  form.controls['email'].touched
+                "
+                >Invalid email format.</mat-error
+              >
+            </mat-form-field>
+          </div>
 
           <!-- Address -->
-          <mat-form-field appearance="fill">
+
+          <mat-form-field class="address" appearance="outline">
             <mat-label>Address</mat-label>
+
             <input
               type="text"
               matInput
@@ -176,6 +147,7 @@
               required
               placeholder="28201 E. Bonanza st. South Park, Colorado 15129"
             />
+
             <mat-error
               *ngIf="
                 form.controls['email'].hasError('required') &&
@@ -183,29 +155,65 @@
               "
               >Address is a required field.</mat-error
             >
-            <mat-error
-              *ngIf="
-                form.controls['address'].hasError('minlength') &&
-                form.controls['address'].touched
-                "
-                >Last Name must be at least 3 characters.</mat-error
-              >
-            <mat-error
-              *ngIf="
-              form.controls['address'].hasError('maxlength') &&
-              form.controls['address'].touched
-              "
-              >Last Name must be less than 75 characters.</mat-error
-            >
           </mat-form-field>
+
+          <hr />
+          <div class="smaller-inputs" id="username-password">
+            <!-- Username -->
+            <mat-form-field appearance="outline">
+              <mat-label>Username</mat-label>
+              <input
+                type="text"
+                matInput
+                formControlName="userName"
+                required
+                autocomplete="off"
+              />
+              <mat-error
+                *ngIf="
+                  form.controls['userName'].hasError('required') &&
+                  form.controls['userName'].touched
+                "
+                >Username is a required field.</mat-error
+              >
+            </mat-form-field>
+
+            <!-- Password -->
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input
+                type="password"
+                matInput
+                formControlName="password"
+                required
+                autocomplete="off"
+              />
+              <mat-error
+                *ngIf="
+                  form.controls['password'].hasError('required') &&
+                  form.controls['password'].touched
+                "
+                >Password is a required field.</mat-error
+              >
+              <mat-error
+                *ngIf="
+                  form.controls['password'].hasError('pattern') &&
+                  form.controls['password'].touched
+                "
+                >Password must be at least 8 characters, contain one letter, and
+                one number.</mat-error
+              >
+            </mat-form-field>
+          </div>
         </div>
       </mat-card-content>
-
-      <br />
-
-      <mat-card-actions align="end">
-        <button mat-raised-button (click)="cancel()" color="accent">Cancel</button>
-        <button mat-raised-button [disabled]="!form.valid" color="primary">Submit</button>
+      <mat-card-actions>
+        <button mat-raised-button (click)="cancel()" color="accent">
+          Cancel
+        </button>
+        <button mat-raised-button [disabled]="!form.valid" color="primary">
+          Submit
+        </button>
       </mat-card-actions>
     </form>
   </mat-card>
