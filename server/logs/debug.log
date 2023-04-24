@@ -32157,3 +32157,18 @@
   selectedSecurityQuestions: [],
   __v: 0
 }
+[4/23/2023, 1:00:31 AM] server	 session-routes.js - {
+  _id: new ObjectId("6440c9ae3c98e2d36a50236e"),
+  userName: 'Eric23',
+  password: '$2a$10$UoOxp2cLikRrBBQgadhTUOvNjfYjuJyIiyXXqBtJ6UcEo/ltXw3gW',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '123-456-7890',
+  address: '1234 Authority st. South Park, Colorado 12345',
+  email: 'eric@southpark.tv',
+  isDisabled: false,
+  dateCreated: 2023-04-20T05:12:11.773Z,
+  selectedSecurityQuestions: [],
+  __v: 0,
+  dateModified: 2023-04-22T00:29:56.194Z
+}
