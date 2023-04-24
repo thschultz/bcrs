@@ -7,6 +7,7 @@
  * Description: service interface for the bcrs project
  */
 
+//service interface
 export interface Service {
   _id?: string;
   serviceName: string;

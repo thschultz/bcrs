@@ -18,31 +18,31 @@ import { Observable } from 'rxjs';
 export class ServiceService {
 
   constructor(private http: HttpClient) { }
-
-    findAllServices(): Observable<any> {
-      return this.http.get('/api/services');
-    }
-
-    findServiceById(serviceId: string): Observable<any> {
-      return this.http.get('/api/services/' + serviceId);
-    }
-
-    createService(newService: Service): Observable<any> {
-      return this.http.post('/api/services', {
-        serviceName: newService.serviceName,
-        price: newService.price
-      })
-    }
-
-    updateService(serviceId: string, updateService: Service): Observable<any> {
-      return this.http.put('/api/services/' + serviceId, {
-        serviceName: updateService.serviceName,
-        price: updateService.price
-      })
-    }
-
-    deleteService(serviceId: string): Observable<any> {
-      return this.http.delete('/api/services/' + serviceId);
-    }
+  //find all services function
+  findAllServices(): Observable<any> {
+    return this.http.get('/api/services');
+  }
+  //find all services by id function
+  findServiceById(serviceId: string): Observable<any> {
+    return this.http.get('/api/services/' + serviceId);
+  }
+  //create service function
+  createService(newService: Service): Observable<any> {
+    return this.http.post('/api/services', {
+      serviceName: newService.serviceName,
+      price: newService.price
+    })
+  }
+  //update service function
+  updateService(serviceId: string, updateService: Service): Observable<any> {
+    return this.http.put('/api/services/' + serviceId, {
+      serviceName: updateService.serviceName,
+      price: updateService.price
+    })
+  }
+  //delete service function
+  deleteService(serviceId: string): Observable<any> {
+    return this.http.delete('/api/services/' + serviceId);
+  }
 
 }

@@ -3,8 +3,8 @@
  * Author: Richard Krasso
  * Contributors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 04/16/23
- * Last Modified by: Walter McCue
- * Last Modification Date: 04/16/23
+ * Last Modified by: Thomas Schultz
+ * Last Modification Date: 04/21/23
  * Description: base layout for UI for the bcrs project
  */
 
@@ -27,8 +27,8 @@ export class BaseLayoutComponent implements OnInit {
     this.userName = this.cookieService.get('sessionuser') ?? '';
   }
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void { }
+  //logout function. deletes cookie session
   logout() {
     this.cookieService.deleteAll();
     this.router.navigate(['/session/login']);

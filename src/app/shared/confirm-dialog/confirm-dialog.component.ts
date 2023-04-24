@@ -17,7 +17,7 @@ import { DialogData } from '../models/dialog-data.interface'
   templateUrl: './confirm-dialog.component.html',
   styleUrls: ['./confirm-dialog.component.css']
 })
-
+//confirm dialog class
 export class ConfirmDialogComponent implements OnInit {
   dialogData: DialogData
 

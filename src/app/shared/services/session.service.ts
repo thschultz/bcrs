@@ -2,7 +2,7 @@
  * Title: session.module.ts
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 04/19/23
- * Last Modified by: Walter McCue
+ * Last Modified by: Thomas Schultz
  * Last Modification Date: 04/19/23
  * Description: session api service for the bcrs project
  */
@@ -14,9 +14,10 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class SessionService {
-  constructor(private http: HttpClient) {}
 
+export class SessionService {
+  constructor(private http: HttpClient) { }
+  //login function from session API
   login(userName: string, password: string): Observable<any> {
     return this.http.post('/api/session/login', {
       userName,

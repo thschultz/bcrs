@@ -2,7 +2,7 @@
   Title: security-question-details.component.html
   Author: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
   Date: 04/19/23
-  Last Modified by: Walter McCue
+  Last Modified by: Thomas Schultz
   Last Modification Date: 04/19/23
   Description: html for the bcrs project
 -->
@@ -27,6 +27,12 @@
             <mat-error class="error"
               *ngIf="editForm.controls['text'].hasError('required') && editForm.controls['text'].touched">
               Security question is a required field.
+            </mat-error>
+            <mat-error *ngIf="editForm.controls['text'].hasError('minlength') && editForm.controls['text'].touched">
+              Security question must be at least 3 characters.
+            </mat-error>
+            <mat-error *ngIf="editForm.controls['text'].hasError('maxlength') && editForm.controls['text'].touched">
+              Security question must be less than 75 characters.
             </mat-error>
           </mat-form-field>
         </div>

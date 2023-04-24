@@ -8,19 +8,19 @@
  */
 
 import { Component, OnInit } from '@angular/core';
-import { ConfirmationService, ConfirmEventType } from 'primeng/api';
+
 import { ServiceService } from '../../shared/services/service.service';
 import { Service } from '../../shared/models/service.interface';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog'
-import { Message } from 'primeng/api/message';
+import { Message } from 'primeng/api';
 
 @Component({
   selector: 'app-service-list',
   templateUrl: './service-list.component.html',
   styleUrls: ['./service-list.component.css'],
-  providers: [ConfirmationService]
+  providers: []
 })
 export class ServiceListComponent implements OnInit {
 
@@ -33,8 +33,9 @@ export class ServiceListComponent implements OnInit {
     price: new FormControl('', [ Validators.required, Validators.pattern('\\-?\\d*\\.?\\d{1,2}'), Validators.maxLength(7) ])
   });
 
-  constructor(private serviceService: ServiceService, private confirmationService: ConfirmationService, private fb: FormBuilder, private dialog: MatDialog) {
+  constructor(private serviceService: ServiceService, private fb: FormBuilder, private dialog: MatDialog) {
     this.services = [];
+    this.serverMessages = [];
 
     // findAllServices function
     this.serviceService.findAllServices().subscribe({
@@ -71,6 +72,13 @@ export class ServiceListComponent implements OnInit {
       complete: () => {
         this.serviceForm.controls['serviceName'].setErrors({ 'incorrect': false })
         this.serviceForm.controls['price'].setErrors({ 'incorrect': false })
+        this.serverMessages = [
+          {
+            severity: 'success',
+            summary: 'Success',
+            detail: 'Service Added Successfully'
+          }
+        ]
       }
     })
   }
