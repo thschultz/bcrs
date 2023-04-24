@@ -22,6 +22,7 @@ import { Message } from 'primeng/api';
   styleUrls: ['./user-create.component.css'],
 })
 export class UserCreateComponent implements OnInit {
+  // Form group with validations
   form: FormGroup = this.fb.group({
     userName: [null, Validators.compose([ Validators.required ])],
     password: [

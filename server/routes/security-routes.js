@@ -149,9 +149,11 @@ router.get("/", async (req, res) => {
 // findById
 router.get("/:id", async (req, res) => {
   try {
+    // Find question by id from request parameter
     SecurityQuestion.findOne(
       { _id: req.params.id },
       (err, securityQuestion) => {
+        // Internal server error
         if (err) {
           console.log(err);
           const findByIdMongodbErrorResponse = new ErrorResponse(
@@ -161,6 +163,7 @@ router.get("/:id", async (req, res) => {
           );
           res.status(500).send(findByIdMongodbErrorResponse.toObject());
         } else {
+          // Successful query response
           console.log(securityQuestion);
           const findByIdResponse = new BaseResponse(
             200,
@@ -172,6 +175,7 @@ router.get("/:id", async (req, res) => {
       }
     );
   } catch (e) {
+    // Internal server error
     console.log(e);
     const findByIdCatchErrorResponse = new ErrorResponse(
       500,

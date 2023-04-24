@@ -26,6 +26,7 @@
         [enableService]="false"
       ></p-messages>
       <mat-card class="mat-elevation-z0">
+        <!-- Username and password form-->
         <form [formGroup]="loginForm" (ngSubmit)="login(); loginForm.reset()">
           <mat-card-content>
             <mat-form-field appearance="outline">
@@ -54,6 +55,8 @@
                 formControlName="password"
                 placeholder="   Password"
               />
+
+              <!-- Error handling-->
               <mat-error
                 *ngIf="
                   loginForm.controls['password'].hasError('required') &&
@@ -74,6 +77,8 @@
               </mat-error>
             </mat-form-field>
           </mat-card-content>
+
+          <!-- Form submission button-->
           <mat-card-actions>
             <button
               type="submit"
@@ -84,6 +89,8 @@
             </button>
           </mat-card-actions>
           <hr />
+
+          <!-- Account creations and password reset anchors-->
           <div class="create-account">
             <a [routerLink]="" (click)="passwordReset()" class=""
               >Forgot Password?</a

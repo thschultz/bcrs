@@ -20,8 +20,9 @@
     </div>
 
     <br />
+    <!-- Displaying success and error messages -->
     <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
-
+    <!-- User creation form-->
     <form
       [formGroup]="form"
       (ngSubmit)="createUser()"
@@ -39,6 +40,7 @@
                 formControlName="firstName"
                 required
               />
+              <!-- Error handling -->
               <mat-error
                 *ngIf="
                   form.controls['firstName'].hasError('required') &&
@@ -65,6 +67,7 @@
             <mat-form-field appearance="outline">
               <mat-label>Last name</mat-label>
               <input type="text" matInput formControlName="lastName" required />
+              <!-- Error handling -->
               <mat-error
                 *ngIf="
                   form.controls['lastName'].hasError('required') &&
@@ -99,6 +102,7 @@
                 formControlName="phoneNumber"
                 required
               />
+              <!-- Error handling -->
               <mat-error
                 *ngIf="
                   form.controls['phoneNumber'].hasError('required') &&
@@ -118,6 +122,7 @@
             <mat-form-field appearance="outline">
               <mat-label>Email address</mat-label>
               <input type="text" matInput formControlName="email" required />
+              <!-- Error handling -->
               <mat-error
                 *ngIf="
                   form.controls['email'].hasError('required') &&
@@ -147,7 +152,7 @@
               required
               placeholder="28201 E. Bonanza st. South Park, Colorado 15129"
             />
-
+            <!-- Error handling -->
             <mat-error
               *ngIf="
                 form.controls['email'].hasError('required') &&
@@ -169,6 +174,7 @@
                 required
                 autocomplete="off"
               />
+              <!-- Error handling -->
               <mat-error
                 *ngIf="
                   form.controls['userName'].hasError('required') &&
@@ -188,6 +194,7 @@
                 required
                 autocomplete="off"
               />
+              <!-- Error handling -->
               <mat-error
                 *ngIf="
                   form.controls['password'].hasError('required') &&
@@ -207,6 +214,7 @@
           </div>
         </div>
       </mat-card-content>
+      <!-- Form submission and cancel buttons-->
       <mat-card-actions>
         <button mat-raised-button (click)="cancel()" color="accent">
           Cancel
