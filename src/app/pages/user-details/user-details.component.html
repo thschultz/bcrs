@@ -18,7 +18,7 @@
     <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
 
     <form [formGroup]="form" (ngSubmit)="saveUser()" (keydown.enter)="$event.preventDefault()"
-      style="width: 50%; margin: 0 auto">
+      style="width: 50%; margin: 0 auto" autocomplete="off">
       <mat-card-content>
         <div fxLayout="column" fxLayoutGap="10px">
 
