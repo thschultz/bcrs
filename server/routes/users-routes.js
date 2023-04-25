@@ -83,18 +83,6 @@ const updateUserSchema = {
   additionalProperties: false,
 };
 
-<<<<<<< HEAD
-// Schema for disabled validation
-const disabledSchema = {
-  type: "object",
-  properties: {
-    isDisabled: { type: "boolean" },
-  },
-  required: ["isDisabled"],
-  additionalProperties: false,
-};
-=======
->>>>>>> f76f4c66b67dffe748e8728037d85428f73b849b
 
 /**
  * API: http://localhost:3000/api/users
