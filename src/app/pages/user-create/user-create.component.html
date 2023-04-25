@@ -7,7 +7,7 @@
   Description: html for the bcrs project
 -->
 
-<div fxLayout="colums">
+<div fxLayout="column">
   <mat-card class="mat-elevation-z0">
     <div class="header">
       <mat-card-title style="text-align: center">
@@ -216,12 +216,14 @@
       </mat-card-content>
       <!-- Form submission and cancel buttons-->
       <mat-card-actions>
-        <button mat-raised-button (click)="cancel()" color="accent">
-          Cancel
-        </button>
-        <button mat-raised-button [disabled]="!form.valid" color="primary">
-          Submit
-        </button>
+        <div class="w-100">
+          <button mat-raised-button (click)="cancel()" class="cancel">
+            Cancel
+          </button>
+          <button mat-raised-button [disabled]="!form.valid" class="primary-color">
+            Submit
+          </button>
+      </div>
       </mat-card-actions>
     </form>
   </mat-card>

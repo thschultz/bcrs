@@ -80,16 +80,17 @@
           <tr>
             <th>Service Name</th>
             <th>Price</th>
-            <th style="width: 8rem"></th>
+            <th width='200px'></th>
+
           </tr>
         </ng-template>
 
         <!-- Table Body -->
         <ng-template pTemplate="body" let-service>
           <tr>
-            <td>{{ service.serviceName }}</td>
-            <td>{{ service.price | number: '1.2' }}</td>
-            <td style="text-align: center">
+            <td data-cell="service">{{ service.serviceName }}</td>
+            <td data-cell="price">${{ service.price | number: '1.2' }}</td>
+            <td class="api-buttons">
               <button mat-button type="button" routerLink="/service-list/{{ service._id }}">
                 <i class="fa-solid fa-pen-to-square"></i>
               </button>
@@ -97,6 +98,7 @@
                 <i class="fa-regular fa-trash-can"></i>
               </button>
             </td>
+
           </tr>
         </ng-template>
 

@@ -61,14 +61,14 @@
           <tr>
             <th>Security Questions
             </th>
-            <th style="width: 8rem"></th>
+            <th width='200px'></th>
           </tr>
         </ng-template>
 
         <ng-template pTemplate="body" let-sq>
           <tr>
             <td>{{ sq.text }}</td>
-            <td style="text-align: center">
+            <td class="api-buttons">
               <button mat-button type="button" routerLink="/security-questions/{{ sq._id }}"><i
                   class="fa-solid fa-pen-to-square"></i></button>
               <button mat-button type="button" (click)="delete(sq._id)"><i class="fa-regular fa-trash-can"></i>

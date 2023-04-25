@@ -71,6 +71,10 @@ body {
   margin-inline: 20px;
 }
 
+.w-100 {
+  width: 100%;
+}
+
 /* Color Styles */
 
 .primary-color {
@@ -198,13 +202,19 @@ body {
 }
 
 .api-table th, .api-table td {
-  padding: 5px;
+  padding-inline: 5px;
   text-align: left;
-
 }
 
 .api-table th {
-  background-color: #48494b;
+  background-color: #000!important;
+}
+.api-table td button {
+  gap: 10px;
+}
+
+.api-buttons {
+  text-align: end!important;
 }
 
 .api-table tr:nth-of-type(2n) {
@@ -238,20 +248,24 @@ body {
   }
   .api-table td {
     display: grid;
-    padding: 3px 5px;
+    padding: 5px 10px!important;
   }
-  .api-table td button {
-    width: 50px;
+
+  .api-buttons {
+    display: flex!important;
+    flex-direction: row!important;
+    gap: 10px;
   }
+
   .api-table td::before {
     content: attr(data-cell);
     font-weight: 700;
     text-transform: capitalize;
   }
   .api-table td:first-child {
-    padding-top: 10px;
+    padding-top: 15px!important;
   }
   .api-table td:last-child {
-    padding-bottom: 10px;
+    padding-bottom: 15px!important;
   }
 }
