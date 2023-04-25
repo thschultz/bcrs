@@ -202,7 +202,6 @@ router.post('/verify/users/:userName/security-questions', async(req, res) => {
 
 
 
-module.exports = router;
 
 // ResetPassword
 
@@ -251,3 +250,7 @@ router.post('/users/:userName/reset-password', async(req, res) => {
     res.status(500).send(resetPasswordCatchError.toObject());
   }
 });
+
+
+
+module.exports = router;
