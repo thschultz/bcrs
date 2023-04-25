@@ -34,6 +34,12 @@ const loginSchema = {
   additionalProperties: false
 }
 
+
+/**
+ * API: http://localhost:3000/api/session
+ */
+
+
 // openapi language used to describe the API via swagger
 /**
  * @openapi
@@ -68,6 +74,7 @@ const loginSchema = {
  *       '500':
  *         description: Server expectations.
  */
+
 // User Sign-in
 router.post('/login', async(req, res) => {
   try {
@@ -132,5 +139,66 @@ router.post('/login', async(req, res) => {
     res.status(500).send(signinCatchErrorResponse.toObject());
   }
 });
+
+
+
+
+// Verify Security Question
+router.post('/verify/users/:userName/security-questions', async(req, res) => {
+  try {
+
+    // findOne function for user
+    User.findOne({ 'userName': req.params.userName }, function (err, user) {
+
+      // If userName not found
+      if (err) {
+        console.log(err);
+        const verifySqError = new ErrorResponse(404, 'Bad request, invalid userName', err);
+        res.status(404).send(verifySqError.toObject());
+        errorLogger({ filename: myFile, message: "Bad request, invalid userName" });
+        return
+      }
+
+      // If user is valid
+      console.log(user);
+
+      // variables for the selected questions
+      const selectedSecurityQuestionOne = user.selectedSecurityQuestionOne.find(q => q.questionText === req.body.questionText1);
+      const selectedSecurityQuestionTwo = user.selectedSecurityQuestionTwo.find(q2 => q2.questionText === req.body.questionText2);
+      const selectedSecurityQuestionThree = user.selectedSecurityQuestionThree.find(q3 => q3.questionText === req.body.questionText3);
+
+      //Variables for the selected answers
+      const isValidAnswerOne = selectedSecurityQuestionOne.answerText === req.body.answerText1;
+      const isValidAnswerTwo = selectedSecurityQuestionTwo.answerText === req.body.answerText2;
+      const isValidAnswerThree = selectedSecurityQuestionThree.answerText === req.body.answerText3;
+
+      // if all three security questions are valid
+      if (isValidAnswerOne && isValidAnswerTwo && isValidAnswerThree) {
+        console.log(`User ${user.userName} answered security questions correctly`);
+        const validSqResponse = new BaseResponse(200, 'success', user)
+        res.json(validSqResponse.toObject());
+        debugLogger({ filename: myFile, message: user });
+        return
+      }
+
+      // If any of the three security questions are invalid
+      console.log(`User ${user.userName} failed to answer security questions correctly`);
+      const invalidSqResponse = new BaseResponse(400, 'error', user)
+      res.json(invalidSqResponse.toObject());
+      errorLogger({ filename: myFile, message: `User ${user.userName} failed to answer security questions correctly` });
+    })
+
+    // Internal Server Error
+  } catch (e) {
+    console.log(e);
+    const verifySqError = new ErrorResponse(500, 'Internal server error', e.message);
+    res.status(500).send(verifySqError.toObject());
+    errorLogger({ filename: myFile, message: "Internal server error" });
+  }
+})
+
+
+
+
 
 module.exports = router;
