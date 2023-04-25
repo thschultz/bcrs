@@ -5,34 +5,33 @@
  * Last Modified by: Carl Logan
  * Last Modification Date: 04/17/23
  * Description: session api routing for the bcrs project
-*/
-
+ */
 
 // Require statements
-const express = require('express');
-const User = require('../models/user');
+const express = require("express");
+const User = require("../models/user");
 const router = express.Router();
-const { debugLogger, errorLogger } = require('../logs/logger');
-const createError = require('http-errors');
-const Ajv = require('ajv');
-const BaseResponse = require('../services/base-response');
-const ErrorResponse = require('../services/error-response');
-const bcrypt = require('bcryptjs');
+const { debugLogger, errorLogger } = require("../logs/logger");
+const createError = require("http-errors");
+const Ajv = require("ajv");
+const BaseResponse = require("../services/base-response");
+const ErrorResponse = require("../services/error-response");
+const bcrypt = require("bcryptjs");
 
 // Logging and Validation
-const myFile = 'session-routes.js';
+const myFile = "session-routes.js";
 const ajv = new Ajv();
 
 // Schema for validation
 const loginSchema = {
-  type: 'object',
+  type: "object",
   properties: {
-    userName: {type: 'string'},
-    password: {type: 'string'}
+    userName: { type: "string" },
+    password: { type: "string" },
   },
-  required: ['userName', 'password'],
-  additionalProperties: false
-}
+  required: ["userName", "password"],
+  additionalProperties: false,
+};
 
 // openapi language used to describe the API via swagger
 /**
@@ -69,67 +68,141 @@ const loginSchema = {
  *         description: Server expectations.
  */
 // User Sign-in
-router.post('/login', async(req, res) => {
+router.post("/login", async (req, res) => {
   try {
     // checks request body against the schema
     const validator = ajv.compile(loginSchema);
-    const valid = validator({'userName': req.body.userName, 'password': req.body.password})
+    const valid = validator({
+      userName: req.body.userName,
+      password: req.body.password,
+    });
 
     // failed validation
     if (!valid) {
-      console.log('Bad Request, unable to validate');
-      const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
-      errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+      console.log("Bad Request, unable to validate");
+      const createServiceError = new ErrorResponse(
+        400,
+        "Bad Request, unable to validate",
+        valid
+      );
+      errorLogger({
+        filename: myFile,
+        message: "Bad Request, unable to validate",
+      });
       res.status(400).send(createServiceError.toObject());
-      return
+      return;
     }
 
-    User.findOne({'userName': req.body.userName}, (err, user) => {
-
+    User.findOne({ userName: req.body.userName }, (err, user) => {
       // return an error response
-      if(err) {
+      if (err) {
         console.log(err);
-        const signinMongodbErrorResponse = new ErrorResponse(500, 'Internal server error', err);
+        const signinMongodbErrorResponse = new ErrorResponse(
+          500,
+          "Internal server error",
+          err
+        );
         errorLogger({ filename: myFile, message: "Internal server error" });
         res.status(500).send(signinMongodbErrorResponse.toObject());
-      }
-      else {
+      } else {
         console.log(user);
 
         // compare the string password with the hashed password in the database
-        if(user) {
-          let passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
+        if (user) {
+          let passwordIsValid = bcrypt.compareSync(
+            req.body.password,
+            user.password
+          );
 
           // valid password
-          if(passwordIsValid) {
-            console.log('Login successful');
-            const signinResponse = new BaseResponse(200, 'Login successful', user);
+          if (passwordIsValid) {
+            console.log("Login successful");
+            const signinResponse = new BaseResponse(
+              200,
+              "Login successful",
+              user
+            );
             debugLogger({ filename: myFile, message: user });
             res.json(signinResponse.toObject());
           }
           // invalid password
           else {
             console.log(`Invalid password or username: ${user.userName}`);
-            const invalidPasswordResponse = new BaseResponse(401, 'Invalid password or username, please try again.', null);
-            errorLogger({ filename: myFile, message: "Invalid password or username" });
+            const invalidPasswordResponse = new BaseResponse(
+              401,
+              "Invalid password or username, please try again.",
+              null
+            );
+            errorLogger({
+              filename: myFile,
+              message: "Invalid password or username",
+            });
             res.status(401).send(invalidPasswordResponse.toObject());
           }
         }
         //  invalid username
         else {
           console.log(`Username: ${req.body.userName} is invalid`);
-          const invalidUserNameResponse = new BaseResponse(200, 'Invalid password or username, please try again.', null);
-          errorLogger({ filename: myFile, message: "Invalid password or username" });
+          const invalidUserNameResponse = new BaseResponse(
+            200,
+            "Invalid password or username, please try again.",
+            null
+          );
+          errorLogger({
+            filename: myFile,
+            message: "Invalid password or username",
+          });
           res.status(401).send(invalidUserNameResponse.toObject());
         }
       }
     });
-  }
-  catch (err) {
+  } catch (err) {
     console.log(err);
-    const signinCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
+    const signinCatchErrorResponse = new ErrorResponse(
+      500,
+      "Internal server error",
+      e.message
+    );
     errorLogger({ filename: myFile, message: "Internal server error" });
     res.status(500).send(signinCatchErrorResponse.toObject());
+  }
+});
+
+// VerifyUser
+
+router.get("/verify/users/:userName", async (req, res) => {
+  try {
+    User.findOne({ userName: req.params.userName }, function (err, user) {
+      if (err) {
+        console.log(err);
+        res.status(500).send(verifyUserMongodbErrorResponse.toObject());
+      } else {
+        if (user) {
+          console.log(user);
+          const verifyUserResponse = new BaseResponse(
+            "200",
+            "Query successful",
+            user
+          );
+          res.json(verifyUserResponse.toObject());
+        } else {
+          const invalidUserNameResponse = new BaseResponse(
+            "400",
+            "Invalid username",
+            req.params.userName
+          );
+          res.status(400).send(invalidUserNameResponse.toObject());
+        }
+      }
+    });
+  } catch (e) {
+    console.log(e);
+    const verifyUserCatchErrorResponse = new ErrorResponse(
+      "500",
+      "Internal server error",
+      e.message
+    );
+    res.status(500).send(verifyUserCatchErrorResponse.toObject());
   }
 });
 
