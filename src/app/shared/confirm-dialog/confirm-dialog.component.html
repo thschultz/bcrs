@@ -8,9 +8,10 @@
   Description: html for the bcrs project
 -->
 
+<!-- Dialog Header -->
+<h2 mat-dialog-title>{{ dialogData.header }}</h2>
 
-  <h2 mat-dialog-title>{{ dialogData.header }}</h2>
-
+<!-- Dialog Body -->
 <div mat-dialog-content>
   <p>{{ dialogData.body }}</p>
   <p class="dialog-warning"><i class="fa-solid fa-triangle-exclamation"></i> WARNING: This action cannot be undone.</p>
@@ -18,6 +19,7 @@
 
 <mat-divider></mat-divider>
 
+<!-- Dialog Buttons -->
 <div mat-dialog-actions class="dialog-buttons">
   <button mat-raised-button matDialogClose="cancel" class="cancel">Cancel</button>
   <button mat-raised-button matDialogClose="confirm" class="primary-color" cdkFocusInitial>Confirm</button>

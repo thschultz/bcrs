@@ -7,9 +7,6 @@
   Description: html for the bcrs project
 -->
 
-<p-confirmDialog [style]="{ width: '35vw' }" [baseZIndex]="10000"
-  rejectButtonStyleClass="p-button-text"></p-confirmDialog>
-
 <div fxLayout="column" fxLayoutGap="20px">
 
   <!-- Page Header -->
@@ -23,7 +20,7 @@
   </div>
 
   <div>
-    <p-messages [(value)]="serverMessages" [enableService]="false" style="color: #fff;"></p-messages>
+    <p-messages [(value)]="serverMessages" [enableService]="false"></p-messages>
   </div>
 
   <!-- Create Service Form -->
@@ -78,6 +75,7 @@
     <mat-card>
       <p-table [value]="services" responsiveLayout="scroll" class="api-table">
 
+        <!-- Table Header -->
         <ng-template pTemplate="header">
           <tr>
             <th>Service Name</th>
@@ -86,10 +84,11 @@
           </tr>
         </ng-template>
 
+        <!-- Table Body -->
         <ng-template pTemplate="body" let-service>
           <tr>
             <td>{{ service.serviceName }}</td>
-            <td>{{ service.price }}</td>
+            <td>{{ service.price | number: '1.2' }}</td>
             <td style="text-align: center">
               <button mat-button type="button" routerLink="/service-list/{{ service._id }}">
                 <i class="fa-solid fa-pen-to-square"></i>

@@ -25,6 +25,7 @@ export class ServiceDetailsComponent implements OnInit {
   serviceId: string;
   errorMessages: Message[];
 
+  // FormGroup initializer with validators
   updateForm: FormGroup = this.fb.group({
     serviceName: new FormControl('', [ Validators.required, Validators.minLength(3), Validators.maxLength(50) ]),
     price: new FormControl('', [ Validators.required, Validators.pattern('\\-?\\d*\\.?\\d{1,2}'), Validators.maxLength(7) ])
@@ -40,6 +41,7 @@ export class ServiceDetailsComponent implements OnInit {
     this.errorMessages = [];
     this.serviceId = this.route.snapshot.paramMap.get('serviceId') ?? '';
 
+    // findServiceById function
     this.serviceService
       .findServiceById(this.serviceId)
       .subscribe({
@@ -49,6 +51,7 @@ export class ServiceDetailsComponent implements OnInit {
         error: (e) => {
           console.log(e);
         },
+        // Inserts the prior values into the fields
         complete: () => {
           this.updateForm.controls['serviceName'].setValue(this.service.serviceName);
           this.updateForm.controls['price'].setValue(this.service.price);
@@ -59,12 +62,15 @@ export class ServiceDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // updateService function
   save(): void {
     const updateService: Service = {
       serviceName: this.updateForm.controls['serviceName'].value,
       price: parseFloat(this.updateForm.controls['price'].value)
 
     };
+
+    // Updates service with new values and redirects user to Service List page
     this.serviceService
       .updateService(this.serviceId, updateService)
       .subscribe({
@@ -81,6 +87,8 @@ export class ServiceDetailsComponent implements OnInit {
         },
       });
   }
+
+  // Cancels action and redirects user to Service List page
   cancel(): void {
     this.router.navigate(['/service-list']);
   }

@@ -8,33 +8,36 @@
  */
 
 import { Component, OnInit } from '@angular/core';
-import { ConfirmationService, ConfirmEventType } from 'primeng/api';
+
 import { ServiceService } from '../../shared/services/service.service';
 import { Service } from '../../shared/models/service.interface';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog'
-import { Message } from 'primeng/api/message';
+import { Message } from 'primeng/api';
 
 @Component({
   selector: 'app-service-list',
   templateUrl: './service-list.component.html',
   styleUrls: ['./service-list.component.css'],
-  providers: [ConfirmationService]
+  providers: []
 })
 export class ServiceListComponent implements OnInit {
 
   services: Service[] = [];
   serverMessages: Message[] = [];
 
+  // FormGroup initializer with Validators
   serviceForm: FormGroup = this.fb.group({
     serviceName: new FormControl('', [ Validators.required, Validators.minLength(3), Validators.maxLength(50) ]),
     price: new FormControl('', [ Validators.required, Validators.pattern('\\-?\\d*\\.?\\d{1,2}'), Validators.maxLength(7) ])
   });
 
-  constructor(private serviceService: ServiceService, private confirmationService: ConfirmationService, private fb: FormBuilder, private dialog: MatDialog) {
+  constructor(private serviceService: ServiceService, private fb: FormBuilder, private dialog: MatDialog) {
     this.services = [];
+    this.serverMessages = [];
 
+    // findAllServices function
     this.serviceService.findAllServices().subscribe({
       next: (res) => {
         this.services = res.data;
@@ -48,6 +51,7 @@ export class ServiceListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // createService function
   create(): void {
     const serviceName = this.serviceForm.controls['serviceName'].value;
     const price = parseFloat(this.serviceForm.controls['price'].value);
@@ -68,10 +72,18 @@ export class ServiceListComponent implements OnInit {
       complete: () => {
         this.serviceForm.controls['serviceName'].setErrors({ 'incorrect': false })
         this.serviceForm.controls['price'].setErrors({ 'incorrect': false })
+        this.serverMessages = [
+          {
+            severity: 'success',
+            summary: 'Success',
+            detail: 'Service Added Successfully'
+          }
+        ]
       }
     })
   }
 
+  // deleteService function
   delete(serviceId: string): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: {
@@ -87,7 +99,7 @@ export class ServiceListComponent implements OnInit {
     dialogRef.afterClosed().subscribe({
       next: (result) => {
 
-        // If delete is confirmed, the service is deleted
+        // If delete is confirmed, the service is disabled
         if (result === 'confirm') {
           this.serviceService.deleteService(serviceId).subscribe({
             next: (res) => {

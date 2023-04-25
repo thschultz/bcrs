@@ -74,10 +74,17 @@
 [4/22/2023, 10:54:12 AM] server	 services-routes.js - Bad Request, unable to validate
 [4/22/2023, 10:55:20 AM] server	 services-routes.js - Bad Request, unable to validate
 [4/22/2023, 11:01:55 AM] server	 services-routes.js - Bad Request, unable to validate
+<<<<<<< HEAD
+[4/22/2023, 11:54:20 PM] server	 session-routes.js - Invalid password or username
+[4/22/2023, 11:54:37 PM] server	 session-routes.js - Invalid password or username
+[4/22/2023, 11:54:50 PM] server	 session-routes.js - Invalid password or username
+[4/22/2023, 11:56:40 PM] server	 session-routes.js - Invalid password or username
+=======
 [4/22/2023, 12:53:03 PM] server	 session-routes.js - Invalid password or username
 [4/22/2023, 12:53:08 PM] server	 session-routes.js - Invalid password or username
 [4/22/2023, 12:55:16 PM] server	 services-routes.js - Bad Request, unable to validate
 [4/22/2023, 12:55:16 PM] server	 services-routes.js - Bad Request, unable to validate
+<<<<<<< HEAD
 [4/22/2023, 2:28:11 PM] server	 session-routes.js - Invalid password or username
 [4/22/2023, 2:28:32 PM] server	 session-routes.js - Invalid password or username
 [4/22/2023, 2:34:18 PM] server	 session-routes.js - Invalid password or username
@@ -92,3 +99,18 @@
 [4/24/2023, 8:19:23 PM] server	 session-routes.js - Bad Request, unable to validate
 [4/24/2023, 8:19:34 PM] server	 session-routes.js - Username already exists.
 [4/24/2023, 8:24:25 PM] server	 session-routes.js - Username already exists.
+=======
+[4/22/2023, 5:19:34 PM] server	 services-routes.js - Bad Request, unable to validate
+>>>>>>> cc1f6b8e52f266dbf078f81c582b70088527a421
+[4/23/2023, 12:00:07 AM] server	 session-routes.js - Invalid password or username
+[4/23/2023, 10:33:03 PM] server	 session-routes.js - Invalid password or username
+[4/23/2023, 11:36:27 PM] server	 session-routes.js - Invalid password or username
+[4/24/2023, 9:15:21 PM] server	 users-routes.js - Bad Request, unable to validate
+[4/24/2023, 9:15:58 PM] server	 users-routes.js - Bad Request, unable to validate
+[4/24/2023, 9:16:06 PM] server	 users-routes.js - Bad Request, unable to validate
+[4/24/2023, 9:17:54 PM] server	 users-routes.js - Bad Request, unable to validate
+[4/24/2023, 10:03:12 PM] server	 users-routes.js - Bad request, invalid UserId
+[4/24/2023, 10:03:24 PM] server	 users-routes.js - Bad request, invalid UserId
+[4/24/2023, 10:27:38 PM] server	 users-routes.js - Bad request, invalid UserId
+[4/24/2023, 10:28:11 PM] server	 users-routes.js - Bad request, invalid UserId
+>>>>>>> e41467dfa9a9d9707b687bc8b40fcd957ad26c90

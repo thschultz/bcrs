@@ -8,6 +8,8 @@
  * Description: angular routing for the bcrs project
  */
 
+
+// Import statements
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
@@ -32,6 +34,7 @@ const routes: Routes = [
     path: '',
     component: BaseLayoutComponent,
     children: [
+      // Main Children
       {
         path: '',
         component: HomeComponent,
@@ -44,6 +47,11 @@ const routes: Routes = [
         path: 'contact',
         component: ContactComponent,
       },
+      // User Children
+      {
+        path: 'user-list',
+        component: UserListComponent,
+      },
       {
         path: 'users/:userId',
         component: UserDetailsComponent
@@ -52,10 +60,7 @@ const routes: Routes = [
         path: 'user-create',
         component: UserCreateComponent,
       },
-      {
-        path: 'user-list',
-        component: UserListComponent,
-      },
+      // Security Children
       {
         path: 'security-questions',
         component: SecurityQuestionListComponent,
@@ -64,6 +69,7 @@ const routes: Routes = [
         path: 'security-questions/:questionId',
         component: SecurityQuestionDetailsComponent,
       },
+      // Service Children
       {
         path: 'service-list',
         component: ServiceListComponent,
@@ -75,6 +81,8 @@ const routes: Routes = [
     ],
     canActivate: [AuthGuard],
   },
+
+  // Session Path
   {
     path: 'session',
     component: AuthLayoutComponent,
@@ -90,11 +98,6 @@ const routes: Routes = [
       {
         path: 'server-error',
         component: ServerErrorComponent,
-      },
-
-      {
-        path: 'security-questions',
-        component: SecurityQuestionListComponent,
       },
     ],
   },

@@ -2,7 +2,7 @@
  * Title: user.service.ts
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 04/19/23
- * Last Modified by: Walter McCue
+ * Last Modified by: Thomas Schultz
  * Last Modification Date: 04/19/23
  * Description: user api service for the bcrs project
  */
@@ -17,15 +17,15 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   constructor(private http: HttpClient) { }
-
+  //find all users function
   findAllUsers(): Observable<any> {
     return this.http.get('/api/users');
   }
-
+  //find user by id function
   findUserById(userId: string): Observable<any> {
     return this.http.get('/api/users/' + userId);
   }
-
+  //create user function
   createUser(user: User): Observable<any> {
     return this.http.post('/api/users', {
       userName: user.userName,
@@ -37,7 +37,7 @@ export class UserService {
       email: user.email,
     });
   }
-
+  //update user function
   updateUser(userId: string, user: User): Observable<any> {
     return this.http.put('/api/users/' + userId, {
       firstName: user.firstName,
@@ -47,7 +47,7 @@ export class UserService {
       email: user.email,
     });
   }
-
+  //delete user function
   deleteUser(userId: string): Observable<any> {
     return this.http.delete('/api/users/' + userId);
   }

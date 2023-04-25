@@ -22,8 +22,9 @@ import { Message } from 'primeng/api';
   styleUrls: ['./user-create.component.css'],
 })
 export class UserCreateComponent implements OnInit {
+  // Form group with validations
   form: FormGroup = this.fb.group({
-    userName: [null, Validators.compose([Validators.required])],
+    userName: [null, Validators.compose([ Validators.required ])],
     password: [
       null,
       Validators.compose([
@@ -31,11 +32,11 @@ export class UserCreateComponent implements OnInit {
         Validators.pattern('^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$'),
       ]),
     ],
-    firstName: [null, Validators.compose([Validators.required])],
-    lastName: [null, Validators.compose([Validators.required])],
-    phoneNumber: [null, Validators.compose([Validators.required])],
-    address: [null, Validators.compose([Validators.required])],
-    email: [null, Validators.compose([Validators.required, Validators.email])],
+    firstName: [null, Validators.compose([ Validators.required, Validators.minLength(3), Validators.maxLength(35) ])],
+    lastName: [null, Validators.compose([ Validators.required, Validators.minLength(3), Validators.maxLength(35) ])],
+    phoneNumber: [null, Validators.compose([ Validators.required, Validators.pattern('\\d{3}\\-\\d{3}-\\d{4}') ])],
+    address: [null, Validators.compose([ Validators.required, Validators.minLength(3), Validators.maxLength(75) ])],
+    email: [null, Validators.compose([ Validators.required, Validators.email ])],
   });
 
   user: User;
@@ -51,10 +52,11 @@ export class UserCreateComponent implements OnInit {
     this.userId = '';
   }
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void { }
+  //create user function
   createUser(): void {
     const newUser: User = {
+      //variables for form.
       userName: this.form.controls['userName'].value,
       password: this.form.controls['password'].value,
       firstName: this.form.controls['firstName'].value,
@@ -63,7 +65,7 @@ export class UserCreateComponent implements OnInit {
       address: this.form.controls['address'].value,
       email: this.form.controls['email'].value,
     };
-
+    //successful save and error handling
     this.userService.createUser(newUser).subscribe({
       next: (res) => {
         console.log(res);
@@ -80,7 +82,7 @@ export class UserCreateComponent implements OnInit {
       },
     });
   }
-
+  //cancel navigates to user list page
   cancel(): void {
     this.router.navigate(['/user-list']);
   }

@@ -10,8 +10,10 @@
 
 <div fxLayout="column">
   <header class="gradient-header">
+
     <!-- navigation -->
     <nav fxFlex>
+
       <!-- nabar image-->
       <div class="house-img">
         <img src="/assets/pngwing.com.png" alt="Slytherin Emblem" />
@@ -24,16 +26,18 @@
         <a routerLink="/contact" class="neon-btn">CONTACT</a>
       </div>
 
+      <!-- Profile Menu -->
       <div class="profile-menu">
         <button mat-icon-button [matMenuTriggerFor]="profileMenu" aria-label="User Profile menu">
           <mat-icon class="profile-btn">perm_identity</mat-icon>
         </button>
-        <mat-menu #profileMenu class="accent-color p-20" x-position="before">
-          <p style="padding: 10px; font-size: 18px;">
+        <mat-menu #profileMenu class="relative p-20" x-position="before">
+          <p style="padding: 10px; font-size: 18px; color:#fff;">
             Signed in as
             <span style="font-weight: normal">{{ userName }}</span>
           </p>
 
+          <!-- Config Menu -->
           <button mat-menu-item [matMenuTriggerFor]="configs">
             <mat-icon>settings</mat-icon>
             Configurations
@@ -53,9 +57,27 @@
             </button>
           </mat-menu>
 
+          <!-- Services Menu --><!--
+          <button mat-menu-item [matMenuTriggerFor]="services">
+            <mat-icon>build</mat-icon>
+            Services
+          </button>
+          <mat-menu #services="matMenu" class="service-menu">
+            <button mat-menu-item routerLink="purchases" class="">
+              Purchases by Service
+            </button>
+          </mat-menu>-->
+
+          <!-- User Profile --><!--
+          <button mat-menu-item routerLink="profile" class="">
+            <mat-icon>person</mat-icon>
+            Edit Profile
+          </button>-->
+
+          <!-- Logout -->
           <button mat-menu-item (click)="logout()">
-            <mat-icon style="color: #000;">logout</mat-icon>
-            <span style="font-size: 16px; color: #000;">Log out</span>
+            <mat-icon>logout</mat-icon>
+            <span style="font-size: 16px;">Log out</span>
           </button>
         </mat-menu>
       </div>

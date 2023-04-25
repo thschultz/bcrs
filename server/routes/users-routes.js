@@ -25,36 +25,45 @@ const saltRounds = 10; // hashes password
 
 // Schema for  create validation
 const userSchema = {
-  type: 'object',
+  type: "object",
   properties: {
-    userName: {type: 'string'},
-    password: {type: 'string'},
-    firstName: {type: 'string'},
-    lastName: {type: 'string'},
-    phoneNumber: {type: 'string'},
-    address: {type: 'string'},
-    email: {type: 'string'},
+    userName: { type: "string" },
+    password: { type: "string" },
+    firstName: { type: "string" },
+    lastName: { type: "string" },
+    phoneNumber: { type: "string" },
+    address: { type: "string" },
+    email: { type: "string" },
     role: {
-      type: 'object',
+      type: "object",
       properties: {
-        text: {type: 'string'}
+        text: { type: "string" },
       },
-      required: ['text'],
-      additionalProperties: false
-    }
+      required: ["text"],
+      additionalProperties: false,
+    },
   },
-  required: ['userName', 'password', 'firstName', 'lastName', 'phoneNumber', 'address', 'email', 'role'],
-  additionalProperties: false
-}
+  required: [
+    "userName",
+    "password",
+    "firstName",
+    "lastName",
+    "phoneNumber",
+    "address",
+    "email",
+    "role",
+  ],
+  additionalProperties: false,
+};
 
 const updateUserSchema = {
-  type: 'object',
+  type: "object",
   properties: {
-    firstName: {type: 'string'},
-    lastName: {type: 'string'},
-    phoneNumber: {type: 'string'},
-    address: {type: 'string'},
-    email: {type: 'string'},
+    firstName: { type: "string" },
+    lastName: { type: "string" },
+    phoneNumber: { type: "string" },
+    address: { type: "string" },
+    email: { type: "string" },
     /*role: {
       type: 'object',
       properties: {
@@ -64,25 +73,20 @@ const updateUserSchema = {
       additionalProperties: false
     }*/
   },
-  required: ['firstName', 'lastName', 'phoneNumber', 'address', 'email'/*, 'role'*/],
-  additionalProperties: false
-}
-
-// Schema for disabled validation
-const disabledSchema = {
-  type: 'object',
-  properties: {
-    isDisabled: {type: 'boolean'},
-  },
-  required: ['isDisabled'],
-  additionalProperties: false
-}
+  required: [
+    "firstName",
+    "lastName",
+    "phoneNumber",
+    "address",
+    "email" /*, 'role'*/,
+  ],
+  additionalProperties: false,
+};
 
 
 /**
  * API: http://localhost:3000/api/users
  */
-
 
 /**
  * findAllUsers
@@ -176,11 +180,12 @@ router.get("/:id", async (req, res) => {
       if (err) {
         console.log(err);
         const findByIdMongodbErrorResponse = new ErrorResponse(
-          500,
-          "Internal server error",
+          404,
+          "Bad request, invalid UserId",
           err
         );
-        res.status(500).send(findByIdMongodbErrorResponse.toObject());
+        res.status(404).send(findByIdMongodbErrorResponse.toObject());
+        errorLogger({ filename: myFile, message: "Bad request, invalid UserId" });
       } else {
         console.log(user);
         const findByIdResponse = new BaseResponse(
@@ -189,6 +194,7 @@ router.get("/:id", async (req, res) => {
           user
         );
         res.json(findByIdResponse.toObject());
+        debugLogger({ filename: myFile, message: user });
       }
     });
   } catch (e) {
@@ -198,18 +204,65 @@ router.get("/:id", async (req, res) => {
       "Internal server error",
       e
     );
-    res.status(200).send(findByIdCatchErrorResponse.toObject());
+    res.status(500).send(findByIdCatchErrorResponse.toObject());
+    errorLogger({ filename: myFile, message: "Internal server error" });
   }
 });
 
+/**
+ * createUser
+ * @openapi
+ * /api/users:
+ *   post:
+ *     tags:
+ *       - Users
+ *     description: API that creates a new user
+ *     summary: Creates a new user
+ *     requestBody:
+ *       description: Creates a new user
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             required:
+ *               - text
+ *             properties:
+ *               userName:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *               firstName:
+ *                 type: string
+ *               lastName:
+ *                 type: string
+ *               phoneNumber:
+ *                 type: string
+ *               address:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               role:
+ *                 type: string
+ *     responses:
+ *       '200':
+ *         description: New user added to MongoDB
+ *       '400':
+ *         description: Bad Request
+ *       '404':
+ *         description: Null Record
+ *       '500':
+ *         description: Server Exception
+ *       '501':
+ *         description: MongoDB Exception
+ */
 
 // createUser
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
-    let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds);// salt/hash the password
+    let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds); // salt/hash the password
 
     standardRole = {
-      text: "standard"
+      text: "standard",
     };
 
     // user object
@@ -226,35 +279,100 @@ router.post('/', async (req, res) => {
 
     // Checks current request body against the schema
     const validator = ajv.compile(userSchema);
-    const valid = validator(newUser)
+    const valid = validator(newUser);
 
     // If invalid return 400 Error
     if (!valid) {
-      console.log('Bad Request, unable to validate');
-      const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
-      errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+      console.log("Bad Request, unable to validate");
+      const createServiceError = new ErrorResponse(
+        400,
+        "Bad Request, unable to validate",
+        valid
+      );
+      errorLogger({
+        filename: myFile,
+        message: "Bad Request, unable to validate",
+      });
       res.status(400).send(createServiceError.toObject());
-      return
+      return;
     }
 
     User.create(newUser, function (err, user) {
       if (err) {
         console.log(err);
-        const createUserMongodbErrorResponse = new ErrorResponse(500, "Internal server error", err);
+        const createUserMongodbErrorResponse = new ErrorResponse(
+          500,
+          "Internal server error",
+          err
+        );
         res.status(500).send(createUserMongodbErrorResponse.toObject());
+        errorLogger({ filename: myFile, message: "Internal server error" });
       } else {
         console.log(user);
-        const CreateUserResponse = new BaseResponse(200, "Query successful", user);
+        const CreateUserResponse = new BaseResponse(
+          200,
+          "Query successful",
+          user
+        );
         res.json(CreateUserResponse.toObject());
+        debugLogger({ filename: myFile, message: user });
       }
     });
   } catch (e) {
     console.log(e);
-    const createUserCatchErrorResponse = ErrorResponse(500, "Internal server error", e.message);
+    const createUserCatchErrorResponse = ErrorResponse(
+      500,
+      "Internal server error",
+      e.message
+    );
     res.status(500).send(createUserCatchErrorResponse.toObject());
+    errorLogger({ filename: myFile, message: "Internal server error" });
   }
 });
 
+/**
+ * updateUser
+ * @openapi
+ * /api/users/{id}:
+ *   put:
+ *     tags:
+ *       - Users
+ *     description: API that updates users
+ *     summary: Updates Users
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         description: User ID
+ *         schema:
+ *           type:
+ *     requestBody:
+ *       description: Update user
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             required:
+ *               - text
+ *             properties:
+ *               firstName:
+ *                 type: string
+ *               lastName:
+ *                 type: string
+ *               phoneNumber:
+ *                 type: string
+ *               address:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *     responses:
+ *       '204':
+ *         description: User updated
+ *       '400':
+ *         description: Bad Request
+ *       '404':
+ *         description: User not found
+ */
 
 // updateUser
 router.put("/:id", async (req, res) => {
@@ -264,34 +382,41 @@ router.put("/:id", async (req, res) => {
         //server error
         console.log(err);
         const updateUserByIdMongodbErrorResponse = new ErrorResponse(
-          500,
+          404,
           "Internal server error",
           err
         );
-        res.status(500).send(updateUserByIdMongodbErrorResponse.toObject());
+        errorLogger({ filename: myFile, message: "Bad request, invalid UserId" });
+        res.status(404).send(updateUserByIdMongodbErrorResponse.toObject());
       } else {
-
         let updatedUser = {
           firstName: req.body.firstName,
           lastName: req.body.lastName,
           phoneNumber: req.body.phoneNumber,
           address: req.body.address,
           email: req.body.email,
-          // role: req.body.role
-        }
+          //role: req.body.role,
+        };
 
         // Checks current request body against the schema
-         const validator = ajv.compile(updateUserSchema);
-         const valid = validator(updatedUser)
+        const validator = ajv.compile(updateUserSchema);
+        const valid = validator(updatedUser);
 
-         // If invalid return 400 Error
-         if (!valid) {
-           console.log('Bad Request, unable to validate');
-           const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
-           errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
-           res.status(400).send(createServiceError.toObject());
-           return
-         }
+        // If invalid return 400 Error
+        if (!valid) {
+          console.log("Bad Request, unable to validate");
+          const createServiceError = new ErrorResponse(
+            400,
+            "Bad Request, unable to validate",
+            valid
+          );
+          errorLogger({
+            filename: myFile,
+            message: "Bad Request, unable to validate",
+          });
+          res.status(400).send(createServiceError.toObject());
+          return;
+        }
 
         //updating fields
         console.log(user);
@@ -316,6 +441,7 @@ router.put("/:id", async (req, res) => {
               err
             );
             res.status(500).send(saveUserMongodbErrorResponse.toObject());
+            errorLogger({ filename: myFile, message: "Internal server error" });
           } else {
             //saving updated User
             console.log(savedUser);
@@ -325,6 +451,7 @@ router.put("/:id", async (req, res) => {
               savedUser
             );
             res.json(saveUserResponse.toObject());
+            debugLogger({ filename: myFile, message: user });
           }
         });
       }
@@ -338,9 +465,9 @@ router.put("/:id", async (req, res) => {
       e.message
     );
     res.status(500).send(updateUserByIdCatchErrorResponse.toObject());
+    errorLogger({ filename: myFile, message: "Internal server error" });
   }
 });
-
 
 /**
  * deleteUserById
@@ -377,28 +504,14 @@ router.delete("/:id", async (req, res) => {
       if (err) {
         console.log(err);
         const deleteUserErrorResponse = new ErrorResponse(
-          500,
-          "Internal server error",
+          404,
+          "Bad request, invalid UserId",
           err.message
         );
-        res.status(500).send(deleteUserErrorResponse.toObject());
+        res.status(404).send(deleteUserErrorResponse.toObject());
+        errorLogger({ filename: myFile, message: "Bad request, invalid UserId" });
         return;
       }
-
-      // Checks current request body against the schema
-      //const validator = ajv.compile(disabledSchema);
-      //const valid = validator({
-      //  isDisabled: req.body.isDisabled
-      //})
-
-      // If invalid return 400 Error
-      //if (!valid) {
-      //  console.log('Bad Request, unable to validate');
-      //  const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
-      //  errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
-      //  res.status(400).send(createServiceError.toObject());
-      //  return
-      //}
 
       // sets disabled status instead of deleting the record
       console.log(user);
@@ -416,6 +529,7 @@ router.delete("/:id", async (req, res) => {
             err
           );
           res.json(500).send(savedUserErrorResponse.toObject());
+          errorLogger({ filename: myFile, message: "Internal server error" });
           return;
         }
 
@@ -427,6 +541,7 @@ router.delete("/:id", async (req, res) => {
           savedUser
         );
         res.json(savedUserResponse.toObject());
+        debugLogger({ filename: myFile, message: savedUser });
       });
     });
 
@@ -439,6 +554,36 @@ router.delete("/:id", async (req, res) => {
       e.message
     );
     res.status(500).send(deleteUserErrorResponse.toObject());
+    errorLogger({ filename: myFile, message: "Internal server error" });
+  }
+});
+
+
+// FindSelectedSecurityQuestions
+
+router.get('/:userName/security-questions', async (req, res) => {
+  try {
+    User.findOne({'userName': req.params.userName}, function(err, user)
+    {
+      //error handling if server can't save.
+      if (err) {
+        console.log(err);
+        const findSelectedSecurityQuestionsMongodbErrorResponse = new ErrorResponse('500', 'Internal Server Error', err);
+        res.status(500).send(findSelectedSecurityQuestionsMongodbErrorResponse.toObject());
+      }
+      else {
+        //successful save
+        console.log(user);
+        const findSelectedSecurityQuestionResponse = new BaseResponse('200', 'Query Successful', user.selectedSecurityQuestions);
+        res.json(findSelectedSecurityQuestionResponse.toObject());
+      }
+    })
+  }
+  //server error
+  catch (e) {
+    console.log(e);
+    const findSelectedSecurityQuestionsCatchErrorResponse = new ErrorResponse('500', 'Internal server error', e);
+    res.status(500).send(findSelectedSecurityQuestionsCatchErrorResponse.toObject());
   }
 });
 

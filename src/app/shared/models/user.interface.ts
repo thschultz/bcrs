@@ -2,11 +2,12 @@
  * Title: user.interface.ts
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 04/19/23
- * Last Modified by: Walter McCue
+ * Last Modified by: Thomas Schultz
  * Last Modification Date: 04/19/23
  * Description: user interface for the bcrs project
  */
 
+//user interface
 export interface User {
   _id?: string;
   userName?: string;

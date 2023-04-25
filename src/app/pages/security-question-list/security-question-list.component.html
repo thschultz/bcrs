@@ -2,7 +2,7 @@
   Title: security-question-list.component.html
   Author: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
   Date: 04/19/23
-  Last Modified by: Walter McCue
+  Last Modified by: Carl Logan
   Last Modification Date: 04/19/23
   Description: html for the bcrs project
 -->
@@ -22,7 +22,7 @@
   </div>
   <!-- error message from server -->
   <div>
-    <p-messages [(value)]="serverMessages" [enableService]="false" style="color: #fff;"></p-messages>
+    <p-messages [(value)]="serverMessages" [enableService]="false"></p-messages>
   </div>
 
   <div fxFlex>
@@ -41,6 +41,12 @@
 
           <mat-error *ngIf="sqForm.controls['text'].hasError('required') && sqForm.controls['text'].touched">
             Security question is a required field.
+          </mat-error>
+          <mat-error *ngIf="sqForm.controls['text'].hasError('minlength') && sqForm.controls['text'].touched">
+            Security question must be at least 3 characters.
+          </mat-error>
+          <mat-error *ngIf="sqForm.controls['text'].hasError('maxlength') && sqForm.controls['text'].touched">
+            Security question must be less than 75 characters.
           </mat-error>
         </form>
       </mat-card>
