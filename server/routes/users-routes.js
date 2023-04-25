@@ -83,6 +83,7 @@ const updateUserSchema = {
   additionalProperties: false,
 };
 
+<<<<<<< HEAD
 // Schema for disabled validation
 const disabledSchema = {
   type: "object",
@@ -92,6 +93,8 @@ const disabledSchema = {
   required: ["isDisabled"],
   additionalProperties: false,
 };
+=======
+>>>>>>> f76f4c66b67dffe748e8728037d85428f73b849b
 
 /**
  * API: http://localhost:3000/api/users
@@ -189,11 +192,12 @@ router.get("/:id", async (req, res) => {
       if (err) {
         console.log(err);
         const findByIdMongodbErrorResponse = new ErrorResponse(
-          500,
-          "Internal server error",
+          404,
+          "Bad request, invalid UserId",
           err
         );
-        res.status(500).send(findByIdMongodbErrorResponse.toObject());
+        res.status(404).send(findByIdMongodbErrorResponse.toObject());
+        errorLogger({ filename: myFile, message: "Bad request, invalid UserId" });
       } else {
         console.log(user);
         const findByIdResponse = new BaseResponse(
@@ -202,6 +206,7 @@ router.get("/:id", async (req, res) => {
           user
         );
         res.json(findByIdResponse.toObject());
+        debugLogger({ filename: myFile, message: user });
       }
     });
   } catch (e) {
@@ -211,7 +216,8 @@ router.get("/:id", async (req, res) => {
       "Internal server error",
       e
     );
-    res.status(200).send(findByIdCatchErrorResponse.toObject());
+    res.status(500).send(findByIdCatchErrorResponse.toObject());
+    errorLogger({ filename: myFile, message: "Internal server error" });
   }
 });
 
@@ -312,6 +318,7 @@ router.post("/", async (req, res) => {
           err
         );
         res.status(500).send(createUserMongodbErrorResponse.toObject());
+        errorLogger({ filename: myFile, message: "Internal server error" });
       } else {
         console.log(user);
         const CreateUserResponse = new BaseResponse(
@@ -320,6 +327,7 @@ router.post("/", async (req, res) => {
           user
         );
         res.json(CreateUserResponse.toObject());
+        debugLogger({ filename: myFile, message: user });
       }
     });
   } catch (e) {
@@ -330,6 +338,7 @@ router.post("/", async (req, res) => {
       e.message
     );
     res.status(500).send(createUserCatchErrorResponse.toObject());
+    errorLogger({ filename: myFile, message: "Internal server error" });
   }
 });
 
@@ -385,11 +394,12 @@ router.put("/:id", async (req, res) => {
         //server error
         console.log(err);
         const updateUserByIdMongodbErrorResponse = new ErrorResponse(
-          500,
+          404,
           "Internal server error",
           err
         );
-        res.status(500).send(updateUserByIdMongodbErrorResponse.toObject());
+        errorLogger({ filename: myFile, message: "Bad request, invalid UserId" });
+        res.status(404).send(updateUserByIdMongodbErrorResponse.toObject());
       } else {
         let updatedUser = {
           firstName: req.body.firstName,
@@ -443,6 +453,7 @@ router.put("/:id", async (req, res) => {
               err
             );
             res.status(500).send(saveUserMongodbErrorResponse.toObject());
+            errorLogger({ filename: myFile, message: "Internal server error" });
           } else {
             //saving updated User
             console.log(savedUser);
@@ -452,6 +463,7 @@ router.put("/:id", async (req, res) => {
               savedUser
             );
             res.json(saveUserResponse.toObject());
+            debugLogger({ filename: myFile, message: user });
           }
         });
       }
@@ -465,6 +477,7 @@ router.put("/:id", async (req, res) => {
       e.message
     );
     res.status(500).send(updateUserByIdCatchErrorResponse.toObject());
+    errorLogger({ filename: myFile, message: "Internal server error" });
   }
 });
 
@@ -503,28 +516,14 @@ router.delete("/:id", async (req, res) => {
       if (err) {
         console.log(err);
         const deleteUserErrorResponse = new ErrorResponse(
-          500,
-          "Internal server error",
+          404,
+          "Bad request, invalid UserId",
           err.message
         );
-        res.status(500).send(deleteUserErrorResponse.toObject());
+        res.status(404).send(deleteUserErrorResponse.toObject());
+        errorLogger({ filename: myFile, message: "Bad request, invalid UserId" });
         return;
       }
-
-      // Checks current request body against the schema
-      //const validator = ajv.compile(disabledSchema);
-      //const valid = validator({
-      //  isDisabled: req.body.isDisabled
-      //})
-
-      // If invalid return 400 Error
-      //if (!valid) {
-      //  console.log('Bad Request, unable to validate');
-      //  const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
-      //  errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
-      //  res.status(400).send(createServiceError.toObject());
-      //  return
-      //}
 
       // sets disabled status instead of deleting the record
       console.log(user);
@@ -542,6 +541,7 @@ router.delete("/:id", async (req, res) => {
             err
           );
           res.json(500).send(savedUserErrorResponse.toObject());
+          errorLogger({ filename: myFile, message: "Internal server error" });
           return;
         }
 
@@ -553,6 +553,7 @@ router.delete("/:id", async (req, res) => {
           savedUser
         );
         res.json(savedUserResponse.toObject());
+        debugLogger({ filename: myFile, message: savedUser });
       });
     });
 
@@ -565,6 +566,7 @@ router.delete("/:id", async (req, res) => {
       e.message
     );
     res.status(500).send(deleteUserErrorResponse.toObject());
+    errorLogger({ filename: myFile, message: "Internal server error" });
   }
 });
 
