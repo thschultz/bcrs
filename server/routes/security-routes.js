@@ -33,16 +33,6 @@ const securitySchema = {
   additionalProperties: false
 }
 
-// Schema for disabled validation
-const disabledSchema = {
-  type: 'object',
-  properties: {
-    isDisabled: {type: 'boolean'},
-  },
-  required: ['isDisabled'],
-  additionalProperties: false
-}
-
 
 /**
  * API: http://localhost:3000/api/security
@@ -85,6 +75,7 @@ router.get("/", async (req, res) => {
             err
           );
           res.status(500).send(findAllMongoDBErrorResponse.toObject());
+          errorLogger({ filename: myFile, message: "Internal server error" });
         } else {
           //successful query response
           console.log(securityQuestions);
@@ -94,6 +85,7 @@ router.get("/", async (req, res) => {
             securityQuestions
           );
           res.json(findAllResponse.toObject());
+          debugLogger({ filename: myFile, message: securityQuestions });
         }
       });
   } catch (e) {
@@ -105,6 +97,7 @@ router.get("/", async (req, res) => {
       e.message
     );
     res.status(500).send(findAllCatchErrorResponse.toObject());
+    errorLogger({ filename: myFile, message: "Internal server error" });
   }
 });
 
@@ -157,11 +150,12 @@ router.get("/:id", async (req, res) => {
         if (err) {
           console.log(err);
           const findByIdMongodbErrorResponse = new ErrorResponse(
-            500,
-            "Internal server error",
+            404,
+            "Bad request, invalid securityQuestionId",
             err
           );
-          res.status(500).send(findByIdMongodbErrorResponse.toObject());
+          res.status(404).send(findByIdMongodbErrorResponse.toObject());
+          errorLogger({ filename: myFile, message: "Bad request, invalid securityQuestionId" });
         } else {
           // Successful query response
           console.log(securityQuestion);
@@ -171,6 +165,7 @@ router.get("/:id", async (req, res) => {
             securityQuestion
           );
           res.json(findByIdResponse.toObject());
+          debugLogger({ filename: myFile, message: securityQuestion });
         }
       }
     );
@@ -183,6 +178,7 @@ router.get("/:id", async (req, res) => {
       e.message
     );
     res.status(500).send(findByIdCatchErrorResponse.toObject());
+    errorLogger({ filename: myFile, message: "Internal server error" });
   }
 });
 
@@ -254,6 +250,7 @@ router.post("/", async (req, res) => {
           res
             .status(500)
             .send(createSecurityQuestionMongodbErrorResponse.toObject());
+            errorLogger({ filename: myFile, message: "Internal server error" });
         } else {
           console.log(securityQuestion);
           const createSecurityQuestionResponse = new BaseResponse(
@@ -262,6 +259,7 @@ router.post("/", async (req, res) => {
             securityQuestion
           );
           res.json(createSecurityQuestionResponse.toObject());
+          debugLogger({ filename: myFile, message: securityQuestion });
         }
       }
     );
@@ -273,6 +271,7 @@ router.post("/", async (req, res) => {
       e.message
     );
     res.status(500).send(createSecurityQuestionCatchResponse.toObject());
+    errorLogger({ filename: myFile, message: "Internal server error" });
   }
 });
 
@@ -323,13 +322,14 @@ router.put("/:id", async (req, res) => {
         if (err) {
           //server error
           console.log(err);
-          const updateSecurityQuestionMongodbErrorResponse = new ErrorResponse(500,
-            "Internal server error",
+          const updateSecurityQuestionMongodbErrorResponse = new ErrorResponse(404,
+            "Bad request, securityQuestionId not valid",
             err
           );
           res
-            .status(500)
+            .status(404)
             .send(updateSecurityQuestionMongodbErrorResponse.toObject());
+            errorLogger({ filename: myFile, message: "Bad request, securityQuestionId not valid" });
         } else {
 
           // Checks current request body against the schema
@@ -363,6 +363,7 @@ router.put("/:id", async (req, res) => {
               res
                 .status(500)
                 .send(savedSecurityQuestionMongodbErrorResponse.toObject());
+                errorLogger({ filename: myFile, message: "Internal server error" });
             } else {
               //saving new security question
               console.log(savedSecurityQuestion);
@@ -372,6 +373,7 @@ router.put("/:id", async (req, res) => {
                 savedSecurityQuestion
               );
               res.json(savedSecurityQuestionResponse.toObject());
+              debugLogger({ filename: myFile, message: savedSecurityQuestion });
             }
           });
         }
@@ -386,6 +388,7 @@ router.put("/:id", async (req, res) => {
       e.message
     );
     res.status(500).send(updateSecurityQuestionCatchErrorResponse.toObject());
+    errorLogger({ filename: myFile, message: "Internal server error" });
   }
 });
 
@@ -397,38 +400,28 @@ router.delete('/:id', async (req, res) => {
     SecurityQuestion.findOne({'_id': req.params.id },function (err, securityQuestion) {
         if (err) {
           console.log(err);
-          const deleteByIdMongoDBErrorResponse = new new ErrorResponse(500, "Internal server error", err);
-          res.status(500).send(deleteByIdMongoDBErrorResponse.toObject());
+          const deleteByIdMongoDBErrorResponse = new new ErrorResponse(404, "Bad Request, securityQuestionId not valid", err);
+          res.status(404).send(deleteByIdMongoDBErrorResponse.toObject());
+          errorLogger({ filename: myFile, message: "Bad Request, securityQuestionId not valid" });
         } else {
 
           console.log(securityQuestion)
           securityQuestion.set({
             isDisabled: true,
           });
-          // Checks current request body against the schema
-          // const validator = ajv.compile(disabledSchema);
-          // const valid = validator({
-          //   isDisabled: req.body.isDisabled
-          // })
-
-          // If invalid return 400 Error
-          // if (!valid) {
-          //   console.log('Bad Request, unable to validate');
-          //   const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
-          //   errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
-          //   res.status(400).send(createServiceError.toObject());
-          //   return
-          // }
 
           securityQuestion.save(function (err, savedSecurityQuestion) {
             if (err) {
               console.log(err);
-              const savedSecurityQuestionMongoDBErrorResponse = ErrorResponse(500, "Internal server error", err);
+              const savedSecurityQuestionMongoDBErrorResponse = ErrorResponse(501, "Internal server error", err);
               res.status(501).send(savedSecurityQuestionMongoDBErrorResponse.toObject());
+              errorLogger({ filename: myFile, message: "Internal server error" });
+
             } else {
               console.log(savedSecurityQuestion);
               const deleteByIdResponse = new BaseResponse(200, "Query successful", savedSecurityQuestion);
               res.json(deleteByIdResponse.toObject());
+              debugLogger({ filename: myFile, message: savedSecurityQuestion });
             }
           });
         }
@@ -439,6 +432,7 @@ router.delete('/:id', async (req, res) => {
     console.log(e);
     const deleteSecurityQuestionCatchErrorResponse = new ErrorResponse(500, "Internal server error", err);
     res.status(500).send(deleteSecurityQuestionCatchErrorResponse.toObject());
+    errorLogger({ filename: myFile, message: "Internal server error" });
   }
 });
 
