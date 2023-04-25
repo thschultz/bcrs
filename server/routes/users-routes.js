@@ -83,18 +83,6 @@ const updateUserSchema = {
   additionalProperties: false,
 };
 
-<<<<<<< HEAD
-// Schema for disabled validation
-const disabledSchema = {
-  type: "object",
-  properties: {
-    isDisabled: { type: "boolean" },
-  },
-  required: ["isDisabled"],
-  additionalProperties: false,
-};
-=======
->>>>>>> f76f4c66b67dffe748e8728037d85428f73b849b
 
 /**
  * API: http://localhost:3000/api/users
@@ -567,6 +555,35 @@ router.delete("/:id", async (req, res) => {
     );
     res.status(500).send(deleteUserErrorResponse.toObject());
     errorLogger({ filename: myFile, message: "Internal server error" });
+  }
+});
+
+
+// FindSelectedSecurityQuestions
+
+router.get('/:userName/security-questions', async (req, res) => {
+  try {
+    User.findOne({'userName': req.params.userName}, function(err, user)
+    {
+      //error handling if server can't save.
+      if (err) {
+        console.log(err);
+        const findSelectedSecurityQuestionsMongodbErrorResponse = new ErrorResponse('500', 'Internal Server Error', err);
+        res.status(500).send(findSelectedSecurityQuestionsMongodbErrorResponse.toObject());
+      }
+      else {
+        //successful save
+        console.log(user);
+        const findSelectedSecurityQuestionResponse = new BaseResponse('200', 'Query Successful', user.selectedSecurityQuestions);
+        res.json(findSelectedSecurityQuestionResponse.toObject());
+      }
+    })
+  }
+  //server error
+  catch (e) {
+    console.log(e);
+    const findSelectedSecurityQuestionsCatchErrorResponse = new ErrorResponse('500', 'Internal server error', e);
+    res.status(500).send(findSelectedSecurityQuestionsCatchErrorResponse.toObject());
   }
 });
 

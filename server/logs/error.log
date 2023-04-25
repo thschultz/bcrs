@@ -93,3 +93,7 @@
 [4/24/2023, 9:15:58 PM] server	 users-routes.js - Bad Request, unable to validate
 [4/24/2023, 9:16:06 PM] server	 users-routes.js - Bad Request, unable to validate
 [4/24/2023, 9:17:54 PM] server	 users-routes.js - Bad Request, unable to validate
+[4/24/2023, 10:03:12 PM] server	 users-routes.js - Bad request, invalid UserId
+[4/24/2023, 10:03:24 PM] server	 users-routes.js - Bad request, invalid UserId
+[4/24/2023, 10:27:38 PM] server	 users-routes.js - Bad request, invalid UserId
+[4/24/2023, 10:28:11 PM] server	 users-routes.js - Bad request, invalid UserId
