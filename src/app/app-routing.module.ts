@@ -28,6 +28,9 @@ import { UserCreateComponent } from './pages/user-create/user-create.component';
 import { UserDetailsComponent } from './pages/user-details/user-details.component';
 import { ServiceListComponent } from './pages/service-list/service-list.component';
 import { ServiceDetailsComponent } from './pages/service-details/service-details.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
@@ -77,6 +80,10 @@ const routes: Routes = [
       {
         path: 'service-list/:serviceId',
         component: ServiceDetailsComponent
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent
       }
     ],
     canActivate: [AuthGuard],
@@ -90,6 +97,14 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent,
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
+      },
+      {
+        path: 'reset-password',
+        component: ForgotPasswordComponent
       },
       {
         path: 'not-found',

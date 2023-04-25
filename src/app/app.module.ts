@@ -31,6 +31,9 @@ import { UserDetailsComponent } from './pages/user-details/user-details.componen
 import { UserListComponent } from './pages/user-list/user-list.component';
 import { ServiceListComponent } from './pages/service-list/service-list.component';
 import { ServiceDetailsComponent } from './pages/service-details/service-details.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 // Angular Materials
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -58,7 +61,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,6 +80,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     UserListComponent,
     ServiceListComponent,
     ServiceDetailsComponent,
+    ProfileComponent,
+    RegisterComponent,
+    ForgotPasswordComponent,
 
   ],
   imports: [
