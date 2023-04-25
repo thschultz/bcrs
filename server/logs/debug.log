@@ -44369,3 +44369,262 @@
   dateCreated: 2023-04-22T20:55:24.062Z,
   __v: 0
 }
+[4/24/2023, 5:11:54 PM] server	 session-routes.js - {
+  _id: new ObjectId("6440c9ae3c98e2d36a50236e"),
+  userName: 'Eric23',
+  password: '$2a$10$UoOxp2cLikRrBBQgadhTUOvNjfYjuJyIiyXXqBtJ6UcEo/ltXw3gW',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '123-456-7890',
+  address: '1234 Authority st. South Park, Colorado 12345',
+  email: 'eric@southpark.tv',
+  isDisabled: false,
+  dateCreated: 2023-04-20T05:12:11.773Z,
+  selectedSecurityQuestions: [],
+  __v: 0,
+  dateModified: 2023-04-22T00:29:56.194Z
+}
+[4/24/2023, 5:11:58 PM] server	 users-routes.js - {
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0,
+  dateModified: 2023-04-24T20:19:34.067Z
+},{
+  _id: new ObjectId("6440c9ae3c98e2d36a50236e"),
+  userName: 'Eric23',
+  password: '$2a$10$UoOxp2cLikRrBBQgadhTUOvNjfYjuJyIiyXXqBtJ6UcEo/ltXw3gW',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '123-456-7890',
+  address: '1234 Authority st. South Park, Colorado 12345',
+  email: 'eric@southpark.tv',
+  isDisabled: false,
+  dateCreated: 2023-04-20T05:12:11.773Z,
+  selectedSecurityQuestions: [],
+  __v: 0,
+  dateModified: 2023-04-22T00:29:56.194Z
+},{
+  _id: new ObjectId("64444a50aadbf7ffd07d1eb7"),
+  userName: 'bach',
+  password: '$2a$10$8DFknBFqmBQU9WAwH9t/AuMcKEwb5X97RoIe1gMcH0TAu5mvdQSua',
+  firstName: 'bach',
+  lastName: 'password01',
+  phoneNumber: '555-555-5555',
+  address: 'bach password01',
+  email: 'bach@password01.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("64444a50aadbf7ffd07d1eb8") },
+  dateCreated: 2023-04-22T20:55:23.593Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+},{
+  _id: new ObjectId("64444a92aadbf7ffd07d1ebb"),
+  userName: 'mozart',
+  password: '$2a$10$0QC0GFnm5cX2tZAIkin.PO6A2qA.OLhJco/IPwF1gmYSU.TtCeg4i',
+  firstName: 'mozart',
+  lastName: 'password01',
+  phoneNumber: '555-555-5555',
+  address: 'mozart password01',
+  email: 'mozart@password01.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("64444a92aadbf7ffd07d1ebc") },
+  dateCreated: 2023-04-22T20:55:23.593Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+},{
+  _id: new ObjectId("6446e4cea71ae77027bb2c43"),
+  userName: 'testing',
+  password: '$2a$10$oHHCZlcd7wA1G6zmpSKoQeeB7tFq9UNNcxa6MTPAEalRAgVTihso2',
+  firstName: 'Test',
+  lastName: 'User',
+  phoneNumber: '123-123-1234',
+  address: '123 Fake Street',
+  email: 'test@test.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6446e4cea71ae77027bb2c44") },
+  dateCreated: 2023-04-24T13:27:48.824Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/24/2023, 5:12:14 PM] server	 users-routes.js - {
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0,
+  dateModified: 2023-04-24T20:19:34.067Z
+},{
+  _id: new ObjectId("6440c9ae3c98e2d36a50236e"),
+  userName: 'Eric23',
+  password: '$2a$10$UoOxp2cLikRrBBQgadhTUOvNjfYjuJyIiyXXqBtJ6UcEo/ltXw3gW',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '123-456-7890',
+  address: '1234 Authority st. South Park, Colorado 12345',
+  email: 'eric@southpark.tv',
+  isDisabled: false,
+  dateCreated: 2023-04-20T05:12:11.773Z,
+  selectedSecurityQuestions: [],
+  __v: 0,
+  dateModified: 2023-04-22T00:29:56.194Z
+},{
+  _id: new ObjectId("64444a50aadbf7ffd07d1eb7"),
+  userName: 'bach',
+  password: '$2a$10$8DFknBFqmBQU9WAwH9t/AuMcKEwb5X97RoIe1gMcH0TAu5mvdQSua',
+  firstName: 'bach',
+  lastName: 'password01',
+  phoneNumber: '555-555-5555',
+  address: 'bach password01',
+  email: 'bach@password01.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("64444a50aadbf7ffd07d1eb8") },
+  dateCreated: 2023-04-22T20:55:23.593Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+},{
+  _id: new ObjectId("64444a92aadbf7ffd07d1ebb"),
+  userName: 'mozart',
+  password: '$2a$10$0QC0GFnm5cX2tZAIkin.PO6A2qA.OLhJco/IPwF1gmYSU.TtCeg4i',
+  firstName: 'mozart',
+  lastName: 'password01',
+  phoneNumber: '555-555-5555',
+  address: 'mozart password01',
+  email: 'mozart@password01.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("64444a92aadbf7ffd07d1ebc") },
+  dateCreated: 2023-04-22T20:55:23.593Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+},{
+  _id: new ObjectId("6446e4cea71ae77027bb2c43"),
+  userName: 'testing',
+  password: '$2a$10$oHHCZlcd7wA1G6zmpSKoQeeB7tFq9UNNcxa6MTPAEalRAgVTihso2',
+  firstName: 'Test',
+  lastName: 'User',
+  phoneNumber: '123-123-1234',
+  address: '123 Fake Street',
+  email: 'test@test.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6446e4cea71ae77027bb2c44") },
+  dateCreated: 2023-04-24T13:27:48.824Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+}
+[4/24/2023, 5:12:27 PM] server	 services-routes.js - {
+  _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
+  serviceName: 'Password Reset',
+  price: 39.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444acaaadbf7ffd07d1ec6"),
+  serviceName: 'Spyware Removal',
+  price: 99.9,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0,
+  dateModified: 2023-04-22T21:18:42.519Z
+},{
+  _id: new ObjectId("64444ad7aadbf7ffd07d1ec8"),
+  serviceName: 'RAM Upgrade',
+  price: 129.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444ae7aadbf7ffd07d1eca"),
+  serviceName: 'Software Installation',
+  price: 49.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444af5aadbf7ffd07d1ecc"),
+  serviceName: 'PC Tune-up',
+  price: 89.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b03aadbf7ffd07d1ece"),
+  serviceName: 'Keyboard Cleaning',
+  price: 45,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b12aadbf7ffd07d1ed0"),
+  serviceName: 'Disk Clean-up',
+  price: 149.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+}
+[4/24/2023, 7:11:55 PM] server	 services-routes.js - {
+  _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
+  serviceName: 'Password Reset',
+  price: 39.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444acaaadbf7ffd07d1ec6"),
+  serviceName: 'Spyware Removal',
+  price: 99.9,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0,
+  dateModified: 2023-04-22T21:18:42.519Z
+},{
+  _id: new ObjectId("64444ad7aadbf7ffd07d1ec8"),
+  serviceName: 'RAM Upgrade',
+  price: 129.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444ae7aadbf7ffd07d1eca"),
+  serviceName: 'Software Installation',
+  price: 49.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444af5aadbf7ffd07d1ecc"),
+  serviceName: 'PC Tune-up',
+  price: 89.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b03aadbf7ffd07d1ece"),
+  serviceName: 'Keyboard Cleaning',
+  price: 45,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b12aadbf7ffd07d1ed0"),
+  serviceName: 'Disk Clean-up',
+  price: 149.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+}

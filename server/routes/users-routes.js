@@ -25,36 +25,45 @@ const saltRounds = 10; // hashes password
 
 // Schema for  create validation
 const userSchema = {
-  type: 'object',
+  type: "object",
   properties: {
-    userName: {type: 'string'},
-    password: {type: 'string'},
-    firstName: {type: 'string'},
-    lastName: {type: 'string'},
-    phoneNumber: {type: 'string'},
-    address: {type: 'string'},
-    email: {type: 'string'},
+    userName: { type: "string" },
+    password: { type: "string" },
+    firstName: { type: "string" },
+    lastName: { type: "string" },
+    phoneNumber: { type: "string" },
+    address: { type: "string" },
+    email: { type: "string" },
     role: {
-      type: 'object',
+      type: "object",
       properties: {
-        text: {type: 'string'}
+        text: { type: "string" },
       },
-      required: ['text'],
-      additionalProperties: false
-    }
+      required: ["text"],
+      additionalProperties: false,
+    },
   },
-  required: ['userName', 'password', 'firstName', 'lastName', 'phoneNumber', 'address', 'email', 'role'],
-  additionalProperties: false
-}
+  required: [
+    "userName",
+    "password",
+    "firstName",
+    "lastName",
+    "phoneNumber",
+    "address",
+    "email",
+    "role",
+  ],
+  additionalProperties: false,
+};
 
 const updateUserSchema = {
-  type: 'object',
+  type: "object",
   properties: {
-    firstName: {type: 'string'},
-    lastName: {type: 'string'},
-    phoneNumber: {type: 'string'},
-    address: {type: 'string'},
-    email: {type: 'string'},
+    firstName: { type: "string" },
+    lastName: { type: "string" },
+    phoneNumber: { type: "string" },
+    address: { type: "string" },
+    email: { type: "string" },
     /*role: {
       type: 'object',
       properties: {
@@ -64,25 +73,29 @@ const updateUserSchema = {
       additionalProperties: false
     }*/
   },
-  required: ['firstName', 'lastName', 'phoneNumber', 'address', 'email'/*, 'role'*/],
-  additionalProperties: false
-}
+  required: [
+    "firstName",
+    "lastName",
+    "phoneNumber",
+    "address",
+    "email" /*, 'role'*/,
+  ],
+  additionalProperties: false,
+};
 
 // Schema for disabled validation
 const disabledSchema = {
-  type: 'object',
+  type: "object",
   properties: {
-    isDisabled: {type: 'boolean'},
+    isDisabled: { type: "boolean" },
   },
-  required: ['isDisabled'],
-  additionalProperties: false
-}
-
+  required: ["isDisabled"],
+  additionalProperties: false,
+};
 
 /**
  * API: http://localhost:3000/api/users
  */
-
 
 /**
  * findAllUsers
@@ -202,14 +215,60 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+/**
+ * createUser
+ * @openapi
+ * /api/users:
+ *   post:
+ *     tags:
+ *       - Users
+ *     description: API that creates a new user
+ *     summary: Creates a new user
+ *     requestBody:
+ *       description: Creates a new user
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             required:
+ *               - text
+ *             properties:
+ *               userName:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *               firstName:
+ *                 type: string
+ *               lastName:
+ *                 type: string
+ *               phoneNumber:
+ *                 type: string
+ *               address:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               role:
+ *                 type: string
+ *     responses:
+ *       '200':
+ *         description: New user added to MongoDB
+ *       '400':
+ *         description: Bad Request
+ *       '404':
+ *         description: Null Record
+ *       '500':
+ *         description: Server Exception
+ *       '501':
+ *         description: MongoDB Exception
+ */
 
 // createUser
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
-    let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds);// salt/hash the password
+    let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds); // salt/hash the password
 
     standardRole = {
-      text: "standard"
+      text: "standard",
     };
 
     // user object
@@ -226,35 +285,97 @@ router.post('/', async (req, res) => {
 
     // Checks current request body against the schema
     const validator = ajv.compile(userSchema);
-    const valid = validator(newUser)
+    const valid = validator(newUser);
 
     // If invalid return 400 Error
     if (!valid) {
-      console.log('Bad Request, unable to validate');
-      const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
-      errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+      console.log("Bad Request, unable to validate");
+      const createServiceError = new ErrorResponse(
+        400,
+        "Bad Request, unable to validate",
+        valid
+      );
+      errorLogger({
+        filename: myFile,
+        message: "Bad Request, unable to validate",
+      });
       res.status(400).send(createServiceError.toObject());
-      return
+      return;
     }
 
     User.create(newUser, function (err, user) {
       if (err) {
         console.log(err);
-        const createUserMongodbErrorResponse = new ErrorResponse(500, "Internal server error", err);
+        const createUserMongodbErrorResponse = new ErrorResponse(
+          500,
+          "Internal server error",
+          err
+        );
         res.status(500).send(createUserMongodbErrorResponse.toObject());
       } else {
         console.log(user);
-        const CreateUserResponse = new BaseResponse(200, "Query successful", user);
+        const CreateUserResponse = new BaseResponse(
+          200,
+          "Query successful",
+          user
+        );
         res.json(CreateUserResponse.toObject());
       }
     });
   } catch (e) {
     console.log(e);
-    const createUserCatchErrorResponse = ErrorResponse(500, "Internal server error", e.message);
+    const createUserCatchErrorResponse = ErrorResponse(
+      500,
+      "Internal server error",
+      e.message
+    );
     res.status(500).send(createUserCatchErrorResponse.toObject());
   }
 });
 
+/**
+ * updateUser
+ * @openapi
+ * /api/users/{id}:
+ *   put:
+ *     tags:
+ *       - Users
+ *     description: API that updates users
+ *     summary: Updates Users
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         description: User ID
+ *         schema:
+ *           type:
+ *     requestBody:
+ *       description: Update user
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             required:
+ *               - text
+ *             properties:
+ *               firstName:
+ *                 type: string
+ *               lastName:
+ *                 type: string
+ *               phoneNumber:
+ *                 type: string
+ *               address:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *     responses:
+ *       '204':
+ *         description: User updated
+ *       '400':
+ *         description: Bad Request
+ *       '404':
+ *         description: User not found
+ */
 
 // updateUser
 router.put("/:id", async (req, res) => {
@@ -270,28 +391,34 @@ router.put("/:id", async (req, res) => {
         );
         res.status(500).send(updateUserByIdMongodbErrorResponse.toObject());
       } else {
-
         let updatedUser = {
           firstName: req.body.firstName,
           lastName: req.body.lastName,
           phoneNumber: req.body.phoneNumber,
           address: req.body.address,
           email: req.body.email,
-          // role: req.body.role
-        }
+          //role: req.body.role,
+        };
 
         // Checks current request body against the schema
-         const validator = ajv.compile(updateUserSchema);
-         const valid = validator(updatedUser)
+        const validator = ajv.compile(updateUserSchema);
+        const valid = validator(updatedUser);
 
-         // If invalid return 400 Error
-         if (!valid) {
-           console.log('Bad Request, unable to validate');
-           const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
-           errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
-           res.status(400).send(createServiceError.toObject());
-           return
-         }
+        // If invalid return 400 Error
+        if (!valid) {
+          console.log("Bad Request, unable to validate");
+          const createServiceError = new ErrorResponse(
+            400,
+            "Bad Request, unable to validate",
+            valid
+          );
+          errorLogger({
+            filename: myFile,
+            message: "Bad Request, unable to validate",
+          });
+          res.status(400).send(createServiceError.toObject());
+          return;
+        }
 
         //updating fields
         console.log(user);
@@ -340,7 +467,6 @@ router.put("/:id", async (req, res) => {
     res.status(500).send(updateUserByIdCatchErrorResponse.toObject());
   }
 });
-
 
 /**
  * deleteUserById
