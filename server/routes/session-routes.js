@@ -18,6 +18,7 @@ const Ajv = require('ajv');
 const BaseResponse = require('../services/base-response');
 const ErrorResponse = require('../services/error-response');
 const bcrypt = require('bcryptjs');
+const { async } = require('rxjs');
 
 // Logging and Validation
 const myFile = 'session-routes.js';
@@ -202,3 +203,51 @@ router.post('/verify/users/:userName/security-questions', async(req, res) => {
 
 
 module.exports = router;
+
+// ResetPassword
+
+router.post('/users/:userName/reset-password', async(req, res) => {
+
+  try {
+    const password = req.body.password;
+
+    User.findOne({'userName': req.params.userName}, function(err, user)
+    {
+      if (err)
+      {
+        console.log(err);
+        const resetPasswordMongodbErrorResponse = new ErrorResponse('500', 'Internal Server Error', err);
+        res.status(500).send(resetPasswordMongodbErrorResponse.toObject());
+      }
+      else {
+        console.log(user);
+        let hashedPassword = bcrypt.hashSync(password, saltRounds);
+
+        user.set({
+          password: hashedPassword
+        });
+
+        user.save(function(err, updatedUser)
+        {
+          if (err)
+          {
+            console.log(err);
+            const updateUserMongodbErrorResponse = new ErrorResponse('500', 'Internal server error', err);
+            res.status(500).send(updateUserMongodbErrorResponse.toObject());
+          }
+          else {
+            console.log(updatedUser);
+            const updatedPasswordResponse = new BaseResponse('200', 'Query Successful', updatedUser);
+            res.json(updatedPasswordResponse.toObject());
+          }
+        })
+      }
+    })
+  }
+  catch(e)
+  {
+    console.log(e);
+    const resetPasswordCatchError = new ErrorResponse('500', 'Internal server error', e);
+    res.status(500).send(resetPasswordCatchError.toObject());
+  }
+});
