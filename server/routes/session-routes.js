@@ -221,19 +221,19 @@ router.post("/login", async (req, res) => {
  *               firstName:
  *                 text:
  *                   type: string
- *                lastName:
+ *               lastName:
  *                 text:
  *                   type: string
- *                phoneNumber:
+ *               phoneNumber:
  *                 text:
  *                   type: string
- *                address:
+ *               address:
  *                 text:
  *                   type: string
- *                email:
+ *               email:
  *                 text:
  *                   type: string
- *                selectedSecurityQuestions:
+ *               selectedSecurityQuestions:
  *                 text:
  *                   type: string
  *       required: true

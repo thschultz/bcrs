@@ -45286,3 +45286,18 @@
   dateModified: 2023-04-22T00:29:56.194Z
 >>>>>>> e41467dfa9a9d9707b687bc8b40fcd957ad26c90
 }
+[4/24/2023, 9:20:32 PM] server	 session-routes.js - {
+  userName: 'testreg',
+  password: '$2a$10$TMXbUFuH2J3oCQrw93roEeypaxOSYC3SnpOkniwH4B6knXYe23qXO',
+  firstName: 'tester',
+  lastName: 'testing',
+  phoneNumber: '555-888-0000',
+  address: '100 The Way, Registered, The Galaxy',
+  email: 'max@max.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6447470051436e70375d82fc") },
+  selectedSecurityQuestions: [ { _id: new ObjectId("6447470051436e70375d82fd") } ],
+  dateCreated: 2023-04-25T03:19:26.447Z,
+  _id: new ObjectId("6447470051436e70375d82fb"),
+  __v: 0
+}
