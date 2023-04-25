@@ -78,3 +78,17 @@
 [4/22/2023, 12:53:08 PM] server	 session-routes.js - Invalid password or username
 [4/22/2023, 12:55:16 PM] server	 services-routes.js - Bad Request, unable to validate
 [4/22/2023, 12:55:16 PM] server	 services-routes.js - Bad Request, unable to validate
+[4/22/2023, 2:28:11 PM] server	 session-routes.js - Invalid password or username
+[4/22/2023, 2:28:32 PM] server	 session-routes.js - Invalid password or username
+[4/22/2023, 2:34:18 PM] server	 session-routes.js - Invalid password or username
+[4/24/2023, 7:41:33 PM] server	 session-routes.js - Username already exists.
+[4/24/2023, 7:43:29 PM] server	 session-routes.js - Username already exists.
+[4/24/2023, 7:46:23 PM] server	 session-routes.js - Username already exists.
+[4/24/2023, 7:47:32 PM] server	 session-routes.js - Username already exists.
+[4/24/2023, 8:07:39 PM] server	 session-routes.js - Username already exists.
+[4/24/2023, 8:10:10 PM] server	 session-routes.js - Username already exists.
+[4/24/2023, 8:13:56 PM] server	 session-routes.js - Username already exists.
+[4/24/2023, 8:16:06 PM] server	 session-routes.js - Username already exists.
+[4/24/2023, 8:19:23 PM] server	 session-routes.js - Bad Request, unable to validate
+[4/24/2023, 8:19:34 PM] server	 session-routes.js - Username already exists.
+[4/24/2023, 8:24:25 PM] server	 session-routes.js - Username already exists.
