@@ -185,7 +185,6 @@ router.post("/login", async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 // VerifyUser
 
 router.get("/verify/users/:userName", async (req, res) => {
@@ -224,7 +223,6 @@ router.get("/verify/users/:userName", async (req, res) => {
   }
 });
 
-=======
 
 
 
@@ -337,5 +335,4 @@ router.post('/users/:userName/reset-password', async(req, res) => {
 
 
 
->>>>>>> 4c0c23c648dbd0de5458a78edcbee514602ea589
 module.exports = router;
