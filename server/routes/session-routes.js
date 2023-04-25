@@ -163,12 +163,12 @@ router.post('/verify/users/:userName/security-questions', async(req, res) => {
       // If user is valid
       console.log(user);
 
-      // variables for the selected questions
+      // Variables to gather the selected questions
       const selectedSecurityQuestionOne = user.selectedSecurityQuestionOne.find(q => q.questionText === req.body.questionText1);
       const selectedSecurityQuestionTwo = user.selectedSecurityQuestionTwo.find(q2 => q2.questionText === req.body.questionText2);
       const selectedSecurityQuestionThree = user.selectedSecurityQuestionThree.find(q3 => q3.questionText === req.body.questionText3);
 
-      //Variables for the selected answers
+      // Variables to compare the selected answers against the answers stored in the database
       const isValidAnswerOne = selectedSecurityQuestionOne.answerText === req.body.answerText1;
       const isValidAnswerTwo = selectedSecurityQuestionTwo.answerText === req.body.answerText2;
       const isValidAnswerThree = selectedSecurityQuestionThree.answerText === req.body.answerText3;
