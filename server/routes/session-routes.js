@@ -11,14 +11,12 @@
 const express = require("express");
 const User = require("../models/user");
 const router = express.Router();
-<<<<<<< HEAD
 const { debugLogger, errorLogger } = require("../logs/logger");
 const createError = require("http-errors");
 const Ajv = require("ajv");
 const BaseResponse = require("../services/base-response");
 const ErrorResponse = require("../services/error-response");
 const bcrypt = require("bcryptjs");
-=======
 const { debugLogger, errorLogger } = require('../logs/logger');
 const createError = require('http-errors');
 const Ajv = require('ajv');
@@ -26,7 +24,6 @@ const BaseResponse = require('../services/base-response');
 const ErrorResponse = require('../services/error-response');
 const bcrypt = require('bcryptjs');
 const { async } = require('rxjs');
->>>>>>> 4c0c23c648dbd0de5458a78edcbee514602ea589
 
 // Logging and Validation
 const myFile = "session-routes.js";
