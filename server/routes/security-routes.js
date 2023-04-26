@@ -392,6 +392,31 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+/**
+ * deleteSecurityQuestionById
+ * @openapi
+ * /api/security/{id}:
+ *   delete:
+ *     tags:
+ *       - Users
+ *     name: deleteSecurityQuestion
+ *     description: API for deleting a document.
+ *     summary: Sets the isDisabled status to true.
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         description: Id of the document to remove.
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: Service disabled
+ *       '400':
+ *         description: Bad Request
+ *       '500':
+ *         description: Server Exception
+ */
 
 // deleteSecurity
 router.delete('/:id', async (req, res) => {
