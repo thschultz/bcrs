@@ -134,6 +134,11 @@ body {
   flex-direction: row;
 }
 
+.messages {
+  width: 50%;
+  align-self: center;
+}
+
 /* Neon Button Styling */
 
 .neon-btn {
@@ -235,6 +240,10 @@ body {
 
   .formDesign {
     flex-direction: column;
+  }
+
+  .messages {
+    width: 100%;
   }
 
   /* Width Styles */

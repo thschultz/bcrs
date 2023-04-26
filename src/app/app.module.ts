@@ -32,7 +32,6 @@ import { UserListComponent } from './pages/user-list/user-list.component';
 import { ServiceListComponent } from './pages/service-list/service-list.component';
 import { ServiceDetailsComponent } from './pages/service-details/service-details.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { ProfileDetailsComponent } from './pages/profile-details/profile-details.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
@@ -84,9 +83,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ProfileComponent,
     RegisterComponent,
     ForgotPasswordComponent,
-    ProfileDetailsComponent,
-
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
