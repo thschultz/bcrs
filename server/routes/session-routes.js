@@ -547,7 +547,7 @@ router.post("/verify/users/:userName/security-questions", async (req, res) => {
  *       required: true
  *     responses:
  *       '200':
- *         description: Login successful.
+ *         description: Password rest successful.
  *       '400':
  *         description: Bad request.
  *       '404':
