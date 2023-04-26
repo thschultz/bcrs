@@ -11,13 +11,13 @@
 const express = require("express");
 const User = require("../models/user");
 const router = express.Router();
-const { debugLogger, errorLogger } = require('../logs/logger');
-const createError = require('http-errors');
-const Ajv = require('ajv');
-const BaseResponse = require('../services/base-response');
-const ErrorResponse = require('../services/error-response');
-const bcrypt = require('bcryptjs');
-const { async } = require('rxjs');
+const { debugLogger, errorLogger } = require("../logs/logger");
+const createError = require("http-errors");
+const Ajv = require("ajv");
+const BaseResponse = require("../services/base-response");
+const ErrorResponse = require("../services/error-response");
+const bcrypt = require("bcryptjs");
+const { async } = require("rxjs");
 // const SelectedSecurityQuestions = require('../schemas/selected-security-question');
 
 // Logging and Validation
@@ -39,25 +39,30 @@ const loginSchema = {
  * API: http://localhost:3000/api/session
  */
 
-
 const registerSchema = {
-  type: 'object',
+  type: "object",
   properties: {
-    userName: {type: 'string'},
-    password: {type: 'string'},
-    firstName: {type: 'string'},
-    lastName: {type: 'string'},
-    phoneNumber: {type: 'string'},
-    address: {type: 'string'},
-    email: {type: 'string'},
-    selectedSecurityQuestions: {type: 'array'}
+    userName: { type: "string" },
+    password: { type: "string" },
+    firstName: { type: "string" },
+    lastName: { type: "string" },
+    phoneNumber: { type: "string" },
+    address: { type: "string" },
+    email: { type: "string" },
+    selectedSecurityQuestions: { type: "array" },
   },
   required: [
-              'userName', 'password', 'firstName', 'lastName', 'phoneNumber',
-              'address', 'email', 'selectedSecurityQuestions'
-            ],
-  additionalProperties: false
-}
+    "userName",
+    "password",
+    "firstName",
+    "lastName",
+    "phoneNumber",
+    "address",
+    "email",
+    "selectedSecurityQuestions",
+  ],
+  additionalProperties: false,
+};
 
 const saltRounds = 10;
 
@@ -256,45 +261,54 @@ router.post("/login", async (req, res) => {
  */
 // register
 //
-router.post('/register', async(req, res) => {
+router.post("/register", async (req, res) => {
   try {
-
     // checks request body against the schema
     const validator = ajv.compile(registerSchema);
     const valid = validator({
-      'userName': req.body.userName,
-      'password': req.body.password,
-      'firstName': req.body.firstName,
-      'lastName': req.body.lastName,
-      'phoneNumber': req.body.phoneNumber,
-      'address': req.body.address,
-      'email': req.body.email,
-      'selectedSecurityQuestions': req.body.selectedSecurityQuestions
+      userName: req.body.userName,
+      password: req.body.password,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      phoneNumber: req.body.phoneNumber,
+      address: req.body.address,
+      email: req.body.email,
+      selectedSecurityQuestions: req.body.selectedSecurityQuestions,
     });
 
     // failed validation
     if (!valid) {
-      console.log('Bad Request, unable to validate');
-      const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
-      errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+      console.log("Bad Request, unable to validate");
+      const createServiceError = new ErrorResponse(
+        400,
+        "Bad Request, unable to validate",
+        valid
+      );
+      errorLogger({
+        filename: myFile,
+        message: "Bad Request, unable to validate",
+      });
       res.status(400).send(createServiceError.toObject());
-      return
+      return;
     }
 
-    User.findOne({'userName': req.body.userName}, (err, user) => {
+    User.findOne({ userName: req.body.userName }, (err, user) => {
       console.log("user --> " + user);
-      if(err) {
+      if (err) {
         console.log(err);
-        const registerUserMongodbErrorResponse = new ErrorResponse(500, 'Internal server error', err);
+        const registerUserMongodbErrorResponse = new ErrorResponse(
+          500,
+          "Internal server error",
+          err
+        );
         errorLogger({ filename: myFile, message: "Internal server error" });
         res.status(500).send(registerUserMongodbErrorResponse.toObject());
-      }
-      else {
-        if(!user) {
+      } else {
+        if (!user) {
           let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds);
           standardRole = {
-            text: 'standard'
-          }
+            text: "standard",
+          };
 
           let registeredUser = {
             userName: req.body.userName,
@@ -305,42 +319,88 @@ router.post('/register', async(req, res) => {
             address: req.body.address,
             email: req.body.email,
             role: standardRole,
-            selectedSecurityQuestions: req.body.selectedSecurityQuestions
+            selectedSecurityQuestions: req.body.selectedSecurityQuestions,
           };
 
           User.create(registeredUser, (err, newUser) => {
-            if(err) {
+            if (err) {
               console.lof(err);
-              const newUserMongodbErrorResponse = new ErrorResponse(500, 'Internal server error', err);
-              errorLogger({ filename: myFile, message: "Internal server error" });
+              const newUserMongodbErrorResponse = new ErrorResponse(
+                500,
+                "Internal server error",
+                err
+              );
+              errorLogger({
+                filename: myFile,
+                message: "Internal server error",
+              });
               res.status(500).send(newUserMongodbErrorResponse.toObject());
-            }
-            else {
+            } else {
               console.log(newUser);
-              const registerUserResponse = new BaseResponse(200, 'Query successful', newUser);
+              const registerUserResponse = new BaseResponse(
+                200,
+                "Query successful",
+                newUser
+              );
               debugLogger({ filename: myFile, message: newUser });
               res.json(registerUserResponse.toObject());
             }
           });
-        }
-        else {
+        } else {
           console.log(`Username ${req.body.userName} already exists.`);
-          const userInUseError = new BaseResponse(400, `The username '${req.body.userName}' is already in use.`, null);
-          errorLogger({ filename: myFile, message: "Username already exists." });
+          const userInUseError = new BaseResponse(
+            400,
+            `The username '${req.body.userName}' is already in use.`,
+            null
+          );
+          errorLogger({
+            filename: myFile,
+            message: "Username already exists.",
+          });
           res.status(400).send(userInUseError.toObject());
         }
       }
     });
-  }
-  catch(e) {
+  } catch (e) {
     console.log(err);
-    const registerUserCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
+    const registerUserCatchErrorResponse = new ErrorResponse(
+      500,
+      "Internal server error",
+      e.message
+    );
     errorLogger({ filename: myFile, message: "Internal server error" });
     res.status(500).send(registerUserCatchErrorResponse.toObject());
   }
 });
 
 // VerifyUser
+
+/**
+ * findUserById
+ * @openapi
+ * /api/session/verify/users/{userName}:
+ *   get:
+ *     tags:
+ *       - Session
+ *     description:  API that verify users by userName
+ *     summary: Verify user by userName
+ *     parameters:
+ *       - name: Username
+ *         in: path
+ *         required: true
+ *         description: UserName
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: User document
+ *       '401':
+ *         description: Invalid invalid user ID
+ *       '500':
+ *         description: Server exception
+ *       '501':
+ *         description: MongoDB exception
+ */
 
 router.get("/verify/users/:userName", async (req, res) => {
   try {
