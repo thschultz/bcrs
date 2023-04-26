@@ -18,6 +18,7 @@ const BaseResponse = require('../services/base-response');
 const ErrorResponse = require('../services/error-response');
 const bcrypt = require('bcryptjs');
 const { async } = require('rxjs');
+// const SelectedSecurityQuestions = require('../schemas/selected-security-question');
 
 // Logging and Validation
 const myFile = "session-routes.js";
@@ -49,7 +50,7 @@ const registerSchema = {
     phoneNumber: {type: 'string'},
     address: {type: 'string'},
     email: {type: 'string'},
-    selectedSecurityQuestions: {type: 'array'},
+    selectedSecurityQuestions: {type: 'array'}
   },
   required: [
               'userName', 'password', 'firstName', 'lastName', 'phoneNumber',
@@ -59,6 +60,7 @@ const registerSchema = {
 }
 
 const saltRounds = 10;
+
 // openapi language used to describe the API via swagger
 /**
  * @openapi
@@ -235,7 +237,12 @@ router.post("/login", async (req, res) => {
  *                   type: string
  *               selectedSecurityQuestions:
  *                 text:
- *                   type: string
+ *                   type: array
+ *                   items:
+ *                     questionText:
+ *                       type: string
+ *                     answerText:
+ *                       type: string
  *       required: true
  *     responses:
  *       '200':
