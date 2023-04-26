@@ -70,7 +70,7 @@ const saltRounds = 10;
 /**
  * @openapi
  * /api/session/login:
- *   put:
+ *   post:
  *     tags:
  *       - Session
  *     operationId: login
@@ -206,7 +206,7 @@ router.post("/login", async (req, res) => {
 /**
  * @openapi
  * /api/session/register:
- *   put:
+ *   post:
  *     tags:
  *       - Session
  *     operationId: register
@@ -373,10 +373,10 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// VerifyUser
+// verifyUser
 
 /**
- * findUserById
+ * verifyUser
  * @openapi
  * /api/session/verify/users/{userName}:
  *   get:
@@ -385,21 +385,19 @@ router.post("/register", async (req, res) => {
  *     description:  API that verify users by userName
  *     summary: Verify user by userName
  *     parameters:
- *       - name: Username
+ *       - name: userName
  *         in: path
  *         required: true
- *         description: UserName
+ *         description: userName
  *         schema:
  *           type: string
  *     responses:
  *       '200':
  *         description: User document
- *       '401':
- *         description: Invalid invalid user ID
+ *       '400':
+ *         description: Invalid username
  *       '500':
  *         description: Server exception
- *       '501':
- *         description: MongoDB exception
  */
 
 router.get("/verify/users/:userName", async (req, res) => {
@@ -519,6 +517,44 @@ router.post("/verify/users/:userName/security-questions", async (req, res) => {
 });
 
 // ResetPassword
+
+/**
+ * @openapi
+ * /api/session/users/{userName}/reset-password:
+ *   post:
+ *     tags:
+ *       - Session
+ *     operationId: Reset Password
+ *     description: Resets user password.
+ *     summary: Resets Password.
+ *     parameters:
+ *       - name: userName
+ *         in: path
+ *         required: true
+ *         description: userName
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       description: New password.
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               password:
+ *                 text:
+ *                   type: string
+ *       required: true
+ *     responses:
+ *       '200':
+ *         description: Login successful.
+ *       '400':
+ *         description: Bad request.
+ *       '404':
+ *         description: Not found.
+ *       '500':
+ *         description: Server expectations.
+ */
 
 router.post("/users/:userName/reset-password", async (req, res) => {
   try {
