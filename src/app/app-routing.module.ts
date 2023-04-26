@@ -31,6 +31,7 @@ import { ServiceDetailsComponent } from './pages/service-details/service-details
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { ProfileDetailsComponent } from './pages/profile-details/profile-details.component';
 
 const routes: Routes = [
   {
@@ -81,9 +82,14 @@ const routes: Routes = [
         path: 'service-list/:serviceId',
         component: ServiceDetailsComponent
       },
+      // User Profile Children
       {
         path: 'profile',
         component: ProfileComponent
+      },
+      {
+        path: 'edit-profile',
+        component: ProfileDetailsComponent
       }
     ],
     canActivate: [AuthGuard],
@@ -107,11 +113,11 @@ const routes: Routes = [
         component: ForgotPasswordComponent
       },
       {
-        path: 'not-found',
+        path: '404',
         component: NotFoundComponent,
       },
       {
-        path: 'server-error',
+        path: '500',
         component: ServerErrorComponent,
       },
     ],
