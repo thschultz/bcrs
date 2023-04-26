@@ -42,6 +42,7 @@ const loginSchema = {
 const registerSchema = {
   type: "object",
   properties: {
+<<<<<<< Updated upstream
     userName: { type: "string" },
     password: { type: "string" },
     firstName: { type: "string" },
@@ -63,6 +64,22 @@ const registerSchema = {
   ],
   additionalProperties: false,
 };
+=======
+    userName: {type: 'string'},
+    password: {type: 'string'},
+    firstName: {type: 'string'},
+    lastName: {type: 'string'},
+    phoneNumber: {type: 'string'},
+    address: {type: 'string'},
+    email: {type: 'string'},
+  },
+  required: [
+              'userName', 'password', 'firstName', 'lastName', 'phoneNumber',
+              'address', 'email'
+            ],
+  additionalProperties: false
+}
+>>>>>>> Stashed changes
 
 const saltRounds = 10;
 
@@ -266,6 +283,7 @@ router.post("/register", async (req, res) => {
     // checks request body against the schema
     const validator = ajv.compile(registerSchema);
     const valid = validator({
+<<<<<<< Updated upstream
       userName: req.body.userName,
       password: req.body.password,
       firstName: req.body.firstName,
@@ -274,6 +292,15 @@ router.post("/register", async (req, res) => {
       address: req.body.address,
       email: req.body.email,
       selectedSecurityQuestions: req.body.selectedSecurityQuestions,
+=======
+      'userName': req.body.userName,
+      'password': req.body.password,
+      'firstName': req.body.firstName,
+      'lastName': req.body.lastName,
+      'phoneNumber': req.body.phoneNumber,
+      'address': req.body.address,
+      'email': req.body.email
+>>>>>>> Stashed changes
     });
 
     // failed validation
