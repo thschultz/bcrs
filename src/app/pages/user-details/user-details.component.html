@@ -8,17 +8,22 @@
 -->
 
 <div fxLayout="column">
-  <mat-card class="mat-elevation-z0">
-    <mat-card-title style="text-align: center; font-weight: lighter">Update User Form</mat-card-title>
-    <mat-card-subtitle style="text-align: center; font-weight: lighter">
-      Fields marked with an asterisk (*) are required.
-    </mat-card-subtitle>
-    <br />
 
-    <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
+  <div fxFlex>
+    <h1 class="page-header">
+      Edit User Form!<br />
+      <span class="subtitle">
+        Fields marked with an asterisk (*) are required.
+      </span>
+    </h1>
+  </div>
+
+  <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
+
+  <mat-card class="mat-elevation-z0">
 
     <form [formGroup]="form" (ngSubmit)="saveUser()" (keydown.enter)="$event.preventDefault()"
-      style="width: 50%; margin: 0 auto" autocomplete="off">
+      class="form-style" autocomplete="off">
       <mat-card-content>
         <div fxLayout="column" fxLayoutGap="10px">
 

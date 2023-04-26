@@ -134,6 +134,11 @@ body {
   flex-direction: row;
 }
 
+.form-style {
+  width: 50%;
+  margin: 0 auto;
+}
+
 .messages {
   width: 50%;
   align-self: center;
@@ -243,6 +248,10 @@ body {
   }
 
   .messages {
+    width: 100%;
+  }
+
+  .form-style {
     width: 100%;
   }
 
