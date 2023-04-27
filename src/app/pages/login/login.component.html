@@ -9,69 +9,45 @@
 -->
 
 <div fxLayout="column">
-  <mat-card
-    fxFlex
-    class="login-container w-50"
-    n
-    style="margin-top: 150px; border-radius: 10px"
-  >
+  <mat-card fxFlex class="login-container w-50" n style="margin-top: 150px; border-radius: 10px">
     <mat-card-header class="header">
       <!-- Page Title-->
       <mat-card-title class="login-title"> Employee Login</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <!-- Display error messages-->
-      <p-messages
-        [(value)]="errorMessages"
-        [enableService]="false"
-      ></p-messages>
+      <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
       <mat-card class="mat-elevation-z0">
         <!-- Username and password form-->
         <form [formGroup]="loginForm" (ngSubmit)="login(); loginForm.reset()">
           <mat-card-content>
             <mat-form-field appearance="outline">
-              <input
-                type="text"
-                matInput
-                formControlName="userName"
-                placeholder="   Username"
-              />
+              <input type="text" matInput formControlName="userName" placeholder="   Username" />
 
               <!-- Error Handling -->
-              <mat-error
-                *ngIf="
+              <mat-error *ngIf="
                   loginForm.controls['userName'].hasError('required') &&
                   loginForm.controls['userName'].touched
-                "
-              >
+                ">
                 Username is a required field.
               </mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-              <input
-                matInput
-                type="password"
-                formControlName="password"
-                placeholder="   Password"
-              />
+              <input matInput type="password" formControlName="password" placeholder="   Password" />
 
               <!-- Error handling-->
-              <mat-error
-                *ngIf="
+              <mat-error *ngIf="
                   loginForm.controls['password'].hasError('required') &&
                   loginForm.controls['password'].touched
-                "
-              >
+                ">
                 Password is a required field.
               </mat-error>
 
-              <mat-error
-                *ngIf="
+              <mat-error *ngIf="
                   loginForm.controls['password'].hasError('pattern') &&
                   loginForm.controls['password'].touched
-                "
-              >
+                ">
                 Password must be at least 8 characters, contain one letter, and
                 one number.
               </mat-error>
@@ -80,11 +56,7 @@
 
           <!-- Form submission button-->
           <mat-card-actions>
-            <button
-              type="submit"
-              mat-raised-button
-              [disabled]="!loginForm.valid"
-            >
+            <button type="submit" mat-raised-button [disabled]="!loginForm.valid">
               Log in
             </button>
           </mat-card-actions>
@@ -92,12 +64,8 @@
 
           <!-- Account creations and password reset anchors-->
           <div class="create-account">
-            <a [routerLink]="" (click)="passwordReset()" class=""
-              >Forgot Password?</a
-            >
-            <a [routerLink]="" (click)="createAccount()" class=""
-              >Create Account</a
-            >
+            <a routerLink="/session/forgot-password">Forgot Password?</a>
+            <a class="">Create Account</a>
           </div>
         </form>
       </mat-card>

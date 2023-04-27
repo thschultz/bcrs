@@ -68,6 +68,6 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  createAccount() { }
+  // createAccount() { }
   passwordReset() { }
 }
