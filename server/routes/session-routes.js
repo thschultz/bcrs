@@ -266,6 +266,16 @@ router.post("/register", async (req, res) => {
     // checks request body against the schema
     const validator = ajv.compile(registerSchema);
     const valid = validator({
+<<<<<<< Updated upstream
+      userName: req.body.userName,
+      password: req.body.password,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      phoneNumber: req.body.phoneNumber,
+      address: req.body.address,
+      email: req.body.email,
+      selectedSecurityQuestions: req.body.selectedSecurityQuestions,
+=======
       'userName': req.body.userName,
       'password': req.body.password,
       'firstName': req.body.firstName,
@@ -273,6 +283,7 @@ router.post("/register", async (req, res) => {
       'phoneNumber': req.body.phoneNumber,
       'address': req.body.address,
       'email': req.body.email
+>>>>>>> Stashed changes
     });
 
     // failed validation
