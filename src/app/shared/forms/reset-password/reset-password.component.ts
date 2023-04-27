@@ -43,11 +43,11 @@ export class ResetPasswordComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  update() {
+  updatePassword() {
     const password = this.form.controls['password'].value;
 
     this.sessionService.updatePassword(password, this.userName).subscribe({
-      next: => {
+      next: (res) => {
         this.cookieService.set('sessionuser', this.userName, 1);
         //this.cookieService.set('session-id', this.user._id, 1);
         this.router.navigate(['/']);
