@@ -1,3 +1,4 @@
+import { VerifySecurityQuestion } from './../../models/verify-security-question.interface';
 import { FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { SelectedSecurityQuestion } from '../../models/security-question.interface';
@@ -14,6 +15,10 @@ import { VerifySecurityQuestionModel } from "../../models/verify-security-questi
   styleUrls: ['./verify-security-questions.component.css'],
 })
 export class VerifySecurityQuestionsComponent implements OnInit {
+selectedSecurityQuestions: SelectedSecurityQuestion[];
+VerifySecurityQuestionsModel: VerifySecurityQuestionModel;
+
+
   constructor() {}
 
   ngOnInit(): void {}
