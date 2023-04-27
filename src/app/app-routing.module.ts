@@ -31,12 +31,15 @@ import { ServiceDetailsComponent } from './pages/service-details/service-details
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ForgotPasswordComponent } from './shared/forms/forgot-password/forgot-password.component';
+import { VerifySecurityQuestionsComponent } from './shared/forms/verify-security-questions/verify-security-questions.component';
+import { ResetPasswordComponent } from './shared/forms/reset-password/reset-password.component';
 
 const routes: Routes = [
   {
     path: '',
     component: BaseLayoutComponent,
     children: [
+      
       // Main Children
       {
         path: '',
@@ -50,6 +53,7 @@ const routes: Routes = [
         path: 'contact',
         component: ContactComponent,
       },
+
       // User Children
       {
         path: 'user-list',
@@ -63,6 +67,7 @@ const routes: Routes = [
         path: 'user-create',
         component: UserCreateComponent,
       },
+
       // Security Children
       {
         path: 'security-questions',
@@ -72,6 +77,7 @@ const routes: Routes = [
         path: 'security-questions/:questionId',
         component: SecurityQuestionDetailsComponent,
       },
+
       // Service Children
       {
         path: 'service-list',
@@ -81,6 +87,7 @@ const routes: Routes = [
         path: 'service-list/:serviceId',
         component: ServiceDetailsComponent
       },
+
       // User Profile Child
       {
         path: 'profile',
@@ -95,18 +102,34 @@ const routes: Routes = [
     path: 'session',
     component: AuthLayoutComponent,
     children: [
+
+      // Login
       {
         path: 'login',
         component: LoginComponent,
       },
+
+      // Register
       {
         path: 'register',
         component: RegisterComponent
       },
+
+      // Forgot Password
       {
-        path: 'reset-password',
+        path: 'forgot-password',
         component: ForgotPasswordComponent
       },
+      {
+        path: 'verify-security-questions',
+        component: VerifySecurityQuestionsComponent
+      },
+      {
+        path: 'reset-password',
+        component: ResetPasswordComponent
+      },
+
+      // Error Components
       {
         path: '404',
         component: NotFoundComponent,
