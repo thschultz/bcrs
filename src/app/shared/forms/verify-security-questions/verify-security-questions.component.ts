@@ -16,7 +16,7 @@ export class VerifySecurityQuestionsComponent implements OnInit {
   selectedSecurityQuestions: SelectedSecurityQuestion[];
   verifySecurityQuestionsModel: VerifySecurityQuestionModel;
   username: string;
-  errorMessage: Message[];
+  errorMessages: Message[];
 
   form: FormGroup = this.fb.group({
     answerToSecurityQuestion1: [
@@ -40,7 +40,7 @@ export class VerifySecurityQuestionsComponent implements OnInit {
     private sessionService: SessionService
   ) {
     this.username = this.route.snapshot.queryParamMap.get('username') ?? '';
-    this.errorMessage = [];
+    this.errorMessages = [];
     this.verifySecurityQuestionsModel = {} as VerifySecurityQuestionModel;
     this.selectedSecurityQuestions = [];
 
@@ -89,7 +89,7 @@ export class VerifySecurityQuestionsComponent implements OnInit {
               skipLocationChange: true,
             });
           } else {
-            this.errorMessage = [
+            this.errorMessages = [
               {
                 severity: 'error',
                 summary: 'Error',

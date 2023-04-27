@@ -324,7 +324,7 @@ router.post("/register", async (req, res) => {
 
           User.create(registeredUser, (err, newUser) => {
             if (err) {
-              console.lof(err);
+              console.log(err);
               const newUserMongodbErrorResponse = new ErrorResponse(
                 500,
                 "Internal server error",
@@ -461,16 +461,15 @@ router.post("/verify/users/:userName/security-questions", async (req, res) => {
       console.log(user);
 
       // Variables to gather the selected questions
-      const selectedSecurityQuestionOne = user.selectedSecurityQuestionOne.find(
+      const selectedSecurityQuestionOne = user.selectedSecurityQuestions.find(
         (q) => q.questionText === req.body.questionText1
       );
-      const selectedSecurityQuestionTwo = user.selectedSecurityQuestionTwo.find(
+      const selectedSecurityQuestionTwo = user.selectedSecurityQuestions.find(
         (q2) => q2.questionText === req.body.questionText2
       );
-      const selectedSecurityQuestionThree =
-        user.selectedSecurityQuestionThree.find(
-          (q3) => q3.questionText === req.body.questionText3
-        );
+      const selectedSecurityQuestionThree = user.selectedSecurityQuestions.find(
+        (q3) => q3.questionText === req.body.questionText3
+      );
 
       // Variables to compare the selected answers against the answers stored in the database
       const isValidAnswerOne =
