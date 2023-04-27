@@ -39,7 +39,7 @@ body {
 }
 
 .subtitle {
-  font-size: 24px!important;
+  font-size: 16px!important;
 }
 
 .p-10 {
@@ -52,7 +52,7 @@ body {
 
 .form-button {
   margin-inline: 20px!important;
-  width: 125px;
+  width: 145px;
 }
 
 /* Width Styles */

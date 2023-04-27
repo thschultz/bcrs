@@ -29,7 +29,7 @@
         [(value)]="errorMessages"
         [enableService]="false"
       ></p-messages>
-
+      <h2>Verify Security Questions</h2>
       <form
         *ngIf="selectedSecurityQuestions"
         [formGroup]="form"
@@ -102,12 +102,12 @@
             <button
               mat-raised-button
               routerLink="/session/login"
-              color="accent"
+              class="cancel form-button"
             >
               Cancel
             </button>
-            <button mat-raised-button [disabled]="!form.valid" color="primary">
-              Verify Security Questions
+            <button mat-raised-button [disabled]="!form.valid" class="color-primary form-button">
+              Confirm
             </button>
           </div>
         </mat-card-content>
