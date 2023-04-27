@@ -16,7 +16,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
   //find all users function
   findAllUsers(): Observable<any> {
     return this.http.get('/api/users');
@@ -50,5 +50,10 @@ export class UserService {
   //delete user function
   deleteUser(userId: string): Observable<any> {
     return this.http.delete('/api/users/' + userId);
+  }
+
+  // find selected security questions
+  findSelectedSecurityQuestions(username: string): Observable<any> {
+    return this.http.get('api/users/' + username + '/security-questions');
   }
 }
