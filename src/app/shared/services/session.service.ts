@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/user.interface';
-import { VerifySecurityQuestion } from '../models/verify-security-question.interface';
+import { VerifySecurityQuestionModel } from '../models/verify-security-question.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -44,7 +44,7 @@ export class SessionService {
     return this.http.get('/api/session/verify/users/' + username);
   }
 
-  verifySecurityQuestions(model: VerifySecurityQuestion, username: string): Observable<any> {
+  verifySecurityQuestions(model: VerifySecurityQuestionModel, username: string): Observable<any> {
     return this.http.post('/api/session/verify/users/' + username + '/security-questions', {
       questionText1: model.question1,
       questionText2: model.question2,
