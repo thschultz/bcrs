@@ -1,3 +1,4 @@
+import { SelectedSecurityQuestion } from '../models/selected-security-question.interface';
 /**
  * Title: user.interface.ts
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
@@ -17,4 +18,5 @@ export interface User {
   phoneNumber: string;
   address: string;
   email: string;
+  SelectedSecurityQuestions?: SelectedSecurityQuestion[];
 }
