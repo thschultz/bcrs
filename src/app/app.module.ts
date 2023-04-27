@@ -33,7 +33,9 @@ import { ServiceListComponent } from './pages/service-list/service-list.componen
 import { ServiceDetailsComponent } from './pages/service-details/service-details.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { ForgotPasswordComponent } from './shared/forms/forgot-password/forgot-password.component';
+import { VerifySecurityQuestionsComponent } from './shared/forms/verify-security-questions/verify-security-questions.component';
+import { ResetPasswordComponent } from './shared/forms/reset-password/reset-password.component';
 
 // Angular Materials
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -83,8 +85,10 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ProfileComponent,
     RegisterComponent,
     ForgotPasswordComponent,
+    VerifySecurityQuestionsComponent,
+    ResetPasswordComponent,
   ],
-  
+
   imports: [
     BrowserModule,
     AppRoutingModule,
