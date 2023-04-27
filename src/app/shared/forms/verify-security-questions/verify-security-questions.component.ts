@@ -1,10 +1,5 @@
-import {
-  VerifySecurityQuestion,
-  VerifySecurityQuestionModel,
-} from './../../models/verify-security-question.interface';
 import { Component, OnInit } from '@angular/core';
 import { SelectedSecurityQuestion } from '../../models/selected-security-question.interface';
-import { SelectedSecurityQuestionModel } from '../../models/security-question.interface';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Message } from 'primeng/api';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -46,7 +41,7 @@ export class VerifySecurityQuestionsComponent implements OnInit {
   ) {
     this.username = this.route.snapshot.queryParamMap.get('username') ?? '';
     this.errorMessage = [];
-    this.VerifySecurityQuestionsModel = {} as VerifySecurityQuestionModel;
+    this.verifySecurityQuestionsModel = {} as VerifySecurityQuestionModel;
     this.selectedSecurityQuestions = [];
 
     this.userService.findSelectedSecurityQuestions(this.username).subscribe({
