@@ -36,6 +36,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ForgotPasswordComponent } from './shared/forms/forgot-password/forgot-password.component';
 import { VerifySecurityQuestionsComponent } from './shared/forms/verify-security-questions/verify-security-questions.component';
 import { ResetPasswordComponent } from './shared/forms/reset-password/reset-password.component';
+import { ErrorInterceptor } from './shared/error.interceptor';
 
 // Angular Materials
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -48,6 +49,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatListModule } from '@angular/material/list';
 
 // Services and Modules
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -59,8 +63,9 @@ import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 
 @NgModule({
@@ -113,9 +118,13 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     TableModule,
     ButtonModule,
     ConfirmDialogModule,
-
+    MatSelectModule,
+    MatStepperModule,
+    MatListModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
