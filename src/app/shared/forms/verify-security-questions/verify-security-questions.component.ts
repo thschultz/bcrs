@@ -94,7 +94,7 @@ export class VerifySecurityQuestionsComponent implements OnInit {
               skipLocationChange: true,
             });
           } else {
-            this.errorMessages = [
+            this.errorMessage = [
               {
                 severity: 'error',
                 summary: 'Error',
