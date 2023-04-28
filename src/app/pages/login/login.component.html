@@ -9,20 +9,24 @@
 -->
 
 <div fxLayout="column">
-  <mat-card fxFlex class="login-container w-50" n style="margin-top: 150px; border-radius: 10px">
-    <mat-card-header class="header">
-      <!-- Page Title-->
-      <mat-card-title class="login-title"> Employee Login</mat-card-title>
-    </mat-card-header>
+
+  <div fxFlex>
+    <h1 class="page-header">Employee Login</h1>
+  </div>
+
+  <div class="messages">
+    <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
+  </div>
+
+  <mat-card fxFlex class="card-form" style="border-radius: 10px">
+
     <mat-card-content>
-      <!-- Display error messages-->
-      <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
-      <mat-card class="mat-elevation-z0">
+
         <!-- Username and password form-->
-        <form [formGroup]="loginForm" (ngSubmit)="login(); loginForm.reset()">
+        <form [formGroup]="loginForm" (ngSubmit)="login(); loginForm.reset()" class="">
           <mat-card-content>
-            <mat-form-field appearance="outline">
-              <input type="text" matInput formControlName="userName" placeholder="   Username" />
+            <mat-form-field appearance="fill">
+              <input type="text" matInput formControlName="userName" placeholder="Username" />
 
               <!-- Error Handling -->
               <mat-error *ngIf="
@@ -33,8 +37,8 @@
               </mat-error>
             </mat-form-field>
 
-            <mat-form-field appearance="outline">
-              <input matInput type="password" formControlName="password" placeholder="   Password" />
+            <mat-form-field appearance="fill">
+              <input matInput type="password" formControlName="password" placeholder="Password" />
 
               <!-- Error handling-->
               <mat-error *ngIf="
@@ -60,15 +64,14 @@
               Log in
             </button>
           </mat-card-actions>
-          <hr />
 
-          <!-- Account creations and password reset anchors-->
-          <div class="create-account">
-            <a routerLink="/session/forgot-password">Forgot Password?</a>
-            <a routerLink="/session/register" class="">Create Account</a>
-          </div>
         </form>
-      </mat-card>
+
     </mat-card-content>
   </mat-card>
+  <!-- Account creations and password reset anchors-->
+  <div class="create-account">
+    <a routerLink="/session/forgot-password" class="neon-btn" style="width: 200px;">Forgot Password?</a>
+    <a routerLink="/session/register" class="neon-btn" style="width: 200px;">Create Account</a>
+  </div>
 </div>

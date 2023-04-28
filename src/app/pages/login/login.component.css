@@ -15,6 +15,7 @@ Description: component styling for the bcrs project
 .login-container {
   margin: auto;
   text-align: center;
+  padding: 20px;
 }
 
 .header {
@@ -37,7 +38,7 @@ hr {
 }
 .mat-card {
   margin-top: 50px;
-  padding: 0;
+  padding: 20px;
 }
 
 .mat-card-content {
@@ -50,11 +51,10 @@ hr {
 
 .mat-card-actions {
   margin-right: 20%;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 button {
-  font-family: "Abril Fatface", cursive;
   font-size: 18px;
   font-weight: 700;
   float: right;
@@ -66,18 +66,13 @@ button {
 .btn:disabled {
   background-color: transparent;
   color: #fff;
-  font-family: "Abril Fatface", cursive;
+
 }
 
 input {
   border-radius: 5px;
-  font-family: cursive;
   font-size: 18px;
   padding-left: 10px;
-}
-
-hr {
-  width: 60%;
 }
 
 .create-account {
@@ -85,18 +80,11 @@ hr {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 50%;
+  gap: 25%;
   margin-bottom: 30px;
 }
 
-a {
-  color: #fff;
-  margin-top: 2%;
-}
-a:hover {
-  cursor: pointer;
-  color: var(--green);
-}
+
 
 .error-message {
   background-color: red;

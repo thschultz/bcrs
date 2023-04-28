@@ -7,3 +7,65 @@ Last Modified by: Walter McCue
 Last Modification Date: 04/16/23
 Description: component styling for the bcrs project
 */
+
+.navbar-container {
+  font-weight: bolder;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.bcrs {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.main-content {
+  padding: 20px 30px;
+
+}
+
+footer {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.footer-content {
+  bottom: 5px;
+  position: fixed;
+  font-size: 16px;
+  font-weight: bolder;
+  padding-left: 100px;
+  letter-spacing: 3px;
+}
+
+.bu-link {
+  text-decoration: none;
+  color: var(--green);
+}
+
+.bu-link:hover {
+  text-decoration: underline;
+}
+
+.house-img {
+  text-align: center;
+}
+
+.house-img img {
+  padding-top: 20px;
+  height: 200px;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 800px) {
+
+  .footer-content {
+    padding: 0 5px;
+    text-align: center;
+  }
+
+}

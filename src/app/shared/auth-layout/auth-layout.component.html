@@ -8,4 +8,37 @@
   Description: html for the bcrs project
 -->
 
-<router-outlet></router-outlet>
+<div fxLayout="column">
+  <header class="gradient-header">
+
+
+    <div class="bcrs">
+      <h1>Bob's Computer Repair Shop</h1>
+    </div>
+
+    <!-- navbar image-->
+    <div class="house-img">
+      <img src="/assets/pngwing.com.png" alt="Slytherin Emblem" />
+    </div>
+
+  </header>
+
+  <!-- main content -->
+  <div fxFlex>
+    <main class="main-content" fxFlex="100%;">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
+  <!-- footer -->
+  <div fxFlex>
+    <footer class="gradient-footer">
+      <div class="footer-content">
+        <p>
+          &copy; {{ year | date : "yyyy" }} - Bob's Computer Repair Service -
+          <a href="https://www.bellevue.edu/" class="bu-link" target="_blank">Bellevue University</a>
+        </p>
+      </div>
+    </footer>
+  </div>
+</div>

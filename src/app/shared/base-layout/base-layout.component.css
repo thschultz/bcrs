@@ -15,6 +15,12 @@ Description: component styling for the bcrs project
   justify-content: center;
 }
 
+.bcrs {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
 .navbar-link {
   font-size: 24px;
 }
