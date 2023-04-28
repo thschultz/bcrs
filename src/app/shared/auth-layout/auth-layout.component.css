@@ -22,19 +22,16 @@ Description: component styling for the bcrs project
 }
 
 .main-content {
-  padding: 20px 30px;
-
+  padding: 20px 30px 30px 30px;
+  min-height: 650px;
 }
 
 footer {
-  bottom: 0;
-  position: fixed;
   width: 100%;
 }
 
 .footer-content {
-  bottom: 5px;
-  position: fixed;
+  padding-top: 40px;
   font-size: 16px;
   font-weight: bolder;
   padding-left: 100px;

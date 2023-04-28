@@ -8,31 +8,18 @@
  * Description: HTML for the bcrs project
 -->
 
-<mat-toolbar color="primary" style="border-bottom: 15px solid green;">
-  <mat-toolbar-row></mat-toolbar-row>
-  <mat-toolbar-row>
-    <div class="layout-header-content">
-      <p id="large-text" class="layout-header-text comic-text">
-        Bob's Computer Repair Shop <br><br><br>
-      </p>
-    </div>
-  </mat-toolbar-row>
-  <mat-toolbar-row></mat-toolbar-row>
-</mat-toolbar>
-
-<br><br><br>
-
 <div fxLayout="column" >
-  <br><br>
-  <mat-card fxFlex class="card-container mat-elevation-z4">
-    <mat-card-title>
-      <h1 class="title">
-        Account Registration Form
-        <span class="subtitle">
-          Fields marked with an asterik (*) are required.
-        </span>
-      </h1>
-    </mat-card-title>
+
+  <div fxFlex>
+    <h1 class="page-header">
+      Account Registration Form!<br />
+      <span class="subtitle">
+        Fields marked with an asterisk (*) are required.
+      </span>
+    </h1>
+  </div>
+
+  <mat-card fxFlex class="card-style mat-elevation-z4">
 
     <mat-card-content fxLayout="column" fxLayoutGap="10px">
 
@@ -41,7 +28,7 @@
 
         <!-- Step #1 -->
         <mat-step fxFlex [stepControl]="contactForm" class="required" errorMessage="Contact is required.">
-          <form [formGroup]="contactForm">
+          <form [formGroup]="contactForm" autocomplete="off">
             <ng-template matStepLabel>
               Contact Information
             </ng-template>
@@ -96,6 +83,8 @@
                 </mat-form-field>
               </mat-list-item>
 
+              <br /><br /><br />
+
               <!-- Address -->
               <mat-list-item>
                 <mat-form-field fxFlex appearance="fill">
@@ -111,7 +100,7 @@
             <br>
 
             <div fxLayoutAlign="end">
-              <button mat-raised-button color="primary" matStepperNext>Next</button>
+              <button mat-raised-button class="primary-color form-button" matStepperNext>Next</button>
             </div>
 
           </form>
@@ -216,8 +205,8 @@
             <br>
 
             <div fxLayoutAlign="end">
-              <button mat-raised-button color="accent" matStepperPrevious>Back</button> &nbsp;&nbsp;
-              <button mat-raised-button color="primary" matStepperNext [disabled]="!sqForm.valid">Next</button>
+              <button mat-raised-button class="cancel form-button" matStepperPrevious>Back</button> &nbsp;&nbsp;
+              <button mat-raised-button class="primary-color form-button" matStepperNext [disabled]="!sqForm.valid">Next</button>
             </div>
           </form>
         </mat-step>
@@ -247,11 +236,13 @@
                   </mat-form-field>
                 </mat-list-item>
 
+                <br /><br />
+
                 <!-- password -->
                 <mat-list-item>
                   <mat-form-field fxFlex appearance="fill">
                     <mat-label>Password</mat-label>
-                    <input required matInput type="password" formControlName="password">
+                    <input required matInput type="password" formControlName="password" autocomplete="new-password">
 
                     <mat-error class="error" *ngIf="credForm.controls['password'].hasError('required') && credForm.controls['password'].touched">
                       Password is a required field.
@@ -269,8 +260,8 @@
               <br>
 
               <div fxLayoutAlign="end">
-                <button mat-raised-button color="accent" matStepperPrevious>Back</button> &nbsp;&nbsp;
-                <button mat-raised-button color="primary" [disabled]="!credForm.valid" (click)="register()">Register</button>
+                <button mat-raised-button class="cancel form-button" matStepperPrevious>Back</button> &nbsp;&nbsp;
+                <button mat-raised-button class="primary-color form-button" [disabled]="!credForm.valid" (click)="register()">Register</button>
               </div>
             </div>
           </form>
@@ -278,10 +269,13 @@
 
       </mat-horizontal-stepper>
 
-      <div>
-        <a routerLink="/session/login" class="register-footer-link">Employee Sign In</a>
-      </div>
+
 
     </mat-card-content>
   </mat-card>
+
+  <div>
+    <a routerLink="/session/login" class="neon-btn" style="width: 200px;">Employee Sign In</a>
+  </div>
+
 </div>
