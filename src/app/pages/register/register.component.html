@@ -40,7 +40,7 @@
       <mat-horizontal-stepper #stepper linear>
 
         <!-- Step #1 -->
-        <mat-step fxFlex [stepContorl]="contactForm" class="required" errorMessage="Contact is required.">
+        <mat-step fxFlex [stepControl]="contactForm" class="required" errorMessage="Contact is required.">
           <form [formGroup]="contactForm">
             <ng-template matStepLabel>
               Contact Information
@@ -95,7 +95,7 @@
 
         <!-- Step #2 -->
         <mat-step [stepControl]="sqForm" errorMessage="Security questions are required.">
-          <form [formGroup]="sqFrom">
+          <form [formGroup]="sqForm">
             <ng-template matStepLabel>Security Questions</ng-template>
 
             <br>
@@ -107,9 +107,9 @@
                 <mat-form-field fxFlex appearance="fill">
                   <mat-label>Security Question</mat-label>
                   <mat-select required formControlName="securityQuestion1">
-                    <mat-option *ngIf="let question of securityQuestions" [value]="question.text">
+                    <!-- <mat-option *ngIf="let question of securityQuestions" [value]="question.text">
                       {{ question.text }}
-                    </mat-option>
+                    </mat-option> -->
                   </mat-select>
                   <mat-error class="error" *ngIf="sqForm.controls['securityQuestion1'].hasError('required') && contactForm.controls['securityQuestion1'].touched">
                     Required field.
@@ -136,9 +136,9 @@
                 <mat-form-field fxFlex appearance="fill">
                   <mat-label>Security Question</mat-label>
                   <mat-select required formControlName="securityQuestion2">
-                    <mat-option *ngIf="let question of securityQuestions" [value]="question.text">
+                    <!-- <mat-option *ngIf="let question of securityQuestions" [value]="question.text">
                       {{ question.text }}
-                    </mat-option>
+                    </mat-option> -->
                   </mat-select>
                   <mat-error class="error" *ngIf="sqForm.controls['securityQuestion2'].hasError('required') && contactForm.controls['securityQuestion2'].touched">
                     Required field.
@@ -165,9 +165,9 @@
                 <mat-form-field fxFlex appearance="fill">
                   <mat-label>Security Question</mat-label>
                   <mat-select required formControlName="securityQuestion3">
-                    <mat-option *ngIf="let question of securityQuestions" [value]="question.text">
+                    <!-- <mat-option *ngIf="let question of securityQuestions" [value]="question.text">
                       {{ question.text }}
-                    </mat-option>
+                    </mat-option> -->
                   </mat-select>
                   <mat-error class="error" *ngIf="sqForm.controls['securityQuestion3'].hasError('required') && contactForm.controls['securityQuestion3'].touched">
                     Required field.
