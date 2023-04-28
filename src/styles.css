@@ -259,6 +259,9 @@ body {
   .card-30 {
     width: 70%;
   }
+  .card-style {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 800px) {
