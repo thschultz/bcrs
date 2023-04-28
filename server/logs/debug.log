@@ -51492,3 +51492,335 @@
   isDisabled: false,
   __v: 0
 }
+[4/28/2023, 6:26:02 AM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/28/2023, 6:26:11 AM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/28/2023, 6:26:37 AM] server	 session-routes.js - {
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0,
+  dateModified: 2023-04-27T22:14:52.175Z
+}
+[4/28/2023, 6:28:20 AM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/28/2023, 6:39:33 AM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/28/2023, 6:46:46 AM] server	 users-routes.js - {
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Ted',
+  lastName: 'Lasso',
+  phoneNumber: '555-777-9999',
+  address: '100 Soccer Lane, Somewhere, The World',
+  email: 'ted@lasso.com',
+  isDisabled: false,
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0,
+  dateModified: 2023-04-27T22:14:52.175Z
+},{
+  _id: new ObjectId("6440c9ae3c98e2d36a50236e"),
+  userName: 'Eric23',
+  password: '$2a$10$rKpkVYTPJQRpPCMWl1xoWO8aXhuRCXZ5wUa2BBSzDy2Tgu.oF5hSu',
+  firstName: 'Eric',
+  lastName: 'Cartman',
+  phoneNumber: '123-456-7890',
+  address: '1234 Authority st. South Park, Colorado 12345',
+  email: 'eric@southpark.tv',
+  isDisabled: false,
+  dateCreated: 2023-04-20T05:12:11.773Z,
+  selectedSecurityQuestions: [],
+  __v: 0,
+  dateModified: 2023-04-22T00:29:56.194Z
+},{
+  _id: new ObjectId("6446e4cea71ae77027bb2c43"),
+  userName: 'testing',
+  password: '$2a$10$oHHCZlcd7wA1G6zmpSKoQeeB7tFq9UNNcxa6MTPAEalRAgVTihso2',
+  firstName: 'string232',
+  lastName: 'string232',
+  phoneNumber: '1111',
+  address: 'string',
+  email: 'string@ddd.com',
+  isDisabled: false,
+  dateCreated: 2023-04-24T13:27:48.824Z,
+  selectedSecurityQuestions: [],
+  __v: 0,
+  dateModified: 2023-04-25T01:20:03.681Z
+},{
+  _id: new ObjectId("644737c5e5fbd0192d01a53a"),
+  userName: 'mozart',
+  password: '$2a$10$gWlKxNz3hl3Qi3HXdcJ9CefTwwB37CtfleybJaDpRIEx5GmeOf1IO',
+  firstName: 'mozart',
+  lastName: 'Password01',
+  phoneNumber: '555-555-5555',
+  address: 'mozart Password01',
+  email: 'mozart@Password01.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("644737c5e5fbd0192d01a53b") },
+  dateCreated: 2023-04-25T02:13:28.101Z,
+  selectedSecurityQuestions: [],
+  __v: 0
+},{
+  _id: new ObjectId("64473a1c50498ff5606e0fc1"),
+  userName: 'registeredUser',
+  password: '$2a$10$dFJEnpHZpwXL6dA.9u2Kg.clcfyZPiQk33AoVYn.y7sg.vtftfThq',
+  firstName: 'Reggie',
+  lastName: 'Stirred',
+  phoneNumber: '555-777-9999',
+  address: '100 Register Ave, Registered, The Galaxy',
+  email: 'reggie@stirred.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("64473a1c50498ff5606e0fc2") },
+  selectedSecurityQuestions: [],
+  dateCreated: 2023-04-25T02:24:20.630Z,
+  __v: 0
+},{
+  _id: new ObjectId("6448680e0b7c3d606bb1cd35"),
+  userName: 'kettleCooked',
+  password: '$2a$10$oKl8quXEORR7DumFFVNYE.W/zgrjE/LpllWAqEi6why.LEzi1SP1q',
+  firstName: 'Peter',
+  lastName: 'Parker',
+  phoneNumber: '444-789-0000',
+  address: 'somewhere',
+  email: 'peter@super.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("6448680e0b7c3d606bb1cd36") },
+  selectedSecurityQuestions: [
+    {
+      questionText: 'What is your favorite food?',
+      answerText: 'Steak',
+      _id: new ObjectId("6448680e0b7c3d606bb1cd37")
+    },
+    {
+      questionText: 'What is the best soda flavor?',
+      answerText: 'Strawberry',
+      _id: new ObjectId("6448680e0b7c3d606bb1cd38")
+    },
+    {
+      questionText: "What is your first car's model?",
+      answerText: 'Bentley',
+      _id: new ObjectId("6448680e0b7c3d606bb1cd39")
+    }
+  ],
+  dateCreated: 2023-04-25T23:53:41.992Z,
+  __v: 0
+},{
+  _id: new ObjectId("644a082f6be76d6acfc49ea1"),
+  userName: 'Jay23',
+  password: '$2a$10$lbqTdBfKEMFsW8iLnk78GuG.Ww2pelC5OJ47TANIKd1c1bYa1idui',
+  firstName: 'Jay',
+  lastName: 'Dean',
+  phoneNumber: '777-888-9999',
+  address: '1213 Address, address 3333',
+  email: 'james@dean.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("644a082f6be76d6acfc49ea2") },
+  selectedSecurityQuestions: [
+    {
+      questionText: 'What is you favorite food?',
+      answerText: 'Sushi',
+      _id: new ObjectId("644a082f6be76d6acfc49ea3")
+    },
+    {
+      questionText: 'What is your first car model?',
+      answerText: 'Maxima',
+      _id: new ObjectId("644a082f6be76d6acfc49ea4")
+    },
+    {
+      questionText: 'What is the best soda flavor?',
+      answerText: 'Orange',
+      _id: new ObjectId("644a082f6be76d6acfc49ea5")
+    }
+  ],
+  dateCreated: 2023-04-27T05:25:13.643Z,
+  __v: 0
+}
+[4/28/2023, 6:50:21 AM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/28/2023, 6:52:11 AM] server	 session-routes.js - {
+  userName: 'brown',
+  password: '$2a$10$ifW6i9KNvIKYdpY6E4Wgfu9mJbmsFH.0Q/s3PWjQxfsJ/ZO70p0X2',
+  firstName: 'Charlie',
+  lastName: 'Brown',
+  phoneNumber: '000-000-0000',
+  address: '1 Main Street, Hennepin, MN',
+  email: 'charlie@peanuts.com',
+  isDisabled: false,
+  role: { text: 'standard', _id: new ObjectId("644bc17bdfc7f2a235d52029") },
+  selectedSecurityQuestions: [
+    {
+      questionText: 'What is you first car model?',
+      answerText: 'Fast',
+      _id: new ObjectId("644bc17bdfc7f2a235d5202a")
+    },
+    {
+      questionText: 'What is your favorite food?',
+      answerText: 'Candy',
+      _id: new ObjectId("644bc17bdfc7f2a235d5202b")
+    },
+    {
+      questionText: 'What is the best soda flavor?',
+      answerText: 'Red',
+      _id: new ObjectId("644bc17bdfc7f2a235d5202c")
+    }
+  ],
+  dateCreated: 2023-04-28T12:20:18.549Z,
+  _id: new ObjectId("644bc17bdfc7f2a235d52028"),
+  __v: 0
+}

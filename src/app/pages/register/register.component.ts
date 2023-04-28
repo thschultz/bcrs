@@ -53,7 +53,7 @@ export class RegisterComponent implements OnInit {
 
   credForm: FormGroup = this.fb.group({
     userName: [null, Validators.compose([Validators.required])],
-    password: [null, Validators.compose([Validators.required, Validators.pattern('^(?=.*[A-Za-z])(?=.*\\d){8,}$')])],
+    password: [null, Validators.compose([Validators.required, Validators.pattern('^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$')])],
   });
 
   constructor(private router: Router, private fb: FormBuilder, private cookieService: CookieService,
