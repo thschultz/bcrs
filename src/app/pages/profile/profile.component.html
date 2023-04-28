@@ -23,10 +23,10 @@
     <p-messages [(value)]="serverMessages" [enableService]="false"></p-messages>
   </div>
 
-  <mat-card class="mat-elevation-z0">
+  <mat-card class="mat-elevation-z0 card-form">
 
     <form [formGroup]="form" (ngSubmit)="saveUser()" (keydown.enter)="$event.preventDefault()"
-      style="width: 50%; margin: 0 auto" autocomplete="off">
+      class="form-full" autocomplete="off">
       <mat-card-content>
         <div fxLayout="column" fxLayoutGap="10px">
 

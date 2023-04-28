@@ -19,9 +19,11 @@
   </div>
 
     <!-- Displaying success and error messages -->
+  <div class="messages">
     <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
+  </div>
 
-  <mat-card class="mat-elevation-z0">
+  <mat-card class="mat-elevation-z0 card-form">
 
     <!-- User creation form-->
     <form
@@ -29,7 +31,7 @@
       (ngSubmit)="createUser()"
       (keydown.enter)="$event.preventDefault()"
       autocomplete="off"
-      class="form-style"
+      class="form-full"
     >
       <mat-card-content>
         <div fxLayout="column" fxLayoutGap="10px">

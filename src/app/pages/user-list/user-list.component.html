@@ -29,13 +29,13 @@
     <a routerLink="/user-create" class="neon-btn">Add User</a>
   </div>
 
-  <div>
+  <div class="messages">
     <p-messages [(value)]="serverMessages" [enableService]="false"></p-messages>
   </div>
 
   <!-- Table Data -->
   <div fxFlex class="p-20">
-    <mat-card>
+    <mat-card class="card-style">
       <p-table [value]="users" responsiveLayout="scroll" class="api-table">
 
         <!-- Table Header -->

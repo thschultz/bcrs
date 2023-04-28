@@ -17,13 +17,14 @@
       </span>
     </h1>
   </div>
+  <div class="messages">
+    <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
+  </div>
 
-  <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
-
-  <mat-card class="mat-elevation-z0">
+  <mat-card class="mat-elevation-z0 card-form">
 
     <form [formGroup]="form" (ngSubmit)="saveUser()" (keydown.enter)="$event.preventDefault()"
-      class="form-style" autocomplete="off">
+      class="form-style" autocomplete="off" class="form-full">
       <mat-card-content>
         <div fxLayout="column" fxLayoutGap="10px">
 

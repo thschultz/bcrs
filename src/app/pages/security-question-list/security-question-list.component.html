@@ -21,13 +21,13 @@
     </h1>
   </div>
   <!-- error message from server -->
-  <div>
+  <div class="messages">
     <p-messages [(value)]="serverMessages" [enableService]="false"></p-messages>
   </div>
 
   <div fxFlex>
     <div fxLayout="column" class="pageDesign">
-      <mat-card>
+      <mat-card class="card-form">
         <form [formGroup]="sqForm" (ngSubmit)="create(); sqForm.reset()">
           <mat-form-field appearance="fill" class="w-60">
             <mat-label>Security question</mat-label>
@@ -55,7 +55,7 @@
 
 
   <div fxFlex>
-    <mat-card>
+    <mat-card class="card-form">
       <p-table [value]="securityQuestions" responsiveLayout="scroll" class="api-table">
         <ng-template pTemplate="header">
           <tr>

@@ -59,16 +59,22 @@ body {
 
 .w-50 {
   width: 50%;
+  margin-inline: 2%;
 }
 
 .w-20 {
   width: 20%;
-  margin-inline: 20px;
+  margin-inline: 2%;
+}
+
+.w-30 {
+  width: 30%;
+  margin-inline: 2%;
 }
 
 .w-60 {
   width: 60%;
-  margin-inline: 20px;
+  margin-inline: 2%;
 }
 
 .w-100 {
@@ -121,6 +127,16 @@ body {
   justify-items: center;
 }
 
+.card-style {
+  width: 70%;
+  margin-inline: auto
+}
+
+.card-form {
+  width: 50%;
+  margin-inline: auto;
+}
+
 .img-container {
   display: grid;
   margin-left: auto;
@@ -137,6 +153,11 @@ body {
 .form-style {
   width: 50%;
   margin: 0 auto;
+}
+
+.form-full {
+  width: 95%;
+  margin-inline: auto;
 }
 
 .messages {
@@ -239,7 +260,7 @@ body {
     flex-direction: column;
   }
 
-  .content-container {
+  .content-container, .card-style, .card-form {
     width: 95%;
   }
 

@@ -9,18 +9,27 @@
 
 <!-- update security question page -->
 <div fxLayout="column">
-  <mat-card class="mat-elevation-z0">
-    <!-- title -->
-    <mat-card-title>Update Security Question Form</mat-card-title>
-    <mat-card-subtitle>Fields marked with an asterisk (*) are required</mat-card-subtitle>
-    <br>
-    <!-- error messages dialog -->
+
+  <div fxFlex>
+    <h1 class="page-header">
+      Update Security Question Form<br />
+      <span class="subtitle">
+        Fields marked with an asterisk(*) are required.
+      </span>
+    </h1>
+  </div>
+  <!-- error message from server -->
+  <div class="messages">
     <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
+  </div>
+
+  <mat-card class="mat-elevation-z0 card-form">
+
     <!-- edit question form -->
     <form [formGroup]="editForm" (ngSubmit)="save(); editForm.reset();">
       <mat-card-content>
         <div>
-          <mat-form-field appearance="fill" class="w-60">
+          <mat-form-field appearance="fill" class="w-100">
             <mat-label>Security question</mat-label>
             <input type="text" matInput formControlName="text" required />
             <!-- if you click save and it's empty, this error will show up -->
@@ -39,7 +48,7 @@
       </mat-card-content>
 
       <!-- cancel and save buttons -->
-      <mat-card-actions>
+      <mat-card-actions align="end">
         <button mat-raised-button (click)="cancel()" class="cancel form-button">Cancel</button>
         <button mat-raised-button (click)="save()" class="primary-color form-button">Save</button>
       </mat-card-actions>

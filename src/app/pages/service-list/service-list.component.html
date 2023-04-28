@@ -19,17 +19,17 @@
     </h1>
   </div>
 
-  <div>
+  <div class="messages">
     <p-messages [(value)]="serverMessages" [enableService]="false"></p-messages>
   </div>
 
   <!-- Create Service Form -->
   <div fxFlex>
     <div fxLayout="column">
-      <mat-card>
+      <mat-card class="card-form">
         <form [formGroup]="serviceForm" (ngSubmit)="create(); serviceForm.reset()">
 
-          <mat-form-field appearance="fill" class="w-60">
+          <mat-form-field appearance="fill" class="w-50">
             <mat-label>Service Name</mat-label>
             <input type="text" matInput formControlName="serviceName" required placeholder="Enter a service name..." /><br />
           </mat-form-field>
@@ -72,7 +72,7 @@
 
   <!-- List of Active Services -->
   <div fxFlex>
-    <mat-card>
+    <mat-card class="card-form">
       <p-table [value]="services" responsiveLayout="scroll" class="api-table">
 
         <!-- Table Header -->

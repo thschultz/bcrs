@@ -19,9 +19,11 @@
     </h1>
   </div>
 
-  <mat-card class="mat-elevation-z0">
-
+  <div class="messages">
     <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
+  </div>
+
+  <mat-card class="mat-elevation-z0 card-form">
 
     <!-- Create Service Form -->
     <form [formGroup]="updateForm" (ngSubmit)="save(); updateForm.reset();">
@@ -32,7 +34,7 @@
             <input type="text" matInput formControlName="serviceName" required placeholder="Enter a service name..." /><br />
           </mat-form-field>
 
-          <mat-form-field appearance="fill" class="w-20">
+          <mat-form-field appearance="fill" class="w-30">
             <mat-label>Service Price</mat-label>
             <input type="text" matInput formControlName="price" required placeholder="Enter a price..." />
           </mat-form-field>
@@ -63,7 +65,7 @@
       </mat-card-content>
 
       <!-- Cancel and Submit buttons -->
-      <mat-card-actions class="p-10">
+      <mat-card-actions class="p-10" align="end">
         <button mat-raised-button (click)="cancel()" class="cancel form-button">Cancel</button>
         <button mat-raised-button (click)="save()" class="primary-color form-button">Save</button>
       </mat-card-actions>
