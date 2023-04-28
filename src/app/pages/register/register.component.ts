@@ -66,7 +66,7 @@ export class RegisterComponent implements OnInit {
                 this.securityQuestionsService.findAllSecurityQuestions().subscribe({
                   next: (res) => {
                     this.securityQuestions = res.data;
-                    console.log(this.securityQuestions);
+                    console.log('register component --> ' + this.securityQuestions);
                   },
                   error: (e) => {
                     console.log(e);
@@ -124,5 +124,6 @@ export class RegisterComponent implements OnInit {
       }
     });
   }
+
 
 }

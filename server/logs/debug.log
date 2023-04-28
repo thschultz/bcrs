@@ -50159,3 +50159,1336 @@
   isDisabled: false,
   __v: 0
 }
+[4/27/2023, 9:57:28 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 9:59:49 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:05:37 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:10:26 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:11:09 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:11:33 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:11:55 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:13:48 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:15:43 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:23:36 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:25:39 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:26:58 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:27:10 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:27:37 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:27:46 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:30:17 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:39:46 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:46:26 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:52:33 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:52:49 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 10:56:28 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 11:22:31 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 11:23:02 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 11:23:11 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 11:26:33 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 11:27:11 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 11:27:23 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 11:29:06 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 11:31:04 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 11:33:36 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 11:33:49 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 11:34:11 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 11:37:19 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 11:37:26 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 11:37:30 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 11:38:51 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/27/2023, 11:39:58 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/28/2023, 6:00:37 AM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/28/2023, 6:02:44 AM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/28/2023, 6:03:02 AM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/28/2023, 6:07:40 AM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/28/2023, 6:11:05 AM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
+[4/28/2023, 6:16:30 AM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What is you first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'what is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("6445891d050bb6b327bb40b6"),
+  text: 'testing 2sdf',
+  isDisabled: false,
+  __v: 0
+}
