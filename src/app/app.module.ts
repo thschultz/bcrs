@@ -65,6 +65,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ProfileDetailsComponent } from './pages/profile-details/profile-details.component';
 
 
 
@@ -92,6 +93,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ForgotPasswordComponent,
     VerifySecurityQuestionsComponent,
     ResetPasswordComponent,
+    ProfileDetailsComponent,
   ],
 
   imports: [

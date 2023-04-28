@@ -66,7 +66,7 @@ export class VerifySecurityQuestionsComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   VerifySecurityQuestions() {
     this.verifySecurityQuestionsModel.answerToQuestion1 =
