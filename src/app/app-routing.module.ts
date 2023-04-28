@@ -33,13 +33,14 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ForgotPasswordComponent } from './shared/forms/forgot-password/forgot-password.component';
 import { VerifySecurityQuestionsComponent } from './shared/forms/verify-security-questions/verify-security-questions.component';
 import { ResetPasswordComponent } from './shared/forms/reset-password/reset-password.component';
+import { ProfileDetailsComponent } from './pages/profile-details/profile-details.component';
 
 const routes: Routes = [
   {
     path: '',
     component: BaseLayoutComponent,
     children: [
-      
+
       // Main Children
       {
         path: '',
@@ -92,6 +93,10 @@ const routes: Routes = [
       {
         path: 'profile',
         component: ProfileComponent
+      },
+      {
+        path: 'profile/:userId',
+        component: ProfileDetailsComponent
       }
     ],
     canActivate: [AuthGuard],

@@ -1,0 +1,129 @@
+<!--
+  Title: profile.component.html
+  Author: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+  Date: 04/19/23
+  Last Modified by: Walter McCue
+  Last Modification Date: 04/26/23
+  Description: html for the bcrs project
+-->
+
+<div fxLayout="column">
+
+  <!-- Page Header -->
+  <div fxFlex>
+    <h1 class="page-header">
+      Edit your profile!<br />
+      <span class="subtitle">
+        Fields marked with an asterisk(*) are required.
+      </span>
+    </h1>
+  </div>
+
+  <div class="messages">
+    <p-messages [(value)]="serverMessages" [enableService]="false"></p-messages>
+  </div>
+
+  <mat-card class="mat-elevation-z0">
+
+    <form [formGroup]="form" (ngSubmit)="saveUser()" (keydown.enter)="$event.preventDefault()"
+      style="width: 50%; margin: 0 auto" autocomplete="off">
+      <mat-card-content>
+        <div fxLayout="column" fxLayoutGap="10px">
+
+          <!-- First Name -->
+          <mat-form-field appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input type="text" matInput formControlName="firstName" required />
+
+            <mat-error class="error"
+              *ngIf="form.controls['firstName'].hasError('required') && form.controls['firstName'].touched">
+              First name is a required field.
+            </mat-error>
+            <mat-error *ngIf="form.controls['firstName'].hasError('minlength') && form.controls['firstName'].touched">
+              First Name must be at least 3 characters.
+            </mat-error>
+            <mat-error *ngIf="form.controls['firstName'].hasError('maxlength') && form.controls['firstName'].touched">
+              First Name must be less than 35 characters.
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Last Name -->
+          <mat-form-field appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input type="text" matInput formControlName="lastName" required />
+
+            <mat-error class="error"
+              *ngIf="form.controls['lastName'].hasError('required') && form.controls['lastName'].touched">
+              Last name is a required field.
+            </mat-error>
+            <mat-error *ngIf="form.controls['lastName'].hasError('minlength') && form.controls['lastName'].touched">
+              Last Name must be at least 3 characters.
+            </mat-error>
+            <mat-error *ngIf="form.controls['lastName'].hasError('maxlength') && form.controls['lastName'].touched">
+              Last Name must be less than 35 characters.
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Phone Number -->
+          <mat-form-field appearance="fill">
+            <mat-label>Phone number</mat-label>
+            <input type="text" matInput formControlName="phoneNumber" required />
+
+            <mat-error class="error"
+              *ngIf="form.controls['phoneNumber'].hasError('required') && form.controls['phoneNumber'].touched">
+              Phone number is a required field.
+            </mat-error>
+            <mat-error *ngIf="form.controls['phoneNumber'].hasError('pattern') && form.controls['phoneNumber'].touched">
+              Phone number must be formatted as 999-999-9999.
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Email Address -->
+          <mat-form-field appearance="fill">
+            <mat-label>Email address</mat-label>
+            <input type="text" matInput formControlName="email" required />
+
+            <mat-error class="error"
+              *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched">
+              Email is a required field.
+            </mat-error>
+
+            <mat-error class="error" *ngIf="form.controls['email'].hasError('email') && form.controls['email'].touched">
+              Invalid email format.
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Address -->
+          <mat-form-field appearance="fill">
+            <mat-label>Address</mat-label>
+
+            <textarea matInput required formControlName="address"
+              placeholder="505 Main Street Omaha, Nebraska 68111"></textarea>
+
+            <mat-error class="error"
+              *ngIf="form.controls['address'].hasError('required') && form.controls['address'].touched">
+              Address is a required field.
+            </mat-error>
+            <mat-error *ngIf="form.controls['address'].hasError('minlength') && form.controls['address'].touched">
+              Last Name must be at least 3 characters.
+            </mat-error>
+            <mat-error *ngIf="form.controls['address'].hasError('maxlength') && form.controls['address'].touched">
+              Last Name must be less than 75 characters.
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions align="end">
+        <button mat-raised-button (click)="cancel()" class="cancel form-button">
+          Cancel
+        </button>
+        <button mat-raised-button [disabled]="!form.valid" class="primary-color form-button">
+          Submit
+        </button>
+      </mat-card-actions>
+
+    </form>
+
+  </mat-card>
+</div>
