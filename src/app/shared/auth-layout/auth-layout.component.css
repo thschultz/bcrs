@@ -21,6 +21,10 @@ Description: component styling for the bcrs project
   left: 20px;
 }
 
+.bcrs-mobile {
+  display: none;
+}
+
 .main-content {
   padding: 20px 30px 30px 30px;
   min-height: 69.7vh;
@@ -63,6 +67,17 @@ footer {
   .footer-content {
     padding: 0 5px;
     text-align: center;
+  }
+
+  .bcrs {
+    display: none;
+  }
+
+  .bcrs-mobile {
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 5px;
   }
 
 }

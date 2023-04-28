@@ -21,6 +21,10 @@ Description: component styling for the bcrs project
   left: 20px;
 }
 
+.bcrs-mobile {
+  display: none;
+}
+
 .navbar-link {
   font-size: 24px;
 }
@@ -77,6 +81,17 @@ footer {
   .footer-content {
     padding: 0 5px;
     text-align: center;
+  }
+
+  .bcrs {
+    display: none;
+  }
+
+  .bcrs-mobile {
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 5px;
   }
 
 }
