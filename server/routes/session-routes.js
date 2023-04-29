@@ -35,10 +35,6 @@ const loginSchema = {
   additionalProperties: false,
 };
 
-/**
- * API: http://localhost:3000/api/session
- */
-
 const registerSchema = {
   type: "object",
   properties: {
@@ -63,8 +59,43 @@ const registerSchema = {
   ],
   additionalProperties: false,
 };
+/*
+const verifySecurityQuestionsSchema = {
+  type: "object",
+  properties: {
+    selectedSecurityQuestions: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          questionText: { type: "string" },
+          answerText: { type: "string" },
+        },
+        required: ["questionText", "answerText"],
+        additionalProperties: false,
+      }
+    },
+  },
+  required: ["selectedSecurityQuestions"],
+  additionalProperties: false,
+};
+*/
+const resetPasswordSchema = {
+  type: "object",
+  properties: {
+    password: { type: "string" },
+  },
+  required: ["password"],
+  additionalProperties: false,
+};
 
 const saltRounds = 10;
+
+
+/**
+ * API: http://localhost:3000/api/session
+ */
+
 
 // openapi language used to describe the API via swagger
 /**
@@ -104,12 +135,12 @@ const saltRounds = 10;
 // User Sign-in
 router.post("/login", async (req, res) => {
   try {
+
+    let userLogin = req.body;
+
     // checks request body against the schema
     const validator = ajv.compile(loginSchema);
-    const valid = validator({
-      userName: req.body.userName,
-      password: req.body.password,
-    });
+    const valid = validator(userLogin);
 
     // failed validation
     if (!valid) {
@@ -132,12 +163,12 @@ router.post("/login", async (req, res) => {
       if (err) {
         console.log(err);
         const signinMongodbErrorResponse = new ErrorResponse(
-          500,
-          "Internal server error",
+          404,
+          "Bad request, invalid path",
           err
         );
-        errorLogger({ filename: myFile, message: "Internal server error" });
-        res.status(500).send(signinMongodbErrorResponse.toObject());
+        errorLogger({ filename: myFile, message: "Bad request, invalid path" });
+        res.status(404).send(signinMongodbErrorResponse.toObject());
       } else {
         console.log(user);
 
@@ -178,7 +209,7 @@ router.post("/login", async (req, res) => {
         else {
           console.log(`Username: ${req.body.userName} is invalid`);
           const invalidUserNameResponse = new BaseResponse(
-            200,
+            401,
             "Invalid password or username, please try again.",
             null
           );
@@ -263,18 +294,12 @@ router.post("/login", async (req, res) => {
 //
 router.post("/register", async (req, res) => {
   try {
+
+    let registerUser = req.body;
+
     // checks request body against the schema
     const validator = ajv.compile(registerSchema);
-    const valid = validator({
-      userName: req.body.userName,
-      password: req.body.password,
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      phoneNumber: req.body.phoneNumber,
-      address: req.body.address,
-      email: req.body.email,
-      selectedSecurityQuestions: req.body.selectedSecurityQuestions,
-    });
+    const valid = validator(registerUser);
 
     // failed validation
     if (!valid) {
@@ -297,12 +322,12 @@ router.post("/register", async (req, res) => {
       if (err) {
         console.log(err);
         const registerUserMongodbErrorResponse = new ErrorResponse(
-          500,
-          "Internal server error",
+          401,
+          "Bad request, username in use",
           err
         );
-        errorLogger({ filename: myFile, message: "Internal server error" });
-        res.status(500).send(registerUserMongodbErrorResponse.toObject());
+        errorLogger({ filename: myFile, message: "Bad request, username in use" });
+        res.status(401).send(registerUserMongodbErrorResponse.toObject());
       } else {
         if (!user) {
           let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds);
@@ -436,9 +461,35 @@ router.get("/verify/users/:userName", async (req, res) => {
   }
 });
 
+
 // Verify Security Question
 router.post("/verify/users/:userName/security-questions", async (req, res) => {
   try {
+    
+    /*
+    let verifySecurityQuestions = req.body;
+
+    // checks request body against the schema
+    const validator = ajv.compile(verifySecurityQuestionsSchema);
+    const valid = validator(verifySecurityQuestions);
+
+    // failed validation
+    if (!valid) {
+      console.log("Bad Request, unable to validate");
+      const createServiceError = new ErrorResponse(
+        400,
+        "Bad Request, unable to validate",
+        valid
+      );
+      errorLogger({
+        filename: myFile,
+        message: "Bad Request, unable to validate",
+      });
+      res.status(400).send(createServiceError.toObject());
+      return;
+    }
+    */
+
     // findOne function for user
     User.findOne({ userName: req.params.userName }, function (err, user) {
       // If userName not found
@@ -557,7 +608,27 @@ router.post("/verify/users/:userName/security-questions", async (req, res) => {
 
 router.post("/users/:userName/reset-password", async (req, res) => {
   try {
-    const password = req.body.password;
+    let newPassword = req.body;
+
+    // checks request body against the schema
+    const validator = ajv.compile(resetPasswordSchema);
+    const valid = validator(newPassword);
+
+    // failed validation
+    if (!valid) {
+      console.log("Bad Request, unable to validate");
+      const createServiceError = new ErrorResponse(
+        400,
+        "Bad Request, unable to validate",
+        valid
+      );
+      errorLogger({
+        filename: myFile,
+        message: "Bad Request, unable to validate",
+      });
+      res.status(400).send(createServiceError.toObject());
+      return;
+    }
 
     User.findOne({ userName: req.params.userName }, function (err, user) {
       if (err) {
@@ -570,6 +641,7 @@ router.post("/users/:userName/reset-password", async (req, res) => {
         res.status(500).send(resetPasswordMongodbErrorResponse.toObject());
       } else {
         console.log(user);
+        password = req.body.password
         let hashedPassword = bcrypt.hashSync(password, saltRounds);
 
         user.set({
