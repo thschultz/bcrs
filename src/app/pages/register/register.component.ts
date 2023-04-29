@@ -33,6 +33,9 @@ export class RegisterComponent implements OnInit {
   errorMessages: Message[];
   user: User;
   selectedSecurityQuestions: SelectedSecurityQuestion[];
+  securityMenu1 = '';
+  securityMenu2 = '';
+  securityMenu3 = '';
 
   contactForm: FormGroup = this.fb.group({
     firstName: [null, Validators.compose([ Validators.required, Validators.minLength(3), Validators.maxLength(35) ])],
@@ -72,6 +75,26 @@ export class RegisterComponent implements OnInit {
                     console.log(e);
                   }
                 });
+              }
+
+              // if Drop Down Menu 1 is selected, returns false
+              // if not selected, returns true and disables second drop down
+              isSelectedMenu1() {
+                if (this.securityMenu1) {
+                  return false
+                } else {
+                  return true
+                }
+              }
+
+              // if Drop Down Menu 2 is selected, returns false
+              // if not selected, returns true and disables third drop down
+              isSelectedMenu2() {
+                if (this.securityMenu2) {
+                  return false
+                } else {
+                  return true
+                }
               }
 
   ngOnInit(): void {
