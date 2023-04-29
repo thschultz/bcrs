@@ -23,10 +23,10 @@ export class ForgotPasswordComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  // verifyUser function
   verifyUser() {
     const username = this.form.controls['username'].value;
-
+    //successful username. if successful, will take them to verify questions page. if not, error message will appear
     this.sessionService.verifyUsername(username).subscribe({
       next: (res) => {
         console.log(res);
