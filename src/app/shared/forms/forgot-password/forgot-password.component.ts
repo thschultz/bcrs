@@ -1,3 +1,13 @@
+// Title: forgot-password.component.ts
+// Author: Richard Krasso
+// Contributors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+// Date: 04/26/23
+// Last Modified by: Thomas Schultz
+// Last Modification Date: 04/29/23
+// Description: html for the bcrs project
+
+
+
 import { Component, OnInit } from '@angular/core';
 import { Message } from 'primeng/api';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
