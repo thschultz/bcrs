@@ -2,8 +2,8 @@
   Title: profile.component.html
   Author: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
   Date: 04/19/23
-  Last Modified by: Walter McCue
-  Last Modification Date: 04/26/23
+  Last Modified by: Thomas Schultz
+  Last Modification Date: 04/29/23
   Description: html for the bcrs project
 -->
 
@@ -18,15 +18,15 @@
       </span>
     </h1>
   </div>
-
+  <!-- server error messages -->
   <div class="messages">
     <p-messages [(value)]="serverMessages" [enableService]="false"></p-messages>
   </div>
 
   <mat-card class="mat-elevation-z0 card-form">
 
-    <form [formGroup]="form" (ngSubmit)="saveUser()" (keydown.enter)="$event.preventDefault()"
-      style="margin: 0 auto" autocomplete="off">
+    <form [formGroup]="form" (ngSubmit)="saveUser()" (keydown.enter)="$event.preventDefault()" style="margin: 0 auto"
+      autocomplete="off">
       <mat-card-content>
         <div fxLayout="column" fxLayoutGap="10px">
 
