@@ -141,7 +141,7 @@
                 <mat-form-field fxFlex appearance="fill">
                   <mat-label>Security Question</mat-label>
                   <mat-select required formControlName="securityQuestion1" [(ngModel)]="securityMenu1">
-                    <mat-option *ngFor="let question of securityQuestions" [value]="question.text">
+                    <mat-option *ngFor="let question of securityQuestions" [value]="question.text" [(ngModel)]="securityOption1" [disabled]="isOptionDisabled()">
                       {{ question.text }}
                     </mat-option>
                   </mat-select>
@@ -170,7 +170,7 @@
                 <mat-form-field fxFlex appearance="fill">
                   <mat-label>Security Question</mat-label>
                   <mat-select required formControlName="securityQuestion2" [(ngModel)]="securityMenu2" [disabled]="isSelectedMenu1()">
-                    <mat-option *ngFor="let question of securityQuestions" [value]="question.text">
+                    <mat-option *ngFor="let question of securityQuestions" [value]="question.text" [(ngModel)]="securityOption2" [disabled]="isOptionDisabled()">
                       {{ question.text }}
                     </mat-option>
                   </mat-select>
@@ -199,7 +199,7 @@
                 <mat-form-field fxFlex appearance="fill">
                   <mat-label>Security Question</mat-label>
                   <mat-select required formControlName="securityQuestion3" [(ngModel)]="securityMenu3" [disabled]="isSelectedMenu2()">
-                    <mat-option *ngFor="let question of securityQuestions" [value]="question.text">
+                    <mat-option *ngFor="let question of securityQuestions" [value]="question.text" [(ngModel)]="securityOption3" [disabled]="isOptionDisabled()">
                       {{ question.text }}
                     </mat-option>
                   </mat-select>

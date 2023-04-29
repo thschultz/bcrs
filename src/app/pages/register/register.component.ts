@@ -36,6 +36,9 @@ export class RegisterComponent implements OnInit {
   securityMenu1 = '';
   securityMenu2 = '';
   securityMenu3 = '';
+  securityOption1 = '';
+  securityOption2 = '';
+  securityOption3 = '';
 
   contactForm: FormGroup = this.fb.group({
     firstName: [null, Validators.compose([ Validators.required, Validators.minLength(3), Validators.maxLength(35) ])],
@@ -96,6 +99,20 @@ export class RegisterComponent implements OnInit {
                   return true
                 }
               }
+
+
+
+              isOptionDisabled() {
+                if (this.securityOption1 == this.securityOption2 &&
+                  this.securityOption1 == this.securityOption3 &&
+                  this.securityOption2 == this.securityMenu3)
+                  {
+                    return false
+                  } else {
+                    return false
+                  }
+                }
+
 
   ngOnInit(): void {
   }
