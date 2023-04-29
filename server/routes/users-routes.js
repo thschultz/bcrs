@@ -34,14 +34,6 @@ const userSchema = {
     phoneNumber: { type: "string" },
     address: { type: "string" },
     email: { type: "string" },
-    role: {
-      type: "object",
-      properties: {
-        text: { type: "string" },
-      },
-      required: ["text"],
-      additionalProperties: false,
-    },
   },
   required: [
     "userName",
@@ -51,7 +43,6 @@ const userSchema = {
     "phoneNumber",
     "address",
     "email",
-    "role",
   ],
   additionalProperties: false,
 };
@@ -114,12 +105,12 @@ router.get("/", async (req, res) => {
         // Server Error
         if (err) {
           const findAllError = new ErrorResponse(
-            500,
-            "Internal server error",
+            404,
+            "Bad request, path not found.",
             err.message
           );
-          res.status(500).send(findAllError.toObject());
-          errorLogger({ filename: myFile, message: "Internal server error" });
+          res.status(404).send(findAllError.toObject());
+          errorLogger({ filename: myFile, message: "Bad request, path not found." });
           return;
         }
 
@@ -266,16 +257,7 @@ router.post("/", async (req, res) => {
     };
 
     // user object
-    let newUser = {
-      userName: req.body.userName,
-      password: hashedPassword,
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      phoneNumber: req.body.phoneNumber,
-      address: req.body.address,
-      email: req.body.email,
-      role: standardRole,
-    };
+    let newUser = req.body;
 
     // Checks current request body against the schema
     const validator = ajv.compile(userSchema);
@@ -296,17 +278,26 @@ router.post("/", async (req, res) => {
       res.status(400).send(createServiceError.toObject());
       return;
     }
-
-    User.create(newUser, function (err, user) {
+    createUser = {
+      userName: newUser.userName,
+      password: hashedPassword,
+      firstName: newUser.firstName,
+      lastName: newUser.lastName,
+      phoneNumber: newUser.phoneNumber,
+      address: newUser.address,
+      email: newUser.email,
+      role: standardRole
+    }
+    User.create(createUser, function (err, user) {
       if (err) {
         console.log(err);
         const createUserMongodbErrorResponse = new ErrorResponse(
-          500,
-          "Internal server error",
+          404,
+          "Bad request, please ensure request meets requirements.",
           err
         );
-        res.status(500).send(createUserMongodbErrorResponse.toObject());
-        errorLogger({ filename: myFile, message: "Internal server error" });
+        res.status(404).send(createUserMongodbErrorResponse.toObject());
+        errorLogger({ filename: myFile, message: "Bad request, please ensure request meets requirements." });
       } else {
         console.log(user);
         const CreateUserResponse = new BaseResponse(
@@ -377,46 +368,41 @@ router.post("/", async (req, res) => {
 // updateUser
 router.put("/:id", async (req, res) => {
   try {
+
+    let updatedUser = req.body;
+
+    // Checks current request body against the schema
+    const validator = ajv.compile(updateUserSchema);
+    const valid = validator(updatedUser);
+
+    // If invalid return 400 Error
+    if (!valid) {
+      console.log("Bad Request, unable to validate");
+      const createServiceError = new ErrorResponse(
+        400,
+        "Bad Request, unable to validate",
+        valid
+      );
+      errorLogger({
+        filename: myFile,
+        message: "Bad Request, unable to validate",
+      });
+      res.status(400).send(createServiceError.toObject());
+      return;
+    }
+
     User.findOne({ _id: req.params.id }, function (err, user) {
       if (err) {
         //server error
         console.log(err);
         const updateUserByIdMongodbErrorResponse = new ErrorResponse(
           404,
-          "Internal server error",
+          "Bad request, id not found",
           err
         );
-        errorLogger({ filename: myFile, message: "Bad request, invalid UserId" });
+        errorLogger({ filename: myFile, message: "Bad request, id not found" });
         res.status(404).send(updateUserByIdMongodbErrorResponse.toObject());
       } else {
-        let updatedUser = {
-          firstName: req.body.firstName,
-          lastName: req.body.lastName,
-          phoneNumber: req.body.phoneNumber,
-          address: req.body.address,
-          email: req.body.email,
-          //role: req.body.role,
-        };
-
-        // Checks current request body against the schema
-        const validator = ajv.compile(updateUserSchema);
-        const valid = validator(updatedUser);
-
-        // If invalid return 400 Error
-        if (!valid) {
-          console.log("Bad Request, unable to validate");
-          const createServiceError = new ErrorResponse(
-            400,
-            "Bad Request, unable to validate",
-            valid
-          );
-          errorLogger({
-            filename: myFile,
-            message: "Bad Request, unable to validate",
-          });
-          res.status(400).send(createServiceError.toObject());
-          return;
-        }
 
         //updating fields
         console.log(user);
@@ -436,17 +422,17 @@ router.put("/:id", async (req, res) => {
             //Server error
             console.log(err);
             const saveUserMongodbErrorResponse = new ErrorResponse(
-              500,
-              "Internal server error",
+              501,
+              "Bad request, please ensure request meets requirements",
               err
             );
-            res.status(500).send(saveUserMongodbErrorResponse.toObject());
-            errorLogger({ filename: myFile, message: "Internal server error" });
+            res.status(501).send(saveUserMongodbErrorResponse.toObject());
+            errorLogger({ filename: myFile, message: "Bad request, please ensure request meets requirements" });
           } else {
             //saving updated User
             console.log(savedUser);
             const saveUserResponse = new BaseResponse(
-              200,
+              204,
               "Query successful",
               savedUser
             );
@@ -524,19 +510,19 @@ router.delete("/:id", async (req, res) => {
         if (err) {
           console.log(err);
           const savedUserErrorResponse = new ErrorResponse(
-            500,
-            "Internal server Error",
+            501,
+            "Bad request, unable to update record",
             err
           );
-          res.json(500).send(savedUserErrorResponse.toObject());
-          errorLogger({ filename: myFile, message: "Internal server error" });
+          res.json(501).send(savedUserErrorResponse.toObject());
+          errorLogger({ filename: myFile, message: "Bad request, unable to update record" });
           return;
         }
 
         // Successfully saves the disabled status
         console.log(savedUser);
         const savedUserResponse = new BaseResponse(
-          200,
+          204,
           "Successful Query",
           savedUser
         );
@@ -568,8 +554,8 @@ router.get('/:userName/security-questions', async (req, res) => {
       //error handling if server can't save.
       if (err) {
         console.log(err);
-        const findSelectedSecurityQuestionsMongodbErrorResponse = new ErrorResponse('500', 'Internal Server Error', err);
-        res.status(500).send(findSelectedSecurityQuestionsMongodbErrorResponse.toObject());
+        const findSelectedSecurityQuestionsMongodbErrorResponse = new ErrorResponse(404, 'Bad request, invalid path.', err);
+        res.status(404).send(findSelectedSecurityQuestionsMongodbErrorResponse.toObject());
       }
       else {
         //successful save
