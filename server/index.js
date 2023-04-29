@@ -26,6 +26,8 @@ const swaggerJsdoc = require("swagger-jsdoc");
 
 const app = express(); // Express variable.
 
+mongoose.set('strictQuery', false);
+
 /**
  * App configurations.
  */
