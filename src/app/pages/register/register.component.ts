@@ -35,11 +35,11 @@ export class RegisterComponent implements OnInit {
   selectedSecurityQuestions: SelectedSecurityQuestion[];
 
   contactForm: FormGroup = this.fb.group({
-    firstName: [null, Validators.compose([Validators.required])],
-    lastName: [null, Validators.compose([Validators.required])],
-    phoneNumber: [null, Validators.compose([Validators.required])],
-    email: [null, Validators.compose([Validators.required, Validators.email])],
-    address: [null, Validators.compose([Validators.required])]
+    firstName: [null, Validators.compose([ Validators.required, Validators.minLength(3), Validators.maxLength(35) ])],
+    lastName: [null, Validators.compose([ Validators.required, Validators.minLength(3), Validators.maxLength(35) ])],
+    phoneNumber: [null, Validators.compose([ Validators.required, Validators.pattern('\\d{3}\\-\\d{3}-\\d{4}') ])],
+    email: [null, Validators.compose([ Validators.required, Validators.email])],
+    address: [null, Validators.compose([ Validators.required, Validators.minLength(3), Validators.maxLength(75) ])]
   });
 
   sqForm: FormGroup = this.fb.group({
