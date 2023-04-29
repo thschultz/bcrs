@@ -70,12 +70,12 @@ router.get("/", async (req, res) => {
         if (err) {
           console.log(err);
           const findAllMongoDBErrorResponse = new ErrorResponse(
-            500,
-            "Internal server error",
+            404,
+            "Bad request, path not found.",
             err
           );
-          res.status(500).send(findAllMongoDBErrorResponse.toObject());
-          errorLogger({ filename: myFile, message: "Internal server error" });
+          res.status(404).send(findAllMongoDBErrorResponse.toObject());
+          errorLogger({ filename: myFile, message: "Bad request, path not found." });
         } else {
           //successful query response
           console.log(securityQuestions);
@@ -219,9 +219,7 @@ router.get("/:id", async (req, res) => {
 // createSecurityQuestion
 router.post("/", async (req, res) => {
   try {
-    let newSecurityQuestion = {
-      text: req.body.text,
-    };
+    let newSecurityQuestion = req.body
 
     // Checks current request body against the schema
     const validator = ajv.compile(securitySchema);
@@ -243,14 +241,14 @@ router.post("/", async (req, res) => {
         if (err) {
           console.log(err);
           const createSecurityQuestionMongodbErrorResponse = new ErrorResponse(
-            500,
-            "Internal server error",
+            404,
+            "Bad request, path not found.",
             err
           );
           res
-            .status(500)
+            .status(404)
             .send(createSecurityQuestionMongodbErrorResponse.toObject());
-            errorLogger({ filename: myFile, message: "Internal server error" });
+            errorLogger({ filename: myFile, message: "Bad request, path not found." });
         } else {
           console.log(securityQuestion);
           const createSecurityQuestionResponse = new BaseResponse(
@@ -312,9 +310,25 @@ router.post("/", async (req, res) => {
  *         description: Not found
  */
 
-// updateSecurityQuestions
+// updateSecurityQuestion
 router.put("/:id", async (req, res) => {
   try {
+
+    let updateSecurityQuestion = req.body
+
+    // Checks current request body against the schema
+    const validator = ajv.compile(securitySchema);
+    const valid = validator(updateSecurityQuestion)
+
+    // If invalid return 400 Error
+    if (!valid) {
+      console.log('Bad Request, unable to validate');
+      const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
+      errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+      res.status(400).send(createServiceError.toObject());
+      return
+    }
+
     SecurityQuestion.findOne(
       { _id: req.params.id },
       function (err, securityQuestion) {
@@ -332,21 +346,6 @@ router.put("/:id", async (req, res) => {
             errorLogger({ filename: myFile, message: "Bad request, securityQuestionId not valid" });
         } else {
 
-          // Checks current request body against the schema
-          const validator = ajv.compile(securitySchema);
-          const valid = validator({
-            text: req.body.text
-          })
-
-          // If invalid return 400 Error
-          if (!valid) {
-            console.log('Bad Request, unable to validate');
-            const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
-            errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
-            res.status(400).send(createServiceError.toObject());
-            return
-          }
-
           //setting security question
           console.log(securityQuestion);
 
@@ -359,16 +358,16 @@ router.put("/:id", async (req, res) => {
               //server error
               console.log(err);
               const savedSecurityQuestionMongodbErrorResponse =
-                new ErrorResponse(500, "Internal server error", err);
+                new ErrorResponse(404, "Bad request: id not found.", err);
               res
-                .status(500)
+                .status(404)
                 .send(savedSecurityQuestionMongodbErrorResponse.toObject());
-                errorLogger({ filename: myFile, message: "Internal server error" });
+                errorLogger({ filename: myFile, message: "Bad request: id not found." });
             } else {
               //saving new security question
               console.log(savedSecurityQuestion);
               const savedSecurityQuestionResponse = new BaseResponse(
-                200,
+                204,
                 "Query successful",
                 savedSecurityQuestion
               );

@@ -35,16 +35,6 @@ const serviceSchema = {
   additionalProperties: false
 }
 
-// Schema for disabled validation
-const disabledSchema = {
-  type: 'object',
-  properties: {
-    isDisabled: {type: 'boolean'},
-  },
-  required: ['isDisabled'],
-  additionalProperties: false
-}
-
 
 /**
  * API: http://localhost:3000/api/services
