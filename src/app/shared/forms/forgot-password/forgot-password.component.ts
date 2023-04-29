@@ -1,3 +1,13 @@
+// Title: forgot-password.component.ts
+// Author: Richard Krasso
+// Contributors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+// Date: 04/26/23
+// Last Modified by: Thomas Schultz
+// Last Modification Date: 04/29/23
+// Description: html for the bcrs project
+
+
+
 import { Component, OnInit } from '@angular/core';
 import { Message } from 'primeng/api';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -23,10 +33,10 @@ export class ForgotPasswordComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  // verifyUser function
   verifyUser() {
     const username = this.form.controls['username'].value;
-
+    //successful username. if successful, will take them to verify questions page. if not, error message will appear
     this.sessionService.verifyUsername(username).subscribe({
       next: (res) => {
         console.log(res);
