@@ -59,27 +59,21 @@ const registerSchema = {
   ],
   additionalProperties: false,
 };
-/*
+
 const verifySecurityQuestionsSchema = {
   type: "object",
   properties: {
-    selectedSecurityQuestions: {
-      type: "array",
-      items: {
-        type: "object",
-        properties: {
-          questionText: { type: "string" },
-          answerText: { type: "string" },
-        },
-        required: ["questionText", "answerText"],
-        additionalProperties: false,
-      }
-    },
+    questionText1: { type: "string" },
+    answerText1: { type: "string" },
+    questionText2: { type: "string" },
+    answerText2: { type: "string" },
+    questionText3: { type: "string" },
+    answerText3: { type: "string" },
   },
-  required: ["selectedSecurityQuestions"],
+  required: ["questionText1", "answerText1", "questionText2", "answerText2", "questionText3", "answerText3"],
   additionalProperties: false,
 };
-*/
+
 const resetPasswordSchema = {
   type: "object",
   properties: {
@@ -465,8 +459,7 @@ router.get("/verify/users/:userName", async (req, res) => {
 // Verify Security Question
 router.post("/verify/users/:userName/security-questions", async (req, res) => {
   try {
-    
-    /*
+
     let verifySecurityQuestions = req.body;
 
     // checks request body against the schema
@@ -488,7 +481,6 @@ router.post("/verify/users/:userName/security-questions", async (req, res) => {
       res.status(400).send(createServiceError.toObject());
       return;
     }
-    */
 
     // findOne function for user
     User.findOne({ userName: req.params.userName }, function (err, user) {
