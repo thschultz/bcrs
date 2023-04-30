@@ -227,6 +227,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
+
 // openapi language used to describe the API via swagger
 /**
  * @openapi
@@ -284,8 +285,8 @@ router.post("/login", async (req, res) => {
  *       '500':
  *         description: Server expectations.
  */
+
 // register
-//
 router.post("/register", async (req, res) => {
   try {
 
@@ -392,7 +393,6 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// verifyUser
 
 /**
  * verifyUser
@@ -419,6 +419,7 @@ router.post("/register", async (req, res) => {
  *         description: Server exception
  */
 
+// verifyUser
 router.get("/verify/users/:userName", async (req, res) => {
   try {
     User.findOne({ userName: req.params.userName }, function (err, user) {
@@ -455,6 +456,63 @@ router.get("/verify/users/:userName", async (req, res) => {
   }
 });
 
+
+/**
+ * @openapi
+ * /api/session/verify/users/{username}/security-questions:
+ *   post:
+ *     tags:
+ *       - Session
+ *     name: verifySecurityQuestions
+ *     description: Verifies that a user's input to confirm security questions matches what is stored in the database.
+ *     summary: Verify a user's security questions against MongoDB
+ *     operationId: verifySecurityQuestions
+ *     parameters:
+ *       - name: userName
+ *         in: path
+ *         required: true
+ *         description: findOne function to find the selected security questions of the selected userName
+ *         scheme:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       description: The security questions and answers
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - questionText1
+ *               - questionText2
+ *               - questionText3
+ *               - answerText1
+ *               - answerText2
+ *               - answerText3
+ *             properties:
+ *               questionText1:
+ *                 type: string
+ *               questionText2:
+ *                 type: string
+ *               questionText3:
+ *                 type: string
+ *               answerText1:
+ *                 type: string
+ *               answerText2:
+ *                 type: string
+ *               answerText3:
+ *                 type: string
+ *     responses:
+ *       '200':
+ *         description: Verified security question
+ *       '400':
+ *         description: Bad request, unable to validate
+ *       '401':
+ *         description: User failed to answer security questions correctly
+ *       '404':
+ *         description: Bad request, invalid userName
+ *       '500':
+ *         description: Server Exception
+ */
 
 // Verify Security Question
 router.post("/verify/users/:userName/security-questions", async (req, res) => {
@@ -537,7 +595,7 @@ router.post("/verify/users/:userName/security-questions", async (req, res) => {
       console.log(
         `User ${user.userName} failed to answer security questions correctly`
       );
-      const invalidSqResponse = new BaseResponse(400, "error", user);
+      const invalidSqResponse = new BaseResponse(401, "error", user);
       res.json(invalidSqResponse.toObject());
       errorLogger({
         filename: myFile,
@@ -558,7 +616,6 @@ router.post("/verify/users/:userName/security-questions", async (req, res) => {
   }
 });
 
-// ResetPassword
 
 /**
  * @openapi
@@ -598,6 +655,7 @@ router.post("/verify/users/:userName/security-questions", async (req, res) => {
  *         description: Server expectations.
  */
 
+// ResetPassword
 router.post("/users/:userName/reset-password", async (req, res) => {
   try {
     let newPassword = req.body;
