@@ -1,4 +1,3 @@
-import { SelectedSecurityQuestion } from '../models/selected-security-question.interface';
 /**
  * Title: user.interface.ts
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
@@ -7,6 +6,8 @@ import { SelectedSecurityQuestion } from '../models/selected-security-question.i
  * Last Modification Date: 04/19/23
  * Description: user interface for the bcrs project
  */
+
+import { SelectedSecurityQuestion } from '../models/selected-security-question.interface';
 
 //user interface
 export interface User {

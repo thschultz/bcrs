@@ -1,3 +1,12 @@
+/**
+ * Title: verify-security-questions.component.ts
+ * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+ * Date: 04/26/23
+ * Last Modified by: Jamal Damir
+ * Last Modification Date: 04/26/23
+ * Description: user security question validation for the bcrs project
+*/
+
 import { Component, OnInit } from '@angular/core';
 import { SelectedSecurityQuestion } from '../../models/selected-security-question.interface';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';

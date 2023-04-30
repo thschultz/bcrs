@@ -1,3 +1,12 @@
+/**
+ * Title: error.interceptor.ts
+ * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+ * Date: 04/26/23
+ * Last Modified by: Thomas Schultz
+ * Last Modification Date: 04/26/23
+ * Description: error interceptor to redirect users in the event of a major error in the application for the bcrs project
+ */
+
 import { Injectable } from '@angular/core';
 import {
   HttpRequest,
@@ -15,10 +24,13 @@ export class ErrorInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(catchError(err => {
+
+      // 404 error redirects user to 404 page
       if ([404].indexOf(err.status) !== -1) {
         this.router.navigate(['/session/404']);
       }
 
+      // 500 error redirects user to 500 page
       if ([500, 504].indexOf(err.status) !== -1) {
         this.router.navigate(['/session/500']);
       }

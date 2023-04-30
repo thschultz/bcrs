@@ -545,8 +545,11 @@ router.delete("/:id", async (req, res) => {
 });
 
 
-// FindSelectedSecurityQuestions
+/*
+Add Swagger
+*/
 
+// FindSelectedSecurityQuestions
 router.get('/:userName/security-questions', async (req, res) => {
   try {
     User.findOne({'userName': req.params.userName}, function(err, user)
