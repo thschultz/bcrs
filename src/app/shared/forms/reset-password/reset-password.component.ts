@@ -7,6 +7,7 @@
  * Description: user reset password for the bcrs project
 */
 
+// Import statements
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -25,6 +26,7 @@ export class ResetPasswordComponent implements OnInit {
   isAuthenticated: string;
   userName: string;
 
+  // Password reset FormGroup
   form: FormGroup = this.fb.group({
     password: [
       null,
@@ -42,17 +44,19 @@ export class ResetPasswordComponent implements OnInit {
     private cookieService: CookieService,
     private sessionService: SessionService,
   ) {
-
-    this.isAuthenticated = this.route.snapshot.queryParamMap.get('isAuthenticated') ?? '';
+    // getting isAuthenticated parameter from the current route snapshot and setting it to the isAuthenticated.
+    this.isAuthenticated =
+      this.route.snapshot.queryParamMap.get('isAuthenticated') ?? '';
     this.userName = this.route.snapshot.queryParamMap.get('username') ?? '';
   }
 
   ngOnInit(): void {
   }
 
+  // Updates user password
   updatePassword() {
     const password = this.form.controls['password'].value;
-
+    // Updates the user password by calling the updatePassword method of the sessionService
     this.sessionService.updatePassword(password, this.userName).subscribe({
       next: (res) => {
         this.sessionService.verifyUsername(this.userName).subscribe({
