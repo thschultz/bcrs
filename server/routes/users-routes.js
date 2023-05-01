@@ -74,7 +74,6 @@ const updateUserSchema = {
   additionalProperties: false,
 };
 
-
 /**
  * API: http://localhost:3000/api/users
  */
@@ -110,7 +109,10 @@ router.get("/", async (req, res) => {
             err.message
           );
           res.status(404).send(findAllError.toObject());
-          errorLogger({ filename: myFile, message: "Bad request, path not found." });
+          errorLogger({
+            filename: myFile,
+            message: "Bad request, path not found.",
+          });
           return;
         }
 
@@ -176,7 +178,10 @@ router.get("/:id", async (req, res) => {
           err
         );
         res.status(404).send(findByIdMongodbErrorResponse.toObject());
-        errorLogger({ filename: myFile, message: "Bad request, invalid UserId" });
+        errorLogger({
+          filename: myFile,
+          message: "Bad request, invalid UserId",
+        });
       } else {
         console.log(user);
         const findByIdResponse = new BaseResponse(
@@ -286,8 +291,8 @@ router.post("/", async (req, res) => {
       phoneNumber: newUser.phoneNumber,
       address: newUser.address,
       email: newUser.email,
-      role: standardRole
-    }
+      role: standardRole,
+    };
     User.create(createUser, function (err, user) {
       if (err) {
         console.log(err);
@@ -297,7 +302,10 @@ router.post("/", async (req, res) => {
           err
         );
         res.status(404).send(createUserMongodbErrorResponse.toObject());
-        errorLogger({ filename: myFile, message: "Bad request, please ensure request meets requirements." });
+        errorLogger({
+          filename: myFile,
+          message: "Bad request, please ensure request meets requirements.",
+        });
       } else {
         console.log(user);
         const CreateUserResponse = new BaseResponse(
@@ -368,7 +376,6 @@ router.post("/", async (req, res) => {
 // updateUser
 router.put("/:id", async (req, res) => {
   try {
-
     let updatedUser = req.body;
 
     // Checks current request body against the schema
@@ -403,7 +410,6 @@ router.put("/:id", async (req, res) => {
         errorLogger({ filename: myFile, message: "Bad request, id not found" });
         res.status(404).send(updateUserByIdMongodbErrorResponse.toObject());
       } else {
-
         //updating fields
         console.log(user);
 
@@ -427,7 +433,10 @@ router.put("/:id", async (req, res) => {
               err
             );
             res.status(501).send(saveUserMongodbErrorResponse.toObject());
-            errorLogger({ filename: myFile, message: "Bad request, please ensure request meets requirements" });
+            errorLogger({
+              filename: myFile,
+              message: "Bad request, please ensure request meets requirements",
+            });
           } else {
             //saving updated User
             console.log(savedUser);
@@ -495,7 +504,10 @@ router.delete("/:id", async (req, res) => {
           err.message
         );
         res.status(404).send(deleteUserErrorResponse.toObject());
-        errorLogger({ filename: myFile, message: "Bad request, invalid UserId" });
+        errorLogger({
+          filename: myFile,
+          message: "Bad request, invalid UserId",
+        });
         return;
       }
 
@@ -515,7 +527,10 @@ router.delete("/:id", async (req, res) => {
             err
           );
           res.json(501).send(savedUserErrorResponse.toObject());
-          errorLogger({ filename: myFile, message: "Bad request, unable to update record" });
+          errorLogger({
+            filename: myFile,
+            message: "Bad request, unable to update record",
+          });
           return;
         }
 
@@ -544,35 +559,68 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-
-/*
-Add Swagger
-*/
-
 // FindSelectedSecurityQuestions
-router.get('/:userName/security-questions', async (req, res) => {
+
+/**
+ * FindSelectedSecurityQuestions
+ * @openapi
+ * /api/users/{userName}/security-questions:
+ *   get:
+ *     tags:
+ *       - Users
+ *     description: API that finds security questions by userName
+ *     summary:  Finds Selected Security Questions by username
+ *     parameters:
+ *        - name: userName
+ *          in: path
+ *          required: true
+ *          description: Username
+ *          schema:
+ *            type: string
+ *     responses:
+ *       '200':
+ *         description: Query successful
+ *       '400':
+ *         description: Bad Request
+ *       '404':
+ *         description: Null Record
+ *       '500':
+ *         description: Server Exception
+ */
+
+router.get("/:userName/security-questions", async (req, res) => {
   try {
-    User.findOne({'userName': req.params.userName}, function(err, user)
-    {
+    User.findOne({ userName: req.params.userName }, function (err, user) {
       //error handling if server can't save.
       if (err) {
         console.log(err);
-        const findSelectedSecurityQuestionsMongodbErrorResponse = new ErrorResponse(404, 'Bad request, invalid path.', err);
-        res.status(404).send(findSelectedSecurityQuestionsMongodbErrorResponse.toObject());
-      }
-      else {
+        const findSelectedSecurityQuestionsMongodbErrorResponse =
+          new ErrorResponse(404, "Bad request, invalid path.", err);
+        res
+          .status(404)
+          .send(findSelectedSecurityQuestionsMongodbErrorResponse.toObject());
+      } else {
         //successful save
         console.log(user);
-        const findSelectedSecurityQuestionResponse = new BaseResponse('200', 'Query Successful', user.selectedSecurityQuestions);
+        const findSelectedSecurityQuestionResponse = new BaseResponse(
+          "200",
+          "Query Successful",
+          user.selectedSecurityQuestions
+        );
         res.json(findSelectedSecurityQuestionResponse.toObject());
       }
-    })
-  }
-  //server error
-  catch (e) {
+    });
+  } catch (e) {
+    //server error
     console.log(e);
-    const findSelectedSecurityQuestionsCatchErrorResponse = new ErrorResponse('500', 'Internal server error', e);
-    res.status(500).send(findSelectedSecurityQuestionsCatchErrorResponse.toObject());
+    const findSelectedSecurityQuestionsCatchErrorResponse = new ErrorResponse(
+      "500",
+      "Internal server error",
+      e
+    );
+    res
+      .status(500)
+      .send(findSelectedSecurityQuestionsCatchErrorResponse.toObject());
   }
 });
 
