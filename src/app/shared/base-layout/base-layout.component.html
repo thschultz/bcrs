@@ -51,33 +51,33 @@
             Configurations
           </button>
           <mat-menu #configs="matMenu">
-            <button mat-menu-item routerLink="user-list" class="">
+            <button mat-menu-item routerLink="user-list">
               USERS
             </button>
-            <button mat-menu-item routerLink="security-questions" class="">
+            <button mat-menu-item routerLink="security-questions">
               SECURITY QUESTIONS
             </button>
-            <!-- <button mat-menu-item routerLink="roles" class="">
+            <button mat-menu-item routerLink="roles">
               ROLES
-            </button> -->
-            <button mat-menu-item routerLink="service-list" class="">
+            </button>
+            <button mat-menu-item routerLink="service-list">
               SERVICES
             </button>
           </mat-menu>
 
-          <!-- Services Menu --><!--
+          <!-- Services Menu -->
           <button mat-menu-item [matMenuTriggerFor]="services">
             <mat-icon>build</mat-icon>
             Services
           </button>
-          <mat-menu #services="matMenu" class="service-menu">
-            <button mat-menu-item routerLink="purchases" class="">
+          <mat-menu #services="matMenu">
+            <button mat-menu-item routerLink="purchase-graph">
               Purchases by Service
             </button>
-          </mat-menu>-->
+          </mat-menu>
 
           <!-- User Profile -->
-          <button mat-menu-item routerLink="profile" class="">
+          <button mat-menu-item routerLink="profile">
             <mat-icon>person</mat-icon>
             View Profile
           </button>

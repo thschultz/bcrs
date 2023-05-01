@@ -36,7 +36,12 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ForgotPasswordComponent } from './shared/forms/forgot-password/forgot-password.component';
 import { VerifySecurityQuestionsComponent } from './shared/forms/verify-security-questions/verify-security-questions.component';
 import { ResetPasswordComponent } from './shared/forms/reset-password/reset-password.component';
+import { ProfileDetailsComponent } from './pages/profile-details/profile-details.component';
+import { RolesListComponent } from './pages/roles-list/roles-list.component';
+import { RolesDetailsComponent } from './pages/roles-details/roles-details.component';
 import { ErrorInterceptor } from './shared/error.interceptor';
+import { CartComponent } from './pages/cart/cart.component';
+import { PurchasesGraphComponent } from './pages/purchases-graph/purchases-graph.component';
 
 // Angular Materials
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -65,8 +70,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { ProfileDetailsComponent } from './pages/profile-details/profile-details.component';
-
+import { InvoiceSummaryComponent } from './shared/invoice-summary/invoice-summary.component';
 
 
 @NgModule({
@@ -94,6 +98,11 @@ import { ProfileDetailsComponent } from './pages/profile-details/profile-details
     VerifySecurityQuestionsComponent,
     ResetPasswordComponent,
     ProfileDetailsComponent,
+    RolesListComponent,
+    RolesDetailsComponent,
+    CartComponent,
+    PurchasesGraphComponent,
+    InvoiceSummaryComponent,
   ],
 
   imports: [

@@ -20,13 +20,14 @@ const UsersRoute = require("./routes/users-routes");
 const RolesRoute = require("./routes/roles-routes");
 const SecurityRoute = require("./routes/security-routes");
 const ServicesRoute = require("./routes/services-routes");
+const InvoiceRoute = require("./routes/invoice-routes");
 const Session = require("./routes/session-routes");
 const swaggerUi = require("swagger-ui-express");
 const swaggerJsdoc = require("swagger-jsdoc");
 
 const app = express(); // Express variable.
 
-mongoose.set('strictQuery', false);
+mongoose.set('strictQuery', false); // Removes depreciation warning in console
 
 /**
  * App configurations.
@@ -39,7 +40,7 @@ app.use("/", express.static(path.join(__dirname, "../dist/bcrs")));
 // default server port value.
 const PORT = process.env.PORT || 3000;
 
-// TODO: This line will be replaced with your database connection string (including username/password).
+// MongoDB connection string.
 const CONN =
   "mongodb+srv://bcrs_user:s3cret@bcrs.oks3e8a.mongodb.net/bcrs?retryWrites=true&w=majority";
 
@@ -76,6 +77,7 @@ app.use("/api/users", UsersRoute);
 app.use("/api/security", SecurityRoute);
 app.use("/api/roles", RolesRoute);
 app.use("/api/services", ServicesRoute);
+app.use("/api/invoices", InvoiceRoute);
 app.use("/api/session", Session);
 
 // Error handler for 404 errors

@@ -559,7 +559,6 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-// FindSelectedSecurityQuestions
 
 /**
  * FindSelectedSecurityQuestions
@@ -588,6 +587,7 @@ router.delete("/:id", async (req, res) => {
  *         description: Server Exception
  */
 
+// FindSelectedSecurityQuestions
 router.get("/:userName/security-questions", async (req, res) => {
   try {
     User.findOne({ userName: req.params.userName }, function (err, user) {
@@ -623,5 +623,11 @@ router.get("/:userName/security-questions", async (req, res) => {
       .send(findSelectedSecurityQuestionsCatchErrorResponse.toObject());
   }
 });
+
+
+//findUserRole
+
+
+
 
 module.exports = router;

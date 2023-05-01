@@ -7,11 +7,11 @@
  * Description: role model for the bcrs project
  */
 
-//require statements
+// require statements
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-//defining security schema
+// defining security schema
 let RoleSchema = new Schema(
   {
     text: { type: String },

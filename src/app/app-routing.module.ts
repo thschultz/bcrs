@@ -13,6 +13,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
+import { RoleGuard } from './shared/role.guard';
 import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
@@ -34,6 +35,10 @@ import { ForgotPasswordComponent } from './shared/forms/forgot-password/forgot-p
 import { VerifySecurityQuestionsComponent } from './shared/forms/verify-security-questions/verify-security-questions.component';
 import { ResetPasswordComponent } from './shared/forms/reset-password/reset-password.component';
 import { ProfileDetailsComponent } from './pages/profile-details/profile-details.component';
+import { RolesListComponent } from './pages/roles-list/roles-list.component';
+import { RolesDetailsComponent } from './pages/roles-details/roles-details.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { PurchasesGraphComponent } from './pages/purchases-graph/purchases-graph.component';
 
 const routes: Routes = [
   {
@@ -79,6 +84,16 @@ const routes: Routes = [
         component: SecurityQuestionDetailsComponent,
       },
 
+      // Roles Children
+      {
+        path: 'roles',
+        component: RolesListComponent,
+      },
+      {
+        path: 'roles/:roleId',
+        component: RolesDetailsComponent,
+      },
+
       // Service Children
       {
         path: 'service-list',
@@ -97,6 +112,12 @@ const routes: Routes = [
       {
         path: 'profile/:userId',
         component: ProfileDetailsComponent
+      },
+
+      // Purchase Graph
+      {
+        path: 'purchase-graph',
+        component: PurchasesGraphComponent
       }
     ],
     canActivate: [AuthGuard],

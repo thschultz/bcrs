@@ -1,5 +1,5 @@
 /**
- * Title: app.module.ts
+ * Title: auth.guard.ts
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 04/18/23
  * Last Modified by: Walter McCue
