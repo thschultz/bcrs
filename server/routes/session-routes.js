@@ -312,8 +312,11 @@ router.post("/register", async (req, res) => {
       return;
     }
 
+    // search to check if the user already exists
     User.findOne({ userName: req.body.userName }, (err, user) => {
       console.log("user --> " + user);
+
+      // server error
       if (err) {
         console.log(err);
         const registerUserMongodbErrorResponse = new ErrorResponse(
@@ -324,12 +327,15 @@ router.post("/register", async (req, res) => {
         errorLogger({ filename: myFile, message: "Bad request, username in use" });
         res.status(401).send(registerUserMongodbErrorResponse.toObject());
       } else {
+
+        // if the user does not exist then post the new information
         if (!user) {
           let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds);
           standardRole = {
             text: "standard",
           };
 
+          // the data for user creation
           let registeredUser = {
             userName: req.body.userName,
             password: hashedPassword,
@@ -342,6 +348,7 @@ router.post("/register", async (req, res) => {
             selectedSecurityQuestions: req.body.selectedSecurityQuestions,
           };
 
+          // create the new user
           User.create(registeredUser, (err, newUser) => {
             if (err) {
               console.log(err);
@@ -367,6 +374,8 @@ router.post("/register", async (req, res) => {
             }
           });
         } else {
+
+          // send an err if the user does exist
           console.log(`Username ${req.body.userName} already exists.`);
           const userInUseError = new BaseResponse(
             400,
@@ -382,6 +391,8 @@ router.post("/register", async (req, res) => {
       }
     });
   } catch (e) {
+
+    // all other errors
     console.log(err);
     const registerUserCatchErrorResponse = new ErrorResponse(
       500,
@@ -455,6 +466,7 @@ router.get("/verify/users/:userName", async (req, res) => {
     res.status(500).send(verifyUserCatchErrorResponse.toObject());
   }
 });
+
 
 
 /**
