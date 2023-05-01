@@ -115,3 +115,4 @@
 [4/24/2023, 10:28:11 PM] server	 users-routes.js - Bad request, invalid UserId
 >>>>>>> e41467dfa9a9d9707b687bc8b40fcd957ad26c90
 [4/25/2023, 6:34:27 PM] server	 session-routes.js - Username already exists.
+[4/28/2023, 2:20:18 PM] server	 session-routes.js - User brown failed to answer security questions correctly

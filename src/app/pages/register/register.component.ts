@@ -25,6 +25,7 @@ import { SelectedSecurityQuestion } from '../../shared/models/selected-security-
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
   providers: [{
+    // injected service
     provide: STEPPER_GLOBAL_OPTIONS, useValue: {showError: true}
   }]
 })
@@ -34,6 +35,7 @@ export class RegisterComponent implements OnInit {
   user: User;
   selectedSecurityQuestions: SelectedSecurityQuestion[];
 
+  // contact form controls defined
   contactForm: FormGroup = this.fb.group({
     firstName: [null, Validators.compose([Validators.required])],
     lastName: [null, Validators.compose([Validators.required])],
@@ -42,6 +44,7 @@ export class RegisterComponent implements OnInit {
     address: [null, Validators.compose([Validators.required])]
   });
 
+  // security question form controls defined
   sqForm: FormGroup = this.fb.group({
     securityQuestion1: [null, Validators.compose([Validators.required])],
     securityQuestion2: [null, Validators.compose([Validators.required])],
@@ -51,6 +54,7 @@ export class RegisterComponent implements OnInit {
     answerToSecurityQuestion3: [null, Validators.compose([Validators.required])]
   });
 
+  // credential form controls defined
   credForm: FormGroup = this.fb.group({
     userName: [null, Validators.compose([Validators.required])],
     password: [null, Validators.compose([Validators.required, Validators.pattern('^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$')])],
@@ -63,6 +67,8 @@ export class RegisterComponent implements OnInit {
                 this.user = {} as User;
                 this.selectedSecurityQuestions = [];
 
+                // request the security questions from the security API
+                // to dynamically populate the sqForm
                 this.securityQuestionsService.findAllSecurityQuestions().subscribe({
                   next: (res) => {
                     this.securityQuestions = res.data;
@@ -77,11 +83,13 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // initiated when the register button is clicked
   register() {
     const contactInformation = this.contactForm.value;
     const securityQuestions = this.sqForm.value;
     const credentials = this.credForm.value;
 
+    // determine the question / answer pairs
     this.selectedSecurityQuestions = [
       {
         questionText: securityQuestions.securityQuestion1,
@@ -98,6 +106,7 @@ export class RegisterComponent implements OnInit {
     ]
     console.log(this.selectedSecurityQuestions);
 
+    // define user information for posting to the database
     this.user = {
       userName: credentials.userName,
       password: credentials.password,
@@ -110,9 +119,12 @@ export class RegisterComponent implements OnInit {
     }
     console.log(this.user);
 
+    // call to the register API
     this.sessionService.register(this.user).subscribe({
       next: (res) => {
+        // set the cookie data
         this.cookieService.set('sessionuser', credentials.userName, 1);
+        // allow entry to the home page
         this.router.navigate(['/']);
       },
       error: (e) => {
