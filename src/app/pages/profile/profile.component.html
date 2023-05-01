@@ -2,18 +2,39 @@
   Title: profile.component.html
   Author: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
   Date: 04/19/23
-  Last Modified by: Walter McCue
-  Last Modification Date: 04/26/23
+  Last Modified by: Thomas Schultz
+  Last Modification Date: 04/29/23
   Description: html for the bcrs project
 -->
+<h1 class="page-header" style="padding-top: 15px;">Your Profile</h1>
+<mat-card class="card-style">
 
-<div fxLayout="column">
+  <div fxLayout>
+    <div fxFlex class="flex-container">
 
-  <!-- Page Header -->
-  <div fxFlex>
-    <h1>{{user.firstName}}</h1>
+      <!-- Profile Info -->
+      <div class="content-container">
+        <div fxFlex>
+          <h1>First Name : {{user.firstName}}</h1>
+          <h1>Last Name : {{user.lastName}}</h1>
+          <h1>Address: {{user.address}}</h1>
+          <h1>Phone Number : {{user.phoneNumber}}</h1>
+          <h1>Email : {{user.email}}</h1>
+          <button mat-button type="button" class="editButton" routerLink="/profile/{{ user._id }}">
+            <i class="fa-solid fa-pen-to-square"></i> EDIT YOUR PROFILE
+          </button>
+        </div>
+      </div>
+
+      <!-- House Slytherin Image -->
+      <div class="content-container">
+        <div class="img-container house-img">
+          <img src="/assets/pngwing.com.png" alt="Slytherin Emblem" />
+        </div>
+      </div>
+
+    </div>
+
   </div>
-  <div><button mat-button type="button" routerLink="/profile/{{ user._id }}">
-      <i class="fa-solid fa-pen-to-square"></i>
-    </button></div>
-</div>
+
+</mat-card>

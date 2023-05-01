@@ -11,7 +11,7 @@
 import { Component, OnInit } from '@angular/core';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { SecurityQuestion } from 'src/app/shared/models/security-question.interface';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgModel, Validators } from '@angular/forms';
 import { Message } from 'primeng/api';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
@@ -34,14 +34,17 @@ export class RegisterComponent implements OnInit {
   errorMessages: Message[];
   user: User;
   selectedSecurityQuestions: SelectedSecurityQuestion[];
+  securityMenu1 = '';
+  securityMenu2 = '';
+  securityMenu3 = '';
 
   // contact form controls defined
   contactForm: FormGroup = this.fb.group({
-    firstName: [null, Validators.compose([Validators.required])],
-    lastName: [null, Validators.compose([Validators.required])],
-    phoneNumber: [null, Validators.compose([Validators.required])],
-    email: [null, Validators.compose([Validators.required, Validators.email])],
-    address: [null, Validators.compose([Validators.required])]
+    firstName: [null, Validators.compose([ Validators.required, Validators.minLength(3), Validators.maxLength(35) ])],
+    lastName: [null, Validators.compose([ Validators.required, Validators.minLength(3), Validators.maxLength(35) ])],
+    phoneNumber: [null, Validators.compose([ Validators.required, Validators.pattern('\\d{3}\\-\\d{3}-\\d{4}') ])],
+    email: [null, Validators.compose([ Validators.required, Validators.email])],
+    address: [null, Validators.compose([ Validators.required, Validators.minLength(3), Validators.maxLength(75) ])]
   });
 
   // security question form controls defined
@@ -78,6 +81,26 @@ export class RegisterComponent implements OnInit {
                     console.log(e);
                   }
                 });
+              }
+
+              // if Drop Down Menu 1 is selected, returns false
+              // if not selected, returns true and disables second drop down
+              isSelectedMenu1() {
+                if (this.securityMenu1) {
+                  return false
+                } else {
+                  return true
+                }
+              }
+
+              // if Drop Down Menu 2 is selected, returns false
+              // if not selected, returns true and disables third drop down
+              isSelectedMenu2() {
+                if (this.securityMenu2) {
+                  return false
+                } else {
+                  return true
+                }
               }
 
   ngOnInit(): void {
@@ -124,6 +147,7 @@ export class RegisterComponent implements OnInit {
       next: (res) => {
         // set the cookie data
         this.cookieService.set('sessionuser', credentials.userName, 1);
+        this.cookieService.set('session-id', res.data._id, 1);
         // allow entry to the home page
         this.router.navigate(['/']);
       },

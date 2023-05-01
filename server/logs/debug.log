@@ -51824,7 +51824,11 @@
   _id: new ObjectId("644bc17bdfc7f2a235d52028"),
   __v: 0
 }
+<<<<<<< HEAD
 [4/28/2023, 7:24:48 AM] server	 users-routes.js - {
+=======
+[4/29/2023, 10:41:48 AM] server	 users-routes.js - {
+>>>>>>> 1ecdf39bd35940badc68ca4a9f398475c23c2774
   _id: new ObjectId("6440924a773327e3f77e7133"),
   userName: 'testUser1',
   password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
@@ -51837,6 +51841,7 @@
   dateCreated: 2023-04-20T01:06:14.129Z,
   selectedSecurityQuestions: [],
   __v: 0,
+<<<<<<< HEAD
   dateModified: 2023-04-27T22:14:52.175Z
 },{
   _id: new ObjectId("6440c9ae3c98e2d36a50236e"),
@@ -52503,4 +52508,7 @@
   text: 'What is your favorite color?',
   isDisabled: false,
   __v: 0
+=======
+  dateModified: 2023-04-29T15:21:57.621Z
+>>>>>>> 1ecdf39bd35940badc68ca4a9f398475c23c2774
 }

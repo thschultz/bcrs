@@ -19,6 +19,7 @@ import { VerifySecurityQuestionModel } from '../models/verify-security-question.
 
 export class SessionService {
   constructor(private http: HttpClient) { }
+
   //login function from session API
   login(userName: string, password: string): Observable<any> {
     return this.http.post('/api/session/login', {
@@ -27,6 +28,7 @@ export class SessionService {
     });
   }
 
+  // Registers a new User
   register(user: User): Observable<any> {
     return this.http.post('/api/session/register', {
       userName: user.userName,
@@ -40,10 +42,12 @@ export class SessionService {
     })
   }
 
+  // Verifies a userName
   verifyUsername(username: string): Observable<any> {
     return this.http.get('/api/session/verify/users/' + username);
   }
 
+  // Verifies a selected user's security questions against what is stored in the database for that user
   verifySecurityQuestions(model: VerifySecurityQuestionModel, username: string): Observable<any> {
     return this.http.post('/api/session/verify/users/' + username + '/security-questions', {
       questionText1: model.question1,
@@ -55,6 +59,7 @@ export class SessionService {
     })
   }
 
+  // Resets the password for a user
   updatePassword(password: string, username: string): Observable<any> {
     return this.http.post('/api/session/users/' + username + '/reset-password', {
       password

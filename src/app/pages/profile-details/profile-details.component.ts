@@ -93,7 +93,7 @@ export class ProfileDetailsComponent implements OnInit {
 
   //cancel function to lead back to user list page
   cancel(): void {
-    this.router.navigate(['/'])
+    this.router.navigate(['/profile'])
   }
 
 }

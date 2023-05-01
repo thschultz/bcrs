@@ -4,7 +4,7 @@ Author: Richard Krasso
 Contributors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
 Date: 04/16/23
 Last Modified by: Walter McCue
-Last Modification Date: 04/16/23
+Last Modification Date: 04/29/23
 Description: component styling for the bcrs project
 */
 
@@ -19,6 +19,10 @@ Description: component styling for the bcrs project
   position: absolute;
   top: 20px;
   left: 20px;
+}
+
+.bcrs-mobile {
+  display: none;
 }
 
 .main-content {
@@ -63,6 +67,17 @@ footer {
   .footer-content {
     padding: 0 5px;
     text-align: center;
+  }
+
+  .bcrs {
+    display: none;
+  }
+
+  .bcrs-mobile {
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 5px;
   }
 
 }

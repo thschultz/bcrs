@@ -44,6 +44,12 @@
                   <mat-error class="error" *ngIf="contactForm.controls['firstName'].hasError('required') && contactForm.controls['firstName'].touched">
                     First name is a required field.
                   </mat-error>
+                  <mat-error *ngIf="contactForm.controls['firstName'].hasError('minlength') && contactForm.controls['firstName'].touched">
+                    First Name must be at least 3 characters.
+                  </mat-error>
+                  <mat-error *ngIf="contactForm.controls['firstName'].hasError('maxlength') && contactForm.controls['firstName'].touched">
+                    First Name must be less than 35 characters.
+                  </mat-error>
                 </mat-form-field>
 
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -53,6 +59,12 @@
                   <input matInput required formControlName="lastName">
                   <mat-error class="error" *ngIf="contactForm.controls['lastName'].hasError('required') && contactForm.controls['lastName'].touched">
                     Last name is a required field.
+                  </mat-error>
+                  <mat-error *ngIf="contactForm.controls['lastName'].hasError('minlength') && contactForm.controls['lastName'].touched">
+                    First Name must be at least 3 characters.
+                  </mat-error>
+                  <mat-error *ngIf="contactForm.controls['lastName'].hasError('maxlength') && contactForm.controls['lastName'].touched">
+                    First Name must be less than 35 characters.
                   </mat-error>
                 </mat-form-field>
               </mat-list-item>
@@ -66,6 +78,9 @@
                   <input matInput required formControlName="phoneNumber">
                   <mat-error class="error" *ngIf="contactForm.controls['phoneNumber'].hasError('required') && contactForm.controls['phoneNumber'].touched">
                     Phone number is a required field.
+                  </mat-error>
+                  <mat-error *ngIf="contactForm.controls['phoneNumber'].hasError('pattern') && contactForm.controls['phoneNumber'].touched">
+                    Phone number must be formatted as 999-999-9999.
                   </mat-error>
                 </mat-form-field>
 
@@ -93,6 +108,12 @@
                   <mat-error class="error" *ngIf="contactForm.controls['address'].hasError('required') && contactForm.controls['address'].touched">
                     Address is a required field.
                   </mat-error>
+                  <mat-error *ngIf="contactForm.controls['address'].hasError('minlength') && contactForm.controls['address'].touched">
+                    Last Name must be at least 3 characters.
+                  </mat-error>
+                  <mat-error *ngIf="contactForm.controls['address'].hasError('maxlength') && contactForm.controls['address'].touched">
+                    Last Name must be less than 75 characters.
+                  </mat-error>
                 </mat-form-field>
               </mat-list-item>
             </mat-list>
@@ -119,9 +140,12 @@
               <mat-list-item>
                 <mat-form-field fxFlex appearance="fill">
                   <mat-label>Security Question</mat-label>
-                  <mat-select required formControlName="securityQuestion1">
-                    <mat-option *ngFor="let question of securityQuestions" [value]="question.text">
-                      {{ question.text }}
+                  <mat-select required formControlName="securityQuestion1" [(ngModel)]="securityMenu1">
+                    <mat-option *ngFor="let question of securityQuestions"
+                      [value]="question.text"
+                      [disabled]="securityMenu2 === question.text"
+                      [disabled]="securityMenu3 === question.text"
+                    >{{ question.text }}
                     </mat-option>
                   </mat-select>
                   <mat-error class="error" *ngIf="sqForm.controls['securityQuestion1'].hasError('required') && sqForm.controls['securityQuestion1'].touched">
@@ -131,7 +155,7 @@
 
                 &nbsp;&nbsp;&nbsp;&nbsp;
 
-                <!-- Security Anwser #1 -->
+                <!-- Security Answer #1 -->
                 <mat-form-field fxFlex appearance="fill">
                   <mat-label>Answer</mat-label>
                   <input required matInput formControlName="answerToSecurityQuestion1">
@@ -148,9 +172,12 @@
               <mat-list-item>
                 <mat-form-field fxFlex appearance="fill">
                   <mat-label>Security Question</mat-label>
-                  <mat-select required formControlName="securityQuestion2">
-                    <mat-option *ngFor="let question of securityQuestions" [value]="question.text">
-                      {{ question.text }}
+                  <mat-select required formControlName="securityQuestion2" [(ngModel)]="securityMenu2" [disabled]="isSelectedMenu1()">
+                    <mat-option *ngFor="let question of securityQuestions"
+                      [value]="question.text"
+                      [disabled]="securityMenu1 === question.text"
+                      [disabled]="securityMenu3 === question.text"
+                    >{{ question.text }}
                     </mat-option>
                   </mat-select>
                   <mat-error class="error" *ngIf="sqForm.controls['securityQuestion2'].hasError('required') && sqForm.controls['securityQuestion2'].touched">
@@ -160,7 +187,7 @@
 
                 &nbsp;&nbsp;&nbsp;&nbsp;
 
-                <!-- Security Anwser #2 -->
+                <!-- Security Answer #2 -->
                 <mat-form-field fxFlex appearance="fill">
                   <mat-label>Answer</mat-label>
                   <input required matInput formControlName="answerToSecurityQuestion2">
@@ -177,9 +204,12 @@
               <mat-list-item>
                 <mat-form-field fxFlex appearance="fill">
                   <mat-label>Security Question</mat-label>
-                  <mat-select required formControlName="securityQuestion3">
-                    <mat-option *ngFor="let question of securityQuestions" [value]="question.text">
-                      {{ question.text }}
+                  <mat-select required formControlName="securityQuestion3" [(ngModel)]="securityMenu3" [disabled]="isSelectedMenu2()">
+                    <mat-option *ngFor="let question of securityQuestions"
+                      [value]="question.text"
+                      [disabled]="securityMenu1 === question.text"
+                      [disabled]="securityMenu2 === question.text"
+                    >{{ question.text }}
                     </mat-option>
                   </mat-select>
                   <mat-error class="error" *ngIf="sqForm.controls['securityQuestion3'].hasError('required') && sqForm.controls['securityQuestion3'].touched">
@@ -189,7 +219,7 @@
 
                 &nbsp;&nbsp;&nbsp;&nbsp;
 
-                <!-- Security Anwser #3 -->
+                <!-- Security Answer #3 -->
                 <mat-form-field fxFlex appearance="fill">
                   <mat-label>Answer</mat-label>
                   <input required matInput formControlName="answerToSecurityQuestion3">
@@ -274,7 +304,7 @@
     </mat-card-content>
   </mat-card>
 
-  <div>
+  <div class="card-style">
     <a routerLink="/session/login" class="neon-btn" style="width: 200px;">Employee Sign In</a>
   </div>
 

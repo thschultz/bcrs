@@ -35,16 +35,6 @@ const serviceSchema = {
   additionalProperties: false
 }
 
-// Schema for disabled validation
-const disabledSchema = {
-  type: 'object',
-  properties: {
-    isDisabled: {type: 'boolean'},
-  },
-  required: ['isDisabled'],
-  additionalProperties: false
-}
-
 
 /**
  * API: http://localhost:3000/api/services
@@ -78,9 +68,9 @@ router.get("/", async (req, res) => {
 
         // Server Error
         if (err) {
-          const findAllError = new ErrorResponse(500, "Internal server error", err.message);
-          res.status(500).send(findAllError.toObject());
-          errorLogger({ filename: myFile, message: "Internal server error" });
+          const findAllError = new ErrorResponse(404, "Bad request, path not found.", err.message);
+          res.status(404).send(findAllError.toObject());
+          errorLogger({ filename: myFile, message: "Bad request, path not found." });
           return;
         }
 
@@ -133,9 +123,9 @@ router.get("/:id", async (req, res) => {
       // Server error
       if (err) {
         console.log(err);
-        const findByIdError = new ErrorResponse(500, "Internal server error", err);
-        errorLogger({ filename: myFile, message: "Internal server error" });
-        res.status(500).send(findByIdError.toObject());
+        const findByIdError = new ErrorResponse(404, "Bad request, id not found.", err);
+        errorLogger({ filename: myFile, message: "Bad request, id not found." });
+        res.status(404).send(findByIdError.toObject());
         return
       }
 
@@ -286,31 +276,34 @@ router.post('/', async (req, res) => {
 router.put("/:id", async (req, res) => {
   try {
 
+    // New service Object
+    let updateService = {
+      serviceName: req.body.serviceName,
+      price: req.body.price
+    }
+
+    // Checks current request body against the schema
+    const validator = ajv.compile(serviceSchema);
+    const valid = validator(updateService)
+
+    // If invalid return 400 Error
+    if (!valid) {
+      console.log('Bad Request, unable to validate');
+      const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
+      errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+      res.status(400).send(createServiceError.toObject());
+      return
+    }
+
     // Finds Service by id
     Service.findOne({ _id: req.params.id }, function (err, service) {
 
       //server error
       if (err) {
         console.log(err);
-        const updateError = new ErrorResponse(500, "Internal server error", err);
-        errorLogger({ filename: myFile, message: "Internal server error" });
-        res.status(500).send(updateError.toObject());
-        return
-      }
-
-      // Checks current request body against the schema
-      const validator = ajv.compile(serviceSchema);
-      const valid = validator({
-        serviceName: req.body.serviceName,
-        price: req.body.price
-      })
-
-      // If invalid return 400 Error
-      if (!valid) {
-        console.log('Bad Request, unable to validate');
-        const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
-        errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
-        res.status(400).send(createServiceError.toObject());
+        const updateError = new ErrorResponse(404, "Bad Request, id not found", err);
+        errorLogger({ filename: myFile, message: "Bad request, id not found" });
+        res.status(404).send(updateError.toObject());
         return
       }
 
@@ -387,27 +380,12 @@ router.delete('/:id', async (req, res) => {
       // Server error
       if (err) {
         console.log(err);
-        const deleteServiceError = new ErrorResponse(500, 'Internal server error', err.message);
-        errorLogger({ filename: myFile, message: "Internal server error" });
-        res.status(500).send(deleteServiceError.toObject());
+        const deleteServiceError = new ErrorResponse(404, 'Bad request, id not found.', err.message);
+        errorLogger({ filename: myFile, message: "Bad request, id not found." });
+        res.status(404).send(deleteServiceError.toObject());
         return
       }
-      /*
-      // Checks current request body against the schema
-      const validator = ajv.compile(disabledSchema);
-      const valid = validator({
-        isDisabled: req.body.isDisabled
-      })
 
-      // If invalid return 400 Error
-      if (!valid) {
-        console.log('Bad Request, unable to validate');
-        const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
-        errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
-        res.status(400).send(createServiceError.toObject());
-        return
-      }
-      */
       // sets disabled status instead of deleting the record
       console.log(service);
       service.set({

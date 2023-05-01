@@ -1,11 +1,11 @@
-/**
- * Title: profile.component.ts
- * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
- * Date: 04/19/23
- * Last Modified by: Walter McCue
- * Last Modification Date: 04/26/23
- * Description: service list component for the bcrs project
- */
+
+// Title: profile.component.ts
+// Author: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+// Date: 04/19/23
+// Last Modified by: Thomas Schultz
+// Last Modification Date: 04/29/23
+// Description: html for the bcrs project
+
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -30,7 +30,7 @@ export class ProfileComponent implements OnInit {
     this.user = {} as User;
 
 
-    // Collects user data and pre-populates the input fields in the form
+    // Collects user data and can be displayed on the profile page
     this.userService.findUserById(this.userId).subscribe({
       next: (res) => {
         this.user = res.data;
