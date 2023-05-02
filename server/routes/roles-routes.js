@@ -176,7 +176,10 @@ router.put('/:roleId', async(req, res) => {
 router.delete('/:roleId', async (req, res) => {
   try {
 
+    // findOne function to find a role by Id
     Role.findOne({'_id': req.params.roleId}, function(err, role) {
+
+      // If role is not found
       if (err) {
         console.log(err);
           const deleteRoleError = new ErrorResponse(404, 'Bad request, role not found', err);
@@ -185,8 +188,10 @@ router.delete('/:roleId', async (req, res) => {
           return
       }
 
+      // if Role is found
       console.log(role);
 
+      // searches users for roles that match the currently requested role
       User.aggregate(
         [
           {
@@ -205,27 +210,31 @@ router.delete('/:roleId', async (req, res) => {
         ], function(err, users) {
           console.log(users);
 
+          // if there is a server error
           if (err) {
             console.log(err);
-            const deleteRoleError = new ErrorResponse(501, 'MongoDB error', err);
-            res.status(501).send(deleteRoleError.toObject());
-            errorLogger({ filename: myFile, message: "MongoDB error" });
+            const deleteRoleError = new ErrorResponse(500, 'Internal server error', err);
+            res.status(500).send(deleteRoleError.toObject());
+            errorLogger({ filename: myFile, message: "Internal server error" });
             return
           }
 
+          // if users have the role, returns an error
           if (users.length > 0) {
             console.log(`Role ${role.text} is already in use and cannot be deleted.`);
-            const deleteRoleError = new ErrorResponse(400, `Role ${role.text} is already in use and cannot be deleted.`, role);
-            res.status(400).send(deleteRoleError.toObject());
+            const deleteRoleError = new ErrorResponse(501, `Role ${role.text} is already in use and cannot be deleted.`, role);
+            res.status(501).send(deleteRoleError.toObject());
             errorLogger({ filename: myFile, message: `Role <${role.text}> is already in use and cannot be deleted.` });
             return
           }
 
+          // if no users have the role, confirms that the role can be deleted
           console.log(`Role <${role.text}> is not in use and can be safely removed.`);
           role.set({isDisabled: true});
 
           role.save(function(err, updatedRole) {
 
+            // Internal server error
             if (err) {
               const deleteRoleError = new ErrorResponse(500, 'Internal server error', err);
               res.status(500).send(deleteRoleError.toObject());
@@ -233,6 +242,7 @@ router.delete('/:roleId', async (req, res) => {
               return
             }
 
+            // updates the role to disabled
             console.log(updatedRole);
             const updatedRoleResponse = new BaseResponse(200, `Role ${role.text} has been removed successfully.`, updatedRole);
             res.json(updatedRoleResponse.toObject());
@@ -242,6 +252,7 @@ router.delete('/:roleId', async (req, res) => {
       )
     })
 
+  // Internal server errror
   } catch (e) {
     const deleteRoleError = new ErrorResponse(500, 'Internal server error', e.message);
     res.status(500).send(deleteRoleError.toObject());
