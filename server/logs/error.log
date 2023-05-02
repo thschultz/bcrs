@@ -116,3 +116,11 @@
 >>>>>>> e41467dfa9a9d9707b687bc8b40fcd957ad26c90
 [4/25/2023, 6:34:27 PM] server	 session-routes.js - Username already exists.
 [4/28/2023, 2:20:18 PM] server	 session-routes.js - User brown failed to answer security questions correctly
+[5/1/2023, 10:32:03 PM] server	 roles-routes.js - Bad Request, unable to validate
+[5/1/2023, 10:32:24 PM] server	 roles-routes.js - Bad Request, unable to validate
+[5/1/2023, 10:32:31 PM] server	 roles-routes.js - Bad Request, unable to validate
+[5/1/2023, 10:32:36 PM] server	 roles-routes.js - Bad Request, unable to validate
+[5/1/2023, 10:33:08 PM] server	 roles-routes.js - Bad Request, unable to validate
+[5/1/2023, 10:33:45 PM] server	 roles-routes.js - Bad Request, unable to validate
+[5/1/2023, 10:34:00 PM] server	 roles-routes.js - Bad Request, unable to validate
+[5/1/2023, 10:34:07 PM] server	 roles-routes.js - Bad Request, unable to validate

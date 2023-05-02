@@ -25,6 +25,16 @@ const { async } = require('rxjs');
 const myFile = 'roles-routes.js';
 const ajv = new Ajv();
 
+// Schema for  create and update validation
+const roleSchema = {
+  type: 'object',
+  properties: {
+    text: {type: 'string'}
+  },
+  required: ['text'],
+  additionalProperties: false
+}
+
 
 // findRolesUsers
 
@@ -87,6 +97,22 @@ router.get('/:roleId', async(req, res) => {
 // createRole
 router.post('/', async(req, res) => {
   try {
+
+    let newRole = req.body
+
+    // Checks current request body against the schema
+    const validator = ajv.compile(roleSchema);
+    const valid = validator(newRole)
+
+    // If invalid return 400 Error
+    if (!valid) {
+      console.log('Bad Request, unable to validate');
+      const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
+      errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+      res.status(400).send(createServiceError.toObject());
+      return
+    }
+
     Role.findOne({'text': req.body.text}, (err, role) => {
       if(err) {
         console.log(err);
@@ -136,6 +162,22 @@ router.post('/', async(req, res) => {
 // updateRole
 router.put('/:roleId', async(req, res) => {
   try {
+
+    let updateRole = req.body
+
+    // Checks current request body against the schema
+    const validator = ajv.compile(roleSchema);
+    const valid = validator(updateRole)
+
+    // If invalid return 400 Error
+    if (!valid) {
+      console.log('Bad Request, unable to validate');
+      const createServiceError = new ErrorResponse(400, 'Bad Request, unable to validate', valid);
+      errorLogger({ filename: myFile, message: "Bad Request, unable to validate" });
+      res.status(400).send(createServiceError.toObject());
+      return
+    }
+
     Role.findOne({'_id': req.params.roleId}, (err, role) => {
       if(err) {
         console.log(err);

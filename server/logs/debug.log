@@ -52548,3 +52548,9 @@
   isDisabled: false,
   __v: 0
 }
+[5/1/2023, 10:36:58 PM] server	 roles-routes.js - {
+  text: 'validation test1',
+  isDisabled: true,
+  _id: new ObjectId("64507669a47be38effaad568"),
+  __v: 0
+}
