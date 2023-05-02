@@ -55,6 +55,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+
 // findRolesById
 router.get('/:roleId', async(req, res) => {
   try {
@@ -81,6 +82,8 @@ router.get('/:roleId', async(req, res) => {
     res.status(500).send(findRoleByIdCatchErrorResponse.toObject());
   }
 })
+
+
 // createRole
 router.post('/', async(req, res) => {
   try {
@@ -129,6 +132,7 @@ router.post('/', async(req, res) => {
   }
 })
 
+
 // updateRole
 router.put('/:roleId', async(req, res) => {
   try {
@@ -152,7 +156,7 @@ router.put('/:roleId', async(req, res) => {
             res.status(500).send(updatedRoleMongodbErrorResponse.toObject());
           }
           else {
-            console.log(updatedRole);
+            console.log(updateRole);
             const updatedRoleResponse = new BaseResponse(200, 'Query successful', updateRole);
             res.json(updatedRoleResponse.toObject());
           }
