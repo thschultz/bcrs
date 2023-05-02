@@ -36,6 +36,11 @@ const roleSchema = {
 }
 
 
+/**
+ * API: http://localhost:3000/api/roles
+ */
+
+
 // findRolesUsers
 
 router.get('/', async (req, res) => {
