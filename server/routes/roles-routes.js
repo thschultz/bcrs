@@ -58,7 +58,7 @@ router.get('/', async (req, res) => {
 // findRolesById
 router.get('/:roleId', async(req, res) => {
   try {
-    Role.findOne({'_id': req.params.roleId}, function(err, Role)
+    Role.findOne({'_id': req.params.roleId}, function(err, role)
     {
       if (err)
       {
