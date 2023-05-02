@@ -152,7 +152,7 @@ router.put('/:roleId', async(req, res) => {
         role.save((err, updateRole) => {
           if(err) {
             console.log(err);
-            const updatedRoleMongodbErrorResponse = new ErrorRespone(500, 'Internal server error', err);
+            const updatedRoleMongodbErrorResponse = new ErrorResponse(500, 'Internal server error', err);
             res.status(500).send(updatedRoleMongodbErrorResponse.toObject());
           }
           else {
