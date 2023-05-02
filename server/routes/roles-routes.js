@@ -171,6 +171,7 @@ router.put('/:roleId', async(req, res) => {
   }
 })
 
+
 // deleteRole
 router.delete('/:roleId', async (req, res) => {
   try {
@@ -240,7 +241,7 @@ router.delete('/:roleId', async (req, res) => {
         }
       )
     })
-    
+
   } catch (e) {
     const deleteRoleError = new ErrorResponse(500, 'Internal server error', e.message);
     res.status(500).send(deleteRoleError.toObject());
