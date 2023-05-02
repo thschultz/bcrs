@@ -625,6 +625,33 @@ router.get("/:userName/security-questions", async (req, res) => {
 });
 
 
+/**
+ * findUserRole
+ * @openapi
+ * /api/users/{userName}/role:
+ *   get:
+ *     tags:
+ *       - Users
+ *     description: API that finds role by userName
+ *     summary:  Finds role by username
+ *     parameters:
+ *        - name: userName
+ *          in: path
+ *          required: true
+ *          description: Username
+ *          schema:
+ *            type: string
+ *     responses:
+ *       '200':
+ *         description: Query successful
+ *       '400':
+ *         description: Bad Request
+ *       '404':
+ *         description: User not found
+ *       '500':
+ *         description: Server Exception
+ */
+
 //findUserRole
 router.get('/:userName/role', async (req, res) => {
   try {
