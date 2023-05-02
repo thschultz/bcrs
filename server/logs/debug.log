@@ -52512,3 +52512,39 @@
   dateModified: 2023-04-29T15:21:57.621Z
 >>>>>>> 1ecdf39bd35940badc68ca4a9f398475c23c2774
 }
+[5/1/2023, 7:18:57 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What was your first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'What is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("644bc788762dbcb37a2df38a"),
+  text: 'What is your favorite color?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("644de443e99c14c0983fb4e5"),
+  text: 'Who was your favorite teacher?',
+  isDisabled: false,
+  __v: 0
+}
