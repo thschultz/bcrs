@@ -626,8 +626,36 @@ router.get("/:userName/security-questions", async (req, res) => {
 
 
 //findUserRole
+router.get('/:userName/role', async (req, res) => {
+  try {
 
+    // findOne function to find user by userName
+    User.findOne({'userName': req.params.userName}, function(err, user) {
 
+      // If userName not found
+      if (err) {
+        console.log(err);
+        const findUserError = new ErrorResponse(404, 'Bad request, userName not found', err);
+        res.status(404).send(findUserError.toObject());
+        errorLogger({ filename: myFile, message: "Bad request, userName not found" });
+        return
+      }
+
+      // if user found, return user role
+      console.log(user);
+      const findUserResponse = new BaseResponse(200, 'Query successful', user.role);
+      debugLogger({ filename: myFile, message: user.role });
+      res.json(findUserResponse.toObject());
+    })
+
+    // Server error
+  } catch (e) {
+    console.log(e);
+    const findUserError = new ErrorResponse(500, 'Internal server error', e.message);
+    res.status(500).send(findUserError.toObject());
+    errorLogger({ filename: myFile, message: "Internal server error" });
+  }
+})
 
 
 module.exports = router;
