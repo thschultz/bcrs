@@ -57,6 +57,66 @@ const invoiceSchema = {
 
 // createInvoice
 
+/**
+ * createInvoice
+ * @openapi
+ * /api/invoices/{userName}:
+ *   post:
+ *     tags:
+ *       - Invoices
+ *     description: API that creates a new invoice
+ *     summary: Creates a new invoice.
+ *     parameters:
+ *        - name: Username
+ *          in: path
+ *          required: true
+ *          description: Username
+ *          schema:
+ *            type: string
+ *     requestBody:
+ *       description: Invoice data
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             required:
+ *               - lineItems
+ *               - partsAmount
+ *               - laborAmount
+ *               - lineItemTotal
+ *               - total
+ *             properties:
+ *               lineItems:
+ *                 type: object
+ *                 required:
+ *                   - title
+ *                   - price
+ *                 properties:
+ *                  title:
+ *                    type: string
+ *                  price:
+ *                    type: number
+ *               partsAmount:
+ *                 type: number
+ *               laborAmount:
+ *                 type: number
+ *               lineItemTotal:
+ *                 type: number
+ *               total:
+ *                 type: number
+ *     responses:
+ *       '200':
+ *         description: Invoice successfully created
+ *       '400':
+ *         description: Bad Request
+ *       '404':
+ *         description: Null record
+ *       '500':
+ *         description: Server Exception
+ *       '501':
+ *         description: MongoDB Exception
+ */
+
 router.post("/:userName", async (req, res) => {
   try {
     const newInvoice = {
@@ -101,6 +161,25 @@ router.post("/:userName", async (req, res) => {
 
 //findPurchasesByService
 
+/**
+ * findPurchaseByService
+ * @openapi
+ * /api/invoices/purchases-graph:
+ *   get:
+ *     tags:
+ *       - Invoices
+ *     description:  API for finding purchase by service
+ *     summary: view purchases by service
+ *     responses:
+ *       '200':
+ *         description: Success
+ *       '400':
+ *         description: Bad Request route.params.id is not a number
+ *       '404':
+ *         description: Not Found
+ *       '500':
+ *         description: server error
+ */
 router.get("/purchases-graph", async (req, res) => {
   try {
     Invoice.aggregate(
