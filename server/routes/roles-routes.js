@@ -172,6 +172,80 @@ router.put('/:roleId', async(req, res) => {
 })
 
 // deleteRole
+router.delete('/:roleId', async (req, res) => {
+  try {
 
+    Role.findOne({'_id': req.params.roleId}, function(err, role) {
+      if (err) {
+        console.log(err);
+          const deleteRoleError = new ErrorResponse(404, 'Bad request, role not found', err);
+          res.status(404).send(deleteRoleError.toObject());
+          errorLogger({ filename: myFile, message: "Bad request, role not found" });
+          return
+      }
+
+      console.log(role);
+
+      User.aggregate(
+        [
+          {
+            $lookup: {
+              from: 'roles',
+              localField: 'role.text',
+              foreignField: 'text',
+              as: 'userRoles'
+            }
+          },
+          {
+            $match: {
+              'userRoles.text': role.text
+            }
+          }
+        ], function(err, users) {
+          console.log(users);
+
+          if (err) {
+            console.log(err);
+            const deleteRoleError = new ErrorResponse(501, 'MongoDB error', err);
+            res.status(501).send(deleteRoleError.toObject());
+            errorLogger({ filename: myFile, message: "MongoDB error" });
+            return
+          }
+
+          if (users.length > 0) {
+            console.log(`Role ${role.text} is already in use and cannot be deleted.`);
+            const deleteRoleError = new ErrorResponse(400, `Role ${role.text} is already in use and cannot be deleted.`, role);
+            res.status(400).send(deleteRoleError.toObject());
+            errorLogger({ filename: myFile, message: `Role <${role.text}> is already in use and cannot be deleted.` });
+            return
+          }
+
+          console.log(`Role <${role.text}> is not in use and can be safely removed.`);
+          role.set({isDisabled: true});
+
+          role.save(function(err, updatedRole) {
+
+            if (err) {
+              const deleteRoleError = new ErrorResponse(500, 'Internal server error', err);
+              res.status(500).send(deleteRoleError.toObject());
+              errorLogger({ filename: myFile, message: "Internal server error" });
+              return
+            }
+
+            console.log(updatedRole);
+            const updatedRoleResponse = new BaseResponse(200, `Role ${role.text} has been removed successfully.`, updatedRole);
+            res.json(updatedRoleResponse.toObject());
+            debugLogger({ filename: myFile, message: updatedRole });
+          })
+        }
+      )
+    })
+    
+  } catch (e) {
+    const deleteRoleError = new ErrorResponse(500, 'Internal server error', e.message);
+    res.status(500).send(deleteRoleError.toObject());
+    errorLogger({ filename: myFile, message: "Internal server error" });
+  }
+})
 
 module.exports = router;
