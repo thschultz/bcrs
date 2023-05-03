@@ -64,6 +64,20 @@
             </mat-error>
           </mat-form-field>
 
+          <!-- Role -->
+          <mat-form-field appearance="fill">
+            <mat-label>Role</mat-label>
+            <mat-select formControlName="role" required>
+              <mat-option [value]="user.role?.text">
+                {{ user.role?.text }}
+              </mat-option>
+            </mat-select>
+
+            <mat-error class="error" *ngIf="form.controls['role'].hasError('required') && form.controls['role'].touched">
+              Role is a required field.
+            </mat-error>
+          </mat-form-field>
+
           <!-- Phone Number -->
           <mat-form-field appearance="fill">
             <mat-label>Phone number</mat-label>
