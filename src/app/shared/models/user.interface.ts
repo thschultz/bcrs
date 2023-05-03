@@ -8,6 +8,7 @@
  */
 
 import { SelectedSecurityQuestion } from '../models/selected-security-question.interface';
+import { Role } from "./role.interface";
 
 //user interface
 export interface User {
@@ -19,5 +20,6 @@ export interface User {
   phoneNumber: string;
   address: string;
   email: string;
+  role?: Role;
   selectedSecurityQuestions?: SelectedSecurityQuestion[];
 }
