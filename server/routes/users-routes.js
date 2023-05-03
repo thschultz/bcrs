@@ -55,21 +55,16 @@ const updateUserSchema = {
     phoneNumber: { type: "string" },
     address: { type: "string" },
     email: { type: "string" },
-    /*role: {
-      type: 'object',
-      properties: {
-        text: {type: 'string'}
-      },
-      required: ['text'],
-      additionalProperties: false
-    }*/
+    role: { type: 'string' }
+ 
   },
   required: [
     "firstName",
     "lastName",
     "phoneNumber",
     "address",
-    "email" /*, 'role'*/,
+    "email" ,
+    'role',
   ],
   additionalProperties: false,
 };
