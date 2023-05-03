@@ -11,3 +11,9 @@ Description: component styling for the bcrs project
 .house-img img {
   height: 300px;
 }
+
+.img-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

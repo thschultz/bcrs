@@ -79,6 +79,10 @@ footer {
 
 @media screen and (max-width: 800px) {
 
+  .main-content {
+    padding-inline: 0;
+  }
+
   .footer-content {
     padding: 0 5px;
     text-align: center;
