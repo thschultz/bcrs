@@ -45,6 +45,7 @@ export class UserService {
       phoneNumber: user.phoneNumber,
       address: user.address,
       email: user.email,
+      role: user.role
     });
   }
   //delete user function

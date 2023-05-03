@@ -55,8 +55,13 @@ const updateUserSchema = {
     phoneNumber: { type: "string" },
     address: { type: "string" },
     email: { type: "string" },
-    role: { type: 'string' }
- 
+    role: {
+      properties : {
+        text: { type: 'string' }
+      },
+      required: ['text'],
+      additionalProperties: false
+    }
   },
   required: [
     "firstName",
@@ -414,7 +419,7 @@ router.put("/:id", async (req, res) => {
           phoneNumber: req.body.phoneNumber,
           address: req.body.address,
           email: req.body.email,
-          'role.text': req.body.role,
+          role: req.body.role,
           dateModified: new Date(),
         });
         //saving updating user function

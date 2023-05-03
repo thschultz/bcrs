@@ -84,7 +84,7 @@ export class UserDetailsComponent implements OnInit {
       phoneNumber: this.form.controls['phoneNumber'].value,
       email: this.form.controls['email'].value,
       address: this.form.controls['address'].value,
-      role: { text:this.form.controls['role'].value }
+      role: { text: this.form.controls['role'].value }
     }
     //if successful, takes them to user list page.
     this.userService.updateUser(this.userId, updateUser).subscribe({
