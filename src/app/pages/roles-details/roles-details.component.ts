@@ -16,10 +16,10 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-role-details',
-  templateUrl: './role-details.component.html',
-  styleUrls: ['./role-details.component.css']
+  templateUrl: './roles-details.component.html',
+  styleUrls: ['./roles-details.component.css']
 })
-export class RoleDetailsComponent implements OnInit {
+export class RolesDetailsComponent implements OnInit {
 
   role: Role;
   roleId: string;
