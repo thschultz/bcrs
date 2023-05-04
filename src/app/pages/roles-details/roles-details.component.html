@@ -7,4 +7,43 @@
   Description: html for the bcrs project
 -->
 
-<p>roles-details works!</p>
+<div fxLayout="column">
+  <mat-card class="mat-elevation-z8">
+    <mat-card-title style="text-align: center; font-weight: lighter">Update Role Form</mat-card-title>
+    <mat-card-subtitle style="text-align: center; font-weight: lighter">
+      Fields marked with an asterisk(*) are required.
+    </mat-card-subtitle>
+    <br />
+    <!-- displays error message -->
+    <p-messages [(value)]="errorMessage" [enableService]="false"></p-messages>
+    <!-- saves updated role or returns error message-->
+    <form [formGroup]="editForm" (ngSubmit)="save(); editForm.reset()" style="width: 50%; margin: 0 auto">
+      <mat-card-content>
+        <div fxLayout="column" fxLayoutGap="10px">
+          <mat-form-field appearance="fill">
+            <mat-label>Role</mat-label>
+            <input type="text" matInput formControlName="text" required />
+
+            <mat-error class="errors" *ngIf="
+                editForm.controls['text'].hasError('required') &&
+                editForm.controls['text'].touched
+              ">
+              Role is a required field.
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <br />
+
+      <mat-card-actions align="end">
+        <!-- cancel and save buttons -->
+        <button mat-raised-button (click)="cancel()" style="background-color: #eeba30; color: white">
+          Cancel
+        </button>
+        <button mat-raised-button (click)="save()" style="background-color: #ae0001; color: white">
+          Save
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>
