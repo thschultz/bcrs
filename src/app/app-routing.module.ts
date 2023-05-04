@@ -117,7 +117,8 @@ const routes: Routes = [
       // Purchase Graph
       {
         path: 'purchase-graph',
-        component: PurchasesGraphComponent
+        component: PurchasesGraphComponent,
+        canActivate: [RoleGuard],
       }
     ],
     canActivate: [AuthGuard],

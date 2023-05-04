@@ -35,7 +35,7 @@ export class RolesListComponent implements OnInit {
 
     this.roleService.findAllRoles().subscribe({
       next: (res) => {
-        this.roles = res.data
+        this.roles = res.data;
       },
       error: (e) => {
         console.log(e);
