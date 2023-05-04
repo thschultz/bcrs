@@ -7,4 +7,80 @@
   Description: html for the bcrs project
 -->
 
-<p>roles-list works!</p>
+<!--
+  Title: security-question-list.component.html
+  Author: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
+  Date: 04/19/23
+  Last Modified by: Carl Logan
+  Last Modification Date: 04/19/23
+  Description: html for the bcrs project
+-->
+
+<!-- security questions list page -->
+<p-confirmDialog [style]="{ width: '35vw' }" [baseZIndex]="10000"
+  rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+
+<div fxLayout="column" fxLayoutGap="20px">
+  <div fxFlex>
+    <h1 class="page-header">
+      Role Configuration Page! <br />
+      <span class="subtitle">
+        Fields marked with an asterisk(*) are required.
+      </span>
+    </h1>
+  </div>
+  <!-- error message from server -->
+  <div class="messages">
+    <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
+  </div>
+
+  <div fxFlex>
+    <div fxLayout="column" class="pageDesign">
+      <mat-card class="card-form">
+        <form [formGroup]="roleForm" (ngSubmit)="create(); roleForm.reset()">
+          <mat-form-field appearance="fill" class="w-60">
+            <mat-label>Role</mat-label>
+            <input type="text" matInput formControlName="text" required placeholder="Enter a role..." />
+          </mat-form-field>
+
+          <button mat-button type="submit" [disabled]="!roleForm.valid" class="primary-color form-button">
+            Add Role
+          </button>
+
+
+          <mat-error *ngIf="roleForm.controls['text'].hasError('required') && roleForm.controls['text'].touched">
+            Role is a required field.
+          </mat-error>
+
+        </form>
+      </mat-card>
+    </div>
+  </div>
+
+
+  <div fxFlex>
+    <mat-card class="card-form">
+      <p-table [value]="roles" responsiveLayout="scroll" class="api-table">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Roles
+            </th>
+            <th width='200px'></th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-sq>
+          <tr>
+            <td>{{ role.text }}</td>
+            <td class="api-buttons">
+              <button mat-button type="button" routerLink="/roles/{{ role._id }}"><i
+                  class="fa-solid fa-pen-to-square"></i></button>
+              <button mat-button type="button" (click)="delete(role._id)"><i class="fa-regular fa-trash-can"></i>
+              </button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </mat-card>
+  </div>
+</div>
