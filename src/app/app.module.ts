@@ -6,7 +6,7 @@
  * Last Modified by: Walter McCue
  * Last Modification Date: 04/16/23
  * Description: angular module for the bcrs project
-*/
+ */
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -68,11 +68,14 @@ import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClient,
+  HttpClientModule,
+} from '@angular/common/http';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { InvoiceSummaryComponent } from './shared/invoice-summary/invoice-summary.component';
 import { ChartModule } from 'primeng/chart'
-
 
 @NgModule({
   declarations: [
@@ -133,11 +136,11 @@ import { ChartModule } from 'primeng/chart'
     MatSelectModule,
     MatStepperModule,
     MatListModule,
-    ChartModule
+    ChartModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

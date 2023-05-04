@@ -67,7 +67,7 @@ const invoiceSchema = {
  *     description: API that creates a new invoice
  *     summary: Creates a new invoice.
  *     parameters:
- *        - name: Username
+ *        - name: userName
  *          in: path
  *          required: true
  *          description: Username
@@ -87,15 +87,17 @@ const invoiceSchema = {
  *               - total
  *             properties:
  *               lineItems:
- *                 type: object
- *                 required:
- *                   - title
- *                   - price
- *                 properties:
- *                  title:
- *                    type: string
- *                  price:
- *                    type: number
+ *                 type: array
+ *                 items:
+ *                   type: object
+ *                   required:
+ *                     - title
+ *                     - price
+ *                   properties:
+ *                    title:
+ *                      type: string
+ *                    price:
+ *                      type: number
  *               partsAmount:
  *                 type: number
  *               laborAmount:
@@ -128,6 +130,24 @@ router.post("/:userName", async (req, res) => {
       total: req.body.total,
     };
     console.log(newInvoice);
+
+    // const validator = ajv.compile(invoiceSchema);
+    // const valid = validator(req.body);
+
+    // if (!valid) {
+    //   console.log("Bad Request, unable to validate");
+    //   const createServiceError = new ErrorResponse(
+    //     400,
+    //     "Bad Request, unable to validate",
+    //     valid
+    //   );
+    //   errorLogger({
+    //     filename: myFile,
+    //     message: "Bad Request, unable to validate",
+    //   });
+    //   res.status(400).send(createServiceError.toObject());
+    //   return;
+    // }
 
     Invoice.create(newInvoice, function (err, invoice) {
       if (err) {
