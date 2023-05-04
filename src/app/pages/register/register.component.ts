@@ -148,6 +148,7 @@ export class RegisterComponent implements OnInit {
         // set the cookie data
         this.cookieService.set('sessionuser', credentials.userName, 1);
         this.cookieService.set('session-id', res.data._id, 1);
+        this.cookieService.set('role', res.data.role.text, 1);
         // allow entry to the home page
         this.router.navigate(['/']);
       },
