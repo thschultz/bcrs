@@ -16,11 +16,9 @@
   Description: html for the bcrs project
 -->
 
-<!-- security questions list page -->
-<p-confirmDialog [style]="{ width: '35vw' }" [baseZIndex]="10000"
-  rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+<!-- roles list page -->
+<div fxLayout="column">
 
-<div fxLayout="column" fxLayoutGap="20px">
   <div fxFlex>
     <h1 class="page-header">
       Role Configuration Page! <br />
@@ -29,13 +27,13 @@
       </span>
     </h1>
   </div>
+
   <!-- error message from server -->
   <div class="messages">
-    <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
+    <p-messages [(value)]="serverMessages" [enableService]="false"></p-messages>
   </div>
 
   <div fxFlex>
-    <div fxLayout="column" class="pageDesign">
       <mat-card class="card-form">
         <form [formGroup]="roleForm" (ngSubmit)="create(); roleForm.reset()">
           <mat-form-field appearance="fill" class="w-60">
@@ -54,8 +52,7 @@
 
         </form>
       </mat-card>
-    </div>
-  </div>
+  </div><br />
 
 
   <div fxFlex>
