@@ -71,6 +71,7 @@ import { ConfirmationService } from 'primeng/api';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { InvoiceSummaryComponent } from './shared/invoice-summary/invoice-summary.component';
+import { ChartModule } from 'primeng/chart'
 
 
 @NgModule({
@@ -131,7 +132,8 @@ import { InvoiceSummaryComponent } from './shared/invoice-summary/invoice-summar
     ConfirmDialogModule,
     MatSelectModule,
     MatStepperModule,
-    MatListModule
+    MatListModule,
+    ChartModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
