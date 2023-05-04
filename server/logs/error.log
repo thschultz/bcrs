@@ -124,3 +124,6 @@
 [5/1/2023, 10:33:45 PM] server	 roles-routes.js - Bad Request, unable to validate
 [5/1/2023, 10:34:00 PM] server	 roles-routes.js - Bad Request, unable to validate
 [5/1/2023, 10:34:07 PM] server	 roles-routes.js - Bad Request, unable to validate
+[5/3/2023, 3:01:12 PM] server	 roles-routes.js - Bad Request, unable to validate
+[5/3/2023, 3:09:09 PM] server	 roles-routes.js - Bad Request, unable to validate
+[5/3/2023, 3:15:33 PM] server	 roles-routes.js - Bad request, role not found

@@ -52561,3 +52561,9 @@
 >>>>>>> Stashed changes
   __v: 0
 }
+[5/3/2023, 3:14:20 PM] server	 roles-routes.js - {
+  text: 'MEGA USER!',
+  isDisabled: true,
+  _id: new ObjectId("6452cad32229f9b7ac341018"),
+  __v: 0
+}
