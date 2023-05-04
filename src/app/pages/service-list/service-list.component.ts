@@ -79,6 +79,7 @@ export class ServiceListComponent implements OnInit {
             detail: 'Service Added Successfully'
           }
         ]
+        window.scroll(0,300);
       }
     })
   }
@@ -112,6 +113,7 @@ export class ServiceListComponent implements OnInit {
                   detail: 'Service Deleted Successfully'
                 }
               ]
+              window.scroll(0,300);
             }, // Error if failure
             error: (err) => {
               this.serverMessages = [
@@ -121,6 +123,7 @@ export class ServiceListComponent implements OnInit {
                   detail: err.message
                 }
               ]
+              window.scroll(0,300);
             }
           })
 
@@ -134,6 +137,7 @@ export class ServiceListComponent implements OnInit {
               detail: ' Deletion Canceled'
             }
           ]
+          window.scroll(0,300);
         }
       }
     })

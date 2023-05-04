@@ -61,6 +61,7 @@ export class RolesListComponent implements OnInit {
           this.serverMessages = [
             { severity: 'error', summary: 'Error', detail: res.message }
           ]
+          window.scroll(0,300);
         }
       },
       error: (e) => {
@@ -75,6 +76,7 @@ export class RolesListComponent implements OnInit {
             detail: 'Role Added Successfully'
           }
         ]
+        window.scroll(0,300);
       }
     })
   }
@@ -107,6 +109,7 @@ export class RolesListComponent implements OnInit {
                   detail: 'Role Deleted Successfully'
                 }
               ]
+              window.scroll(0,300);
             }, // Error if failure
             error: (err) => {
               this.serverMessages = [
@@ -116,6 +119,7 @@ export class RolesListComponent implements OnInit {
                   detail: err.message
                 }
               ]
+              window.scroll(0,300);
             }
           })
 
@@ -129,6 +133,7 @@ export class RolesListComponent implements OnInit {
               detail: ' Deletion Canceled'
             }
           ]
+          window.scroll(0,300);
         }
       }
     })

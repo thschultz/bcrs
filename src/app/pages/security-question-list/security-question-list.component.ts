@@ -72,6 +72,7 @@ export class SecurityQuestionListComponent implements OnInit {
             detail: 'Security Question Added Successfully'
           }
         ]
+        window.scroll(0,300);
       }
     })
   }
@@ -106,6 +107,7 @@ export class SecurityQuestionListComponent implements OnInit {
                   detail: 'Security Question Deleted Successfully'
                 }
               ]
+              window.scroll(0,300);
             }, // Error if failure
             error: (err) => {
               this.serverMessages = [
@@ -115,6 +117,7 @@ export class SecurityQuestionListComponent implements OnInit {
                   detail: err.message
                 }
               ]
+              window.scroll(0,300);
             }
           })
 
@@ -128,6 +131,7 @@ export class SecurityQuestionListComponent implements OnInit {
               detail: ' Deletion Canceled'
             }
           ]
+          window.scroll(0,300);
         }
       }
     })
