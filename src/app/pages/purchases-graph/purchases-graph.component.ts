@@ -31,7 +31,7 @@ export class PurchasesGraphComponent implements OnInit {
     this.labels = [];
 
     // API call to find, sort, and count all service purchases
-    this.invoiceService.findPurchasesByServiceGraph().subscribe({
+    this.invoiceService.findPurchaseByServiceGraph().subscribe({
       next: (res) => {
         this.purchases = res.data;
         console.log(this.purchases);
