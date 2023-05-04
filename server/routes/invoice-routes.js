@@ -18,37 +18,39 @@ const BaseResponse = require("../services/base-response");
 const ErrorResponse = require("../services/error-response");
 
 // Logging and Validation
-const myFile = "security-routes.js";
+const myFile = "invoice-routes.js";
 const ajv = new Ajv();
 
 // Schema for  create and update validation
 const invoiceSchema = {
   type: "object",
-  properties: {
-    lineItems: {
-      type: "array",
-      properties: {
-        title: { type: "string" },
-        price: { type: "number" },
-      },
-      additionalProperties: false,
-      required: ["title", "price"],
-    },
-    partsAmount: { type: "number" },
-    priceAmount: { type: "number" },
-    laborAmount: { type: "number" },
-    lineItemTotal: { type: "number" },
-    total: { type: "number" },
-  },
   required: [
     "lineItems",
     "partsAmount",
-    "priceAmount",
     "laborAmount",
     "lineItemTotal",
     "total",
   ],
   additionalProperties: false,
+  properties: {
+    lineItems: {
+      type: "array",
+      additionalProperties: false,
+      items: {
+        type: "object",
+        properties: {
+          title: { type: "string" },
+          price: { type: "number" },
+        },
+        required: ["title", "price"],
+        additionalProperties: false,
+      },
+    },
+    partsAmount: { type: "number" },
+    laborAmount: { type: "number" },
+    lineItemTotal: { type: "number" },
+    total: { type: "number" },
+  },
 };
 
 /**
@@ -79,6 +81,7 @@ const invoiceSchema = {
  *       content:
  *         application/json:
  *           schema:
+ *             type: object
  *             required:
  *               - lineItems
  *               - partsAmount
@@ -94,10 +97,10 @@ const invoiceSchema = {
  *                     - title
  *                     - price
  *                   properties:
- *                    title:
- *                      type: string
- *                    price:
- *                      type: number
+ *                     title:
+ *                       type: string
+ *                     price:
+ *                       type: number
  *               partsAmount:
  *                 type: number
  *               laborAmount:
@@ -131,23 +134,23 @@ router.post("/:userName", async (req, res) => {
     };
     console.log(newInvoice);
 
-    // const validator = ajv.compile(invoiceSchema);
-    // const valid = validator(req.body);
+    const validator = ajv.compile(invoiceSchema);
+    const valid = validator(req.body);
 
-    // if (!valid) {
-    //   console.log("Bad Request, unable to validate");
-    //   const createServiceError = new ErrorResponse(
-    //     400,
-    //     "Bad Request, unable to validate",
-    //     valid
-    //   );
-    //   errorLogger({
-    //     filename: myFile,
-    //     message: "Bad Request, unable to validate",
-    //   });
-    //   res.status(400).send(createServiceError.toObject());
-    //   return;
-    // }
+    if (!valid) {
+      console.log("Bad Request, unable to validate");
+      const createServiceError = new ErrorResponse(
+        400,
+        "Bad Request, unable to validate",
+        valid
+      );
+      errorLogger({
+        filename: myFile,
+        message: "Bad Request, unable to validate",
+      });
+      res.status(400).send(createServiceError.toObject());
+      return;
+    }
 
     Invoice.create(newInvoice, function (err, invoice) {
       if (err) {
