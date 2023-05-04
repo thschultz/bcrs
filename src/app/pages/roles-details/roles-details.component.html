@@ -6,21 +6,29 @@
   Last Modification Date: 05/01/23
   Description: html for the bcrs project
 -->
-
+<!-- update role page -->
 <div fxLayout="column">
-  <mat-card class="mat-elevation-z8">
-    <mat-card-title style="text-align: center; font-weight: lighter">Update Role Form</mat-card-title>
-    <mat-card-subtitle style="text-align: center; font-weight: lighter">
-      Fields marked with an asterisk(*) are required.
-    </mat-card-subtitle>
-    <br />
-    <!-- displays error message -->
+  <div fxFlex>
+    <h1 class="page-header">
+      Update Role Form<br />
+      <span class="subtitle">
+        Fields marked with an asterisk(*) are required.
+      </span>
+    </h1>
+  </div>
+  <!-- error messages -->
+  <div class="messages">
     <p-messages [(value)]="errorMessage" [enableService]="false"></p-messages>
-    <!-- saves updated role or returns error message-->
-    <form [formGroup]="editForm" (ngSubmit)="save(); editForm.reset()" style="width: 50%; margin: 0 auto">
+  </div>
+
+  <mat-card class="mat-elevation-z8 card-form">
+
+
+    <!-- update role form -->
+    <form [formGroup]="editForm" (ngSubmit)="save(); editForm.reset()">
       <mat-card-content>
         <div fxLayout="column" fxLayoutGap="10px">
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" class="w-100">
             <mat-label>Role</mat-label>
             <input type="text" matInput formControlName="text" required />
 
@@ -34,13 +42,12 @@
         </div>
       </mat-card-content>
       <br />
-
+      <!-- cancel and save buttons -->
       <mat-card-actions align="end">
-        <!-- cancel and save buttons -->
-        <button mat-raised-button (click)="cancel()" style="background-color: #eeba30; color: white">
+        <button mat-raised-button (click)="cancel()" class="cancel form-button">
           Cancel
         </button>
-        <button mat-raised-button (click)="save()" style="background-color: #ae0001; color: white">
+        <button mat-raised-button (click)=" save()" class="primary-color form-button">
           Save
         </button>
       </mat-card-actions>
