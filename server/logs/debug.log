@@ -57121,3 +57121,291 @@
   __v: 0
 }
 [5/3/2023, 10:49:43 PM] server	 users-routes.js - { text: 'admin', _id: new ObjectId("645315559ba8c0595d1f1785") }
+[5/3/2023, 11:27:24 PM] server	 users-routes.js - {
+  _id: new ObjectId("644bc720762dbcb37a2df369"),
+  userName: 'mccuw008',
+  password: '$2a$10$ynPmIBmZR88I/kDuk7ljsuAiQyyONFiTy4Fgzbta024AyAPUOY6Ly',
+  firstName: 'Walter',
+  lastName: 'McCue',
+  phoneNumber: '555-555-5555',
+  address: '555 Do Not Touch',
+  email: 'walter@mccue.com',
+  isDisabled: false,
+  role: { text: 'admin', _id: new ObjectId("645315559ba8c0595d1f1785") },
+  selectedSecurityQuestions: [
+    {
+      questionText: 'What is you first car model?',
+      answerText: 'car',
+      _id: new ObjectId("644bc720762dbcb37a2df36b")
+    },
+    {
+      questionText: 'What is your favorite food?',
+      answerText: 'food',
+      _id: new ObjectId("644bc720762dbcb37a2df36c")
+    },
+    {
+      questionText: 'What is the best soda flavor?',
+      answerText: 'soda',
+      _id: new ObjectId("644bc720762dbcb37a2df36d")
+    }
+  ],
+  dateCreated: 2023-04-28T13:12:27.853Z,
+  __v: 0,
+  dateModified: 2023-05-04T02:15:49.061Z
+}
+[5/3/2023, 11:28:18 PM] server	 users-routes.js - {
+  _id: new ObjectId("644bc720762dbcb37a2df369"),
+  userName: 'mccuw008',
+  password: '$2a$10$ynPmIBmZR88I/kDuk7ljsuAiQyyONFiTy4Fgzbta024AyAPUOY6Ly',
+  firstName: 'Walter',
+  lastName: 'McCue',
+  phoneNumber: '555-555-5555',
+  address: '555 Do Not Touch',
+  email: 'walter@mccue.com',
+  isDisabled: false,
+  role: { text: 'admin', _id: new ObjectId("645315559ba8c0595d1f1785") },
+  selectedSecurityQuestions: [
+    {
+      questionText: 'What is you first car model?',
+      answerText: 'car',
+      _id: new ObjectId("644bc720762dbcb37a2df36b")
+    },
+    {
+      questionText: 'What is your favorite food?',
+      answerText: 'food',
+      _id: new ObjectId("644bc720762dbcb37a2df36c")
+    },
+    {
+      questionText: 'What is the best soda flavor?',
+      answerText: 'soda',
+      _id: new ObjectId("644bc720762dbcb37a2df36d")
+    }
+  ],
+  dateCreated: 2023-04-28T13:12:27.853Z,
+  __v: 0,
+  dateModified: 2023-05-04T02:15:49.061Z
+}
+[5/3/2023, 11:28:19 PM] server	 users-routes.js - {
+  _id: new ObjectId("644bc720762dbcb37a2df369"),
+  userName: 'mccuw008',
+  password: '$2a$10$ynPmIBmZR88I/kDuk7ljsuAiQyyONFiTy4Fgzbta024AyAPUOY6Ly',
+  firstName: 'Walter',
+  lastName: 'McCue',
+  phoneNumber: '555-555-5555',
+  address: '555 Do Not Touch',
+  email: 'walter@mccue.com',
+  isDisabled: false,
+  role: { text: 'admin', _id: new ObjectId("645315559ba8c0595d1f1785") },
+  selectedSecurityQuestions: [
+    {
+      questionText: 'What is you first car model?',
+      answerText: 'car',
+      _id: new ObjectId("644bc720762dbcb37a2df36b")
+    },
+    {
+      questionText: 'What is your favorite food?',
+      answerText: 'food',
+      _id: new ObjectId("644bc720762dbcb37a2df36c")
+    },
+    {
+      questionText: 'What is the best soda flavor?',
+      answerText: 'soda',
+      _id: new ObjectId("644bc720762dbcb37a2df36d")
+    }
+  ],
+  dateCreated: 2023-04-28T13:12:27.853Z,
+  __v: 0,
+  dateModified: 2023-05-04T02:15:49.061Z
+}
+[5/3/2023, 11:28:32 PM] server	 users-routes.js - {
+  _id: new ObjectId("644bc720762dbcb37a2df369"),
+  userName: 'mccuw008',
+  password: '$2a$10$ynPmIBmZR88I/kDuk7ljsuAiQyyONFiTy4Fgzbta024AyAPUOY6Ly',
+  firstName: 'Walter',
+  lastName: 'McCue',
+  phoneNumber: '555-555-5555',
+  address: '555 Do Not Touch',
+  email: 'walter@mccue.com',
+  isDisabled: false,
+  role: { text: 'admin', _id: new ObjectId("645315559ba8c0595d1f1785") },
+  selectedSecurityQuestions: [
+    {
+      questionText: 'What is you first car model?',
+      answerText: 'car',
+      _id: new ObjectId("644bc720762dbcb37a2df36b")
+    },
+    {
+      questionText: 'What is your favorite food?',
+      answerText: 'food',
+      _id: new ObjectId("644bc720762dbcb37a2df36c")
+    },
+    {
+      questionText: 'What is the best soda flavor?',
+      answerText: 'soda',
+      _id: new ObjectId("644bc720762dbcb37a2df36d")
+    }
+  ],
+  dateCreated: 2023-04-28T13:12:27.853Z,
+  __v: 0,
+  dateModified: 2023-05-04T02:15:49.061Z
+}
+[5/3/2023, 11:29:12 PM] server	 users-routes.js - {
+  _id: new ObjectId("644bc720762dbcb37a2df369"),
+  userName: 'mccuw008',
+  password: '$2a$10$ynPmIBmZR88I/kDuk7ljsuAiQyyONFiTy4Fgzbta024AyAPUOY6Ly',
+  firstName: 'Walter',
+  lastName: 'McCue',
+  phoneNumber: '555-555-5555',
+  address: '555 Do Not Touch',
+  email: 'walter@mccue.com',
+  isDisabled: false,
+  role: { text: 'admin', _id: new ObjectId("645315559ba8c0595d1f1785") },
+  selectedSecurityQuestions: [
+    {
+      questionText: 'What is you first car model?',
+      answerText: 'car',
+      _id: new ObjectId("644bc720762dbcb37a2df36b")
+    },
+    {
+      questionText: 'What is your favorite food?',
+      answerText: 'food',
+      _id: new ObjectId("644bc720762dbcb37a2df36c")
+    },
+    {
+      questionText: 'What is the best soda flavor?',
+      answerText: 'soda',
+      _id: new ObjectId("644bc720762dbcb37a2df36d")
+    }
+  ],
+  dateCreated: 2023-04-28T13:12:27.853Z,
+  __v: 0,
+  dateModified: 2023-05-04T02:15:49.061Z
+}
+[5/3/2023, 11:29:17 PM] server	 users-routes.js - {
+  userName: 'mccuw008',
+  password: '$2a$10$ynPmIBmZR88I/kDuk7ljsuAiQyyONFiTy4Fgzbta024AyAPUOY6Ly',
+  firstName: 'Walter',
+  lastName: 'McCue',
+  phoneNumber: '555-555-5555',
+  address: '555 Do Not Touch',
+  email: 'walter@mccue.com',
+  isDisabled: false,
+  role: { text: 'admin', _id: new ObjectId("6453268d9ba8c0595d1f1bea") },
+  selectedSecurityQuestions: [
+    {
+      questionText: 'What is you first car model?',
+      answerText: 'car',
+      _id: new ObjectId("644bc720762dbcb37a2df36b")
+    },
+    {
+      questionText: 'What is your favorite food?',
+      answerText: 'food',
+      _id: new ObjectId("644bc720762dbcb37a2df36c")
+    },
+    {
+      questionText: 'What is the best soda flavor?',
+      answerText: 'soda',
+      _id: new ObjectId("644bc720762dbcb37a2df36d")
+    }
+  ],
+  dateCreated: 2023-04-28T13:12:27.853Z,
+  dateModified: 2023-05-04T03:29:17.953Z,
+  _id: new ObjectId("644bc720762dbcb37a2df369"),
+  __v: 0
+}
+[5/3/2023, 11:29:18 PM] server	 users-routes.js - {
+  _id: new ObjectId("644bc720762dbcb37a2df369"),
+  userName: 'mccuw008',
+  password: '$2a$10$ynPmIBmZR88I/kDuk7ljsuAiQyyONFiTy4Fgzbta024AyAPUOY6Ly',
+  firstName: 'Walter',
+  lastName: 'McCue',
+  phoneNumber: '555-555-5555',
+  address: '555 Do Not Touch',
+  email: 'walter@mccue.com',
+  isDisabled: false,
+  role: { text: 'admin', _id: new ObjectId("6453268d9ba8c0595d1f1bea") },
+  selectedSecurityQuestions: [
+    {
+      questionText: 'What is you first car model?',
+      answerText: 'car',
+      _id: new ObjectId("644bc720762dbcb37a2df36b")
+    },
+    {
+      questionText: 'What is your favorite food?',
+      answerText: 'food',
+      _id: new ObjectId("644bc720762dbcb37a2df36c")
+    },
+    {
+      questionText: 'What is the best soda flavor?',
+      answerText: 'soda',
+      _id: new ObjectId("644bc720762dbcb37a2df36d")
+    }
+  ],
+  dateCreated: 2023-04-28T13:12:27.853Z,
+  __v: 0,
+  dateModified: 2023-05-04T03:29:17.953Z
+}
+[5/3/2023, 11:29:20 PM] server	 users-routes.js - {
+  _id: new ObjectId("644bc720762dbcb37a2df369"),
+  userName: 'mccuw008',
+  password: '$2a$10$ynPmIBmZR88I/kDuk7ljsuAiQyyONFiTy4Fgzbta024AyAPUOY6Ly',
+  firstName: 'Walter',
+  lastName: 'McCue',
+  phoneNumber: '555-555-5555',
+  address: '555 Do Not Touch',
+  email: 'walter@mccue.com',
+  isDisabled: false,
+  role: { text: 'admin', _id: new ObjectId("6453268d9ba8c0595d1f1bea") },
+  selectedSecurityQuestions: [
+    {
+      questionText: 'What is you first car model?',
+      answerText: 'car',
+      _id: new ObjectId("644bc720762dbcb37a2df36b")
+    },
+    {
+      questionText: 'What is your favorite food?',
+      answerText: 'food',
+      _id: new ObjectId("644bc720762dbcb37a2df36c")
+    },
+    {
+      questionText: 'What is the best soda flavor?',
+      answerText: 'soda',
+      _id: new ObjectId("644bc720762dbcb37a2df36d")
+    }
+  ],
+  dateCreated: 2023-04-28T13:12:27.853Z,
+  __v: 0,
+  dateModified: 2023-05-04T03:29:17.953Z
+}
+[5/3/2023, 11:29:22 PM] server	 users-routes.js - {
+  _id: new ObjectId("644bc720762dbcb37a2df369"),
+  userName: 'mccuw008',
+  password: '$2a$10$ynPmIBmZR88I/kDuk7ljsuAiQyyONFiTy4Fgzbta024AyAPUOY6Ly',
+  firstName: 'Walter',
+  lastName: 'McCue',
+  phoneNumber: '555-555-5555',
+  address: '555 Do Not Touch',
+  email: 'walter@mccue.com',
+  isDisabled: false,
+  role: { text: 'admin', _id: new ObjectId("6453268d9ba8c0595d1f1bea") },
+  selectedSecurityQuestions: [
+    {
+      questionText: 'What is you first car model?',
+      answerText: 'car',
+      _id: new ObjectId("644bc720762dbcb37a2df36b")
+    },
+    {
+      questionText: 'What is your favorite food?',
+      answerText: 'food',
+      _id: new ObjectId("644bc720762dbcb37a2df36c")
+    },
+    {
+      questionText: 'What is the best soda flavor?',
+      answerText: 'soda',
+      _id: new ObjectId("644bc720762dbcb37a2df36d")
+    }
+  ],
+  dateCreated: 2023-04-28T13:12:27.853Z,
+  __v: 0,
+  dateModified: 2023-05-04T03:29:17.953Z
+}
