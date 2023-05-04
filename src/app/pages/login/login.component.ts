@@ -56,6 +56,7 @@ export class LoginComponent implements OnInit {
         console.log(res);
         this.cookieService.set('sessionuser', res.data.userName, 1);
         this.cookieService.set('session-id', res.data._id, 1);
+        this.cookieService.set('role', res.data.role.text, 1);
         this.router.navigate(['/']);
       },
       //error handling if unsuccessful
