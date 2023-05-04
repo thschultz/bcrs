@@ -55,4 +55,18 @@ export class Invoice {
   getOrderDate(): string {
     return this.orderDate;
   }
+
+  getTotal(): number {
+    return (
+      Number(this.partsAmount) +
+      Number(this.getLaborAmount()) +
+      Number(this.getLineItemTotal())
+    );
+  }
+
+  clear() {
+    this.partsAmount = 0;
+    this.laborHours = 0;
+    this.lineItems = [];
+  }
 }
