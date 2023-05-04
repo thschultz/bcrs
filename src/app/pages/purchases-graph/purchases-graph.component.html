@@ -7,4 +7,19 @@
   Description: html for the bcrs project
 -->
 
-<p>purchases-graph works!</p>
+<div fxLayout="column" fxLayoutGap="20px">
+
+  <div fxFlex>
+    <h1 class="page-header">
+      Welcome to the Purchases by Services Page! <br />
+      <span class="subtitle">
+        You can hide or show items by selecting their label
+      </span>
+    </h1>
+  </div>
+
+  <div fxFlex>
+    <p-chart height="450" width="450" type="pie" [data]="data"></p-chart>
+  </div>
+
+</div>
