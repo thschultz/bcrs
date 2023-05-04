@@ -13,6 +13,8 @@ import { RoleService } from '../../shared/services/role.service';
 import { ConfirmationService, ConfirmEventType } from 'primeng/api';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Message } from 'primeng/api';
+import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog'
 
 @Component({
   selector: 'app-roles-list',
@@ -23,15 +25,15 @@ import { Message } from 'primeng/api';
 export class RolesListComponent implements OnInit {
 
   roles: Role[];
-  errorMessages: Message[];
+  serverMessages: Message[];
 
   roleForm: FormGroup = this.fb.group({
     text: [null, Validators.compose([Validators.required])]
   })
 
-  constructor(private roleService: RoleService, private confirmationService: ConfirmationService, private fb: FormBuilder) {
+  constructor(private roleService: RoleService, private confirmationService: ConfirmationService, private fb: FormBuilder,  private dialog: MatDialog) {
     this.roles = [];
-    this.errorMessages = [];
+    this.serverMessages = [];
 
     this.roleService.findAllRoles().subscribe({
       next: (res) => {
@@ -56,9 +58,10 @@ export class RolesListComponent implements OnInit {
         if (res.data) {
           this.roles.push(res.data);
         } else {
-          this.errorMessages = [
+          this.serverMessages = [
             { severity: 'error', summary: 'Error', detail: res.message }
           ]
+          window.scroll(0,300);
         }
       },
       error: (e) => {
@@ -66,34 +69,71 @@ export class RolesListComponent implements OnInit {
       },
       complete: () => {
         this.roleForm.controls['text'].setErrors({ 'incorrect': false })
+        this.serverMessages = [
+          {
+            severity: 'success',
+            summary: 'Success',
+            detail: 'Role Added Successfully'
+          }
+        ]
+        window.scroll(0,300);
       }
     })
   }
 
-  delete(roleId: string) {
-    this.confirmationService.confirm({
-      message: 'Are you sure that you want to delete this record?',
-      header: 'Confirmation',
-      icon: 'pi pi-exclamation-triangle',
-      accept: () => {
-        this.roleService.deleteRole(roleId).subscribe({
-          next: (res) => {
-            console.log('Security question deleted successfully!');
-            this.roles = this.roles.filter(role => role._id !== roleId);
-          },
-          error: (e) => {
-            console.log(e);
-          }
-        })
+  delete(roleId: string): void {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
+        header: 'Delete Role',
+        body: 'Are you sure you want to delete this role?'
       },
-      reject: (type: any) => {
-        switch (type) {
-          case ConfirmEventType.REJECT:
-            console.log('User rejected this operation');
-            break;
-          case ConfirmEventType.CANCEL:
-            console.log('User canceled this operation');
-            break;
+
+      // User has to click one of the buttons in the dialog box to get it to close
+      disableClose: true
+    })
+
+    // Subscribe event from dialog box
+    dialogRef.afterClosed().subscribe({
+      next: (result) => {
+
+        // If delete is confirmed, the service is disabled
+        if (result === 'confirm') {
+          this.roleService.deleteRole(roleId).subscribe({
+            next: (res) => {
+              console.log('Role deleted successfully!');
+              this.roles = this.roles.filter(role => role._id !== roleId);
+              this.serverMessages = [
+                {
+                  severity: 'success',
+                  summary: 'Success',
+                  detail: 'Role Deleted Successfully'
+                }
+              ]
+              window.scroll(0,300);
+            }, // Error if failure
+            error: (err) => {
+              this.serverMessages = [
+                {
+                  severity: 'error',
+                  summary: 'Error',
+                  detail: err.message
+                }
+              ]
+              window.scroll(0,300);
+            }
+          })
+
+        } else {
+
+          // If delete is canceled, inform user of cancellation
+          this.serverMessages = [
+            {
+              severity: 'info',
+              summary: 'Info:',
+              detail: ' Deletion Canceled'
+            }
+          ]
+          window.scroll(0,300);
         }
       }
     })

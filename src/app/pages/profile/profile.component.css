@@ -19,3 +19,9 @@ Description: component styling for the bcrs project
   outline: none;
   transition: .3s;
 }
+
+.img-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

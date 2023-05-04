@@ -7,14 +7,8 @@
   Description: html for the bcrs project
 -->
 
-<p-confirmDialog
-  [style]="{ width: '35vw' }"
-  [baseZIndex]="10000"
-  rejectButtonStyleClass="p-button-text"
-></p-confirmDialog>
-
 <!-- Page Header -->
-<div fxLayout="column" fxLayoutGap="20px">
+<div fxLayout="column">
   <div fxFlex>
     <h1 class="page-header">
       Users Configuration Page!<br />
@@ -25,7 +19,7 @@
   </div>
 
   <!-- Add User Button -->
-  <div fxFlex class="text-center">
+  <div fxFlex class="text-center" style="padding-bottom: 30px;">
     <a routerLink="/user-create" class="neon-btn">Add User</a>
   </div>
 

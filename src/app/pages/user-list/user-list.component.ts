@@ -8,6 +8,7 @@
  */
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../../shared/models/user.interface';
 import { UserService } from '../../shared/services/user.service';
 import { ConfirmationService, ConfirmEventType } from 'primeng/api'
@@ -27,7 +28,7 @@ export class UserListComponent implements OnInit {
   users: User[] = [];
   serverMessages: Message[] = [];
 
-  constructor(private userService: UserService, private confirmationService: ConfirmationService, private dialog: MatDialog) {
+  constructor(private router: Router, private userService: UserService, private confirmationService: ConfirmationService, private dialog: MatDialog) {
 
     // findAllUsers function
     this.userService.findAllUsers().subscribe({
@@ -72,6 +73,7 @@ export class UserListComponent implements OnInit {
                   detail: 'User Deleted Successfully'
                 }
               ]
+              window.scroll(0,300);
             },
 
             // Error if failure
@@ -83,6 +85,7 @@ export class UserListComponent implements OnInit {
                   detail: err.message
                 }
               ]
+              window.scroll(0,300);
             }
           })
 
@@ -96,6 +99,7 @@ export class UserListComponent implements OnInit {
               detail: 'Deletion Canceled'
             }
           ]
+          window.scroll(0,300);
         }
       }
     })
