@@ -46,7 +46,7 @@
           </p>
 
           <!-- Config Menu -->
-          <button mat-menu-item [matMenuTriggerFor]="configs">
+          <button mat-menu-item [matMenuTriggerFor]="configs" *ng-show="user.role == 'admin'">
             <mat-icon>settings</mat-icon>
             Configurations
           </button>
@@ -66,7 +66,7 @@
           </mat-menu>
 
           <!-- Services Menu -->
-          <button mat-menu-item [matMenuTriggerFor]="services">
+          <button mat-menu-item [matMenuTriggerFor]="services" *ng-show="user.role == 'admin'">
             <mat-icon>build</mat-icon>
             Reports
           </button>

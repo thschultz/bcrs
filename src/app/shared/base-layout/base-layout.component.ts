@@ -10,8 +10,9 @@
 
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
-
+import { UserService } from '../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../shared/models/user.interface';
 
 @Component({
   selector: 'app-base-layout',
@@ -22,9 +23,15 @@ export class BaseLayoutComponent implements OnInit {
   year: number = Date.now();
 
   userName: string;
+  user: User;
+  userId: string;
 
-  constructor(private cookieService: CookieService, private router: Router) {
+
+  constructor(private cookieService: CookieService, private router: Router, private userService: UserService,) {
     this.userName = this.cookieService.get('sessionuser') ?? '';
+
+    this.userId = this.cookieService.get('session-id');
+    this.user = {} as User;
   }
 
   ngOnInit(): void { }
