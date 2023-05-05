@@ -46,7 +46,7 @@
           </p>
 
           <!-- Config Menu -->
-          <button mat-menu-item [matMenuTriggerFor]="configs" *ng-show="user.role == 'admin'">
+          <button mat-menu-item [matMenuTriggerFor]="configs" *ngIf="user.role?.text == 'admin'">
             <mat-icon>settings</mat-icon>
             Configurations
           </button>

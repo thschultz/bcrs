@@ -32,6 +32,16 @@ export class BaseLayoutComponent implements OnInit {
 
     this.userId = this.cookieService.get('session-id');
     this.user = {} as User;
+
+    // Collects user data and can be displayed on the profile page
+    this.userService.findUserById(this.userId).subscribe({
+      next: (res) => {
+        this.user = res.data;
+      },
+      error: (e) => {
+        console.log(e);
+      }
+    })
   }
 
   ngOnInit(): void { }
