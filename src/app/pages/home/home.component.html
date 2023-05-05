@@ -15,7 +15,7 @@
       Service Repair Form <br />
     </h1>
   </div>
-  
+
   <div class="messages">
     <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
     <p-messages [(value)]="successMessages" [enableService]="false"></p-messages>
@@ -40,7 +40,7 @@
                 <mat-card-subtitle>Services</mat-card-subtitle>
 
                 <div class="service-container">
-                  <mat-card-content>
+                  <mat-card-content class="flex-item">
                     <div *ngFor="let product of products">
                       <mat-checkbox value="product.price" [(ngModel)]="product.isDisabled" [name]="product.serviceName">
                         {{ product.serviceName }} ({{ product.price | currency }})
@@ -49,7 +49,7 @@
                     <button mat-raised-button type="button" class="primary-color form-button cart-button" click="addToCart()">Add to Cart</button>
                   </mat-card-content>
 
-                  <mat-card-content>
+                  <mat-card-content class="flex-item">
                     <div>
                       <h2>Your cart</h2>
                       <div>
@@ -73,13 +73,13 @@
                 <mat-card-subtitle>Standard Fees</mat-card-subtitle>
 
                 <mat-card-content>
-                  <div fxLayout="column">
-                    <mat-form-field class="w-100" fxFlex>
+                  <div class="service-container">
+                    <mat-form-field class="flex-item" fxFlex appearance="fill">
                       <mat-label>Parts</mat-label>
                       <input matInput [(ngModel)]="invoice.partsAmount" type="number" name="txtPartsAmount">
                     </mat-form-field>
 
-                    <mat-form-field class="w-100" fxFlex>
+                    <mat-form-field class="flex-item" fxFlex  appearance="fill">
                       <mat-label>Labor @ 50/hr</mat-label>
                       <input matInput [(ngModel)]="invoice.laborHours" type="number" name="txtLaborHours">
                     </mat-form-field>

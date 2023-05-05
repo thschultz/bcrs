@@ -50,13 +50,15 @@ mat-form-field {
   border-radius: 5px;
 }
 
-.service-container mat-card-content {
+.flex-item {
   width: 50%;
   padding: 10px;
 }
 
 .service-container {
   display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
 .cart-button {
@@ -66,13 +68,14 @@ mat-form-field {
 
 @media screen and (max-width: 1000px) {
 
-  .service-container mat-card-content {
+  .flex-item {
     width: 100%;
     padding: 5px;
   }
 
   .service-container {
-    flex-direction: column;
+    flex-direction: column!important;
+    gap: 5px;
   }
 
 }
