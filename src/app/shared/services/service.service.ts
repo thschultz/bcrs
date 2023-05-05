@@ -22,9 +22,18 @@ export class ServiceService {
   constructor(private http: HttpClient) {
     this.products = [];
 
-    this.findAllServices().subscribe((data: Service[]) => {
-      this.products = data;
-    });
+    // this.findAllServices().subscribe((data: Service[]) => {
+    //   this.products = data;
+    // });
+
+     this.findAllServices().subscribe({
+      next: (res) => {
+        this.products = res.data;
+      },
+      error: (e) => {
+        console.log(e);
+      }
+     });
    }
   //find all services function
   findAllServices(): Observable<any> {
@@ -54,6 +63,7 @@ export class ServiceService {
   }
 
   getProducts(): Service[] {
+    console.log('getProducts --> ' + this.products);
     return this.products;
   }
 

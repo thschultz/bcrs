@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
     this.products = this.productService.getProducts();
     this.invoice = new Invoice(this.username);
 
-    console.log(this.products);
+    // console.log('PRODUCTS --> ' + this.products);
   }
 
   ngOnInit(): void {
