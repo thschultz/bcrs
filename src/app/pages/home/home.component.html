@@ -32,14 +32,14 @@
 
             <mat-card class="mat-elevation-z0">
 
-              <p-messages [{value}]="errorMessages" [enableService]="false"></p-messages>
-              <p-messages [{value}]="successMessages" [enableService]="false"></p-messages>
+              <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
+              <p-messages [(value)]="successMessages" [enableService]="false"></p-messages>
 
               <mat-card-subtitle>Services</mat-card-subtitle>
 
               <mat-card-content>
                 <div *ngFor="let product of products">
-                  <mat-checkbox value="{{ product.price }}" [(ngModel)]="product.isDisabled" [name]="product.serviceName">
+                  <mat-checkbox value="product.price" [(ngModel)]="product.isDisabled" [name]="product.serviceName">
                     {{ product.serviceName }} ({{ product.price | currency }})
                   </mat-checkbox>
                 </div>

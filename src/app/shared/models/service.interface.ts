@@ -12,5 +12,5 @@ export interface Service {
   _id?: string;
   serviceName: string;
   price: number;
-  isDisabled: boolean;
+  isDisabled?: boolean;
 }
