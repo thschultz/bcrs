@@ -11,10 +11,7 @@
 <!-- Placeholder code until we update it -->
 <div fxLayout="column" class="main-welcome">
   <h1 class="title">
-    Welcome to WEB 450's - Bob's Computer Repair Shop<br />
-    <span class="subtitle">
-      Service Repair Form
-    </span>
+    Service Repair Form<br />
   </h1>
 
   <div fxFlex>
@@ -24,7 +21,7 @@
       <form #invoiceForm="ngForm" (submit)="generateInvoice();">
         <mat-card-content>
           <!-- fx layout column container -->
-          <div fxLayout="column" fxLayoutGap="5px">
+          <div fxLayout="column" fxLayoutGap="5px" class="border">
 
             <!-- Services check boxes -->
             <div fxFlex>
@@ -58,12 +55,12 @@
 
                 <mat-card-content>
                   <div fxLayout="column">
-                    <mat-form-field class="w-50" appearance="fill" fxFlex>
+                    <mat-form-field class="w-100" fxFlex>
                       <mat-label>Parts</mat-label>
                       <input matInput [(ngModel)]="invoice.partsAmount" type="number" name="txtPartsAmount">
                     </mat-form-field>
 
-                    <mat-form-field>
+                    <mat-form-field class="w-100" fxFlex>
                       <mat-label>Labor @ 50/hr</mat-label>
                       <input matInput [(ngModel)]="invoice.laborHours" type="number" name="txtLaborHours">
                     </mat-form-field>
@@ -85,8 +82,8 @@
 
         <!-- form submission buttons -->
         <mat-card-actions>
-          <button mat-raised-button type="reset" color="warm">Cancel</button>
-          <button mat-raised-button color="accent">Generate Invoice</button>
+          <button mat-raised-button type="reset" class="neon-btn form-button">Cancel</button>
+          <button mat-raised-button class="neon-btn form-button">Generate Invoice</button>
         </mat-card-actions>
         <!-- end form submission buttons -->
       </form>

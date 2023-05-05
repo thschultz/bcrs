@@ -42,7 +42,7 @@ const invoiceSchema = {
           serviceName: { type: "string" },
           price: { type: "number" },
         },
-        required: ["title", "price"],
+        required: ["serviceName", "price"],
         additionalProperties: false,
       },
     },
@@ -94,7 +94,7 @@ const invoiceSchema = {
  *                 items:
  *                   type: object
  *                   required:
- *                     - title
+ *                     - serviceName
  *                     - price
  *                   properties:
  *                     serviceName:
@@ -223,7 +223,7 @@ router.get("/purchases-graph", async (req, res) => {
         },
         {
           $sort: {
-            "_id.title": 1,
+            "_id.serviceName": 1,
           },
         },
       ],
