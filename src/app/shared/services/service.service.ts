@@ -2,7 +2,7 @@
  * Title: service.service.ts
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 04/19/23
- * Last Modified by: Walter McCue
+ * Last Modified by: Carl Logan
  * Last Modification Date: 04/19/23
  * Description: service api service for the bcrs project
  */
@@ -16,8 +16,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServiceService {
+  products: Service[];
 
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) {
+    this.products = [];
+
+    this.findAllServices().subscribe((data: Service[]) => {
+      this.products = data;
+    });
+   }
   //find all services function
   findAllServices(): Observable<any> {
     return this.http.get('/api/services');
@@ -43,6 +51,10 @@ export class ServiceService {
   //delete service function
   deleteService(serviceId: string): Observable<any> {
     return this.http.delete('/api/services/' + serviceId);
+  }
+
+  getProducts(): Service[] {
+    return this.products;
   }
 
 }

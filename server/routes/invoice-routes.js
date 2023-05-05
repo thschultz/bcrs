@@ -2,7 +2,7 @@
  * Title: invoice-routes.js
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 05/01/23
- * Last Modified by: Walter McCue
+ * Last Modified by: Carl Logan
  * Last Modification Date: 05/01/23
  * Description: invoice api routing for the bcrs project
  */
@@ -39,7 +39,7 @@ const invoiceSchema = {
       items: {
         type: "object",
         properties: {
-          title: { type: "string" },
+          serviceName: { type: "string" },
           price: { type: "number" },
         },
         required: ["title", "price"],
@@ -97,7 +97,7 @@ const invoiceSchema = {
  *                     - title
  *                     - price
  *                   properties:
- *                     title:
+ *                     serviceName:
  *                       type: string
  *                     price:
  *                       type: number
@@ -213,7 +213,7 @@ router.get("/purchases-graph", async (req, res) => {
         {
           $group: {
             _id: {
-              title: "$lineItems.title",
+              serviceName: "$lineItems.serviceName",
               price: "$lineItems.price",
             },
             count: {
