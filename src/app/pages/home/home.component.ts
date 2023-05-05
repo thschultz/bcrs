@@ -58,6 +58,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addToCart() {
+
+  }
+
   generateInvoice() {
     console.log('generateInvoice() this.invoice');
     console.log(this.invoice);
@@ -96,6 +100,7 @@ export class HomeComponent implements OnInit {
               this.successMessages = [
                 {severity: 'success', summary: 'Success', detail: 'Your order has been processed successfully.'}
               ]
+              window.scroll(0,300);
             },
             error: (e) => {
               console.log(e);
@@ -114,6 +119,7 @@ export class HomeComponent implements OnInit {
       this.errorMessages = [
         {severity: 'error', summary: 'Error', detail: 'You must select at least one service.'}
       ]
+      window.scroll(0,300);
     }
   }
 

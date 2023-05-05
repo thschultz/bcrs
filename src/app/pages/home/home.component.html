@@ -10,12 +10,19 @@
 
 <!-- Placeholder code until we update it -->
 <div fxLayout="column" class="main-welcome">
-  <h1 class="title">
-    Service Repair Form<br />
-  </h1>
+  <div fxFlex>
+    <h1 class="page-header">
+      Service Repair Form <br />
+    </h1>
+  </div>
+  
+  <div class="messages">
+    <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
+    <p-messages [(value)]="successMessages" [enableService]="false"></p-messages>
+  </div>
 
   <div fxFlex>
-    <mat-card class="mat-elevation-z0" style="width: 65%; margin: 0 auto;">
+    <mat-card class="mat-elevation-z0 card-style">
 
       <!-- products form -->
       <form #invoiceForm="ngForm" (submit)="generateInvoice();">
@@ -28,20 +35,32 @@
 
               <mat-card class="mat-elevation-z0">
 
-                <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
-                <p-messages [(value)]="successMessages" [enableService]="false"></p-messages>
+
 
                 <mat-card-subtitle>Services</mat-card-subtitle>
 
-                <mat-card-content>
-                  <div *ngFor="let product of products">
-                    <mat-checkbox value="product.price" [(ngModel)]="product.isDisabled" [name]="product.serviceName">
-                      {{ product.serviceName }} ({{ product.price | currency }})
-                    </mat-checkbox>
-                  </div>
-                </mat-card-content>
+                <div class="service-container">
+                  <mat-card-content>
+                    <div *ngFor="let product of products">
+                      <mat-checkbox value="product.price" [(ngModel)]="product.isDisabled" [name]="product.serviceName">
+                        {{ product.serviceName }} ({{ product.price | currency }})
+                      </mat-checkbox>
+                    </div>
+                    <button mat-raised-button type="button" class="primary-color form-button cart-button" click="addToCart()">Add to Cart</button>
+                  </mat-card-content>
+
+                  <mat-card-content>
+                    <div>
+                      <h2>Your cart</h2>
+                      <div>
+
+                      </div>
+                    </div>
+                  </mat-card-content>
+                </div>
 
               </mat-card>
+
 
             <br>
             <mat-divider></mat-divider>
@@ -81,9 +100,9 @@
         <br>
 
         <!-- form submission buttons -->
-        <mat-card-actions>
-          <button mat-raised-button type="reset" class="neon-btn form-button">Cancel</button>
-          <button mat-raised-button class="neon-btn form-button">Generate Invoice</button>
+        <mat-card-actions align="end">
+          <button mat-raised-button type="reset" class="cancel form-button">Cancel</button>
+          <button mat-raised-button class="primary-color form-button">Generate Invoice</button>
         </mat-card-actions>
         <!-- end form submission buttons -->
       </form>
