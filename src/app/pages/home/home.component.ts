@@ -43,10 +43,16 @@ export class HomeComponent implements OnInit {
     this.errorMessages = [];
     this.successMessages = [];
 
-    this.products = this.productService.getProducts();
+    this.productService.findAllServices().subscribe({
+      next: (res) => {
+        this.products = res.data;
+      },
+      error: (e) => {
+        console.log(e);
+      }
+    })
     this.invoice = new Invoice(this.username);
 
-    // console.log('PRODUCTS --> ' + this.products);
   }
 
   ngOnInit(): void {

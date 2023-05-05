@@ -16,25 +16,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServiceService {
-  products: Service[];
+  // products: Service[];
 
 
-  constructor(private http: HttpClient) {
-    this.products = [];
-
-    // this.findAllServices().subscribe((data: Service[]) => {
-    //   this.products = data;
-    // });
-
-     this.findAllServices().subscribe({
-      next: (res) => {
-        this.products = res.data;
-      },
-      error: (e) => {
-        console.log(e);
-      }
-     });
-   }
+  constructor(private http: HttpClient) { }
   //find all services function
   findAllServices(): Observable<any> {
     return this.http.get('/api/services');
@@ -60,11 +45,6 @@ export class ServiceService {
   //delete service function
   deleteService(serviceId: string): Observable<any> {
     return this.http.delete('/api/services/' + serviceId);
-  }
-
-  getProducts(): Service[] {
-    console.log('getProducts --> ' + this.products);
-    return this.products;
   }
 
 }
