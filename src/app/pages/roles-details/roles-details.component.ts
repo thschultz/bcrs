@@ -2,8 +2,8 @@
  * Title: roles-details.component.ts
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 05/01/23
- * Last Modified by: Walter McCue
- * Last Modification Date: 05/01/23
+ * Last Modified by: Thomas Schultz
+ * Last Modification Date: 05/03/23
  * Description: role details for the bcrs project
 */
 
@@ -28,7 +28,7 @@ export class RolesDetailsComponent implements OnInit {
   editForm: FormGroup = this.fb.group({
     text: [null, Validators.compose([Validators.required])]
   })
-
+  //constructor for roles details page
   constructor(private route: ActivatedRoute, private fb: FormBuilder, private router: Router, private roleService: RoleService) {
     this.role = {} as Role;
     this.errorMessage = [];
@@ -49,7 +49,7 @@ export class RolesDetailsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  // save role function
   save(): void {
     const updatedRole: Role = {
       text: this.editForm.controls['text'].value
@@ -68,7 +68,7 @@ export class RolesDetailsComponent implements OnInit {
 
     })
   }
-
+  //cancel function that takes user back to roles page
   cancel(): void {
     this.router.navigate(['/roles'])
   }

@@ -127,6 +127,7 @@ router.get("/:roleId", async (req, res) => {
   try {
     Role.findOne({ _id: req.params.roleId }, function (err, role) {
       if (err) {
+        //server error
         console.log(err);
         const findRoleByIdMongodbErrorResponse = new ErrorResponse(
           "500",
@@ -135,6 +136,7 @@ router.get("/:roleId", async (req, res) => {
         );
         res.status(500).send(findRoleByIdMongodbErrorResponse.toObject());
       } else {
+        //successful query
         console.log(role);
         const findRoleByIdResponse = new BaseResponse(
           "200",
@@ -146,6 +148,7 @@ router.get("/:roleId", async (req, res) => {
     });
   } catch (e) {
     console.log(e);
+    //server error
     const findRoleByIdCatchErrorResponse = new ErrorResponse(
       "500",
       "Internal server error",
@@ -209,6 +212,7 @@ router.post("/", async (req, res) => {
 
     Role.findOne({ text: req.body.text }, (err, role) => {
       if (err) {
+        //server error
         console.log(err);
         const findRoleMongodbError = new ErrorResponse(
           500,
@@ -226,6 +230,7 @@ router.post("/", async (req, res) => {
 
           Role.create(newRole, (err, role) => {
             if (err) {
+              //server error
               console.log(err);
               const createRoleMongodbErrorResponse = new ErrorResponse(
                 500,
@@ -234,6 +239,7 @@ router.post("/", async (req, res) => {
               );
               res.status(500).send(createRoleMongodbErrorResponse.toObject());
             } else {
+              //successful query
               console.log(role);
               const createRoleResponse = new BaseResponse(
                 200,
@@ -244,6 +250,7 @@ router.post("/", async (req, res) => {
             }
           });
         } else {
+          //error response on existing role
           console.log(`Role: ${req.body.text} already exists`);
           const roleAlreadyExists = new ErrorResponse(
             200,
@@ -256,6 +263,7 @@ router.post("/", async (req, res) => {
     });
   } catch (e) {
     console.log(e);
+    //server error
     const createRoleCatchErrorResponse = new ErrorResponse(
       500,
       "Internal server error",

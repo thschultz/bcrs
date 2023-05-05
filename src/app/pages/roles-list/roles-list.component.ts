@@ -2,8 +2,8 @@
  * Title: roles-list.component.ts
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 05/01/23
- * Last Modified by: Walter McCue
- * Last Modification Date: 05/01/23
+ * Last Modified by: Thomas Schultz
+ * Last Modification Date: 05/03/23
  * Description: list of roles for the bcrs project
 */
 
@@ -31,7 +31,7 @@ export class RolesListComponent implements OnInit {
     text: [null, Validators.compose([Validators.required])]
   })
 
-  constructor(private roleService: RoleService, private confirmationService: ConfirmationService, private fb: FormBuilder,  private dialog: MatDialog) {
+  constructor(private roleService: RoleService, private confirmationService: ConfirmationService, private fb: FormBuilder, private dialog: MatDialog) {
     this.roles = [];
     this.serverMessages = [];
 
@@ -47,7 +47,7 @@ export class RolesListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  // create role function
   create() {
     const newRole: Role = {
       text: this.roleForm.controls['text'].value
@@ -61,7 +61,7 @@ export class RolesListComponent implements OnInit {
           this.serverMessages = [
             { severity: 'error', summary: 'Error', detail: res.message }
           ]
-          window.scroll(0,300);
+          window.scroll(0, 300);
         }
       },
       error: (e) => {
@@ -76,11 +76,11 @@ export class RolesListComponent implements OnInit {
             detail: 'Role Added Successfully'
           }
         ]
-        window.scroll(0,300);
+        window.scroll(0, 300);
       }
     })
   }
-
+  // delete role function
   delete(roleId: string): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: {
@@ -109,7 +109,7 @@ export class RolesListComponent implements OnInit {
                   detail: 'Role Deleted Successfully'
                 }
               ]
-              window.scroll(0,300);
+              window.scroll(0, 300);
             }, // Error if failure
             error: (err) => {
               this.serverMessages = [
@@ -119,7 +119,7 @@ export class RolesListComponent implements OnInit {
                   detail: err.message
                 }
               ]
-              window.scroll(0,300);
+              window.scroll(0, 300);
             }
           })
 
@@ -133,7 +133,7 @@ export class RolesListComponent implements OnInit {
               detail: ' Deletion Canceled'
             }
           ]
-          window.scroll(0,300);
+          window.scroll(0, 300);
         }
       }
     })

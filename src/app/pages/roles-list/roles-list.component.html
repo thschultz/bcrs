@@ -2,17 +2,8 @@
   Title: roles-list.component.html
   Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
   Date: 05/01/23
-  Last Modified by: Walter McCue
-  Last Modification Date: 05/01/23
-  Description: html for the bcrs project
--->
-
-<!--
-  Title: security-question-list.component.html
-  Author: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
-  Date: 04/19/23
-  Last Modified by: Carl Logan
-  Last Modification Date: 04/19/23
+  Last Modified by: Thomas Schultz
+  Last Modification Date: 05/03/23
   Description: html for the bcrs project
 -->
 
@@ -34,27 +25,28 @@
   </div>
 
   <div fxFlex>
-      <mat-card class="card-form">
-        <form [formGroup]="roleForm" (ngSubmit)="create(); roleForm.reset()">
-          <mat-form-field appearance="fill" class="w-60">
-            <mat-label>Role</mat-label>
-            <input type="text" matInput formControlName="text" required placeholder="Enter a role..." />
-          </mat-form-field>
+    <mat-card class="card-form">
+      <!-- add role to list -->
+      <form [formGroup]="roleForm" (ngSubmit)="create(); roleForm.reset()">
+        <mat-form-field appearance="fill" class="w-60">
+          <mat-label>Role</mat-label>
+          <input type="text" matInput formControlName="text" required placeholder="Enter a role..." />
+        </mat-form-field>
 
-          <button mat-button type="submit" [disabled]="!roleForm.valid" class="primary-color form-button">
-            Add Role
-          </button>
+        <button mat-button type="submit" [disabled]="!roleForm.valid" class="primary-color form-button">
+          Add Role
+        </button>
 
 
-          <mat-error *ngIf="roleForm.controls['text'].hasError('required') && roleForm.controls['text'].touched">
-            Role is a required field.
-          </mat-error>
+        <mat-error *ngIf="roleForm.controls['text'].hasError('required') && roleForm.controls['text'].touched">
+          Role is a required field.
+        </mat-error>
 
-        </form>
-      </mat-card>
+      </form>
+    </mat-card>
   </div><br />
 
-
+  <!-- roles that users can have. full list appears here -->
   <div fxFlex>
     <mat-card class="card-form">
       <p-table [value]="roles" responsiveLayout="scroll" class="api-table">
@@ -70,6 +62,7 @@
           <tr>
             <td>{{ role.text }}</td>
             <td class="api-buttons">
+              <!-- edit and delete buttons. edit takes you to roles details page -->
               <button mat-button type="button" routerLink="/roles/{{ role._id }}"><i
                   class="fa-solid fa-pen-to-square"></i></button>
               <button mat-button type="button" (click)="delete(role._id)"><i class="fa-regular fa-trash-can"></i>
