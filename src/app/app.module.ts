@@ -3,7 +3,7 @@
  * Author: Richard Krasso
  * Contributors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 04/16/23
- * Last Modified by: Walter McCue
+ * Last Modified by: Carl Logan
  * Last Modification Date: 04/16/23
  * Description: angular module for the bcrs project
  */
@@ -57,6 +57,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatListModule } from '@angular/material/list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 // Services and Modules
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -137,6 +138,7 @@ import { ChartModule } from 'primeng/chart'
     MatStepperModule,
     MatListModule,
     ChartModule,
+    MatCheckboxModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
