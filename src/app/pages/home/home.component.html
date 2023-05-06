@@ -46,7 +46,7 @@
                       <mat-label>Service</mat-label>
                       <mat-select required [(ngModel)]="serviceList" name="serviceList">
                         <mat-option *ngFor="let product of products"
-                          [value]="product.serviceName"
+                          [value]="product.serviceName + ' $' + product.price"
                         >{{ product.serviceName }} ({{ product.price | currency }})
                         </mat-option>
                       </mat-select>
