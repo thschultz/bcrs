@@ -8,7 +8,7 @@
  * Description: home component for the bcrs project
 */
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { LineItem } from 'src/app/shared/models/line-item.interface';
 import { Service } from 'src/app/shared/models/service.interface';
 import { Invoice } from 'src/app/shared/models/invoice';
@@ -19,6 +19,7 @@ import { ServiceService } from '../../shared/services/service.service';
 import { InvoiceService } from 'src/app/shared/services/invoice.service';
 import { MatDialog } from '@angular/material/dialog';
 import { InvoiceSummaryComponent } from 'src/app/shared/invoice-summary/invoice-summary.component';
+
 
 @Component({
   selector: 'app-home',
@@ -33,6 +34,9 @@ export class HomeComponent implements OnInit {
   invoice: Invoice;
   errorMessages: Message[];
   successMessages: Message[];
+  serviceList: any;
+  selectedService: any;
+  cart: any;
 
   constructor(private cookieService: CookieService, private productService: ServiceService,
               private invoiceService: InvoiceService, private dialogRef: MatDialog) {
@@ -42,6 +46,9 @@ export class HomeComponent implements OnInit {
     this.invoice = {} as Invoice;
     this.errorMessages = [];
     this.successMessages = [];
+    this.serviceList = '';
+    this.selectedService = '';
+    this.cart = '';
 
     this.productService.findAllServices().subscribe({
       next: (res) => {
@@ -58,7 +65,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
   addToCart() {
+
+  }
+
+  delete() {
 
   }
 
@@ -116,6 +129,7 @@ export class HomeComponent implements OnInit {
       })
     }
     else {
+      console.log(this.serviceList)
       this.errorMessages = [
         {severity: 'error', summary: 'Error', detail: 'You must select at least one service.'}
       ]

@@ -40,21 +40,29 @@
                 <mat-card-subtitle>Services</mat-card-subtitle>
 
                 <div class="service-container">
+
                   <mat-card-content class="flex-item">
-                    <div *ngFor="let product of products">
-                      <mat-checkbox value="product.price" [(ngModel)]="product.isDisabled" [name]="product.serviceName">
-                        {{ product.serviceName }} ({{ product.price | currency }})
-                      </mat-checkbox>
-                    </div>
-                    <button mat-raised-button type="button" class="primary-color form-button cart-button" click="addToCart()">Add to Cart</button>
+                    <mat-form-field fxFlex appearance="fill">
+                      <mat-label>Service</mat-label>
+                      <mat-select required [(ngModel)]="serviceList" name="serviceList">
+                        <mat-option *ngFor="let product of products"
+                          [value]="product.serviceName"
+                        >{{ product.serviceName }} ({{ product.price | currency }})
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+
+                    <button mat-raised-button type="button" class="primary-color form-button" click="addToCart()">Add to Cart</button>
                   </mat-card-content>
 
                   <mat-card-content class="flex-item">
                     <div>
                       <h2>Your cart</h2>
+
                       <div>
 
                       </div>
+
                     </div>
                   </mat-card-content>
                 </div>
