@@ -13,7 +13,7 @@ const Schema = mongoose.Schema;
 
 // line item schema
 const lineItemSchema = new Schema({
-  title: { type: String },
+  serviceName: { type: String },
   price: { type: Number }
 });
 
