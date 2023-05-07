@@ -20,69 +20,63 @@
       <div fxLayout="column" fxLayoutGap="10px">
         <div fxFlex>
 
-            <mat-card-title>Services</mat-card-title>
-            <mat-card-content>
-              <div *ngFor="let lineItem of invoice.getLineItems()">
-                <mat-list>
-                  {{ lineItem.serviceName }}:
-                  <div fxFlex></div>
-                  {{ lineItem.price | currency }}
-                </mat-list>
-              </div>
-            </mat-card-content>
+          <mat-card-title>Services</mat-card-title>
+          <mat-card-content>
+            <div *ngFor="let lineItem of invoice.getLineItems()">
+              <mat-list>
+                {{ lineItem.serviceName }}:
+                <div fxFlex></div>
+                {{ lineItem.price | currency }}
+              </mat-list>
+            </div>
+          </mat-card-content>
 
         </div>
         <hr class="w-100"><br />
         <div fxFlex>
 
-            <mat-card-title>Standard Fees</mat-card-title>
-            <mat-card-content>
-              <mat-list>
-                <mat-list-item>
-                  Parts:
-                  <div fxFlex></div>
-                  {{ parts | currency }}
-                </mat-list-item>
-                <mat-list-item>
-                  Labor @ 50/hr:
-                  <div fxFlex></div>
-                  {{ labor | currency }}
-                </mat-list-item>
-              </mat-list>
-            </mat-card-content>
+          <mat-card-title>Standard Fees</mat-card-title>
+          <mat-card-content>
+            <mat-list>
+              <mat-list-item>
+                Parts:
+                <div fxFlex></div>
+                {{ parts | currency }}
+              </mat-list-item>
+              <mat-list-item>
+                Labor @ 50/hr:
+                <div fxFlex></div>
+                {{ labor | currency }}
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
 
         </div>
         <hr class="w-100">
         <div fxFlex>
 
-            <mat-card-content>
-              <mat-list>
-                <mat-list-item>
-                  &nbsp;
-                  <div fxFlex></div>
-                  Total Charges: {{ total | currency }}
-                </mat-list-item>
-              </mat-list>
-            </mat-card-content>
+          <mat-card-content>
+            <mat-list>
+              <mat-list-item>
+                &nbsp;
+                <div fxFlex></div>
+                Total Charges: {{ total | currency }}
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
 
         </div>
 
         <br />
       </div>
+      <div mat-dialog-actions align="end">
+        <button mat-raised-button matDialogClose="cancel" class="cancel form-button">
+          Cancel
+        </button>
+        <button mat-raised-button mat-dialog-close="confirm" class="primary-color form-button" cdkFocusInitial>
+          Confirm Order
+        </button>
+      </div>
     </mat-card-content>
   </mat-card>
-</div>
-
-<div mat-dialog-actions align="end">
-  <button mat-raised-button matDialogClose="cancel" class="cancel form-button">
-    Cancel
-  </button>
-  <button
-    mat-raised-button
-    mat-dialog-close="confirm"
-    class="primary-color form-button"
-    cdkFocusInitial
-  >
-    Confirm Order
-  </button>
 </div>
