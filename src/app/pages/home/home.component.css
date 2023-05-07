@@ -58,7 +58,6 @@ mat-checkbox:hover {
 .flex-row {
   display: flex;
   flex-direction: row;
-  gap: 10%;
 }
 
 .service-container {

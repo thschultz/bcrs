@@ -41,7 +41,7 @@
 
                 <div class="service-container">
                   <div  class="w-50">
-                    
+
                     <mat-card-content>
                       <mat-form-field fxFlex appearance="fill">
                         <mat-label>Service</mat-label>
@@ -63,11 +63,17 @@
 
                     <div>
                       <div class="flex-row">
-                        <h2>Your cart:</h2>
-                        <button mat-raised-button type="button" class="cancel form-button" (click)="emptyCart()">Empty Cart</button>
+                        <div class="w-50">
+                          <h2>Your cart:</h2>
+                        </div>
+                        <div class="w-50">
+                          <mat-card-actions align="end">
+                            <button mat-raised-button type="button" class="cancel form-button" (click)="emptyCart()">Empty Cart</button>
+                          </mat-card-actions>
+                        </div>
                       </div>
 
-                      <p-table [value]="cartItems" responsiveLayout="scroll" class="api-table">
+                      <p-table [value]="cartItems" responsiveLayout="scroll" class="api-table-small">
 
                         <!-- Table Header -->
                         <ng-template pTemplate="header">
@@ -77,8 +83,8 @@
                         <!-- Table Body -->
                         <ng-template pTemplate="body" let-cartItems>
                           <tr>
-                            <td data-cell="service">{{ cartItems.serviceName }}</td>
-                            <td data-cell="price">${{ cartItems.price | number: '1.2' }}</td>
+                            <td>{{ cartItems.serviceName }}</td>
+                            <td>${{ cartItems.price | number: '1.2' }}</td>
                           </tr>
                         </ng-template>
 
