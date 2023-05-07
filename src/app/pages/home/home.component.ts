@@ -125,6 +125,8 @@ export class HomeComponent implements OnInit {
                 {severity: 'success', summary: 'Success', detail: 'Your order has been processed successfully.'}
               ]
               window.scroll(0,300);
+              this.form.reset()
+              this.cartItems = []
             },
             error: (e) => {
               console.log(e);
