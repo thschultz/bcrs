@@ -40,7 +40,7 @@ export class PurchasesGraphComponent implements OnInit {
         for (const item of this.purchases) {
           console.log('Item object');
           console.log(item._id);
-          let title = item._id.title;
+          let title = item._id.serviceName;
           let count = item.count;
           this.labels.push(title);
           this.itemCount.push(count);
