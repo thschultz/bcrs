@@ -57409,6 +57409,7 @@
   __v: 0,
   dateModified: 2023-05-04T03:29:17.953Z
 }
+<<<<<<< Updated upstream
 [5/4/2023, 6:30:31 PM] server	 services-routes.js - {
   _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
   serviceName: 'Password Reset',
@@ -57548,6 +57549,9 @@
   dateCreated: 2023-04-25T23:53:41.992Z,
   __v: 0
 },{
+=======
+[5/4/2023, 2:39:58 AM] server	 session-routes.js - {
+>>>>>>> Stashed changes
   _id: new ObjectId("644a082f6be76d6acfc49ea1"),
   userName: 'Jay23',
   password: '$2a$10$sJ7pYNtdTH/R6hWFxBKfk.DfglD.bgUH2.tnhoRPUARKu63uka1fm',
@@ -57578,6 +57582,7 @@
   dateCreated: 2023-04-27T05:25:13.643Z,
   __v: 0,
   dateModified: 2023-05-04T02:45:58.683Z
+<<<<<<< Updated upstream
 },{
   _id: new ObjectId("644bc17bdfc7f2a235d52028"),
   userName: 'brown',
@@ -61790,3 +61795,71 @@
   dateCreated: 2023-04-22T20:55:24.062Z,
   __v: 0
 }
+=======
+}
+[5/4/2023, 2:40:16 AM] server	 session-routes.js - {
+  _id: new ObjectId("644a082f6be76d6acfc49ea1"),
+  userName: 'Jay23',
+  password: '$2a$10$sJ7pYNtdTH/R6hWFxBKfk.DfglD.bgUH2.tnhoRPUARKu63uka1fm',
+  firstName: 'Jay',
+  lastName: 'Dean',
+  phoneNumber: '777-888-9999',
+  address: '1213 Address, address 3333',
+  email: 'james@dean.com',
+  isDisabled: false,
+  role: { text: 'admin', _id: new ObjectId("64531c668e00e27d9310beb9") },
+  selectedSecurityQuestions: [
+    {
+      questionText: 'What is you favorite food?',
+      answerText: 'Sushi',
+      _id: new ObjectId("644a082f6be76d6acfc49ea3")
+    },
+    {
+      questionText: 'What is your first car model?',
+      answerText: 'Maxima',
+      _id: new ObjectId("644a082f6be76d6acfc49ea4")
+    },
+    {
+      questionText: 'What is the best soda flavor?',
+      answerText: 'Orange',
+      _id: new ObjectId("644a082f6be76d6acfc49ea5")
+    }
+  ],
+  dateCreated: 2023-04-27T05:25:13.643Z,
+  __v: 0,
+  dateModified: 2023-05-04T02:45:58.683Z
+}
+[5/4/2023, 2:40:20 AM] server	 users-routes.js - {
+  _id: new ObjectId("644a082f6be76d6acfc49ea1"),
+  userName: 'Jay23',
+  password: '$2a$10$sJ7pYNtdTH/R6hWFxBKfk.DfglD.bgUH2.tnhoRPUARKu63uka1fm',
+  firstName: 'Jay',
+  lastName: 'Dean',
+  phoneNumber: '777-888-9999',
+  address: '1213 Address, address 3333',
+  email: 'james@dean.com',
+  isDisabled: false,
+  role: { text: 'admin', _id: new ObjectId("64531c668e00e27d9310beb9") },
+  selectedSecurityQuestions: [
+    {
+      questionText: 'What is you favorite food?',
+      answerText: 'Sushi',
+      _id: new ObjectId("644a082f6be76d6acfc49ea3")
+    },
+    {
+      questionText: 'What is your first car model?',
+      answerText: 'Maxima',
+      _id: new ObjectId("644a082f6be76d6acfc49ea4")
+    },
+    {
+      questionText: 'What is the best soda flavor?',
+      answerText: 'Orange',
+      _id: new ObjectId("644a082f6be76d6acfc49ea5")
+    }
+  ],
+  dateCreated: 2023-04-27T05:25:13.643Z,
+  __v: 0,
+  dateModified: 2023-05-04T02:45:58.683Z
+}
+[5/4/2023, 2:40:29 AM] server	 users-routes.js - { text: 'admin', _id: new ObjectId("64531c668e00e27d9310beb9") }
+>>>>>>> Stashed changes

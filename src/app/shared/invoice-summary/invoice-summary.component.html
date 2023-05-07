@@ -12,5 +12,77 @@
     <mat-card-title mat-dialog-title style="text-align: center">
       {{ username }} please confirm you order.
     </mat-card-title>
+    <mat-card-subtitle style="text-align: center">
+      Order date: {{ orderDate | date }}
+    </mat-card-subtitle>
+
+    <mat-card-content mat-dialog-content>
+      <div fxLayout="column" fxLayoutGap="10px">
+        <div fxFlex>
+          <mat-card>
+            <mat-card-title>Services</mat-card-title>
+            <mat-card-content>
+              <div *ngFor="let lineItem of invoice.getLineItems()">
+                <mat-list>
+                  {{ lineItem.title }}:
+                  <div fxFlex></div>
+                  {{ lineItem.price | currency }}
+                </mat-list>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div fxFlex>
+          <mat-card>
+            <mat-card-title>Standard Fees</mat-card-title>
+            <mat-card-content>
+              <mat-list>
+                <mat-list-item>
+                  Parts:
+                  <div fxFlex></div>
+                  {{ parts | currency }}
+                </mat-list-item>
+                <mat-list-item>
+                  Labor @ 50/hr:
+                  <div fxFlex></div>
+                  {{ labor | currency }}
+                </mat-list-item>
+              </mat-list>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div fxFlex>
+          <mat-card>
+            <mat-card-content>
+              <mat-list>
+                <mat-list-item>
+                  &nbsp;
+                  <div fxFlex></div>
+                  Total Charges: {{ total | currency }}
+                </mat-list-item>
+              </mat-list>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <br />
+      </div>
+    </mat-card-content>
   </mat-card>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-raised-button matDialogClose="cancel" color="primary">
+    Cancel
+  </button>
+  <button
+    mat-raised-button
+    mat-dialog-close="confirm"
+    color="accent"
+    cdkFocusInitial
+  >
+    Confirm Order
+  </button>
 </div>
