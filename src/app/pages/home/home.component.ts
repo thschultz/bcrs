@@ -76,13 +76,10 @@ export class HomeComponent implements OnInit {
 
 
   addToCart() {
-    this.cartItemObj = this.products.filter((products) => products.serviceName === this.serviceList)
     this.cartItems.push({
-      serviceName: this.cartItemObj.serviceName,
-      price: this.cartItemObj.price
+      serviceName: this.serviceList.serviceName,
+      price: this.serviceList.price
     })
-    console.log(this.cartItemObj)
-    console.log(this.serviceList)
     console.log(this.cartItems)
     this.form.reset();
   }
