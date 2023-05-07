@@ -40,28 +40,49 @@
                 <mat-card-subtitle>Services</mat-card-subtitle>
 
                 <div class="service-container">
+                  <div  class="w-50">
+                    
+                    <mat-card-content>
+                      <mat-form-field fxFlex appearance="fill">
+                        <mat-label>Service</mat-label>
+                        <mat-select formControlName="serviceList" required [(ngModel)]="serviceList">
+                          <mat-option *ngFor="let product of products"
+                            [value]="product"
+                          >{{ product.serviceName }} ({{ product.price | currency }})
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </mat-card-content>
+
+                    <mat-card-actions align="end">
+                      <button mat-raised-button type="button" [disabled]="!serviceList" class="primary-color form-button" (click)="addToCart()">Add to Cart</button>
+                    </mat-card-actions>
+                  </div>
 
                   <mat-card-content class="flex-item">
-                    <mat-form-field fxFlex appearance="fill">
-                      <mat-label>Service</mat-label>
-                      <mat-select formControlName="serviceList" required [(ngModel)]="serviceList">
-                        <mat-option *ngFor="let product of products"
-                          [value]="product"
-                        >{{ product.serviceName }} ({{ product.price | currency }})
-                        </mat-option>
-                      </mat-select>
-                    </mat-form-field>
 
-                    <button mat-raised-button type="button" [disabled]="!serviceList" class="primary-color form-button" (click)="addToCart()">Add to Cart</button>
-                  </mat-card-content>
-
-                  <mat-card-content class="flex-item">
                     <div>
-                      <h2>Your cart</h2>
-
-                      <div>
-
+                      <div class="flex-row">
+                        <h2>Your cart:</h2>
+                        <button mat-raised-button type="button" class="cancel form-button" (click)="emptyCart()">Empty Cart</button>
                       </div>
+
+                      <p-table [value]="cartItems" responsiveLayout="scroll" class="api-table">
+
+                        <!-- Table Header -->
+                        <ng-template pTemplate="header">
+
+                        </ng-template>
+
+                        <!-- Table Body -->
+                        <ng-template pTemplate="body" let-cartItems>
+                          <tr>
+                            <td data-cell="service">{{ cartItems.serviceName }}</td>
+                            <td data-cell="price">${{ cartItems.price | number: '1.2' }}</td>
+                          </tr>
+                        </ng-template>
+
+                      </p-table>
 
                     </div>
                   </mat-card-content>
@@ -109,7 +130,7 @@
 
         <!-- form submission buttons -->
         <mat-card-actions align="end">
-          <button mat-raised-button type="reset" class="cancel form-button">Cancel</button>
+          <button mat-raised-button type="reset" class="cancel form-button" (click)="reset()">Cancel</button>
           <button mat-raised-button class="primary-color form-button">Generate Invoice</button>
         </mat-card-actions>
         <!-- end form submission buttons -->

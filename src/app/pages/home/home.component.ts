@@ -84,8 +84,8 @@ export class HomeComponent implements OnInit {
     this.form.reset();
   }
 
-  delete() {
-
+  emptyCart() {
+    this.cartItems = []
   }
 
   generateInvoice() {
@@ -157,4 +157,11 @@ export class HomeComponent implements OnInit {
   clearLineItems() {
     this.lineItems = [];
   }
+
+  reset() {
+    this.form.reset()
+    this.cartItems = []
+    window.scroll(0,300);
+  }
+
 }
