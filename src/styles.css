@@ -262,13 +262,16 @@ body {
 .api-table-small {
   padding: 0px;
   margin: 0px;
-  line-height: .6;
 }
 
 .api-table-small th, .api-table-small td {
   padding-inline: 5px;
   text-align: left;
   font-size: smaller;
+}
+
+.api-table-small th {
+  padding-inline: 12px;
 }
 
 .api-table-small th {

@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
   serviceList: any;
   cartItems: Service[];
   cartItemObj: Service[];
-  cart: any;
+  subTotal: number;
 
   constructor(private cookieService: CookieService, private fb: FormBuilder, private productService: ServiceService,
               private invoiceService: InvoiceService, private dialogRef: MatDialog) {
@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
     this.serviceList = '';
     this.cartItems = [];
     this.cartItemObj = [];
-    this.cart = '';
+    this.subTotal = 0;
 
     this.productService.findAllServices().subscribe({
       next: (res) => {
@@ -68,24 +68,31 @@ export class HomeComponent implements OnInit {
       }
     })
     this.invoice = new Invoice(this.username);
-
   }
 
   ngOnInit(): void {
+
   }
 
-
-  addToCart() {
+    addToCart() {
     this.cartItems.push({
       serviceName: this.serviceList.serviceName,
       price: this.serviceList.price
     })
     console.log(this.cartItems)
-    this.form.reset();
+    this.subTotal += this.serviceList.price
+    this.form.reset(this.serviceList)
+  }
+
+  reset() {
+    this.form.reset()
+    this.cartItems = []
+    this.subTotal = 0
+    window.scroll(0,300);
   }
 
   emptyCart() {
-    this.cartItems = []
+    this.reset()
   }
 
   generateInvoice() {
@@ -125,8 +132,7 @@ export class HomeComponent implements OnInit {
                 {severity: 'success', summary: 'Success', detail: 'Your order has been processed successfully.'}
               ]
               window.scroll(0,300);
-              this.form.reset()
-              this.cartItems = []
+              this.reset()
             },
             error: (e) => {
               console.log(e);
@@ -138,6 +144,7 @@ export class HomeComponent implements OnInit {
           this.reloadProducts();
           this.clearLineItems();
           this.invoice.clear();
+          this.reset()
         }
       })
     }
@@ -147,6 +154,7 @@ export class HomeComponent implements OnInit {
         {severity: 'error', summary: 'Error', detail: 'You must select at least one service.'}
       ]
       window.scroll(0,300);
+      this.reset()
     }
   }
 
@@ -158,12 +166,6 @@ export class HomeComponent implements OnInit {
 
   clearLineItems() {
     this.lineItems = [];
-  }
-
-  reset() {
-    this.form.reset()
-    this.cartItems = []
-    window.scroll(0,300);
   }
 
 }

@@ -15,11 +15,11 @@
     <mat-card-subtitle style="text-align: center">
       Order date: {{ orderDate | date }}
     </mat-card-subtitle>
-
+    <hr class="w-100"><br />
     <mat-card-content mat-dialog-content>
       <div fxLayout="column" fxLayoutGap="10px">
         <div fxFlex>
-          <mat-card>
+
             <mat-card-title>Services</mat-card-title>
             <mat-card-content>
               <div *ngFor="let lineItem of invoice.getLineItems()">
@@ -30,11 +30,11 @@
                 </mat-list>
               </div>
             </mat-card-content>
-          </mat-card>
-        </div>
 
+        </div>
+        <hr class="w-100"><br />
         <div fxFlex>
-          <mat-card>
+
             <mat-card-title>Standard Fees</mat-card-title>
             <mat-card-content>
               <mat-list>
@@ -50,11 +50,11 @@
                 </mat-list-item>
               </mat-list>
             </mat-card-content>
-          </mat-card>
-        </div>
 
+        </div>
+        <hr class="w-100">
         <div fxFlex>
-          <mat-card>
+
             <mat-card-content>
               <mat-list>
                 <mat-list-item>
@@ -64,7 +64,7 @@
                 </mat-list-item>
               </mat-list>
             </mat-card-content>
-          </mat-card>
+
         </div>
 
         <br />
