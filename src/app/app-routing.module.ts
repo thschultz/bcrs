@@ -37,7 +37,6 @@ import { ResetPasswordComponent } from './shared/forms/reset-password/reset-pass
 import { ProfileDetailsComponent } from './pages/profile-details/profile-details.component';
 import { RolesListComponent } from './pages/roles-list/roles-list.component';
 import { RolesDetailsComponent } from './pages/roles-details/roles-details.component';
-import { CartComponent } from './pages/cart/cart.component';
 import { PurchasesGraphComponent } from './pages/purchases-graph/purchases-graph.component';
 
 const routes: Routes = [
