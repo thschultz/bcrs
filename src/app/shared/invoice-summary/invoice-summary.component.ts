@@ -1,4 +1,3 @@
-import { Inject } from '@angular/core';
 /**
  * Title: invoice-summary.component.ts
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
@@ -9,6 +8,7 @@ import { Inject } from '@angular/core';
  */
 
 import { Component, OnInit } from '@angular/core';
+import { Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Invoice } from '../models/invoice';
 

@@ -75,17 +75,20 @@
 
                       <p-table [value]="cartItems" responsiveLayout="scroll" class="api-table-small">
 
-                        <!-- Table Header -->
-                        <ng-template pTemplate="header">
-
-                        </ng-template>
-
                         <!-- Table Body -->
                         <ng-template pTemplate="body" let-cartItems>
                           <tr>
                             <td>{{ cartItems.serviceName }}</td>
                             <td>${{ cartItems.price | number: '1.2' }}</td>
                           </tr>
+                        </ng-template>
+
+                        <!-- Table Header -->
+                        <ng-template pTemplate="header"><!--
+                          <tr>
+                            <th>SubTotal</th>
+                            <th>{{ subTotal }}</th>
+                          </tr>-->
                         </ng-template>
 
                       </p-table>
