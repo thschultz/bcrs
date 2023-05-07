@@ -25,7 +25,7 @@
     <mat-card class="mat-elevation-z0 card-style">
 
       <!-- products form -->
-      <form #invoiceForm="ngForm" (submit)="generateInvoice();">
+      <form [formGroup]="form" #invoiceForm="ngForm" (submit)="generateInvoice();">
         <mat-card-content>
           <!-- fx layout column container -->
           <div fxLayout="column" fxLayoutGap="5px" class="border">
@@ -44,15 +44,15 @@
                   <mat-card-content class="flex-item">
                     <mat-form-field fxFlex appearance="fill">
                       <mat-label>Service</mat-label>
-                      <mat-select required [(ngModel)]="serviceList" name="serviceList">
+                      <mat-select formControlName="serviceList" required [(ngModel)]="serviceList">
                         <mat-option *ngFor="let product of products"
-                          [value]="product.serviceName + ' $' + product.price"
+                          [value]="product.serviceName"
                         >{{ product.serviceName }} ({{ product.price | currency }})
                         </mat-option>
                       </mat-select>
                     </mat-form-field>
 
-                    <button mat-raised-button type="button" class="primary-color form-button" click="addToCart()">Add to Cart</button>
+                    <button mat-raised-button type="button" [disabled]="!serviceList" class="primary-color form-button" (click)="addToCart()">Add to Cart</button>
                   </mat-card-content>
 
                   <mat-card-content class="flex-item">
@@ -84,12 +84,12 @@
                   <div class="service-container">
                     <mat-form-field class="flex-item" fxFlex appearance="fill">
                       <mat-label>Parts</mat-label>
-                      <input matInput [(ngModel)]="invoice.partsAmount" type="number" name="txtPartsAmount">
+                      <input matInput [(ngModel)]="invoice.partsAmount" type="number" formControlName="txtPartsAmount">
                     </mat-form-field>
 
                     <mat-form-field class="flex-item" fxFlex  appearance="fill">
                       <mat-label>Labor @ 50/hr</mat-label>
-                      <input matInput [(ngModel)]="invoice.laborHours" type="number" name="txtLaborHours">
+                      <input matInput [(ngModel)]="invoice.laborHours" type="number" formControlName="txtLaborHours">
                     </mat-form-field>
 
                   </div>

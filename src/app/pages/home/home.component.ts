@@ -19,6 +19,7 @@ import { ServiceService } from '../../shared/services/service.service';
 import { InvoiceService } from 'src/app/shared/services/invoice.service';
 import { MatDialog } from '@angular/material/dialog';
 import { InvoiceSummaryComponent } from 'src/app/shared/invoice-summary/invoice-summary.component';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -28,6 +29,12 @@ import { InvoiceSummaryComponent } from 'src/app/shared/invoice-summary/invoice-
 })
 export class HomeComponent implements OnInit {
 
+  form: FormGroup = this.fb.group({
+    serviceList: [null, Validators.compose([Validators.required])],
+    txtPartsAmount: [null, Validators.compose([Validators.required])],
+    txtLaborHours: [null, Validators.compose([Validators.required])]
+  })
+
   username: string;
   products: Service[];
   lineItems: LineItem[];
@@ -35,10 +42,11 @@ export class HomeComponent implements OnInit {
   errorMessages: Message[];
   successMessages: Message[];
   serviceList: any;
-  selectedService: any;
+  cartItems: Service[];
+  cartItemObj: Service[];
   cart: any;
 
-  constructor(private cookieService: CookieService, private productService: ServiceService,
+  constructor(private cookieService: CookieService, private fb: FormBuilder, private productService: ServiceService,
               private invoiceService: InvoiceService, private dialogRef: MatDialog) {
     this.username = this.cookieService.get('sessionuser') ?? '';
     this.products = [];
@@ -47,7 +55,8 @@ export class HomeComponent implements OnInit {
     this.errorMessages = [];
     this.successMessages = [];
     this.serviceList = '';
-    this.selectedService = '';
+    this.cartItems = [];
+    this.cartItemObj = [];
     this.cart = '';
 
     this.productService.findAllServices().subscribe({
@@ -67,7 +76,15 @@ export class HomeComponent implements OnInit {
 
 
   addToCart() {
-
+    this.cartItemObj = this.products.filter((products) => products.serviceName === this.serviceList)
+    this.cartItems.push({
+      serviceName: this.cartItemObj.serviceName,
+      price: this.cartItemObj.price
+    })
+    console.log(this.cartItemObj)
+    console.log(this.serviceList)
+    console.log(this.cartItems)
+    this.form.reset();
   }
 
   delete() {
