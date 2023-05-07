@@ -95,10 +95,8 @@ export class HomeComponent implements OnInit {
     console.log('generateInvoice() this.products');
     console.log(this.products);
 
-    for(let product of this.products) {
-      if(product.isDisabled) {
-        this.lineItems.push(product);
-      }
+    for(let serviceName of this.cartItems) {
+      this.lineItems.push(serviceName);
     }
 
     if(this.lineItems.length > 0) {
