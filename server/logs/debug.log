@@ -61795,6 +61795,9 @@
   dateCreated: 2023-04-22T20:55:24.062Z,
   __v: 0
 }
+<<<<<<< HEAD
+[5/4/2023, 10:49:22 PM] server	 services-routes.js - {
+=======
 =======
 }
 [5/4/2023, 2:40:16 AM] server	 session-routes.js - {
@@ -61896,6 +61899,7 @@
   dateModified: 2023-05-04T03:29:17.953Z
 }
 [5/7/2023, 12:17:16 AM] server	 services-routes.js - {
+>>>>>>> c0393d62faaa229b942af43a7f02127b485d19a0
   _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
   serviceName: 'Password Reset',
   price: 39.99,
@@ -61946,6 +61950,9 @@
   dateCreated: 2023-04-22T20:55:24.062Z,
   __v: 0
 }
+<<<<<<< HEAD
+[5/4/2023, 10:52:00 PM] server	 services-routes.js - {
+=======
 [5/7/2023, 12:18:25 AM] server	 users-routes.js - {
   _id: new ObjectId("644bc720762dbcb37a2df369"),
   userName: 'mccuw008',
@@ -61979,6 +61986,7 @@
   dateModified: 2023-05-04T03:29:17.953Z
 }
 [5/7/2023, 12:18:25 AM] server	 services-routes.js - {
+>>>>>>> c0393d62faaa229b942af43a7f02127b485d19a0
   _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
   serviceName: 'Password Reset',
   price: 39.99,
@@ -62029,6 +62037,9 @@
   dateCreated: 2023-04-22T20:55:24.062Z,
   __v: 0
 }
+<<<<<<< HEAD
+[5/4/2023, 10:52:30 PM] server	 services-routes.js - {
+=======
 [5/7/2023, 12:18:30 AM] server	 users-routes.js - {
   _id: new ObjectId("644bc720762dbcb37a2df369"),
   userName: 'mccuw008',
@@ -62062,6 +62073,7 @@
   dateModified: 2023-05-04T03:29:17.953Z
 }
 [5/7/2023, 12:18:30 AM] server	 services-routes.js - {
+>>>>>>> c0393d62faaa229b942af43a7f02127b485d19a0
   _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
   serviceName: 'Password Reset',
   price: 39.99,
@@ -62112,6 +62124,9 @@
   dateCreated: 2023-04-22T20:55:24.062Z,
   __v: 0
 }
+<<<<<<< HEAD
+[5/4/2023, 10:52:44 PM] server	 services-routes.js - {
+=======
 [5/7/2023, 12:18:38 AM] server	 users-routes.js - {
   _id: new ObjectId("644bc720762dbcb37a2df369"),
   userName: 'mccuw008',
@@ -62145,6 +62160,7 @@
   dateModified: 2023-05-04T03:29:17.953Z
 }
 [5/7/2023, 12:18:38 AM] server	 services-routes.js - {
+>>>>>>> c0393d62faaa229b942af43a7f02127b485d19a0
   _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
   serviceName: 'Password Reset',
   price: 39.99,
@@ -62195,6 +62211,9 @@
   dateCreated: 2023-04-22T20:55:24.062Z,
   __v: 0
 }
+<<<<<<< HEAD
+[5/4/2023, 10:52:53 PM] server	 services-routes.js - {
+=======
 [5/7/2023, 12:41:00 AM] server	 users-routes.js - {
   _id: new ObjectId("644bc720762dbcb37a2df369"),
   userName: 'mccuw008',
@@ -62228,6 +62247,7 @@
   dateModified: 2023-05-04T03:29:17.953Z
 }
 [5/7/2023, 12:41:00 AM] server	 services-routes.js - {
+>>>>>>> c0393d62faaa229b942af43a7f02127b485d19a0
   _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
   serviceName: 'Password Reset',
   price: 39.99,
@@ -62278,6 +62298,9 @@
   dateCreated: 2023-04-22T20:55:24.062Z,
   __v: 0
 }
+<<<<<<< HEAD
+[5/4/2023, 10:56:11 PM] server	 services-routes.js - {
+=======
 [5/7/2023, 12:45:11 AM] server	 users-routes.js - {
   _id: new ObjectId("644bc720762dbcb37a2df369"),
   userName: 'mccuw008',
@@ -62311,6 +62334,7 @@
   dateModified: 2023-05-04T03:29:17.953Z
 }
 [5/7/2023, 12:45:11 AM] server	 services-routes.js - {
+>>>>>>> c0393d62faaa229b942af43a7f02127b485d19a0
   _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
   serviceName: 'Password Reset',
   price: 39.99,
@@ -62361,6 +62385,9 @@
   dateCreated: 2023-04-22T20:55:24.062Z,
   __v: 0
 }
+<<<<<<< HEAD
+[5/4/2023, 10:57:01 PM] server	 services-routes.js - {
+=======
 [5/7/2023, 12:45:14 AM] server	 users-routes.js - {
   _id: new ObjectId("644bc720762dbcb37a2df369"),
   userName: 'mccuw008',
@@ -62394,6 +62421,7 @@
   dateModified: 2023-05-04T03:29:17.953Z
 }
 [5/7/2023, 12:45:14 AM] server	 services-routes.js - {
+>>>>>>> c0393d62faaa229b942af43a7f02127b485d19a0
   _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
   serviceName: 'Password Reset',
   price: 39.99,
@@ -62444,7 +62472,11 @@
   dateCreated: 2023-04-22T20:55:24.062Z,
   __v: 0
 }
+<<<<<<< HEAD
+[5/4/2023, 10:57:24 PM] server	 services-routes.js - {
+=======
 [5/7/2023, 1:03:01 AM] server	 services-routes.js - {
+>>>>>>> c0393d62faaa229b942af43a7f02127b485d19a0
   _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
   serviceName: 'Password Reset',
   price: 39.99,
@@ -62495,6 +62527,9 @@
   dateCreated: 2023-04-22T20:55:24.062Z,
   __v: 0
 }
+<<<<<<< HEAD
+[5/8/2023, 4:24:00 PM] server	 security-routes.js - {
+=======
 [5/7/2023, 1:03:01 AM] server	 users-routes.js - {
   _id: new ObjectId("644bc720762dbcb37a2df369"),
   userName: 'mccuw008',
@@ -73617,6 +73652,7 @@
 }
 [5/7/2023, 7:25:13 PM] server	 users-routes.js - { text: 'admin', _id: new ObjectId("6453268d9ba8c0595d1f1bea") }
 [5/7/2023, 7:28:56 PM] server	 security-routes.js - {
+>>>>>>> c0393d62faaa229b942af43a7f02127b485d19a0
   _id: new ObjectId("643f73555d2a32241bb9e09e"),
   text: 'What was your first car model?',
   isDisabled: false,
@@ -73651,6 +73687,10 @@
   text: 'Who was your favorite teacher?',
   isDisabled: false,
   __v: 0
+<<<<<<< HEAD
+}
+[5/8/2023, 4:37:26 PM] server	 session-routes.js - {
+=======
 },{
   _id: new ObjectId("645321949ba8c0595d1f1bad"),
   text: 'test',
@@ -73711,6 +73751,7 @@
   __v: 0
 }
 [5/7/2023, 7:30:52 PM] server	 users-routes.js - {
+>>>>>>> c0393d62faaa229b942af43a7f02127b485d19a0
   _id: new ObjectId("6440924a773327e3f77e7133"),
   userName: 'testUser1',
   password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
@@ -73725,6 +73766,10 @@
   __v: 0,
   dateModified: 2023-05-05T17:57:31.519Z,
   role: { text: 'admin', _id: new ObjectId("6455438bacbeaebf453522b8") }
+<<<<<<< HEAD
+}
+[5/8/2023, 4:37:26 PM] server	 services-routes.js - {
+=======
 },{
   _id: new ObjectId("6440c9ae3c98e2d36a50236e"),
   userName: 'Eric23',
@@ -74011,6 +74056,7 @@
   __v: 0
 }
 [5/7/2023, 7:31:05 PM] server	 services-routes.js - {
+>>>>>>> c0393d62faaa229b942af43a7f02127b485d19a0
   _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
   serviceName: 'Password Reset',
   price: 39.99,
@@ -74061,6 +74107,9 @@
   dateCreated: 2023-04-22T20:55:24.062Z,
   __v: 0
 }
+<<<<<<< HEAD
+[5/8/2023, 4:45:34 PM] server	 services-routes.js - {
+=======
 [5/7/2023, 7:32:50 PM] server	 users-routes.js - { text: 'admin', _id: new ObjectId("6453268d9ba8c0595d1f1bea") }
 [5/7/2023, 7:36:33 PM] server	 users-routes.js - { text: 'admin', _id: new ObjectId("6453268d9ba8c0595d1f1bea") }
 [5/7/2023, 7:36:33 PM] server	 users-routes.js - {
@@ -77142,6 +77191,7 @@
   dateModified: 2023-05-04T03:29:17.953Z
 }
 [5/7/2023, 11:47:05 PM] server	 services-routes.js - {
+>>>>>>> c0393d62faaa229b942af43a7f02127b485d19a0
   _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
   serviceName: 'Password Reset',
   price: 39.99,
