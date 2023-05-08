@@ -145,6 +145,10 @@ export class HomeComponent implements OnInit {
           this.clearLineItems();
           this.invoice.clear();
           this.reset()
+          this.errorMessages = [
+            {severity: 'info', summary: 'Info', detail: 'Order Canceled.'}
+          ]
+          window.scroll(0,300);
         }
       })
     }
