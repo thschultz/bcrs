@@ -2,13 +2,14 @@
   Title: invoice-summary.component.html
   Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
   Date: 05/01/23
-  Last Modified by: Walter McCue
-  Last Modification Date: 05/01/23
+  Last Modified by: Jamal Damir
+  Last Modification Date: 05/07/23
   Description: html for the bcrs project
 -->
 
 <div fxLayout="column">
   <mat-card class="mat-elevation-z0">
+    <!-- Button to print invoice summary-->
     <button (click)="print()" class="print-button">Print Invoice</button>
     <mat-card-title mat-dialog-title style="text-align: center">
       {{ username }} please confirm you order.
@@ -23,6 +24,7 @@
         <div fxFlex>
           <mat-card-title>Services</mat-card-title>
           <mat-card-content>
+            <!-- Displays invoice items-->
             <div *ngFor="let lineItem of invoice.getLineItems()">
               <mat-list>
                 {{ lineItem.serviceName }}:
@@ -38,6 +40,7 @@
           <mat-card-title>Standard Fees</mat-card-title>
           <mat-card-content>
             <mat-list>
+              <!-- Displays parts and labor fees-->
               <mat-list-item>
                 Parts:
                 <div fxFlex></div>
@@ -57,6 +60,7 @@
             <mat-list>
               <mat-list-item>
                 &nbsp;
+                <!-- Displays invoice total-->
                 <div fxFlex></div>
                 Total Charges: {{ total | currency }}
               </mat-list-item>
@@ -66,6 +70,7 @@
 
         <br />
       </div>
+      <!-- Buttons to confirm or cancel order-->
       <div mat-dialog-actions align="end">
         <button
           mat-raised-button
