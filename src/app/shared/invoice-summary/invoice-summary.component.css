@@ -6,3 +6,16 @@ Last Modified by: Walter McCue
 Last Modification Date: 05/01/23
 Description: component styling for the bcrs project
 */
+
+/* Hides elements from print*/
+@media print {
+  .mat-dialog-actions,
+  .mat-dialog-title,
+  .print-button {
+    display: none;
+  }
+}
+
+.print-button {
+  float: right;
+}

@@ -40,7 +40,7 @@ export class PurchasesGraphComponent implements OnInit {
         for (const item of this.purchases) {
           console.log('Item object');
           console.log(item._id);
-          let title = item._id.title;
+          let title = item._id.serviceName;
           let count = item.count;
           this.labels.push(title);
           this.itemCount.push(count);
@@ -60,7 +60,9 @@ export class PurchasesGraphComponent implements OnInit {
               '#0066CC',
               '#6B3FA0',
               '#AF593E',
-              '#6CDAE7'
+              '#6CDAE7',
+              '#EE82EE',
+              '#FFFF00'
             ],
 
             hoverBackgroundColor: [
@@ -70,7 +72,9 @@ export class PurchasesGraphComponent implements OnInit {
               '#0066CC',
               '#6B3FA0',
               '#AF593E',
-              '#6CDAE7'
+              '#6CDAE7',
+              '#EE82EE',
+              '#FFFF00'
             ],
 
             data: this.itemCount

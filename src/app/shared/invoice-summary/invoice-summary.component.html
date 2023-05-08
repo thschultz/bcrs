@@ -2,8 +2,8 @@
   Title: invoice-summary.component.html
   Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
   Date: 05/01/23
-  Last Modified by: Walter McCue
-  Last Modification Date: 05/01/23
+  Last Modified by: Jamal Damir
+  Last Modification Date: 05/07/23
   Description: html for the bcrs project
 -->
 
@@ -12,5 +12,91 @@
     <mat-card-title mat-dialog-title style="text-align: center">
       {{ username }} please confirm you order.
     </mat-card-title>
+    <mat-card-subtitle style="text-align: center">
+      Order date: {{ orderDate | date }}
+    </mat-card-subtitle>
+    <!-- Button to print invoice summary-->
+    <div>
+      <button
+        mat-raised-button
+        (click)="print()"
+        class="primary-color form-button print-button"
+      >
+        Print Invoice
+      </button>
+    </div>
+    <br /><br />
+    <hr class="w-100" />
+    <br />
+    <mat-card-content mat-dialog-content>
+      <div fxLayout="column" fxLayoutGap="10px">
+        <div fxFlex>
+          <mat-card-title>Services</mat-card-title>
+          <mat-card-content>
+            <!-- Displays invoice items-->
+            <div *ngFor="let lineItem of invoice.getLineItems()">
+              <mat-list>
+                {{ lineItem.serviceName }}:
+                <div fxFlex></div>
+                {{ lineItem.price | currency }}
+              </mat-list>
+            </div>
+          </mat-card-content>
+        </div>
+        <hr class="w-100" />
+        <br />
+        <div fxFlex>
+          <mat-card-title>Standard Fees</mat-card-title>
+          <mat-card-content>
+            <mat-list>
+              <!-- Displays parts and labor fees-->
+              <mat-list-item>
+                Parts:
+                <div fxFlex></div>
+                {{ parts | currency }}
+              </mat-list-item>
+              <mat-list-item>
+                Labor @ 50/hr:
+                <div fxFlex></div>
+                {{ labor | currency }}
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </div>
+        <hr class="w-100" />
+        <div fxFlex>
+          <mat-card-content>
+            <mat-list>
+              <mat-list-item>
+                &nbsp;
+                <!-- Displays invoice total-->
+                <div fxFlex></div>
+                Total Charges: {{ total | currency }}
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </div>
+
+        <br />
+      </div>
+      <!-- Buttons to confirm or cancel-->
+      <div mat-dialog-actions align="end">
+        <button
+          mat-raised-button
+          matDialogClose="cancel"
+          class="cancel form-button"
+        >
+          Cancel
+        </button>
+        <button
+          mat-raised-button
+          mat-dialog-close="confirm"
+          class="primary-color form-button"
+          cdkFocusInitial
+        >
+          Confirm Order
+        </button>
+      </div>
+    </mat-card-content>
   </mat-card>
 </div>

@@ -258,6 +258,30 @@ body {
   background-color: #48494b;
 }
 
+/* API Tables Small */
+.api-table-small {
+  padding: 0px;
+  margin: 0px;
+}
+
+.api-table-small th, .api-table-small td {
+  padding-inline: 5px;
+  text-align: left;
+  font-size: smaller;
+}
+
+.api-table-small th {
+  padding-inline: 12px;
+}
+
+.api-table-small th {
+  background-color: #000!important;
+}
+
+.api-table-small tr:nth-of-type(2n) {
+  background-color: #48494b;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 1300px) {

@@ -40,7 +40,6 @@ import { ProfileDetailsComponent } from './pages/profile-details/profile-details
 import { RolesListComponent } from './pages/roles-list/roles-list.component';
 import { RolesDetailsComponent } from './pages/roles-details/roles-details.component';
 import { ErrorInterceptor } from './shared/error.interceptor';
-import { CartComponent } from './pages/cart/cart.component';
 import { PurchasesGraphComponent } from './pages/purchases-graph/purchases-graph.component';
 
 // Angular Materials
@@ -105,7 +104,6 @@ import { ChartModule } from 'primeng/chart'
     ProfileDetailsComponent,
     RolesListComponent,
     RolesDetailsComponent,
-    CartComponent,
     PurchasesGraphComponent,
     InvoiceSummaryComponent,
   ],

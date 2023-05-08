@@ -46,32 +46,37 @@
           </p>
 
           <!-- Config Menu -->
-          <button mat-menu-item [matMenuTriggerFor]="configs">
+          <button mat-menu-item [matMenuTriggerFor]="configs" *ngIf="user.role?.text == 'admin'">
             <mat-icon>settings</mat-icon>
             Configurations
           </button>
           <mat-menu #configs="matMenu">
             <button mat-menu-item routerLink="user-list">
+              <mat-icon>supervisor_account</mat-icon>
               USERS
             </button>
             <button mat-menu-item routerLink="security-questions">
+              <mat-icon>question_answer</mat-icon>
               SECURITY QUESTIONS
             </button>
             <button mat-menu-item routerLink="roles">
+              <mat-icon> vpn_key</mat-icon>
               ROLES
             </button>
             <button mat-menu-item routerLink="service-list">
+              <mat-icon>build</mat-icon>
               SERVICES
             </button>
           </mat-menu>
 
           <!-- Services Menu -->
-          <button mat-menu-item [matMenuTriggerFor]="services">
-            <mat-icon>build</mat-icon>
+          <button mat-menu-item [matMenuTriggerFor]="services" *ngIf="user.role?.text == 'admin'">
+            <mat-icon>bar_chart</mat-icon>
             Reports
           </button>
           <mat-menu #services="matMenu">
             <button mat-menu-item routerLink="purchase-graph">
+              <mat-icon> pie_chart</mat-icon>
               Purchases by Service
             </button>
           </mat-menu>

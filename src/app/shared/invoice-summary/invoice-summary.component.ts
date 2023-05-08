@@ -1,4 +1,3 @@
-import { Inject } from '@angular/core';
 /**
  * Title: invoice-summary.component.ts
  * Authors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
@@ -8,7 +7,9 @@ import { Inject } from '@angular/core';
  * Description: invoice summary for the bcrs project
  */
 
+// Imports
 import { Component, OnInit } from '@angular/core';
+import { Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Invoice } from '../models/invoice';
 
@@ -18,6 +19,7 @@ import { Invoice } from '../models/invoice';
   styleUrls: ['./invoice-summary.component.css'],
 })
 export class InvoiceSummaryComponent implements OnInit {
+  // Declaring instance variables of invoice items
   invoice: Invoice;
   username: string;
   orderDate: string;
@@ -26,6 +28,7 @@ export class InvoiceSummaryComponent implements OnInit {
   parts: number;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+    // Initializing variables
     this.invoice = {} as Invoice;
     this.invoice = data.invoice;
     this.username = '';
@@ -34,13 +37,20 @@ export class InvoiceSummaryComponent implements OnInit {
     this.labor = 0;
     this.parts = 0;
 
+    // Assigns values obtained from Invoice class to invoice items variables
     this.username = this.invoice.getUsername();
     this.orderDate = this.invoice.getOrderDate();
     this.parts = this.invoice.partsAmount;
     this.labor = this.invoice.getLaborAmount();
     this.total = this.invoice.getTotal();
 
+    // Logs invoice to console
     console.log(this.invoice);
+  }
+
+  // Prints invoice summary
+  print() {
+    window.print();
   }
 
   ngOnInit(): void {}

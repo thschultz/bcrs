@@ -36,15 +36,11 @@ const invoiceSchema = {
     lineItems: {
       type: "array",
       additionalProperties: false,
-      items: {
-        type: "object",
-        properties: {
-          serviceName: { type: "string" },
-          price: { type: "number" },
-        },
-        required: ["serviceName", "price"],
-        additionalProperties: false,
+      properties: {
+        serviceName: { type: "string" },
+        price: { type: "number" },
       },
+      required: ["serviceName", "price"],
     },
     partsAmount: { type: "number" },
     laborAmount: { type: "number" },
