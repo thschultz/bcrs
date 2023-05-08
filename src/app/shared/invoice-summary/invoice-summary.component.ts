@@ -43,5 +43,9 @@ export class InvoiceSummaryComponent implements OnInit {
     console.log(this.invoice);
   }
 
+  print() {
+    window.print();
+  }
+
   ngOnInit(): void {}
 }
