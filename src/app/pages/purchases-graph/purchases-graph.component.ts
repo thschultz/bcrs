@@ -60,7 +60,9 @@ export class PurchasesGraphComponent implements OnInit {
               '#0066CC',
               '#6B3FA0',
               '#AF593E',
-              '#6CDAE7'
+              '#6CDAE7',
+              '#EE82EE',
+              '#FFFF00'
             ],
 
             hoverBackgroundColor: [
@@ -70,7 +72,9 @@ export class PurchasesGraphComponent implements OnInit {
               '#0066CC',
               '#6B3FA0',
               '#AF593E',
-              '#6CDAE7'
+              '#6CDAE7',
+              '#EE82EE',
+              '#FFFF00'
             ],
 
             data: this.itemCount
