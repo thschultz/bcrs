@@ -67,14 +67,16 @@
           <!-- Role -->
           <p style="font-size: 12px;">Only an admin can change your Role from the Configurations Menu</p>
           <mat-form-field appearance="fill">
-            <mat-label>Role</mat-label>
-            <mat-select formControlName="role" required>
+            <mat-label>Role: {{ user.role?.text }}</mat-label>
+            <input type="text" matInput formControlName="role" />
+            <!-- <mat-select formControlName="role" [disabled]=*"butDisabled">
               <mat-option [value]="user.role?.text">
                 {{ user.role?.text }}
               </mat-option>
-            </mat-select>
+            </mat-select> -->
 
-            <mat-error class="error" *ngIf="form.controls['role'].hasError('required') && form.controls['role'].touched">
+            <mat-error class="error"
+              *ngIf="form.controls['role'].hasError('required') && form.controls['role'].touched">
               Role is a required field.
             </mat-error>
           </mat-form-field>

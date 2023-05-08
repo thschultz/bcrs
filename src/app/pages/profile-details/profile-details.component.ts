@@ -30,7 +30,6 @@ export class ProfileDetailsComponent implements OnInit {
   serverMessages: Message[];
   roles: Role[];
 
-
   // Form Group with validation
   form: FormGroup = this.fb.group({
     firstName: [null, Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(35)])],
@@ -38,7 +37,7 @@ export class ProfileDetailsComponent implements OnInit {
     phoneNumber: [null, Validators.compose([Validators.required, Validators.pattern('\\d{3}\\-\\d{3}-\\d{4}')])],
     email: [null, Validators.compose([Validators.required, Validators.email])],
     address: [null, Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(75)])],
-    role: [null,Validators.compose([Validators.required])]
+    role: [null, Validators.compose([Validators.required])]
   });
 
   constructor(private route: ActivatedRoute, private fb: FormBuilder, private router: Router, private userService: UserService, private cookieService: CookieService, private roleService: RoleService) {
@@ -47,6 +46,7 @@ export class ProfileDetailsComponent implements OnInit {
     this.user = {} as User;
     this.roles = [];
     this.serverMessages = [];
+    this.form.controls['role'].disable();
 
 
     // Collects user data and pre-populates the input fields in the form
