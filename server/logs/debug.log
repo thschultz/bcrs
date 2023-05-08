@@ -61790,3 +61790,565 @@
   dateCreated: 2023-04-22T20:55:24.062Z,
   __v: 0
 }
+[5/4/2023, 10:49:22 PM] server	 services-routes.js - {
+  _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
+  serviceName: 'Password Reset',
+  price: 39.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444acaaadbf7ffd07d1ec6"),
+  serviceName: 'Spyware Removal',
+  price: 99.9,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0,
+  dateModified: 2023-04-22T21:18:42.519Z
+},{
+  _id: new ObjectId("64444ad7aadbf7ffd07d1ec8"),
+  serviceName: 'RAM Upgrade',
+  price: 129.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444ae7aadbf7ffd07d1eca"),
+  serviceName: 'Software Installation',
+  price: 49.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444af5aadbf7ffd07d1ecc"),
+  serviceName: 'PC Tune-up',
+  price: 89.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b03aadbf7ffd07d1ece"),
+  serviceName: 'Keyboard Cleaning',
+  price: 45,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b12aadbf7ffd07d1ed0"),
+  serviceName: 'Disk Clean-up',
+  price: 149.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+}
+[5/4/2023, 10:52:00 PM] server	 services-routes.js - {
+  _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
+  serviceName: 'Password Reset',
+  price: 39.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444acaaadbf7ffd07d1ec6"),
+  serviceName: 'Spyware Removal',
+  price: 99.9,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0,
+  dateModified: 2023-04-22T21:18:42.519Z
+},{
+  _id: new ObjectId("64444ad7aadbf7ffd07d1ec8"),
+  serviceName: 'RAM Upgrade',
+  price: 129.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444ae7aadbf7ffd07d1eca"),
+  serviceName: 'Software Installation',
+  price: 49.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444af5aadbf7ffd07d1ecc"),
+  serviceName: 'PC Tune-up',
+  price: 89.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b03aadbf7ffd07d1ece"),
+  serviceName: 'Keyboard Cleaning',
+  price: 45,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b12aadbf7ffd07d1ed0"),
+  serviceName: 'Disk Clean-up',
+  price: 149.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+}
+[5/4/2023, 10:52:30 PM] server	 services-routes.js - {
+  _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
+  serviceName: 'Password Reset',
+  price: 39.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444acaaadbf7ffd07d1ec6"),
+  serviceName: 'Spyware Removal',
+  price: 99.9,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0,
+  dateModified: 2023-04-22T21:18:42.519Z
+},{
+  _id: new ObjectId("64444ad7aadbf7ffd07d1ec8"),
+  serviceName: 'RAM Upgrade',
+  price: 129.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444ae7aadbf7ffd07d1eca"),
+  serviceName: 'Software Installation',
+  price: 49.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444af5aadbf7ffd07d1ecc"),
+  serviceName: 'PC Tune-up',
+  price: 89.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b03aadbf7ffd07d1ece"),
+  serviceName: 'Keyboard Cleaning',
+  price: 45,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b12aadbf7ffd07d1ed0"),
+  serviceName: 'Disk Clean-up',
+  price: 149.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+}
+[5/4/2023, 10:52:44 PM] server	 services-routes.js - {
+  _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
+  serviceName: 'Password Reset',
+  price: 39.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444acaaadbf7ffd07d1ec6"),
+  serviceName: 'Spyware Removal',
+  price: 99.9,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0,
+  dateModified: 2023-04-22T21:18:42.519Z
+},{
+  _id: new ObjectId("64444ad7aadbf7ffd07d1ec8"),
+  serviceName: 'RAM Upgrade',
+  price: 129.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444ae7aadbf7ffd07d1eca"),
+  serviceName: 'Software Installation',
+  price: 49.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444af5aadbf7ffd07d1ecc"),
+  serviceName: 'PC Tune-up',
+  price: 89.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b03aadbf7ffd07d1ece"),
+  serviceName: 'Keyboard Cleaning',
+  price: 45,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b12aadbf7ffd07d1ed0"),
+  serviceName: 'Disk Clean-up',
+  price: 149.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+}
+[5/4/2023, 10:52:53 PM] server	 services-routes.js - {
+  _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
+  serviceName: 'Password Reset',
+  price: 39.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444acaaadbf7ffd07d1ec6"),
+  serviceName: 'Spyware Removal',
+  price: 99.9,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0,
+  dateModified: 2023-04-22T21:18:42.519Z
+},{
+  _id: new ObjectId("64444ad7aadbf7ffd07d1ec8"),
+  serviceName: 'RAM Upgrade',
+  price: 129.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444ae7aadbf7ffd07d1eca"),
+  serviceName: 'Software Installation',
+  price: 49.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444af5aadbf7ffd07d1ecc"),
+  serviceName: 'PC Tune-up',
+  price: 89.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b03aadbf7ffd07d1ece"),
+  serviceName: 'Keyboard Cleaning',
+  price: 45,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b12aadbf7ffd07d1ed0"),
+  serviceName: 'Disk Clean-up',
+  price: 149.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+}
+[5/4/2023, 10:56:11 PM] server	 services-routes.js - {
+  _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
+  serviceName: 'Password Reset',
+  price: 39.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444acaaadbf7ffd07d1ec6"),
+  serviceName: 'Spyware Removal',
+  price: 99.9,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0,
+  dateModified: 2023-04-22T21:18:42.519Z
+},{
+  _id: new ObjectId("64444ad7aadbf7ffd07d1ec8"),
+  serviceName: 'RAM Upgrade',
+  price: 129.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444ae7aadbf7ffd07d1eca"),
+  serviceName: 'Software Installation',
+  price: 49.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444af5aadbf7ffd07d1ecc"),
+  serviceName: 'PC Tune-up',
+  price: 89.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b03aadbf7ffd07d1ece"),
+  serviceName: 'Keyboard Cleaning',
+  price: 45,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b12aadbf7ffd07d1ed0"),
+  serviceName: 'Disk Clean-up',
+  price: 149.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+}
+[5/4/2023, 10:57:01 PM] server	 services-routes.js - {
+  _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
+  serviceName: 'Password Reset',
+  price: 39.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444acaaadbf7ffd07d1ec6"),
+  serviceName: 'Spyware Removal',
+  price: 99.9,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0,
+  dateModified: 2023-04-22T21:18:42.519Z
+},{
+  _id: new ObjectId("64444ad7aadbf7ffd07d1ec8"),
+  serviceName: 'RAM Upgrade',
+  price: 129.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444ae7aadbf7ffd07d1eca"),
+  serviceName: 'Software Installation',
+  price: 49.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444af5aadbf7ffd07d1ecc"),
+  serviceName: 'PC Tune-up',
+  price: 89.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b03aadbf7ffd07d1ece"),
+  serviceName: 'Keyboard Cleaning',
+  price: 45,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b12aadbf7ffd07d1ed0"),
+  serviceName: 'Disk Clean-up',
+  price: 149.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+}
+[5/4/2023, 10:57:24 PM] server	 services-routes.js - {
+  _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
+  serviceName: 'Password Reset',
+  price: 39.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444acaaadbf7ffd07d1ec6"),
+  serviceName: 'Spyware Removal',
+  price: 99.9,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0,
+  dateModified: 2023-04-22T21:18:42.519Z
+},{
+  _id: new ObjectId("64444ad7aadbf7ffd07d1ec8"),
+  serviceName: 'RAM Upgrade',
+  price: 129.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444ae7aadbf7ffd07d1eca"),
+  serviceName: 'Software Installation',
+  price: 49.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444af5aadbf7ffd07d1ecc"),
+  serviceName: 'PC Tune-up',
+  price: 89.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b03aadbf7ffd07d1ece"),
+  serviceName: 'Keyboard Cleaning',
+  price: 45,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b12aadbf7ffd07d1ed0"),
+  serviceName: 'Disk Clean-up',
+  price: 149.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+}
+[5/8/2023, 4:24:00 PM] server	 security-routes.js - {
+  _id: new ObjectId("643f73555d2a32241bb9e09e"),
+  text: 'What was your first car model?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("643f73665d2a32241bb9e0a0"),
+  text: 'What is your favorite food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("64406849ed08facf7a42b380"),
+  text: 'What is your favorite vacation destination?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f8d608d290d975a5c2e7"),
+  text: 'What is your favorite type of food?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("6441f92808d290d975a5c2e9"),
+  isDisabled: false,
+  __v: 0,
+  text: 'What is the best soda flavor?'
+},{
+  _id: new ObjectId("644bc788762dbcb37a2df38a"),
+  text: 'What is your favorite color?',
+  isDisabled: false,
+  __v: 0
+},{
+  _id: new ObjectId("644de443e99c14c0983fb4e5"),
+  text: 'Who was your favorite teacher?',
+  isDisabled: false,
+  __v: 0
+}
+[5/8/2023, 4:37:26 PM] server	 session-routes.js - {
+  _id: new ObjectId("6440924a773327e3f77e7133"),
+  userName: 'testUser1',
+  password: '$2a$10$nxE5Gdb9s/oQCeFFEn.OLOX6HlMLukpW/DSY9tKN2.GOuYXtCYOeK',
+  firstName: 'Teddy',
+  lastName: 'Lassie',
+  phoneNumber: '000-123-4567',
+  address: 'Teddy Blvd',
+  email: 'Teddy@Lassie.com',
+  isDisabled: false,
+  dateCreated: 2023-04-20T01:06:14.129Z,
+  selectedSecurityQuestions: [],
+  __v: 0,
+  dateModified: 2023-05-05T17:57:31.519Z,
+  role: { text: 'admin', _id: new ObjectId("6455438bacbeaebf453522b8") }
+}
+[5/8/2023, 4:37:26 PM] server	 services-routes.js - {
+  _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
+  serviceName: 'Password Reset',
+  price: 39.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444acaaadbf7ffd07d1ec6"),
+  serviceName: 'Spyware Removal',
+  price: 99.9,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0,
+  dateModified: 2023-04-22T21:18:42.519Z
+},{
+  _id: new ObjectId("64444ad7aadbf7ffd07d1ec8"),
+  serviceName: 'RAM Upgrade',
+  price: 129.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444ae7aadbf7ffd07d1eca"),
+  serviceName: 'Software Installation',
+  price: 49.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444af5aadbf7ffd07d1ecc"),
+  serviceName: 'PC Tune-up',
+  price: 89.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b03aadbf7ffd07d1ece"),
+  serviceName: 'Keyboard Cleaning',
+  price: 45,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b12aadbf7ffd07d1ed0"),
+  serviceName: 'Disk Clean-up',
+  price: 149.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+}
+[5/8/2023, 4:45:34 PM] server	 services-routes.js - {
+  _id: new ObjectId("64444ab6aadbf7ffd07d1ec4"),
+  serviceName: 'Password Reset',
+  price: 39.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444acaaadbf7ffd07d1ec6"),
+  serviceName: 'Spyware Removal',
+  price: 99.9,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0,
+  dateModified: 2023-04-22T21:18:42.519Z
+},{
+  _id: new ObjectId("64444ad7aadbf7ffd07d1ec8"),
+  serviceName: 'RAM Upgrade',
+  price: 129.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444ae7aadbf7ffd07d1eca"),
+  serviceName: 'Software Installation',
+  price: 49.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444af5aadbf7ffd07d1ecc"),
+  serviceName: 'PC Tune-up',
+  price: 89.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b03aadbf7ffd07d1ece"),
+  serviceName: 'Keyboard Cleaning',
+  price: 45,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+},{
+  _id: new ObjectId("64444b12aadbf7ffd07d1ed0"),
+  serviceName: 'Disk Clean-up',
+  price: 149.99,
+  isDisabled: false,
+  dateCreated: 2023-04-22T20:55:24.062Z,
+  __v: 0
+}

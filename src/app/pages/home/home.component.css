@@ -41,11 +41,42 @@ mat-checkbox:hover {
   background-color: rgb(45, 45, 45);
 }
 
-mat-form-field {
-  font-size: 1.5em;
-}
+
 
 .border {
   border: solid 2px black;
   border-radius: 5px;
+}
+
+.flex-item {
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.service-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+  .flex-item {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .service-container {
+    flex-direction: column!important;
+    gap: 5px;
+  }
+
 }
