@@ -4,7 +4,7 @@
  * Contributors: Thomas Schultz, Jamal Damir, Carl Logan, Walter McCue
  * Date: 04/16/23
  * Last Modified by: Carl Logan
- * Last Modification Date: 04/16/23
+ * Last Modification Date: 05/7/23
  * Description: home component for the bcrs project
 */
 
@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
   subTotal: number;
 
   constructor(private cookieService: CookieService, private fb: FormBuilder, private productService: ServiceService,
-              private invoiceService: InvoiceService, private dialogRef: MatDialog) {
+    private invoiceService: InvoiceService, private dialogRef: MatDialog) {
     this.username = this.cookieService.get('sessionuser') ?? '';
     this.products = [];
     this.lineItems = [];
@@ -73,8 +73,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
-    addToCart() {
+  //add to cart function
+  addToCart() {
     this.cartItems.push({
       serviceName: this.serviceList.serviceName,
       price: this.serviceList.price
@@ -83,18 +83,18 @@ export class HomeComponent implements OnInit {
     this.subTotal += this.serviceList.price
     this.form.reset(this.serviceList)
   }
-
+  //reset cart function
   reset() {
     this.form.reset()
     this.cartItems = []
     this.subTotal = 0
-    window.scroll(0,300);
+    window.scroll(0, 300);
   }
-
+  //empty cart function
   emptyCart() {
     this.reset()
   }
-
+  //generate invoice function
   generateInvoice() {
     console.log('generateInvoice() this.invoice');
     console.log(this.invoice);
@@ -102,11 +102,11 @@ export class HomeComponent implements OnInit {
     console.log('generateInvoice() this.products');
     console.log(this.products);
 
-    for(let cartItem of this.cartItems) {
+    for (let cartItem of this.cartItems) {
       this.lineItems.push(cartItem);
     }
 
-    if(this.lineItems.length > 0) {
+    if (this.lineItems.length > 0) {
       this.invoice.setLineItems(this.lineItems);
 
       console.log('lineItems.length > 0: this.invoice');
@@ -121,7 +121,7 @@ export class HomeComponent implements OnInit {
       });
 
       dialogRef.afterClosed().subscribe(result => {
-        if(result === 'confirm') {
+        if (result === 'confirm') {
           this.invoiceService.createInvoice(this.username, this.invoice).subscribe({
             next: (res) => {
               console.log('Invoice created');
@@ -129,9 +129,9 @@ export class HomeComponent implements OnInit {
               this.clearLineItems();
               this.invoice.clear();
               this.successMessages = [
-                {severity: 'success', summary: 'Success', detail: 'Your order has been processed successfully.'}
+                { severity: 'success', summary: 'Success', detail: 'Your order has been processed successfully.' }
               ]
-              window.scroll(0,300);
+              window.scroll(0, 300);
               this.reset()
             },
             error: (e) => {
@@ -146,28 +146,28 @@ export class HomeComponent implements OnInit {
           this.invoice.clear();
           this.reset()
           this.errorMessages = [
-            {severity: 'info', summary: 'Info', detail: 'Order Canceled.'}
+            { severity: 'info', summary: 'Info', detail: 'Order Canceled.' }
           ]
-          window.scroll(0,300);
+          window.scroll(0, 300);
         }
       })
     }
     else {
       console.log(this.serviceList)
       this.errorMessages = [
-        {severity: 'error', summary: 'Error', detail: 'You must select at least one service.'}
+        { severity: 'error', summary: 'Error', detail: 'You must select at least one service.' }
       ]
-      window.scroll(0,300);
+      window.scroll(0, 300);
       this.reset()
     }
   }
-
+  //reload products function
   reloadProducts() {
-    for(let product of this.products) {
+    for (let product of this.products) {
       product.isDisabled = false;
     }
   }
-
+  //clear line items function
   clearLineItems() {
     this.lineItems = [];
   }
