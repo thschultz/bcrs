@@ -9,14 +9,23 @@
 
 <div fxLayout="column">
   <mat-card class="mat-elevation-z0">
-    <!-- Button to print invoice summary-->
-    <button (click)="print()" class="print-button">Print Invoice</button>
     <mat-card-title mat-dialog-title style="text-align: center">
       {{ username }} please confirm you order.
     </mat-card-title>
     <mat-card-subtitle style="text-align: center">
       Order date: {{ orderDate | date }}
     </mat-card-subtitle>
+    <!-- Button to print invoice summary-->
+    <div>
+      <button
+        mat-raised-button
+        (click)="print()"
+        class="primary-color form-button print-button"
+      >
+        Print Invoice
+      </button>
+    </div>
+    <br /><br />
     <hr class="w-100" />
     <br />
     <mat-card-content mat-dialog-content>
@@ -70,7 +79,7 @@
 
         <br />
       </div>
-      <!-- Buttons to confirm or cancel order-->
+      <!-- Buttons to confirm or cancel-->
       <div mat-dialog-actions align="end">
         <button
           mat-raised-button
